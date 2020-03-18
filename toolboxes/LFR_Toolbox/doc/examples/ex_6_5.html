@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>ex_6_5.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">6.5:</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">trim</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">/</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">linearization</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">on</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">gridding.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Interpolation</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equilibrium</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">surface</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">state-space</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">matrices.</SPAN>
+
+   <SPAN CLASS="syntax11">missiledata</SPAN>
+
+   <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Trim,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">linearization</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">storage</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">results</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">at</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">gridding</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">points</SPAN>
+   ex_6_5_loop;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Results</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">ex_6_5_loop</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">al_ma_data</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">values</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">alpha</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Mach</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">defining</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">gridding</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">q_dp_data</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">trimmed</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">values</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">q</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dq</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">at</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">gridding</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">points</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">================================================================</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Interpolation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">finding</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equilibrium</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">surface</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">It</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">means</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">finding</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">q</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dp</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">as</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">polynomial</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">expansion</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Al</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Ma</SPAN>
+
+   <SPAN CLASS="syntax11">lfrs</SPAN> Al Ma <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">0</SPAN> <SPAN CLASS="syntax5">2</SPAN>.<SPAN CLASS="syntax5">0</SPAN><SPAN CLASS="syntax18">]</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">349</SPAN> <SPAN CLASS="syntax5">4</SPAN>.<SPAN CLASS="syntax5">0</SPAN><SPAN CLASS="syntax18">]</SPAN>
+
+   lfrex <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">1</SPAN> Al Al<SPAN CLASS="syntax18">*</SPAN>Ma Al<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">]</SPAN>;
+   ordlfr <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">{</SPAN>Al Ma<SPAN CLASS="syntax18">}</SPAN>;
+   q_dp <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">data2lfr</SPAN><SPAN CLASS="syntax18">(</SPAN>q_dp_data,al_ma_data,lfrex,ordlfr<SPAN CLASS="syntax18">)</SPAN>;
+
+   <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">q</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">at</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equilibrium</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">as</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">alpha</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Mach</SPAN>
+   q <SPAN CLASS="syntax18">=</SPAN> q_dp<SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+   <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dp</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">at</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equilibrium</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">as</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">alpha</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Mach</SPAN>
+   dp <SPAN CLASS="syntax18">=</SPAN> q_dp<SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+   <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Verification</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">results</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(dp2</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">exact</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equation)</SPAN>
+   dp2 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">-</SPAN><SPAN CLASS="syntax18">(</SPAN>m3<SPAN CLASS="syntax18">*</SPAN>Al<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">3</SPAN> <SPAN CLASS="syntax18">+</SPAN> m2<SPAN CLASS="syntax18">*</SPAN>Al<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN> <SPAN CLASS="syntax18">+</SPAN> m1<SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax18">-</SPAN><SPAN CLASS="syntax5">7</SPAN> <SPAN CLASS="syntax18">+</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">8</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">*</SPAN>Ma<SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">*</SPAN>Al<SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">/</SPAN>m0;
+   <SPAN CLASS="syntax11">distlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>dp,dp2<SPAN CLASS="syntax18">)</SPAN>
+
+   <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Verification</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">by</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">plotting</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">surfaces</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dp</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dp2</SPAN>
+   <SPAN CLASS="syntax9">figure</SPAN>
+   <SPAN CLASS="syntax11">plotlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>dp, <SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">Al</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax5">0</SPAN>,<SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">349</SPAN>,<SPAN CLASS="syntax5">10</SPAN><SPAN CLASS="syntax18">}</SPAN>,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">Ma</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">4</SPAN>,<SPAN CLASS="syntax5">10</SPAN><SPAN CLASS="syntax18">}</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+   <SPAN CLASS="syntax9">hold</SPAN> on
+   <SPAN CLASS="syntax11">plotlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>dp2,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">Al</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax5">0</SPAN>,<SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">349</SPAN>,<SPAN CLASS="syntax5">10</SPAN><SPAN CLASS="syntax18">}</SPAN>,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">Ma</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">4</SPAN>,<SPAN CLASS="syntax5">10</SPAN><SPAN CLASS="syntax18">}</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+</PRE></BODY>
+</HTML>
+

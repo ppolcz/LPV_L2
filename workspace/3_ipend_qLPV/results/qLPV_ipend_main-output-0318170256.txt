@@ -1,0 +1,3 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0318170256.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m')">qLPV_ipend_main</a> called from evaluateCode

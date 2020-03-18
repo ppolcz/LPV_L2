@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>ex_2_13.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">construction</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">proposed</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">ex_2_11.m</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">treated</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">now</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">symbolic</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approach</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">instead</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">object-oriented</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approach.</SPAN>
+
+   syms Int d1 d3
+   syss <SPAN CLASS="syntax18">=</SPAN> d1<SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN>Int d1<SPAN CLASS="syntax18">*</SPAN>d3<SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">1</SPAN> <SPAN CLASS="syntax5">1</SPAN>;<SPAN CLASS="syntax5">0</SPAN> <SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN>d1<SPAN CLASS="syntax18">*</SPAN>Int ; d3<SPAN CLASS="syntax18">]</SPAN>;
+   sys3 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">sym2lfr</SPAN><SPAN CLASS="syntax18">(</SPAN>syss<SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Note</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">1/s</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">must</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">denoted</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Int</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">used</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">formula.</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Object-oriented</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approach</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(ex_2_12.m)</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">comparison</SPAN>
+
+   <SPAN CLASS="syntax11">lfrs</SPAN> Int d1 d3
+   sys2 <SPAN CLASS="syntax18">=</SPAN> d1<SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN>Int d1<SPAN CLASS="syntax18">*</SPAN>d3<SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">1</SPAN> <SPAN CLASS="syntax5">1</SPAN>;<SPAN CLASS="syntax5">0</SPAN> <SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN>d1<SPAN CLASS="syntax18">*</SPAN>Int ; d3<SPAN CLASS="syntax18">]</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Comparison</SPAN>
+
+   <SPAN CLASS="syntax11">distlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>sys2,sys3<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">distance</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">should</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">zero.</SPAN>
+</PRE></BODY>
+</HTML>
+

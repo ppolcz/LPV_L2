@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>ex_4_5.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">illustrates</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">computation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approximation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">error</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bounds</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;udistlfr&quot;)</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">use</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">this</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">information</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">introducing</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">new</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uncertain</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameters</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">modelling</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approximations.</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(See</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">also</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">ex_4_4.m).</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Approximation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">performed</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;reduclfr&quot;</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Realization:</SPAN>
+
+   <SPAN CLASS="syntax11">lfrs</SPAN> a b c
+   S1 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">+</SPAN><SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">001</SPAN><SPAN CLASS="syntax18">*</SPAN>a<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">5</SPAN><SPAN CLASS="syntax18">-</SPAN>b<SPAN CLASS="syntax18">*</SPAN>c a<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">4</SPAN><SPAN CLASS="syntax18">*</SPAN>c;a<SPAN CLASS="syntax18">*</SPAN>b<SPAN CLASS="syntax18">*</SPAN>c<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">+</SPAN><SPAN CLASS="syntax5">2</SPAN> a<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">-</SPAN><SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">001</SPAN><SPAN CLASS="syntax18">*</SPAN>b<SPAN CLASS="syntax18">*</SPAN>c<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">+</SPAN><SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">]</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Approximation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;reduclfr&quot;</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(this</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">handles</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">tolerance</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">argument</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">order</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">reduction</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">algorithms</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">such</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">way</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approximation</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">error</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">remains</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">less</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">than</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">given</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bound).</SPAN>
+
+   S2 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">reduclfr</SPAN><SPAN CLASS="syntax18">(</SPAN>S1,<SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">01</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">a</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Evaluation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approximation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">error</SPAN>
+
+   <SPAN CLASS="syntax18">[</SPAN>distu,dist2,mindiff,maxdiff<SPAN CLASS="syntax18">]</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">udistlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>S1,S2<SPAN CLASS="syntax18">)</SPAN>;
+   <SPAN CLASS="syntax9">disp</SPAN><SPAN CLASS="syntax18">(</SPAN>mindiff<SPAN CLASS="syntax18">)</SPAN>; <SPAN CLASS="syntax9">disp</SPAN><SPAN CLASS="syntax18">(</SPAN>maxdiff<SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">returns</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">mindiff</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">maxdiff</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">are</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">matrices</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">having</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">same</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">as</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">S1.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">These</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">matrices</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">give</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">term</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">by</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">term</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">-</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">lower</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bound</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">minimum</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">value</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approximation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">error</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(mindiff)</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">-</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">an</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">upper</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bound</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">maximum</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">value</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approximation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">error</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(maxdiff).</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">It</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">remains</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">replace</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approximation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">errors</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">by</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">additional</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">normalized</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">real</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameters.</SPAN>
+
+   syserr <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">bnds2lfr</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">s_</SPAN><SPAN CLASS="syntax13">'</SPAN>,mindiff,maxdiff<SPAN CLASS="syntax18">)</SPAN>;
+   S3 <SPAN CLASS="syntax18">=</SPAN> S2 <SPAN CLASS="syntax18">+</SPAN> syserr;
+
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>S3<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Now</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">S3</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">has</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Delta-block</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">14-by-14</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">compared</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">original</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">S1</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">23-by-23.</SPAN>
+
+
+</PRE></BODY>
+</HTML>
+

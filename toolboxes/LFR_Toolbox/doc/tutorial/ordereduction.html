@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="manually generated">
+   <meta name="keywords" content="lft, lfr, toolbox, lfrt, gain, scheduling, matlab, tutorial, robustness, multimodel, order reduction, pole assignment, observer">
+   <meta name="description" content="Tutorial for using the Linear Fractional Representation Toolbox.">
+
+<title>LFRT tutorial: order reduction</title>
+<link rel="stylesheet" href="../green.css" type="text/css">
+</head>
+
+<body text="#330000" bgcolor="#cccccc" link="#000000" vlink="#000000" alink="#000000">
+
+<center><table class="bod"><tr><td>
+
+<a name="top"></a>
+<h1>LFRT version 2.0: order reduction</h1>
+
+<p><hr></p>
+
+<ul>
+   <li><a class="intext" href="index.html">Introduction</a></li>
+   <li><a class="intext" href="basicfunctions.html">Basic functions</a></li>
+   <li><a class="intext" href="realization.html">Realization</a></li>
+
+   <li><span class="focus">Order reduction</span>
+       <ul>
+         <li><a title="Sequencial 1-D order reduction" href="#minlfr1"><tt class="function">minlfr1</tt></a></li>
+         <li><a title="n-D order reduction" href="#minlfr"><tt class="function">minlfr</tt></a></li>
+       </ul></li>
+   <li><a class="intext" href="approximation.html">Approximation</a></li>
+   <li><a class="intext" href="modelling.html">Modelling a missile</a></li>
+   <li><a class="intext" href="muanalysis.html">&micro;-analysis</a></li>
+</ul>
+</p>
+
+
+<p><hr></p>
+
+This page describes two functions for order reduction after realization. Note that <span class="emphas">after
+realization, parameter commutativity is ignored</span> (i.e., <tt>a*b-b*a</tt> connot be reduced to zero).
+
+<p><hr></p>
+
+<!-- ================================================================ -->
+<a name="minlfr1"></a>
+<h3>Function <tt class="function">minlfr1</tt></h3>
+<p>
+A system is defined, it will be used to illustrate the differences between both functions.
+</p>
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b c d
+sys1 = [a*c+a*d+b*c+b*d      1/(a*b*c);...
+        c+d                  1/(a*b*c)];
+
+<tt class="function">size</tt>(sys1)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Dimension of constant block in uncertainty matrix: 2
+Uncertainty blocks (globally (16 x 16)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ a     4x4   LTI       r           s           [-1,1]
+ b     4x4   LTI       r           s           [-1,1]
+ c     5x5   LTI       r           s           [-1,1]
+ d     3x3   LTI       r           s           [-1,1]</span>
+</pre>
+The function <tt class="function">minlfr1</tt> considers separately the parameters
+for order reduction, so, the expected order reduction corresponds to the following
+factorized from.
+<pre>
+   = [a+b  1/(a*b*c) ; 1  1/(a*b*c)] * ...
+     [c+d  0 ; 0 1];
+</pre>
+i.e., order 10:
+</p>
+
+<p>
+<pre>
+sys2 = <tt class="function">minlfr1</tt>(sys1);
+<tt class="function">size</tt>(sys2)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Dimension of constant block in uncertainty matrix: 2
+Uncertainty blocks (globally (10 x 10)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ a     3x3   LTI       r           s           [-1,1]
+ b     3x3   LTI       r           s           [-1,1]
+ c     3x3   LTI       r           s           [-1,1]
+ d     1x1   LTI       r           s           [-1,1]</span>
+</pre>
+</p>
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="minlfr"></a>
+<h3>Function <tt class="function">minlfr</tt></h3>
+
+<p>
+The function <tt class="function">minlfr</tt> considers all parameters simultaneously
+for factorization, the expected order reduction corresponds to the following
+factorized form (considering the same system <tt>sys1</tt> as above):
+<pre>
+    = [a+b  1 ; 1  1] * ...
+      [c+d  0 ; 0 1/(a*b*c)];
+</pre>
+i.e., order 7:
+</p>
+
+<p>
+<pre>
+sys3 = <tt class="function">minlfr</tt>(sys1);
+<tt class="function">size</tt>(sys3)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Dimension of constant block in uncertainty matrix: 1
+Uncertainty blocks (globally (7 x 7)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ a     2x2   LTI       r           s           [-1,1]
+ b     2x2   LTI       r           s           [-1,1]
+ c     2x2   LTI       r           s           [-1,1]
+ d     1x1   LTI       r           s           [-1,1]</span>
+</pre>
+</p>
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+
+</td></tr></table></center>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body></html>

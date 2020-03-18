@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<TITLE>ex_6_5_loop.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Loop</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">invoked</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">by</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">ex_6_5.m</SPAN>
+
+   kk <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax5">1</SPAN>;
+
+   <SPAN CLASS="syntax8">warning</SPAN> off
+   <SPAN CLASS="syntax8">for</SPAN> ii <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax5">0</SPAN><SPAN CLASS="syntax18">:</SPAN><SPAN CLASS="syntax5">5</SPAN>;
+   <SPAN CLASS="syntax8">for</SPAN> jj <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax5">0</SPAN><SPAN CLASS="syntax18">:</SPAN><SPAN CLASS="syntax5">5</SPAN>;
+
+       <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Trim</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameters</SPAN>
+       Al <SPAN CLASS="syntax18">=</SPAN> ii<SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">349</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax5">5</SPAN><SPAN CLASS="syntax18">)</SPAN>; <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">from</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">0</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">0.349</SPAN>
+       Ma <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax5">2</SPAN> <SPAN CLASS="syntax18">+</SPAN> jj<SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax5">5</SPAN><SPAN CLASS="syntax18">)</SPAN>; <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">from</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">2</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">4</SPAN>
+
+       <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Computation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equilibrium</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">points</SPAN>
+       X0 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">0</SPAN>;<SPAN CLASS="syntax5">0</SPAN>;Al;<SPAN CLASS="syntax5">0</SPAN><SPAN CLASS="syntax18">]</SPAN>;
+       <SPAN CLASS="syntax18">[</SPAN>X,U,Y,dX<SPAN CLASS="syntax18">]</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax9">trim</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">missile53</SPAN><SPAN CLASS="syntax13">'</SPAN>,X0,<SPAN CLASS="syntax5">0</SPAN>,<SPAN CLASS="syntax5">0</SPAN>,<SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+       <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Computation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">linearized</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">models</SPAN>
+       <SPAN CLASS="syntax18">[</SPAN>A,B,C,D<SPAN CLASS="syntax18">]</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax9">linmod</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">missile53</SPAN><SPAN CLASS="syntax13">'</SPAN>,X,U<SPAN CLASS="syntax18">)</SPAN>;
+       B <SPAN CLASS="syntax18">=</SPAN> B<SPAN CLASS="syntax18">/</SPAN>B<SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">1</SPAN>,<SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+       C <SPAN CLASS="syntax18">=</SPAN> C<SPAN CLASS="syntax18">*</SPAN>B<SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">1</SPAN>,<SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+       <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Storage</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">values</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">state-space</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">model</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">interpolation</SPAN>
+       abcd_data<SPAN CLASS="syntax18">{</SPAN>kk<SPAN CLASS="syntax18">}</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN>A B;C D<SPAN CLASS="syntax18">]</SPAN>;
+       al_ma_data<SPAN CLASS="syntax18">{</SPAN>kk<SPAN CLASS="syntax18">}</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN>Al,Ma<SPAN CLASS="syntax18">]</SPAN>;
+
+       <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Storage</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">values</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equilibrium</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">surface</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">interpolation</SPAN>
+       q_dp_data<SPAN CLASS="syntax18">{</SPAN>kk<SPAN CLASS="syntax18">}</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN>X<SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">4</SPAN><SPAN CLASS="syntax18">)</SPAN> U<SPAN CLASS="syntax18">]</SPAN>;  <SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">values</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">q</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dp</SPAN>
+
+       kk <SPAN CLASS="syntax18">=</SPAN> kk <SPAN CLASS="syntax18">+</SPAN> <SPAN CLASS="syntax5">1</SPAN>;
+
+   <SPAN CLASS="syntax8">end</SPAN>;
+   <SPAN CLASS="syntax8">end</SPAN>;
+   <SPAN CLASS="syntax8">warning</SPAN> on
+</PRE></BODY>
+</HTML>
+

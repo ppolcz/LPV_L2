@@ -1,0 +1,1552 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0317171646.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m')">qLPV_ipend_main</a> called from evaluateCode
+Undefined function 'I' for input arguments of type 'double'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('LPV_L2anal_Masubuchi_primal', '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Masubuchi_primal.m', 95)" style="font-weight:bold">LPV_L2anal_Masubuchi_primal</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Masubuchi_primal.m',95,0)">line 95</a>)
+E = blkdiag(I(nx), O(m1));
+
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Masubuchi_primal.m')">LPV_L2anal_Masubuchi_primal</a> called from evaluateCode
+M_fh
+
+M_fh =
+
+  <a href="matlab:helpPopup function_handle" style="font-weight:bold">function_handle</a> with value:
+
+    @(varargin)[A_fh(varargin{:})-B_fh(varargin{:})*K,B_fh(varargin{:});C,D]
+
+edit pcz_fhzero_report.m
+M_plfr
+
+M_plfr = 
+
+PLFR object (4 x 4), uncertainty block: (12 x 12)
+Dimensions: np = 3, ny = 4, nu = 4, m1 = 12.
+-- 
+Uncertainty blocks (globally (12 x 12)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds              
+ p1    2x2   LTI       r           s        [0.99833,1]         
+ p2    9x9   LTI       r           s        [0.995,1]           
+ p3    1x1   LTI       r           s        [-0.099833,0.099833]
+Names, dimensions:    p1 (2x2), p2 (9x9), p3 (1x1) 
+Blocks (vars):        p1, p2, p3 (sym)
+Symvars:              p1, p2, p3 (sym, np = 3)
+Substitute into:      p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)             TODO: too many redundant fields
+M_plfr.val([1 ; 3 ;3 ])
+val = M_plfr.val([1 ; 3 ;3 ])
+
+val =
+
+         0         0    1.0000         0
+   10.0063    0.1681    0.8553   -0.1143
+   14.3047   -0.0101    5.1373   -0.3429
+    1.0000         0         0         0
+
+val = M_plfr.val([1 2 ; 3 2 ; 3 2 ])
+
+val =
+
+         0         0    1.0000         0         0         0    1.0000         0
+   10.0063    0.1681    0.8553   -0.1143   40.0221    0.5883    3.4935   -0.4000
+   14.3047   -0.0101    5.1373   -0.3429   20.0442   -0.0235   10.9870   -0.8000
+    1.0000         0         0         0    1.0000         0         0         0
+
+norm(randn(4,100))
+
+ans =
+
+   11.7824
+
+norm(randn(4,100),1)
+
+ans =
+
+    6.8017
+
+norm(randn(4,100),2)
+
+ans =
+
+   11.3346
+
+norm(randn(4,100),3)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('norm')" style="font-weight:bold">norm</a>
+The only matrix norms available are 1, 2, inf, and 'fro'.
+} 
+norm(randn(4,100),Inf)
+
+ans =
+
+   77.8589
+
+norm(randn(4,100),1)
+
+ans =
+
+    7.8943
+
+norm(randn(4,100),2)
+
+ans =
+
+   10.6556
+
+norm(randn(4,100),Inf)
+
+ans =
+
+   88.2560
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    6.8633
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    5.2349
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    6.4791
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    6.1896
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    8.2862
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    6.7110
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    6.2287
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    5.9674
+
+norm(randn(100,4),Inf)
+
+ans =
+
+    6.2344
+
+norm(randn(100,4),1)
+
+ans =
+
+   86.1666
+
+edit pcz_fhzero_report.m
+pcz_createFunction ../../utilities/symbolical/pcz_plfrzero_report.m
+
+ans =
+
+     1
+
+M_plfr
+
+M_plfr = 
+
+PLFR object (4 x 4), uncertainty block: (12 x 12)
+Dimensions: np = 3, ny = 4, nu = 4, m1 = 12.
+-- 
+Uncertainty blocks (globally (12 x 12)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds              
+ p1    2x2   LTI       r           s        [0.99833,1]         
+ p2    9x9   LTI       r           s        [0.995,1]           
+ p3    1x1   LTI       r           s        [-0.099833,0.099833]
+Names, dimensions:    p1 (2x2), p2 (9x9), p3 (1x1) 
+Blocks (vars):        p1, p2, p3 (sym)
+Symvars:              p1, p2, p3 (sym, np = 3)
+Substitute into:      p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)             TODO: too many redundant fields
+M_plfr.subsvars
+ 
+ans =
+ 
+ p1
+ p2
+ p3
+ 
+M_plfr.np
+
+ans =
+
+     3
+
+w_dummy = zeros(M_plfr.np,1)
+
+w_dummy =
+
+     0
+     0
+     0
+
+if isa(M_plfr, 'lfr')
+    M_plfr = plfr(M_plfr);
+end
+rand(M_plfr.np,1)
+
+ans =
+
+    0.3330
+    0.9217
+    0.6325
+
+M_plfr
+
+M_plfr = 
+
+PLFR object (4 x 4), uncertainty block: (12 x 12)
+Dimensions: np = 3, ny = 4, nu = 4, m1 = 12.
+-- 
+Uncertainty blocks (globally (12 x 12)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds              
+ p1    2x2   LTI       r           s        [0.99833,1]         
+ p2    9x9   LTI       r           s        [0.995,1]           
+ p3    1x1   LTI       r           s        [-0.099833,0.099833]
+Names, dimensions:    p1 (2x2), p2 (9x9), p3 (1x1) 
+Blocks (vars):        p1, p2, p3 (sym)
+Symvars:              p1, p2, p3 (sym, np = 3)
+Substitute into:      p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)             TODO: too many redundant fields
+edit P_constKer_for_LFR.m
+rand(M_plfr.np,N)
+{Unrecognized function or variable 'N'.
+} 
+N = 10
+
+N =
+
+    10
+
+rand(M_plfr.np,N)
+
+ans =
+
+  Columns 1 through 9
+
+    0.9322    0.8890    0.9592    0.8281    0.6428    0.9190    0.9513    0.0881    0.4022
+    0.4259    0.0174    0.7145    0.8079    0.6287    0.6240    0.0462    0.5178    0.5613
+    0.3005    0.1481    0.3065    0.9093    0.1185    0.2576    0.0209    0.8787    0.5982
+
+  Column 10
+
+    0.0751
+    0.3915
+    0.3550
+
+M_plfr.bounds
+
+ans =
+
+    0.9983    1.0000
+    0.9950    1.0000
+   -0.0998    0.0998
+
+lims = M_plfr.bounds
+
+lims =
+
+    0.9983    1.0000
+    0.9950    1.0000
+   -0.0998    0.0998
+
+proj = @(x) x
+
+proj =
+
+  <a href="matlab:helpPopup function_handle" style="font-weight:bold">function_handle</a> with value:
+
+    @(x)x
+
+samples_cell = cellfun(@(a,b) {rand(1,N)*(b-a)+a}, num2cell(lims(:,1)), num2cell(lims(:,2)));
+        samples = proj(vertcat(samples_cell{:}));
+        
+        % After the projection some points may lie outside `lims'.
+        samples = samples(:,prod(lims(:,1)*ones(1,N) <= samples & samples <= lims(:,2)*ones(1,N),1) == 1)
+
+samples =
+
+  Columns 1 through 9
+
+    0.9987    0.9985    0.9985    0.9988    0.9988    0.9999    0.9986    0.9992    0.9986
+    0.9996    0.9957    0.9994    0.9951    0.9986    0.9994    0.9969    0.9962    0.9956
+    0.0319    0.0558   -0.0282   -0.0631   -0.0978   -0.0827   -0.0340   -0.0398    0.0013
+
+  Column 10
+
+    0.9999
+    0.9992
+   -0.0226
+
+ZERO_row = M_plfr.val(samples)
+
+ZERO_row =
+
+  Columns 1 through 9
+
+         0         0    1.0000         0         0         0    1.0000         0         0
+  -49.9929   -1.1757   -8.9488    0.7994  -49.5598   -1.1665   -8.8549    0.7932  -49.9589
+  -20.0411    0.0234   -9.0093    0.7992  -19.7314    0.0232   -8.9270    0.7898  -20.0224
+    1.0000         0         0         0    1.0000         0         0         0    1.0000
+
+  Columns 10 through 18
+
+         0    1.0000         0         0         0    1.0000         0         0         0
+   -1.1750   -9.0037    0.7990  -49.4955   -1.1651   -8.9618    0.7922  -49.8797   -1.1733
+    0.0234   -8.9415    0.7985  -19.6773    0.0231   -8.7933    0.7883  -19.9577    0.0234
+         0         0         0    1.0000         0         0         0    1.0000         0
+
+  Columns 19 through 27
+
+    1.0000         0         0         0    1.0000         0         0         0    1.0000
+   -9.0597    0.7978  -49.9765   -1.1751   -9.0587    0.7990  -49.6964   -1.1694   -8.9663
+   -8.8523    0.7967  -19.9978    0.0234   -8.8881    0.7985  -19.8276    0.0233   -8.8713
+         0         0    1.0000         0         0         0    1.0000         0         0
+
+  Columns 28 through 36
+
+         0         0         0    1.0000         0         0         0    1.0000         0
+    0.7951  -49.6254   -1.1678   -8.9594    0.7940  -49.5469   -1.1662   -8.9068    0.7930
+    0.7927  -19.7614    0.0232   -8.8471    0.7910  -19.7203    0.0232   -8.8699    0.7895
+         0    1.0000         0         0         0    1.0000         0         0         0
+
+  Columns 37 through 40
+
+         0         0    1.0000         0
+  -49.9588   -1.1747   -8.9959    0.7988
+  -19.9856    0.0234   -8.9438    0.7982
+    1.0000         0         0         0
+
+plfr(M_fh(p_lfr_cell{:}))
+
+ans = 
+
+PLFR object (4 x 4), uncertainty block: (29 x 29)
+Dimensions: np = 3, ny = 4, nu = 4, m1 = 29.
+-- 
+Uncertainty blocks (globally (29 x 29)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds              
+ p1    2x2   LTI       r           s        [0.99833,1]         
+ p2    25x25 LTI       r           s        [0.995,1]           
+ p3    2x2   LTI       r           s        [-0.099833,0.099833]
+Names, dimensions:    p1 (2x2), p2 (25x25), p3 (2x2) 
+Blocks (vars):        p1, p2, p3 (sym)
+Symvars:              p1, p2, p3 (sym, np = 3)
+Substitute into:      p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)             TODO: too many redundant fields
+M_lfr = plfr(M_fh(p_lfr_cell{:}))
+
+M_lfr = 
+
+PLFR object (4 x 4), uncertainty block: (29 x 29)
+Dimensions: np = 3, ny = 4, nu = 4, m1 = 29.
+-- 
+Uncertainty blocks (globally (29 x 29)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds              
+ p1    2x2   LTI       r           s        [0.99833,1]         
+ p2    25x25 LTI       r           s        [0.995,1]           
+ p3    2x2   LTI       r           s        [-0.099833,0.099833]
+Names, dimensions:    p1 (2x2), p2 (25x25), p3 (2x2) 
+Blocks (vars):        p1, p2, p3 (sym)
+Symvars:              p1, p2, p3 (sym, np = 3)
+Substitute into:      p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)             TODO: too many redundant fields
+M_lfr - M_plfr
+
+ans = 
+
+PLFR object (4 x 4), uncertainty block: (41 x 41)
+Dimensions: np = 3, ny = 4, nu = 4, m1 = 41.
+-- 
+Uncertainty blocks (globally (41 x 41)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds              
+ p1    4x4   LTI       r           s        [0.99833,1]         
+ p2    34x34 LTI       r           s        [0.995,1]           
+ p3    3x3   LTI       r           s        [-0.099833,0.099833]
+Names, dimensions:    p1 (4x4), p2 (34x34), p3 (3x3) 
+Blocks (vars):        p1, p2, p3 (sym)
+Symvars:              p1, p2, p3 (sym, np = 3)
+Substitute into:      p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)             TODO: too many redundant fields
+M_plfr = M_lfr - M_plfr
+
+M_plfr = 
+
+PLFR object (4 x 4), uncertainty block: (41 x 41)
+Dimensions: np = 3, ny = 4, nu = 4, m1 = 41.
+-- 
+Uncertainty blocks (globally (41 x 41)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds              
+ p1    4x4   LTI       r           s        [0.99833,1]         
+ p2    34x34 LTI       r           s        [0.995,1]           
+ p3    3x3   LTI       r           s        [-0.099833,0.099833]
+Names, dimensions:    p1 (4x4), p2 (34x34), p3 (3x3) 
+Blocks (vars):        p1, p2, p3 (sym)
+Symvars:              p1, p2, p3 (sym, np = 3)
+Substitute into:      p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)             TODO: too many redundant fields
+ZERO_row = M_plfr.val(samples)
+
+ZERO_row =
+
+   1.0e-12 *
+
+  Columns 1 through 9
+
+         0         0         0         0         0         0         0         0         0
+    0.1101    0.0011    0.0076    0.0006    0.0995    0.0007    0.0041    0.0007    0.0995
+   -0.0346   -0.0003   -0.0031   -0.0023   -0.0302   -0.0004   -0.0009   -0.0024   -0.0373
+         0         0         0         0         0         0         0         0         0
+
+  Columns 10 through 18
+
+         0         0         0         0         0         0         0         0         0
+    0.0009    0.0050    0.0008    0.0853    0.0004    0.0040    0.0008    0.0924    0.0006
+   -0.0006   -0.0028   -0.0021   -0.0444   -0.0004   -0.0024   -0.0021   -0.0240   -0.0005
+         0         0         0         0         0         0         0         0         0
+
+  Columns 19 through 27
+
+         0         0         0         0         0         0         0         0         0
+    0.0028    0.0008    0.0995    0.0009    0.0051    0.0006    0.0924    0.0007    0.0043
+   -0.0011   -0.0022   -0.0329   -0.0004   -0.0018   -0.0023   -0.0266   -0.0005   -0.0004
+         0         0         0         0         0         0         0         0         0
+
+  Columns 28 through 36
+
+         0         0         0         0         0         0         0         0         0
+    0.0008    0.0924    0.0007    0.0053    0.0007    0.0924    0.0007    0.0061    0.0007
+   -0.0024   -0.0471   -0.0005   -0.0062   -0.0019   -0.0151   -0.0004    0.0007   -0.0027
+         0         0         0         0         0         0         0         0         0
+
+  Columns 37 through 40
+
+         0         0         0         0
+    0.0959    0.0006    0.0033    0.0008
+   -0.0444   -0.0004   -0.0034   -0.0021
+         0         0         0         0
+
+norm_Inf = norm(ZERO_row, Inf)
+
+norm_Inf =
+
+   1.0212e-12
+
+norm_Inf = norm(ZERO_row, 1)
+
+norm_Inf =
+
+   1.4477e-13
+
+norm1 = norm(ZERO_row, 1)
+
+norm1 =
+
+   1.4477e-13
+
+column_norm = norm(ZERO_row, 1)
+
+column_norm =
+
+   1.4477e-13
+
+greater = column_norm > tol
+{Unrecognized function or variable 'tol'.
+} 
+[1 2 3 4 5 6 ; 7 8 9 10 11 12 ]
+
+ans =
+
+     1     2     3     4     5     6
+     7     8     9    10    11    12
+
+M = [1 2 3 4 5 6 ; 7 8 9 10 11 12 ]
+
+M =
+
+     1     2     3     4     5     6
+     7     8     9    10    11    12
+
+reshape(M,[2 2 3])
+
+ans(:,:,1) =
+
+     1     2
+     7     8
+
+
+ans(:,:,2) =
+
+     3     4
+     9    10
+
+
+ans(:,:,3) =
+
+     5     6
+    11    12
+
+M_tenzor = reshape(M,[2 2 3])
+
+M_tenzor(:,:,1) =
+
+     1     2
+     7     8
+
+
+M_tenzor(:,:,2) =
+
+     3     4
+     9    10
+
+
+M_tenzor(:,:,3) =
+
+     5     6
+    11    12
+
+reshape(M_tenzor,[2 6])
+
+ans =
+
+     1     2     3     4     5     6
+     7     8     9    10    11    12
+
+reshape(M_tenzor,[2 6]) - M
+
+ans =
+
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+
+ZERO = reshape( M_plfr.val(samples) , [M_plfr.nu M_plfr.ny N] )
+
+ZERO(:,:,1) =
+
+   1.0e-12 *
+
+         0         0         0         0
+    0.1101    0.0011    0.0076    0.0006
+   -0.0346   -0.0003   -0.0031   -0.0023
+         0         0         0         0
+
+
+ZERO(:,:,2) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0067    0.0415    0.0069
+   -0.3020   -0.0043   -0.0087   -0.0244
+         0         0         0         0
+
+
+ZERO(:,:,3) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0089    0.0502    0.0079
+   -0.3730   -0.0057   -0.0281   -0.0211
+         0         0         0         0
+
+
+ZERO(:,:,4) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.8527    0.0044    0.0398    0.0078
+   -0.4441   -0.0044   -0.0240   -0.0211
+         0         0         0         0
+
+
+ZERO(:,:,5) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0056    0.0276    0.0080
+   -0.2398   -0.0053   -0.0110   -0.0222
+         0         0         0         0
+
+
+ZERO(:,:,6) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0089    0.0510    0.0064
+   -0.3286   -0.0039   -0.0183   -0.0233
+         0         0         0         0
+
+
+ZERO(:,:,7) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0431    0.0082
+   -0.2665   -0.0054   -0.0040   -0.0244
+         0         0         0         0
+
+
+ZERO(:,:,8) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0531    0.0074
+   -0.4707   -0.0051   -0.0623   -0.0189
+         0         0         0         0
+
+
+ZERO(:,:,9) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0606    0.0065
+   -0.1510   -0.0044    0.0074   -0.0266
+         0         0         0         0
+
+
+ZERO(:,:,10) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0056    0.0332    0.0083
+   -0.4441   -0.0042   -0.0340   -0.0211
+         0         0         0         0
+
+norm(ZERO)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('norm')" style="font-weight:bold">norm</a>
+Input must be 2-D.
+} 
+ZERO = reshape( M_plfr.val(samples).^2 , [M_plfr.nu M_plfr.ny N] )
+
+ZERO(:,:,1) =
+
+   1.0e-25 *
+
+         0         0         0         0
+    0.1213    0.0000    0.0006    0.0000
+    0.0120    0.0000    0.0001    0.0001
+         0         0         0         0
+
+
+ZERO(:,:,2) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.9895    0.0000    0.0017    0.0000
+    0.0912    0.0000    0.0001    0.0006
+         0         0         0         0
+
+
+ZERO(:,:,3) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.9895    0.0001    0.0025    0.0001
+    0.1392    0.0000    0.0008    0.0004
+         0         0         0         0
+
+
+ZERO(:,:,4) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.7270    0.0000    0.0016    0.0001
+    0.1972    0.0000    0.0006    0.0004
+         0         0         0         0
+
+
+ZERO(:,:,5) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.8532    0.0000    0.0008    0.0001
+    0.0575    0.0000    0.0001    0.0005
+         0         0         0         0
+
+
+ZERO(:,:,6) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.9895    0.0001    0.0026    0.0000
+    0.1080    0.0000    0.0003    0.0005
+         0         0         0         0
+
+
+ZERO(:,:,7) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.8532    0.0000    0.0019    0.0001
+    0.0710    0.0000    0.0000    0.0006
+         0         0         0         0
+
+
+ZERO(:,:,8) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.8532    0.0000    0.0028    0.0001
+    0.2216    0.0000    0.0039    0.0004
+         0         0         0         0
+
+
+ZERO(:,:,9) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.8532    0.0000    0.0037    0.0000
+    0.0228    0.0000    0.0001    0.0007
+         0         0         0         0
+
+
+ZERO(:,:,10) =
+
+   1.0e-26 *
+
+         0         0         0         0
+    0.9201    0.0000    0.0011    0.0001
+    0.1972    0.0000    0.0012    0.0004
+         0         0         0         0
+
+ZERO = sum(reshape( M_plfr.val(samples).^2 , [M_plfr.nu M_plfr.ny N] ),3)
+
+ZERO =
+
+   1.0e-25 *
+
+         0         0         0         0
+    0.9242    0.0001    0.0024    0.0001
+    0.1226    0.0000    0.0008    0.0005
+         0         0         0         0
+
+ZERO = sqrt(sum(reshape( M_plfr.val(samples).^2 , [M_plfr.nu M_plfr.ny N] ),3))
+
+ZERO =
+
+   1.0e-12 *
+
+         0         0         0         0
+    0.3040    0.0023    0.0156    0.0023
+    0.1107    0.0015    0.0089    0.0072
+         0         0         0         0
+
+ZERO = reshape( M_plfr.val(samples) , [M_plfr.nu M_plfr.ny N] )
+
+ZERO(:,:,1) =
+
+   1.0e-12 *
+
+         0         0         0         0
+    0.1101    0.0011    0.0076    0.0006
+   -0.0346   -0.0003   -0.0031   -0.0023
+         0         0         0         0
+
+
+ZERO(:,:,2) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0067    0.0415    0.0069
+   -0.3020   -0.0043   -0.0087   -0.0244
+         0         0         0         0
+
+
+ZERO(:,:,3) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0089    0.0502    0.0079
+   -0.3730   -0.0057   -0.0281   -0.0211
+         0         0         0         0
+
+
+ZERO(:,:,4) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.8527    0.0044    0.0398    0.0078
+   -0.4441   -0.0044   -0.0240   -0.0211
+         0         0         0         0
+
+
+ZERO(:,:,5) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0056    0.0276    0.0080
+   -0.2398   -0.0053   -0.0110   -0.0222
+         0         0         0         0
+
+
+ZERO(:,:,6) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0089    0.0510    0.0064
+   -0.3286   -0.0039   -0.0183   -0.0233
+         0         0         0         0
+
+
+ZERO(:,:,7) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0431    0.0082
+   -0.2665   -0.0054   -0.0040   -0.0244
+         0         0         0         0
+
+
+ZERO(:,:,8) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0531    0.0074
+   -0.4707   -0.0051   -0.0623   -0.0189
+         0         0         0         0
+
+
+ZERO(:,:,9) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0606    0.0065
+   -0.1510   -0.0044    0.0074   -0.0266
+         0         0         0         0
+
+
+ZERO(:,:,10) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0056    0.0332    0.0083
+   -0.4441   -0.0042   -0.0340   -0.0211
+         0         0         0         0
+
+ZERO_mean = sum(ZERO,3)
+
+ZERO_mean =
+
+   1.0e-12 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+ZERO_mean = sum(ZERO,3) / N
+
+ZERO_mean =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+ZERO_mean = repmat(sum(ZERO,3) / N, [1 1 N])
+
+ZERO_mean(:,:,1) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,2) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,3) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,4) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,5) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,6) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,7) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,8) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,9) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,10) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+ZERO_variance = sum((ZERO - ZERO_mean).^2,3)
+
+ZERO_variance =
+
+   1.0e-27 *
+
+         0         0         0         0
+    0.4039    0.0004    0.0174    0.0001
+    0.9253    0.0001    0.0338    0.0004
+         0         0         0         0
+
+ZERO_mean
+
+ZERO_mean(:,:,1) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,2) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,3) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,4) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,5) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,6) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,7) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,8) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,9) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,10) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+ZERO_mean
+
+ZERO_mean(:,:,1) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,2) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,3) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,4) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,5) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,6) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,7) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,8) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,9) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,10) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+ZERO_variance = sqrt(sum((ZERO - ZERO_mean).^2,3))
+
+ZERO_variance =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.2010    0.0059    0.0417    0.0027
+    0.3042    0.0024    0.0582    0.0067
+         0         0         0         0
+
+ZERO_variance = sqrt(sum((ZERO - ZERO_mean).^2,3) / (N-1))
+
+ZERO_variance =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.0670    0.0020    0.0139    0.0009
+    0.1014    0.0008    0.0194    0.0022
+         0         0         0         0
+
+ZERO_mean
+
+ZERO_mean(:,:,1) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,2) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,3) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,4) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,5) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,6) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,7) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,8) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,9) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+
+ZERO_mean(:,:,10) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0071    0.0476    0.0073
+   -0.3366   -0.0046   -0.0214   -0.0226
+         0         0         0         0
+
+ZERO
+
+ZERO(:,:,1) =
+
+   1.0e-12 *
+
+         0         0         0         0
+    0.1101    0.0011    0.0076    0.0006
+   -0.0346   -0.0003   -0.0031   -0.0023
+         0         0         0         0
+
+
+ZERO(:,:,2) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0067    0.0415    0.0069
+   -0.3020   -0.0043   -0.0087   -0.0244
+         0         0         0         0
+
+
+ZERO(:,:,3) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0089    0.0502    0.0079
+   -0.3730   -0.0057   -0.0281   -0.0211
+         0         0         0         0
+
+
+ZERO(:,:,4) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.8527    0.0044    0.0398    0.0078
+   -0.4441   -0.0044   -0.0240   -0.0211
+         0         0         0         0
+
+
+ZERO(:,:,5) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0056    0.0276    0.0080
+   -0.2398   -0.0053   -0.0110   -0.0222
+         0         0         0         0
+
+
+ZERO(:,:,6) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9948    0.0089    0.0510    0.0064
+   -0.3286   -0.0039   -0.0183   -0.0233
+         0         0         0         0
+
+
+ZERO(:,:,7) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0431    0.0082
+   -0.2665   -0.0054   -0.0040   -0.0244
+         0         0         0         0
+
+
+ZERO(:,:,8) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0531    0.0074
+   -0.4707   -0.0051   -0.0623   -0.0189
+         0         0         0         0
+
+
+ZERO(:,:,9) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9237    0.0067    0.0606    0.0065
+   -0.1510   -0.0044    0.0074   -0.0266
+         0         0         0         0
+
+
+ZERO(:,:,10) =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.9592    0.0056    0.0332    0.0083
+   -0.4441   -0.0042   -0.0340   -0.0211
+         0         0         0         0
+
+ZERO_variance0 = sqrt( sum(ZERO.^2,3) / (N-1) )
+
+ZERO_variance0 =
+
+   1.0e-12 *
+
+         0         0         0         0
+    0.1013    0.0008    0.0052    0.0008
+    0.0369    0.0005    0.0030    0.0024
+         0         0         0         0
+
+ZERO_variance
+
+ZERO_variance =
+
+   1.0e-13 *
+
+         0         0         0         0
+    0.0670    0.0020    0.0139    0.0009
+    0.1014    0.0008    0.0194    0.0022
+         0         0         0         0
+
+tol = 1e-12
+
+tol =
+
+   1.0000e-12
+
+greater = ZERO_variance0(:) > tol
+
+greater =
+
+  16×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+tol = 1e-13
+
+tol =
+
+   1.0000e-13
+
+greater = ZERO_variance0(:) > tol
+
+greater =
+
+  16×1 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+   0
+   1
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+   0
+
+indices = find(greater)
+
+indices =
+
+     2
+
+perc = numel(indices) / p
+ 
+perc =
+ 
+[ 1/p1, 0, 0]
+ 
+p = M_plfr.ny * M_plfr.nu
+
+p =
+
+    16
+
+samples = generate(N, M_plfr.bounds, @(x) x);
+{'generate' requires <a href="matlab:matlab.internal.language.introspective.showAddon('SB', 'generate');">SimBiology</a>.
+} 
+ZERO_variance0 = sqrt( sum(ZERO.^2,3) / (N-1) );
+
+greater = ZERO_variance0(:) > tol;
+indices = find(greater);
+perc = numel(indices) / p
+
+perc =
+
+    0.0625
+
+maxdiff = max(ZERO_variance0(:))
+
+maxdiff =
+
+   1.0133e-13
+

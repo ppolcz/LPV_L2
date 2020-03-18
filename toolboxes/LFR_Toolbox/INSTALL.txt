@@ -1,0 +1,4 @@
+Add this directory in your path variable
+
+You can also add '~/demo' to run examples of the manual
+

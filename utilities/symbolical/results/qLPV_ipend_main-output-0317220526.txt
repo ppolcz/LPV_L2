@@ -1,0 +1,563 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0317220526.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m')">qLPV_ipend_main</a> called from evaluateCode
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>F(x) == A(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 7.10543e-15
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] F(x) == A(p=p_expr)
+│   └ 0.006162 [sec]
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>G(x) == B(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 0
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] G(x) == B(p=p_expr)
+│   └ 0.000446 [sec]
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Masubuchi_primal.m')">LPV_L2anal_Masubuchi_primal</a> called from evaluateCode
+│   │    
+│   │   ┌ LiveEditorEvaluationHelperESectionEvalabd753a5:85 (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>The reduced LFR corresponds to the original one</strong>]
+│   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   - Maximal variance: 1.0311e-13
+│   │   │   ----------------------------------------------------
+│   │   │   [   <strong>OK</strong>   ] The reduced LFR corresponds to the original one
+│   │   └ 0.010687 [sec]
+%%
+
+% Generate every multi-affine monoms of p
+%
+%  degree 1 monoms: p1, p2, ...
+%  degree 2 monoms: p1*p2, p1*p3, p1*p4, p2*p3, ....
+%  degree 3 monoms: p1*p2*p3, p1*p2*p4, ....
+monoms = cellfun( @(k) { prod(combnk(p,k),2) }, num2cell(1:np) );
+
+xi = [
+    1
+    vertcat(monoms{:})
+    ];
+
+dxi = jacobian(xi,p)*dp;
+
+nxi = 2^np;
+P_Theta = cellfun(@(P1,P23) { [ P1 O(nx,m1) ; P23 ] }, ...
+    sdpvar(ones(1,nxi)*nx,ones(1,nxi)*nx,'symmetric'),...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*(nx+m1)))
+
+P_Theta =
+
+  1×8 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 5
+
+    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}
+
+  Columns 6 through 8
+
+    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}
+
+P_Theta{1}
+Linear matrix variable 15x15 (full, real, 186 variables)
+Coeffiecient range: 1 to 1
+sym(P_Theta{1})
+ 
+ans =
+ 
+[ x5380, x5381, x5382,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0]
+[ x5381, x5383, x5384,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0]
+[ x5382, x5384, x5385,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0]
+[ x5428, x5440, x5452, x5464, x5476, x5488, x5500, x5512, x5524, x5536, x5548, x5560, x5572, x5584, x5596]
+[ x5429, x5441, x5453, x5465, x5477, x5489, x5501, x5513, x5525, x5537, x5549, x5561, x5573, x5585, x5597]
+[ x5430, x5442, x5454, x5466, x5478, x5490, x5502, x5514, x5526, x5538, x5550, x5562, x5574, x5586, x5598]
+[ x5431, x5443, x5455, x5467, x5479, x5491, x5503, x5515, x5527, x5539, x5551, x5563, x5575, x5587, x5599]
+[ x5432, x5444, x5456, x5468, x5480, x5492, x5504, x5516, x5528, x5540, x5552, x5564, x5576, x5588, x5600]
+[ x5433, x5445, x5457, x5469, x5481, x5493, x5505, x5517, x5529, x5541, x5553, x5565, x5577, x5589, x5601]
+[ x5434, x5446, x5458, x5470, x5482, x5494, x5506, x5518, x5530, x5542, x5554, x5566, x5578, x5590, x5602]
+[ x5435, x5447, x5459, x5471, x5483, x5495, x5507, x5519, x5531, x5543, x5555, x5567, x5579, x5591, x5603]
+[ x5436, x5448, x5460, x5472, x5484, x5496, x5508, x5520, x5532, x5544, x5556, x5568, x5580, x5592, x5604]
+[ x5437, x5449, x5461, x5473, x5485, x5497, x5509, x5521, x5533, x5545, x5557, x5569, x5581, x5593, x5605]
+[ x5438, x5450, x5462, x5474, x5486, x5498, x5510, x5522, x5534, x5546, x5558, x5570, x5582, x5594, x5606]
+[ x5439, x5451, x5463, x5475, x5487, x5499, x5511, x5523, x5535, x5547, x5559, x5571, x5583, x5595, x5607]
+ 
+ones(1,nxi)
+
+ans =
+
+     1     1     1     1     1     1     1     1
+
+sdpvar(ones(1,nxi)*m1,ones(1,nxi)*(nx+m1))
+
+ans =
+
+  1×8 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 5
+
+    {12×15 sdpvar}    {12×15 sdpvar}    {12×15 sdpvar}    {12×15 sdpvar}    {12×15 sdpvar}
+
+  Columns 6 through 8
+
+    {12×15 sdpvar}    {12×15 sdpvar}    {12×15 sdpvar}
+
+P_Theta = cellfun(@(P1,P23) { [ P1 O(nx,m1) ; P23 ] }, ...
+    sdpvar(ones(1,nxi)*nx,ones(1,nxi)*nx,'symmetric'),...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*(nx+m1),'full'))
+
+P_Theta =
+
+  1×8 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 5
+
+    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}
+
+  Columns 6 through 8
+
+    {15×15 sdpvar}    {15×15 sdpvar}    {15×15 sdpvar}
+
+sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nw)
+
+ans =
+
+  1×8 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 5
+
+    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}
+
+  Columns 6 through 8
+
+    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}
+
+sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nz)
+
+ans =
+
+  1×8 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 5
+
+    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}
+
+  Columns 6 through 8
+
+    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}
+
+sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nz)
+
+ans =
+
+  1×8 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 5
+
+    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}
+
+  Columns 6 through 8
+
+    {12×1 sdpvar}    {12×1 sdpvar}    {12×1 sdpvar}
+
+P = PGenAffineMatrix(P_Theta,xi,p)
+
+P = 
+
+Theta: Linear matrix variable 15x120 (full, real, 1488 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x15
+Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+Z1 = PGenAffineMatrix(Z1_Theta,xi,p)
+{Unrecognized function or variable 'Z1_Theta'.
+} 
+Z1_Theta = cellfun(@(Z) { [ O(nx,nw) ; Z ] }, ...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nw,'full') );
+Z2_Theta = cellfun(@(Z) { [ O(nx,nz) ; Z ] }, ...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nz,'full') );
+Z1 = PGenAffineMatrix(Z1_Theta,xi,p)
+
+Z1 = 
+
+Theta: Linear matrix variable 15x8 (full, real, 96 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x1
+Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+Z2 = PGenAffineMatrix(Z2_Theta,xi,p)
+
+Z2 = 
+
+Theta: Linear matrix variable 15x8 (full, real, 96 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x1
+Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+dP = P.set_channels(dxi,pdp)
+
+dP = 
+
+Theta: Linear matrix variable 15x120 (full, real, 1488 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x15
+Channels    [8]:     0, dp1, dp2, dp3, dp1*p2 + dp2*p1, dp1*p3 + dp3*p1, dp2*p3 + dp3*p2, dp1*p2*p3 + dp2*p1*p3 + dp3*p1*p2 (sym)
+Substitute into:     p1, p2, p3, dp1, dp2, dp3 (sym)
+
+gammaSqr = sdpvar
+Linear scalar (real, 1 variable)
+Coeffiecient range: 1 to 1
+pcz_display(P)
+P [15x15] = 
+ 
+Theta: Linear matrix variable 15x120 (full, real, 1488 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x15
+Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+ 
+SCOPE_DEPTH = 2
+
+SCOPE_DEPTH =
+
+     2
+
+pcz_display(P)
+P [15x15] = 
+ 
+Theta: Linear matrix variable 15x120 (full, real, 1488 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x15
+Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+ 
+global SCOPE_DEPTH
+SCOPE_DEPTH = 2
+
+SCOPE_DEPTH =
+
+     2
+
+pcz_display(P)
+P [15x15] = 
+ 
+Theta: Linear matrix variable 15x120 (full, real, 1488 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x15
+Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+ 
+pcz_dispFunction(P)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sprintf')" style="font-weight:bold">sprintf</a>
+Invalid format.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_dispFunction', '/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispFunction.m', 37)" style="font-weight:bold">pcz_dispFunction</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispFunction.m',37,0)">line 37</a>)
+    msg = sprintf(varargin{:});
+} 
+pcz_dispay(P)
+{Unrecognized function or variable 'pcz_dispay'.
+} 
+pcz_display(P)
+P [15x15] = 
+ 
+Theta: Linear matrix variable 15x120 (full, real, 1488 variables)
+Coeffiecient range: 1 to 1
+Size of the matrix:  15x15
+Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+ 
+edit pcz_display.m
+pcz_dispFunction([ 'asd' newline 'asdas'])
+│   │   - asd
+│   │   asdas
+pcz_dispFunction2([ 'asd' newline 'asdas'])
+│   │   asd
+│   │   asdas
+pcz_dispFunction2(eval('pcz_display(P)'))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_display')" style="font-weight:bold">pcz_display</a>
+Too many output arguments.
+} 
+pcz_dispFunction2(ceval('pcz_display(P)'))
+{Unrecognized function or variable 'ceval'.
+} 
+pcz_dispFunction2(evalc('pcz_display(P)'))
+│   │   P [15x15] = 
+│   │    
+│   │   Theta: Linear matrix variable 15x120 (full, real, 1488 variables)
+│   │   Coeffiecient range: 1 to 1
+│   │   Size of the matrix:  15x15
+│   │   Channels    [8]:     1, p1, p2, p3, p1*p2, p1*p3, p2*p3, p1*p2*p3 (sym)
+│   │   Substitute into:     p1, p2, p3 (sym)
+│   │   
+│   │    
+│   │   
+Z1_Theta = cellfun(@(Z) { [ O(nx,nw) ; Z ] }, ...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nw,'full') );
+Z2_Theta = cellfun(@(Z) { [ O(nx,nz) ; Z ] }, ...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nz,'full') );
+
+P = PGenAffineMatrix(P_Theta,xi,p);
+Z1 = PGenAffineMatrix(Z1_Theta,xi,p);
+Z2 = PGenAffineMatrix(Z2_Theta,xi,p);
+
+dP = P.set_channels(dxi,pdp);
+
+gammaSqr = sdpvar;
+P_v = P_ndnorms_of_X(p_lim)
+
+P_v =
+
+    0.9983    0.9950   -0.0998
+    0.9983    0.9950    0.0998
+    0.9983    1.0000   -0.0998
+    0.9983    1.0000    0.0998
+    1.0000    0.9950   -0.0998
+    1.0000    0.9950    0.0998
+    1.0000    1.0000   -0.0998
+    1.0000    1.0000    0.0998
+
+nP = size(P_v,1);
+k = 1
+
+k =
+
+     1
+
+P_v(k,:)'
+
+ans =
+
+    0.9983
+    0.9950
+   -0.0998
+
+P(P_v(k,:)')
+Linear matrix variable 15x15 (full, real, 1488 variables)
+Coeffiecient range: 0.099169 to 1
+E'*P(P_v(k,:)'
+ E'*P(P_v(k,:)'
+               ↑
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses.
+Otherwise, check for mismatched delimiters.
+} 
+E'*P(P_v(k,:)')
+Linear matrix variable 15x15 (symmetric, real, 48 variables)
+Coeffiecient range: 0.099169 to 1
+CONS = [];
+for k = 1:nP
+    CONS = [ CONS , E'*P(P_v(k,:)') >= 0 ];
+end
+R_v = P_ndnorms_of_X(dp_lim)
+
+R_v =
+
+   -0.0333   -0.0998   -7.0000
+   -0.0333   -0.0998    7.0000
+   -0.0333    0.0998   -7.0000
+   -0.0333    0.0998    7.0000
+    0.0333   -0.0998   -7.0000
+    0.0333   -0.0998    7.0000
+    0.0333    0.0998   -7.0000
+    0.0333    0.0998    7.0000
+
+nR = size(R_v,1);
+% Evaluation in each corner point
+Evaluate = @(f) cellfun( @(x_num) { f(x_num) }, num2cell(P_v',1));
+
+A_eval = Evaluate(A);
+B_eval = Evaluate(B);
+P_eval = Evaluate(P);
+Z1_eval = Evaluate(Z1);
+Z2_eval = Evaluate(Z2);
+A_eval
+
+A_eval =
+
+  1×8 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 5
+
+    {15×15 double}    {15×15 double}    {15×15 double}    {15×15 double}    {15×15 double}
+
+  Columns 6 through 8
+
+    {15×15 double}    {15×15 double}    {15×15 double}
+
+(
+ (
+  ↑
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses.
+Otherwise, check for mismatched delimiters.
+} 
+(
+ (
+  ↑
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses.
+Otherwise, check for mismatched delimiters.
+} 
+P_v
+
+P_v =
+
+    0.9983    0.9950   -0.0998
+    0.9983    0.9950    0.0998
+    0.9983    1.0000   -0.0998
+    0.9983    1.0000    0.0998
+    1.0000    0.9950   -0.0998
+    1.0000    0.9950    0.0998
+    1.0000    1.0000   -0.0998
+    1.0000    1.0000    0.0998
+
+get_corner_index = @(corner) corner * (2.^(np-1:-1:0))' + 1
+
+get_corner_index =
+
+  <a href="matlab:helpPopup function_handle" style="font-weight:bold">function_handle</a> with value:
+
+    @(corner)corner*(2.^(np-1:-1:0))'+1
+
+(2.^(np-1:-1:0))'
+
+ans =
+
+     4
+     2
+     1
+
+get_corner_index([1 1 1])
+
+ans =
+
+     8
+
+get_corner_index([0 0 0])
+
+ans =
+
+     1
+
+get_corner_index([0 0 1])
+
+ans =
+
+     2
+
+num2cell([ 0 1 ; 1 0 ],1)
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {2×1 double}    {2×1 double}
+
+{1 1}
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {[1]}    {[1]}
+
+combs = repmat({ { {0 0} , {1 1} , num2cell([ 0 1 ; 1 0 ],1) } },[1 np])
+
+combs =
+
+  1×3 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {1×3 cell}    {1×3 cell}    {1×3 cell}
+
+combs = allcomb(combs{:})
+
+combs =
+
+  27×3 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+    {1×2 cell}    {1×2 cell}    {1×2 cell}
+
+combs{1}
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {[0]}    {[0]}
+
+combs{2}
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {[0]}    {[0]}
+
+combs{3}
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {[0]}    {[0]}
+
+combs{12}
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {[1]}    {[1]}
+
+combs{15}
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {[1]}    {[1]}
+
+combs{19}
+
+ans =
+
+  1×2 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {2×1 double}    {2×1 double}
+
+combs{19}{1}
+
+ans =
+
+     0
+     1
+
+qLPV_ipend_main

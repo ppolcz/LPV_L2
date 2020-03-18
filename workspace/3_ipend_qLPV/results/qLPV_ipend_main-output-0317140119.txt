@@ -1,0 +1,27 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0317140119.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m')">qLPV_ipend_main</a>
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>F(x) == A(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 7.10543e-15
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] F(x) == A(p=p_expr)
+│   └ 0.003007 [sec]
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>G(x) == B(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 2.22045e-16
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] G(x) == B(p=p_expr)
+│   └ 0.000499 [sec]
+{Unrecognized function or variable 'Persist'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('LPV_L2anal_Finsler', '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m', 12)" style="font-weight:bold">LPV_L2anal_Finsler</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',12,0)">line 12</a>)
+persist = Persist(mfilename('fullpath'), c); clear c;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('qLPV_ipend_main', '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m', 212)" style="font-weight:bold">qLPV_ipend_main</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212,0)">line 212</a>)
+        LPV_L2anal_Finsler(A_fh, B_fh, C, D, K, x_lim, p_expr, p_lim, dp_lim, ...
+} 
+opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',12,0)
+qLPV_ipend_main

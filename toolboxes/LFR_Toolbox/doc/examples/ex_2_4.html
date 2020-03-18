@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<TITLE>ex_2_4.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Illustration</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;uplft&quot;</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(feedback</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">via</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Delta-matrix)</SPAN>
+
+  G <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">rlfr</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">4</SPAN>,<SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">5</SPAN>,<SPAN CLASS="syntax5">6</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d_</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Computation</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">reduced</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFR-object</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">corresponding</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">s</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">10j</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">delta_2</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">20:</SPAN>
+
+   Gred1 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">uplft</SPAN><SPAN CLASS="syntax18">(</SPAN>G,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">1/s</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d_2</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">}</SPAN>,<SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">10</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax9">j</SPAN><SPAN CLASS="syntax18">)</SPAN>,<SPAN CLASS="syntax5">20</SPAN><SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Compare</SPAN>
+
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>G<SPAN CLASS="syntax18">)</SPAN>
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>Gred<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Alternalively,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">eval</SPAN>
+
+   Int <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">10</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax9">j</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+   d_2 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax5">20</SPAN>;
+   Gred2 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax8">eval</SPAN><SPAN CLASS="syntax18">(</SPAN>G<SPAN CLASS="syntax18">)</SPAN>;
+</PRE></BODY>
+</HTML>
+

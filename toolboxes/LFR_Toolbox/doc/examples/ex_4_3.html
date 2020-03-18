@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>ex_4_3.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">illustrates</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">order</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">reduction</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">after</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">realization</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(here,</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">object-oriented</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">realization)</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">n-D</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approach.</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">aims</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">also</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">at</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">illustrating</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">fundamental</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">difference</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">between</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">1-D</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;minlfr1&quot;)</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">n-D</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;minlfr&quot;)</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approaches.</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">For</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">purpose,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">let</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">us</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">consider</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">an</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">expression</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">which</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">factorization</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">cannot</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;found&quot;</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">considering</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">only</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">one</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameter</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">at</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">time.</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">[1/(1+d1+d2);1/(1+d1+d2)]</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">[1;1]*(1/(1+d1+d2))</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Realization:</SPAN>
+
+   <SPAN CLASS="syntax11">lfrs</SPAN> d1 d2
+   S <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">+</SPAN>d1<SPAN CLASS="syntax18">+</SPAN>d2<SPAN CLASS="syntax18">)</SPAN>;<SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">+</SPAN>d1<SPAN CLASS="syntax18">+</SPAN>d2<SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">]</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">minimum</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">forms</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">after</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">1-D</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">n-D</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approaches</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">are</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">respectively</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">denoted</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Smin1</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Smin</SPAN>
+
+   Smin1 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">minlfr1</SPAN><SPAN CLASS="syntax18">(</SPAN>S<SPAN CLASS="syntax18">)</SPAN>;
+   Smin  <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">minlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>S<SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">For</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">comparison</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">results:</SPAN>
+
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>Smin1<SPAN CLASS="syntax18">)</SPAN>
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>Smin<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">As</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">expected</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Smin</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">minimum</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">but</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Smin1</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">has</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">same</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">complexity</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">as</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">original</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFR-object.</SPAN>
+</PRE></BODY>
+</HTML>
+

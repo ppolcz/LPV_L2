@@ -1,0 +1,431 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0317141633.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m')">qLPV_ipend_main</a>
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>F(x) == A(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 7.10543e-15
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] F(x) == A(p=p_expr)
+│   └ 0.006819 [sec]
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>G(x) == B(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 2.22045e-16
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] G(x) == B(p=p_expr)
+│   └ 0.006834 [sec]
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m')">LPV_L2anal_Finsler</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212)">qLPV_ipend_main:212</a>
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',27)">LPV_L2anal_Finsler:27</a> - [<strong>model generation</strong>]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',73)">LPV_L2anal_Finsler:73</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Generator form (m = 24) of A(p)-B(p)*K is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   [  [INFO]  ] Maximal difference: 3.55271e-15
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Generator form (m = 24) of A(p)-B(p)*K is OK
+│   │   │   └ 0.003969 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',76)">LPV_L2anal_Finsler:76</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 27x27, where (27 = 9*3)
+│   │   │   │   │   - Error computed for M: 54x27, where (54 = 18*3). Error: 4.037510e-14
+│   │   │   │   └ 0.46085 [sec]
+│   │   │   └ 1.2239 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',80)">LPV_L2anal_Finsler:80</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Minimal generator form of A(p)-B(p)*K is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   [  [INFO]  ] Maximal difference: 1.72324e-11
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator form of A(p)-B(p)*K is OK
+│   │   │   └ 0.004064 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',94)">LPV_L2anal_Finsler:94</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Generator form of B(p) is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   [  [INFO]  ] Maximal difference: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Generator form of B(p) is OK
+│   │   │   └ 0.005954 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',97)">LPV_L2anal_Finsler:97</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 6x6, where (6 = 6*1)
+│   │   │   │   │   - Error computed for M: 12x6, where (12 = 12*1). Error: 9.826311e-16
+│   │   │   │   └ 0.1923 [sec]
+│   │   │   └ 0.47835 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',101)">LPV_L2anal_Finsler:101</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Minimal generator form of B(p) is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   [  [INFO]  ] Maximal difference: 1.11022e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator form of B(p) is OK
+│   │   │   └ 0.00371 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',129)">LPV_L2anal_Finsler:129</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 48x46, where (48 = 12*4)
+│   │   │   │   │   - Error computed for M: 96x46, where (96 = 24*4). Error: 6.363150e-13
+│   │   │   │   └ 0.79514 [sec]
+│   │   │   │   - Rank decision tolerance for `rref' increased to 1.02141e-13
+│   │   │   │   - Rank decision tolerance for `rref' increased to 1.02141e-12
+│   │   │   └ 2.3106 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',130)">LPV_L2anal_Finsler:130</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_fhzero_report.m',0)">pcz_fhzero_report</a>) - [<strong>Minimal generator for PI_a(p) is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal difference: 1.11022e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator for PI_a(p) is OK
+│   │   │   └ 0.048106 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator_for_LFR.m')">P_affine_annihilator_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',156)">LPV_L2anal_Finsler:156</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator_for_LFR.m',49)">P_affine_annihilator_for_LFR:49</a>
+│   │   │   │   │   - Kernel computed for M: 54x52, where (54 = 18*3)
+│   │   │   │   │   - Error computed for M: 108x52, where (108 = 36*3). Error: 1.495959e-14
+│   │   │   │   └ 0.46574 [sec]
+│   │   │   └ 1.7109 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',157)">LPV_L2anal_Finsler:157</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_fhzero_report.m',0)">pcz_fhzero_report</a>) - [<strong>Annihilator N</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1.49596e-14.
+│   │   │   │   - Maximal difference: 2.22045e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Annihilator N
+│   │   │   └ 0.026005 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator_for_LFR.m')">P_affine_annihilator_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',159)">LPV_L2anal_Finsler:159</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator_for_LFR.m',49)">P_affine_annihilator_for_LFR:49</a>
+│   │   │   │   │   - Kernel computed for M: 268x266, where (268 = 67*4)
+│   │   │   │   │   - Error computed for M: 536x266, where (536 = 134*4). Error: 8.241334e-11
+│   │   │   │   └ 2.4305 [sec]
+│   │   │   └ 6.0357 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',160)">LPV_L2anal_Finsler:160</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_fhzero_report.m',0)">pcz_fhzero_report</a>) - [<strong>Annihilator Na</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 8.24133e-11.
+│   │   │   │   - Maximal difference: 8.5183e-12
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Annihilator Na
+│   │   │   └ 0.042895 [sec]
+│   │   │   - nr. of variables: 2599
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',211)">LPV_L2anal_Finsler:211</a> - [<strong>Solve LMIs</strong>]
+
+MOSEK Version 9.0.89 (Build date: 2019-5-24 09:51:12)
+Copyright (c) MOSEK ApS, Denmark. WWW: mosek.com
+Platform: Linux/64-X86
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2599            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 72              
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator started.
+Freed constraints in eliminator : 0
+Eliminator terminated.
+Eliminator - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.01            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.05    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2599            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 72              
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 2599
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 1                 conic                  : 0               
+Optimizer  - Semi-definite variables: 72                scalarized             : 48152           
+Factor     - setup time             : 1.88              dense det. time        : 0.00            
+Factor     - ML order time          : 0.23              GP order time          : 0.00            
+Factor     - nonzeros before factor : 3.01e+06          after factor           : 3.01e+06        
+Factor     - dense dim.             : 0                 flops                  : 2.38e+10        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   6.3e+01  2.0e+00  6.3e+01  0.00e+00   -6.400104024e+01  0.000000000e+00   1.0e+00  2.63  
+1   1.2e+01  3.8e-01  1.3e+00  4.94e+00   -2.020103434e+00  -2.260734813e-02  1.9e-01  24.76 
+2   5.8e+00  1.8e-01  3.8e-01  1.48e+00   -8.375096506e-01  -1.025579679e-02  9.2e-02  35.61 
+3   1.6e+00  5.1e-02  3.7e-02  1.30e+00   -1.944455326e-01  -2.966861313e-03  2.6e-02  46.44 
+4   2.3e-01  7.4e-03  9.0e-04  1.75e+00   -1.586368502e-02  -7.966966475e-04  3.7e-03  57.60 
+5   3.6e-02  1.1e-03  5.5e-05  1.33e+00   -2.919819767e-03  -8.845964969e-04  5.7e-04  68.61 
+6   2.7e-03  8.5e-05  3.0e-07  8.32e-01   -1.628912674e-03  -1.473110267e-03  4.2e-05  79.64 
+7   4.9e-04  1.5e-05  6.1e-08  1.18e+00   -1.534884547e-03  -1.511024482e-03  7.7e-06  90.75 
+8   2.8e-04  9.0e-06  2.8e-08  1.11e+00   -1.528684850e-03  -1.514887875e-03  4.5e-06  112.27
+9   3.4e-05  1.1e-06  8.7e-10  1.08e+00   -1.520682770e-03  -1.519141790e-03  5.5e-07  123.33
+10  1.8e-05  5.7e-07  3.6e-10  1.06e+00   -1.520137778e-03  -1.519329887e-03  2.8e-07  144.81
+11  2.6e-06  8.1e-08  2.4e-11  1.03e+00   -1.519595496e-03  -1.519480434e-03  4.0e-08  155.94
+12  2.0e-06  6.4e-08  1.7e-11  1.00e+00   -1.519578427e-03  -1.519487355e-03  3.2e-08  177.40
+13  4.9e-07  9.2e-09  8.5e-13  1.00e+00   -1.519522329e-03  -1.519509432e-03  4.5e-09  188.48
+14  5.5e-07  4.8e-09  6.3e-14  1.00e+00   -1.519515205e-03  -1.519512942e-03  8.1e-10  199.51
+Optimizer terminated. Time: 199.67  
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -1.5195152051e-03   nrm: 1e+00    Viol.  con: 2e-07    var: 0e+00    barvar: 0e+00  
+  Dual.    obj: -1.5195129420e-03   nrm: 5e-01    Viol.  con: 0e+00    var: 0e+00    barvar: 2e-10  
+Optimizer summary
+  Optimizer                 -                        time: 199.67  
+    Interior-point          - iterations : 14        time: 199.53  
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   │   │   [   <strong>OK</strong>   ] Successfully solved (MOSEK). Solver time: <strong>200.919</strong>
+│   │   │   │   [  [<strong>WARN</strong>]  ] The solution is feasible. Tolerance: 1e-06. Min(Primal) = -3.579335e-11.
+│   │   │   │    
+│   │   │   │   - <strong>Gamma = 0.0389809</strong> 
+│   │   │   │   - size(N)  =  14, size(PI)   =  13
+│   │   │   │   - size(Na) =  54, size(PI_a) =  38
+│   │   │   │    
+│   │   │   │   Q0[     0.4766  0.0231  0.0197 -0.0037  0.1566  0.0937 -0.0339 -0.0349  0.0306  0.0031 -0.0497  0.0144  0.0028
+│   │   │   │            0.0231  0.0016   0.009 -0.0022  0.0063 -0.0074  0.0106 -0.0003  0.0019  0.0023  0.0013 -0.0032 -0.0007
+│   │   │   │            0.0197   0.009 -0.0109  0.0001 -0.0025  0.0017  0.0014 -0.0041  0.0121  -0.004 -0.0103  0.0015  0.0013
+│   │   │   │           -0.0037 -0.0022  0.0001  0.0341  0.0099  0.0102  0.0074 -0.0006 -0.0191  0.0016  0.0218  0.0003 -0.0035
+│   │   │   │            0.1566  0.0063 -0.0025  0.0099  0.0785 -0.0299 -0.0168 -0.0127  0.0171  0.0002  -0.025  0.0114  0.0007
+│   │   │   │            0.0937 -0.0074  0.0017  0.0102 -0.0299  0.0089  0.0241  0.0002 -0.0192  0.0161  0.0032 -0.0008 -0.0026
+│   │   │   │           -0.0339  0.0106  0.0014  0.0074 -0.0168  0.0241   0.028 -0.0034 -0.0166  0.0046 -0.0181  0.0084  -0.001
+│   │   │   │           -0.0349 -0.0003 -0.0041 -0.0006 -0.0127  0.0002 -0.0034  0.0026 -0.0087  0.0013  0.0265  0.0063  0.0023
+│   │   │   │            0.0306  0.0019  0.0121 -0.0191  0.0171 -0.0192 -0.0166 -0.0087  0.0058 -0.0041  0.0094 -0.0064  0.0006
+│   │   │   │            0.0031  0.0023  -0.004  0.0016  0.0002  0.0161  0.0046  0.0013 -0.0041  0.0068 -0.0089  0.0002  0.0001
+│   │   │   │           -0.0497  0.0013 -0.0103  0.0218  -0.025  0.0032 -0.0181  0.0265  0.0094 -0.0089  0.0053 -0.0101  0.0041
+│   │   │   │            0.0144 -0.0032  0.0015  0.0003  0.0114 -0.0008  0.0084  0.0063 -0.0064  0.0002 -0.0101  0.0079 -0.0016
+│   │   │   │            0.0028 -0.0007  0.0013 -0.0035  0.0007 -0.0026  -0.001  0.0023  0.0006  0.0001  0.0041 -0.0016 -0.0001 ]
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',232)">LPV_L2anal_Finsler:232</a>
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212)">qLPV_ipend_main:212</a>
+│   │   │   │    
+│   │   │   │   Q1[    -0.1924   0.002 -0.0027  0.0079 -0.0467  0.0288 -0.0002  0.0085  0.0006  0.0025  0.0086 -0.0013 -0.0014
+│   │   │   │             0.002  0.0003 -0.0007  0.0002  0.0005  0.0023 -0.0001 -0.0003  0.0004      -0  0.0001 -0.0002 -0.0003
+│   │   │   │           -0.0027 -0.0007  0.0002   0.001  0.0007  0.0007 -0.0017  0.0003 -0.0006 -0.0003 -0.0003 -0.0002 -0.0001
+│   │   │   │            0.0079  0.0002   0.001      -0 -0.0001 -0.0086  0.0008  0.0002 -0.0001  0.0002  0.0001  0.0003 -0.0003
+│   │   │   │           -0.0467  0.0005  0.0007 -0.0001 -0.0003   0.014 -0.0056  0.0009 -0.0006  0.0003 -0.0002  0.0002 -0.0005
+│   │   │   │            0.0288  0.0023  0.0007 -0.0086   0.014  0.0172 -0.0088  0.0019  0.0059 -0.0036 -0.0052 -0.0015  0.0012
+│   │   │   │           -0.0002 -0.0001 -0.0017  0.0008 -0.0056 -0.0088  0.0009 -0.0094  0.0003  0.0054  0.0276  0.0044  0.0021
+│   │   │   │            0.0085 -0.0003  0.0003  0.0002  0.0009  0.0019 -0.0094 -0.0002      -0       0  0.0017  0.0004  0.0007
+│   │   │   │            0.0006  0.0004 -0.0006 -0.0001 -0.0006  0.0059  0.0003      -0  0.0003 -0.0001 -0.0017 -0.0005 -0.0009
+│   │   │   │            0.0025      -0 -0.0003  0.0002  0.0003 -0.0036  0.0054       0 -0.0001  0.0007  0.0003       0 -0.0002
+│   │   │   │            0.0086  0.0001 -0.0003  0.0001 -0.0002 -0.0052  0.0276  0.0017 -0.0017  0.0003 -0.0009  0.0001  0.0001
+│   │   │   │           -0.0013 -0.0002 -0.0002  0.0003  0.0002 -0.0015  0.0044  0.0004 -0.0005       0  0.0001 -0.0022 -0.0009
+│   │   │   │           -0.0014 -0.0003 -0.0001 -0.0003 -0.0005  0.0012  0.0021  0.0007 -0.0009 -0.0002  0.0001 -0.0009 -0.0023 ]
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',232)">LPV_L2anal_Finsler:232</a>
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212)">qLPV_ipend_main:212</a>
+│   │   │   │    
+│   │   │   │   Q2[    -0.0497       0  0.0046 -0.0384  -0.033 -0.0952  0.0386 -0.0137  0.0097  0.0163  0.0195 -0.0012  -0.021
+│   │   │   │                 0 -0.0005 -0.0032  0.0008  0.0012 -0.0056  0.0009  0.0003      -0 -0.0002  0.0015 -0.0003       0
+│   │   │   │            0.0046 -0.0032  0.0034  0.0013  0.0004 -0.0003 -0.0028      -0 -0.0005 -0.0017  0.0003 -0.0003  0.0002
+│   │   │   │           -0.0384  0.0008  0.0013  0.0101 -0.0392 -0.0073 -0.0146 -0.0111  0.0157 -0.0024  0.0178  0.0064  0.0031
+│   │   │   │            -0.033  0.0012  0.0004 -0.0392 -0.0615 -0.0211  0.0068 -0.0043 -0.0019  0.0144  0.0111  0.0004 -0.0073
+│   │   │   │           -0.0952 -0.0056 -0.0003 -0.0073 -0.0211 -0.0106 -0.0353  0.0088 -0.0056 -0.0157 -0.0029  0.0017  0.0041
+│   │   │   │            0.0386  0.0009 -0.0028 -0.0146  0.0068 -0.0353 -0.0243  0.0098 -0.0019  -0.007  0.0156 -0.0032   -0.01
+│   │   │   │           -0.0137  0.0003      -0 -0.0111 -0.0043  0.0088  0.0098  0.0011 -0.0022   0.001  -0.003  -0.002 -0.0052
+│   │   │   │            0.0097      -0 -0.0005  0.0157 -0.0019 -0.0056 -0.0019 -0.0022   0.014 -0.0067 -0.0198  0.0021  0.0019
+│   │   │   │            0.0163 -0.0002 -0.0017 -0.0024  0.0144 -0.0157  -0.007   0.001 -0.0067  0.0013  -0.003  0.0013  0.0002
+│   │   │   │            0.0195  0.0015  0.0003  0.0178  0.0111 -0.0029  0.0156  -0.003 -0.0198  -0.003  0.0049 -0.0021  0.0095
+│   │   │   │           -0.0012 -0.0003 -0.0003  0.0064  0.0004  0.0017 -0.0032  -0.002  0.0021  0.0013 -0.0021  0.0007  -0.002
+│   │   │   │            -0.021       0  0.0002  0.0031 -0.0073  0.0041   -0.01 -0.0052  0.0019  0.0002  0.0095  -0.002  0.0092 ]
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',232)">LPV_L2anal_Finsler:232</a>
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212)">qLPV_ipend_main:212</a>
+│   │   │   │    
+│   │   │   │   Q3[          0       0 -0.0005       0       0       0       0       0      -0 -0.0013 -0.0019       0       0
+│   │   │   │                 0 -0.0001  0.0015      -0      -0       0       0      -0       0 -0.0008 -0.0034      -0      -0
+│   │   │   │           -0.0005  0.0015   0.005  0.0015  0.0006  0.0026 -0.0019  0.0003 -0.0015  0.0006   0.002 -0.0001 -0.0003
+│   │   │   │                 0      -0  0.0015       0       0       0      -0      -0       0  0.0011 -0.0004       0       0
+│   │   │   │                 0      -0  0.0006       0      -0       0       0      -0       0  0.0002  0.0035       0       0
+│   │   │   │                 0       0  0.0026       0       0       0      -0       0      -0  0.0019  0.0039       0       0
+│   │   │   │                 0       0 -0.0019      -0       0      -0      -0       0      -0 -0.0015  -0.002      -0      -0
+│   │   │   │                 0      -0  0.0003      -0      -0       0       0      -0       0 -0.0006  0.0034      -0      -0
+│   │   │   │                -0       0 -0.0015       0       0      -0      -0       0       0  0.0005 -0.0045      -0      -0
+│   │   │   │           -0.0013 -0.0008  0.0006  0.0011  0.0002  0.0019 -0.0015 -0.0006  0.0005  0.0004  0.0013  0.0003 -0.0002
+│   │   │   │           -0.0019 -0.0034   0.002 -0.0004  0.0035  0.0039  -0.002  0.0034 -0.0045  0.0013  0.0025  0.0012  0.0006
+│   │   │   │                 0      -0 -0.0001       0       0       0      -0      -0      -0  0.0003  0.0012       0       0
+│   │   │   │                 0      -0 -0.0003       0       0       0      -0      -0      -0 -0.0002  0.0006       0       0 ]
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',232)">LPV_L2anal_Finsler:232</a>
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212)">qLPV_ipend_main:212</a>
+│   │   │   │    
+│   │   │   │   p_lim = [       0.998    1.000
+│   │   │   │                   0.995    1.000
+│   │   │   │                  -0.100    0.100 ]
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',235)">LPV_L2anal_Finsler:235</a>
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212)">qLPV_ipend_main:212</a>
+│   │   │   │    
+│   │   │   │   dp_lim = [      -0.033    0.033
+│   │   │   │                   -0.100    0.100
+│   │   │   │                   -7.000    7.000 ]
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Finsler.m',236)">LPV_L2anal_Finsler:236</a>
+│   │   │   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',212)">qLPV_ipend_main:212</a>
+│   │   │   └ 205.5845 [sec]
+│   │   └ 231.864 [sec]
+ 
+┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_RCT.m',20)">LPV_L2anal_RCT:20</a> - [<strong>Robust Control Toolbox</strong>]
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_RCT.m',69)">LPV_L2anal_RCT:69</a> - [<strong>Pure wcgain</strong>]
+│   │   - Solver time: <strong>4.53557</strong>
+│   │   - Bounds: [<strong>0.0389643</strong>,0.0390501] = [-28.1867,-28.1676] dB 
+│   │   - Worst case uncertainty: p1 = 1
+│   │   - Worst case uncertainty: p2 = 0.995004
+│   │   - Worst case uncertainty: p3 = 0.0995861
+│   │   - Critical frequency: 0
+│   └ 4.544 [sec]
+└ 16.1879 [sec]
+{Unrecognized function or variable 'Persist'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('LPV_L2anal_Masubuchi_primal', '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Masubuchi_primal.m', 36)" style="font-weight:bold">LPV_L2anal_Masubuchi_primal</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_Masubuchi_primal.m',36,0)">line 36</a>)
+persist = Persist(mfilename('fullpath'), c); clear c;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('qLPV_ipend_main', '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m', 221)" style="font-weight:bold">qLPV_ipend_main</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',221,0)">line 221</a>)
+        LPV_L2anal_Masubuchi_primal(A_fh, B_fh, C, D, K, ...
+} 
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i))
+{Undefined variable P_cell.
+} 
+P_cell = randn(5,5)
+
+P_cell =
+
+    0.4908   -0.0579   -0.9154    0.5278   -0.5467
+    1.2604    1.0672    0.9401   -1.1763   -0.7354
+   -2.0048   -0.6764   -1.7435    0.7548   -0.7561
+   -0.3045    0.2525    1.4148   -0.0014    1.9747
+   -0.3632   -1.9107   -0.4841    1.2541   -0.3297
+
+P_cell = { randn(5,5) }
+
+P_cell =
+
+  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {5×5 double}
+
+i = 1
+
+i =
+
+     1
+
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i))
+{Index exceeds the number of array elements (1).
+} 
+i = 0
+
+i =
+
+     0
+
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i))
+ 
+Q0 = [     -1.609  0.8875  0.4755  -0.236 -0.4365
+         0.9486 -0.6372  0.7214 -1.5885  0.9261
+          0.025  0.1109 -1.3701 -0.2572   1.568
+        -0.3559 -0.3107  1.1101 -0.0696  1.2436
+         0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','name',sprintf('Q%d = ',i))
+ 
+ = [     -1.609  0.8875  0.4755  -0.236 -0.4365
+         0.9486 -0.6372  0.7214 -1.5885  0.9261
+          0.025  0.1109 -1.3701 -0.2572   1.568
+        -0.3559 -0.3107  1.1101 -0.0696  1.2436
+         0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i), 'pref', 'asdsad')
+ 
+Q0 = [asdsad -1.609  0.8875  0.4755  -0.236 -0.4365
+    asdsad 0.9486 -0.6372  0.7214 -1.5885  0.9261
+    asdsad  0.025  0.1109 -1.3701 -0.2572   1.568
+    asdsad-0.3559 -0.3107  1.1101 -0.0696  1.2436
+    asdsad 0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i), 'beg', 'asdsad')
+ 
+Q0 = asdsad     -1.609  0.8875  0.4755  -0.236 -0.4365
+         0.9486 -0.6372  0.7214 -1.5885  0.9261
+          0.025  0.1109 -1.3701 -0.2572   1.568
+        -0.3559 -0.3107  1.1101 -0.0696  1.2436
+         0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i), 'beg', ['[' newline ])
+ 
+Q0 = [
+     -1.609  0.8875  0.4755  -0.236 -0.4365
+         0.9486 -0.6372  0.7214 -1.5885  0.9261
+          0.025  0.1109 -1.3701 -0.2572   1.568
+        -0.3559 -0.3107  1.1101 -0.0696  1.2436
+         0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i))
+ 
+Q0 = [     -1.609  0.8875  0.4755  -0.236 -0.4365
+         0.9486 -0.6372  0.7214 -1.5885  0.9261
+          0.025  0.1109 -1.3701 -0.2572   1.568
+        -0.3559 -0.3107  1.1101 -0.0696  1.2436
+         0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('i',i))
+ 
+i[     -1.609  0.8875  0.4755  -0.236 -0.4365
+         0.9486 -0.6372  0.7214 -1.5885  0.9261
+          0.025  0.1109 -1.3701 -0.2572   1.568
+        -0.3559 -0.3107  1.1101 -0.0696  1.2436
+         0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('i',i))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parsepropval>match_property', '/home/ppolcz/_/8_published/LPV_L2/utilities/parsepropval.m', 77)" style="font-weight:bold">parsepropval>match_property</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/parsepropval.m',77,0)">line 77</a>)
+Property 'format' does not exist or is ambiguous.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('parsepropval', '/home/ppolcz/_/8_published/LPV_L2/utilities/parsepropval.m', 54)" style="font-weight:bold">parsepropval</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/parsepropval.m',54,0)">line 54</a>)
+		prop_index = match_property(arg,properties);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_dispFunction_num2str', '/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispFunction_num2str.m', 12)" style="font-weight:bold">pcz_dispFunction_num2str</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispFunction_num2str.m',12,0)">line 12</a>)
+args = parsepropval(args, varargin{:});
+} 
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('i',i))
+ 
+i[     -1.609  0.8875  0.4755  -0.236 -0.4365
+       0.9486 -0.6372  0.7214 -1.5885  0.9261
+        0.025  0.1109 -1.3701 -0.2572   1.568
+      -0.3559 -0.3107  1.1101 -0.0696  1.2436
+       0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+args.format = '%8.3f';
+args.del1 = ' , ';
+args.del2 = ' ; ';
+args.del2end = '';
+args.pref = '';
+args.beginning = '[';
+args.ending = ' ]';
+args.label = '';
+args.round = 4;
+args.name = '[noinputname]';
+args.inputname = '{inputname}';
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('i',i))
+ 
+i[     -1.609  0.8875  0.4755  -0.236 -0.4365
+       0.9486 -0.6372  0.7214 -1.5885  0.9261
+        0.025  0.1109 -1.3701 -0.2572   1.568
+      -0.3559 -0.3107  1.1101 -0.0696  1.2436
+       0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+pcz_dispFunction_num2str(P_cell{i+1}, 'format', '%7.5g','label',sprintf('Q%d = ',i))
+ 
+Q0 = [     -1.609  0.8875  0.4755  -0.236 -0.4365
+           0.9486 -0.6372  0.7214 -1.5885  0.9261
+            0.025  0.1109 -1.3701 -0.2572   1.568
+          -0.3559 -0.3107  1.1101 -0.0696  1.2436
+           0.5168 -0.5781  0.1488  0.1038 -0.2305 ]
+qLPV_ipend_main

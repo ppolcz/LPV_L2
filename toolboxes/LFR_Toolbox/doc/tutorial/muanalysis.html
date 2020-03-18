@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="manually generated">
+   <meta name="keywords" content="lft, lfr, toolbox, lfrt, gain, scheduling, matlab, tutorial, robustness, multimodel, order reduction, pole assignment, observer">
+   <meta name="description" content="Tutorial for using the Linear Fractional Representation Toolbox.">
+
+<title>LFRT tutorial: &micro;-analysis</title>
+<link rel="stylesheet" href="../green.css" type="text/css">
+</head>
+
+<body text="#330000" bgcolor="#cccccc" link="#000000" vlink="#000000" alink="#000000">
+
+<center><table class="bod"><tr><td>
+
+<a name="top"></a>
+<h1>LFRT version 2.0: &micro;-analysis</h1>
+
+<p><hr></p>
+
+<ul>
+   <li><a class="intext" href="index.html">Introduction</a></li>
+   <li><a class="intext" href="basicfunctions.html">Basic functions</a></li>
+   <li><a class="intext" href="realization.html">Realization</a></li>
+   <li><a class="intext" href="ordereduction.html">Order reduction</a></li>
+   <li><a class="intext" href="approximation.html">Approximation</a></li>
+   <li><a class="intext" href="modelling.html">Modelling a missile</a></li>
+   <li><span class="focus">&micro;-analysis</span>
+       <ul>
+         <li><a title="&micro;-Analysis and Control Toolbox" href="#lfr2mu"><tt class="function">lfr2mu</tt></a></li>
+         <li><a title="LMI Control Toolbox" href="#lfr2mubnd"><tt class="function">lfr2mubnd</tt></a></li>
+         <li><a title="Robust Control Toolbox version 3" href="#lfr2mussv"><tt class="function">lfr2mussv</tt></a></li>
+         <li><a title="LMI Control Toolbox" href="#lfr2mustab"><tt class="function">lfr2mustab</tt></a></li>
+       </ul></li>
+</ul>
+</p>
+
+
+<p><hr></p>
+
+This page describes four functions that generate from an LFR-object the input arguments of
+four standard Matlab  functions for &micro;-analysis (<tt class="function">mu</tt>,
+<tt class="function">mustab</tt>, <tt class="function">mubnd</tt> and <tt class="function">mussv</tt>).
+
+<p><hr></p>
+
+<!-- ================================================================ -->
+<a name="lfr2mu"></a>
+<h3>Function <tt class="function">lfr2mu</tt></h3>
+
+Generation of a model with an uncertain pole close to the imaginary axis
+at about 10 Rd/s.
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b c
+A = [-1+5*a -10*(1+b);10*(1+c^2) -1-a*b*c];
+B = [1+b;1*c];
+C = [1 1];
+D = 0;
+
+sys = <tt class="function">abcd2lfr</tt>([A B;C D],2);
+sys = <tt class="function">minlfr</tt>(sys);
+</pre>
+</p>
+
+&micro;-analysis using the function <tt class="function">mu</tt>.
+<p>
+<pre>
+frequ = logspace(0,2,20);
+
+[M,blk] = <tt class="function">lfr2mu</tt>(sys,frequ);
+bnds = <tt class="function">mu</tt>(M,blk,'wlc');
+
+semilogx(frequ,bnds(1:20,1),'c+'); hold on
+semilogx(frequ,bnds(1:20,2),'g.');
+</pre>
+</p>
+See <a class="intext" href="#fig">figure</a> below.
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="lfr2mubnd"></a>
+<h3>Function <tt class="function">lfr2mubnd</tt></h3>
+
+Same as above but using an LMI-based &micro; upper bound.
+<p>
+<pre>
+[M,delta] = <tt class="function">lfr2mubnd</tt>(sys,frequ);
+for ii = 1:length(frequ);
+   mu2(ii) = <tt class="function">mubnd</tt>(M{ii},delta,1e-6,'off');
+end;
+
+semilogx(frequ,mu2,'rd');
+</pre>
+</p>
+See <a class="intext" href="#fig">figure</a> below.
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="lfr2mussv"></a>
+<h3>Function <tt class="function">lfr2mussv</tt></h3>
+
+Same as above using the function <tt class="function">mussv</tt> of version 3 of the Robust Control
+Toolbox. Here we use the low precision default options.
+<p>
+<pre>
+[M,blk] = <tt class="function">lfr2mussv</tt>(sys,frequ);
+[bnds2,muinfo] = <tt class="function">mussv</tt>(M,blk);
+
+plot(bnds2);
+</pre>
+</p>
+<center>
+<a name="fig"></a>
+<img src="images/muanalysis.png" width="560" height="420" alt="muanalysis"/>
+</center>
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="lfr2mustab"></a>
+<h3>Function <tt class="function">lfr2mustab</tt></h3>
+
+Computation of the stability margin (inverse of the maximum value
+of the &micro;-curve) using the function <tt class="function">mustab</tt>
+(the function <tt class="function">mustab</tt> doesn't work for this example
+on some platforms).
+<p>
+<pre>
+[P,delta] = <tt class="function">lfr2mustab</tt>(sys);
+[margin1,frequ0] = <tt class="function">mustab</tt>(P,delta);
+
+<span class="mresults">...............
+ Mu upper bound (peak value): 2.556e+00
+ Robust stability margin    : 3.912e-01</span>
+</pre>
+</p>
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+
+<!-- ================================================================ -->
+</td></tr></table></center>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body></html>

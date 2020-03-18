@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<TITLE>ex_2_14.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uses</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">n-D</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">minimization</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">approach</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">minlfr).</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">It</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">illustrates</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">problem</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">due</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">noncommutativity</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uncertain</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameters.</SPAN>
+
+   <SPAN CLASS="syntax11">lfrs</SPAN> d1 d2 d3
+   S1 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN>d1<SPAN CLASS="syntax18">*</SPAN>d2<SPAN CLASS="syntax18">*</SPAN>d3;d2<SPAN CLASS="syntax18">*</SPAN>d3<SPAN CLASS="syntax18">*</SPAN>d1;d3<SPAN CLASS="syntax18">*</SPAN>d1<SPAN CLASS="syntax18">*</SPAN>d2<SPAN CLASS="syntax18">]</SPAN>;
+   S2 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN>d1<SPAN CLASS="syntax18">*</SPAN>d2<SPAN CLASS="syntax18">*</SPAN>d3;d1<SPAN CLASS="syntax18">*</SPAN>d2<SPAN CLASS="syntax18">*</SPAN>d3;d1<SPAN CLASS="syntax18">*</SPAN>d2<SPAN CLASS="syntax18">*</SPAN>d3<SPAN CLASS="syntax18">]</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">minlfr</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">used</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">reducing</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Delta</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">matrices:</SPAN>
+
+   S1min <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">minlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>S1<SPAN CLASS="syntax18">)</SPAN>;
+   S2min <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">minlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>S2<SPAN CLASS="syntax18">)</SPAN>;
+
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>S1min<SPAN CLASS="syntax18">)</SPAN>;
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>S2min<SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">In</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">first</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">case</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Delta</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">9-by-9</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">second</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">case</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">3-by-3.</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">However</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">we</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">have</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;minimal</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">objects&quot;</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">both</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">cases.</SPAN>
+
+   <SPAN CLASS="syntax11">distlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>S1min,S2min<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">As</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">conclusion:</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">commutativity</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">must</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">taken</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">into</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">account</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">before</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">realization</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(i.e.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">symtreed).</SPAN>
+</PRE></BODY>
+</HTML>
+

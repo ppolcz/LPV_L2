@@ -1,0 +1,67 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0317171429.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m')">qLPV_ipend_main</a> called from evaluateCode
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>F(x) == A(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 3.55271e-15
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] F(x) == A(p=p_expr)
+│   └ 0.003749 [sec]
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>G(x) == B(p=p_expr)</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   [  [INFO]  ] Maximal difference: 2.22045e-16
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] G(x) == B(p=p_expr)
+│   └ 0.011044 [sec]
+Undefined function 'x_max' for input arguments of type 'double'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('qLPV_ipend_main', '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m', 140)" style="font-weight:bold">qLPV_ipend_main</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',140,0)">line 140</a>)
+    phi_max   = x_max(1); % radians
+
+% Find out np, nw and nz
+[nz,nx] = size(C);
+[~,nw] = size(D);
+np = size(p_lim,1);
+
+P_generate_symvars(nx,np,nw,nz);
+
+[p_lfr,p_lfr_cell] = pcz_generateLFRStateVector('p',p_lim);
+M_fh = @(varargin) [ 
+    A_fh(varargin{:}) - B_fh(varargin{:})*K , B_fh(varargin{:})
+    C                                       , D
+    ];
+M_lfr = M_fh(p_lfr_cell{:});
+
+if Use_MinLFR == 1
+    
+    % Here, we use the numerical n-D order reduction proposed by
+    % 
+    % [DAK97] D'Andrea and Khatri (1997). Kalman decomposition of linear
+    % fractional transformation representations and minimality. Proceedings
+    % of the 1997 American Control Conference (Cat. No.97CH36041),
+    % 6:3557-3561 vol.6, 1997.
+
+    M_lfr = minlfr(M_lfr);
+
+elseif Use_MinLFR == 2
+    
+    % Due to the nice properties of the model, we can also use the
+    % symbolical LFR transformation of
+    % 
+    % [PPS18a] Polcz, Péni and Szederkényi (2018). Computational method for
+    % estimating the domain of attraction of discrete-time uncertain
+    % rational systems. European Journal of Control, , 2018.
+    %     
+    % [PPS18b] Polcz, Péni and Szederkényi (2018). Reduced linear
+    % fractional representation of nonlinear systems for stability
+    % analysis. IFAC-PapersOnLine, 51(2):37-42, 2018.
+
+    M_plfr_red = P_LFR_reduction(M_lfr,[x;w]);
+    l = M_plfr_red.LFR_reduced;
+    M_lfr = plfr(l.A,l.B,l.C,l.D,l.Delta,p_lim);
+    clear l
+end
+{Unrecognized function or variable 'Use_MinLFR'.
+} 

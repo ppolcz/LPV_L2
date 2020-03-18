@@ -1,0 +1,96 @@
+<HTML>
+<HEAD>
+<TITLE>ex_3_6.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">illustrates</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFR-object</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">realization</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">by</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">tree</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">decomposition,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;symtreed&quot;</SPAN>
+
+   syms d1 d2 d3 d4 d5
+   sys_sym <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">4</SPAN><SPAN CLASS="syntax18">*</SPAN>d1<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">*</SPAN>d3 <SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">*</SPAN>d1 <SPAN CLASS="syntax5">0</SPAN> ; d3<SPAN CLASS="syntax18">*</SPAN>d5 <SPAN CLASS="syntax5">5</SPAN><SPAN CLASS="syntax18">*</SPAN>d2<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">*</SPAN>d4 d2<SPAN CLASS="syntax18">*</SPAN>d4<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">]</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Brute</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">force</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">realization</SPAN>
+
+   sys1 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">sym2lfr</SPAN><SPAN CLASS="syntax18">(</SPAN>sys_sym<SPAN CLASS="syntax18">)</SPAN>;
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>sys1<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Structured</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">tree</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">decomposition</SPAN>
+
+   sys2 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">symtreed</SPAN><SPAN CLASS="syntax18">(</SPAN>sys_sym<SPAN CLASS="syntax18">)</SPAN>;
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>sys2<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">reduces</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">from</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">12</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">9.</SPAN>
+
+</PRE></BODY>
+</HTML>
+

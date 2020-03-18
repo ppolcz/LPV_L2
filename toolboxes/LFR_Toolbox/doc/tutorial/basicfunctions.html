@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="manually generated">
+   <meta name="keywords" content="lft, lfr, toolbox, lfrt, gain, scheduling, matlab, tutorial, robustness, multimodel, order reduction, pole assignment, observer">
+   <meta name="description" content="Tutorial for using the Linear Fractional Representation Toolbox.">
+
+<title>LFRT tutorial: basic functions</title>
+<link rel="stylesheet" href="../green.css" type="text/css">
+</head>
+
+<body text="#330000" bgcolor="#cccccc" link="#000000" vlink="#000000" alink="#000000">
+
+<center><table class="bod"><tr><td>
+
+<a name="top"></a>
+<h1>LFRT version 2.0: basic functions</h1>
+
+<p><hr></p>
+
+<ul>
+   <li><a class="intext" href="index.html">Introduction</a></li>
+   <li><span class="focus">Basic functions</span>
+       <ul>
+         <li><a title="Generation of 1-by-1 LFR-objects" href="#lfrs"><tt class="function">lfrs</tt></a></li>
+         <li><a title="Generation of uncertainty blocks" href="#lfr"><tt class="function">lfr</tt></a></li>
+         <li><a title="Distance (lower bound)" href="#distlfr"><tt class="function">distlfr</tt></a></li>
+         <li><a title="Normalization of LFR-objects" href="#normalizelfr"><tt class="function">normalizelfr</tt>, <tt class="function">unnormalize</tt>, <tt class="function">actualval</tt></a></li>
+         <li><a title="Upper LFT" href="#uplft"><tt class="function">uplft</tt></a></li>
+         <li><a title="Replacement of parameters by functions of other parameters" href="#eval"><tt class="function">eval</tt></a></li>
+         <li><a title="From/to Robust Control Toolbox objects" href="#rob"><tt class="function">lfr2rob</tt></a></li>
+       </ul></li>
+   <li><a class="intext" href="realization.html">Realization</a></li>
+   <li><a class="intext" href="ordereduction.html">Order reduction</a></li>
+   <li><a class="intext" href="approximation.html">Approximation</a></li>
+   <li><a class="intext" href="modelling.html">Modelling a missile</a></li>
+   <li><a class="intext" href="muanalysis.html">&micro;-analysis</a></li>
+</ul>
+</p>
+
+
+<p><hr></p>
+
+This page introduces some functions for LFR-object generation and for basic manipulation.
+LFR-objects can be manipulated like matrices (addition, multiplication, inversion,
+concatenation and so on) and combined to matrices or standard dynamic systems (SS-objects).
+
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="lfrs"></a>
+
+<h3>Function <tt class="function">lfrs</tt></h3>
+This function is the first function have to play with. It defines
+<ul>
+  <li>1-by-1 real LFR-objects possibly with specified intervals of variations
+and nominal values (<i>e.g.</i>, <tt>c</tt> in <tt>[2 4]</tt> nominal value <tt>3</tt>,
+<tt>d</tt> in <tt>[20 40]</tt> nominal value <tt>25</tt>)</li>
+  <li>1-by-1 complex LFR-objects possibly with specified disc of variation
+  (<i>e.g.</i>, center <tt>2+i</tt> and radius <tt>2.2</tt>)</li>
+</ul>
+Note that in most cases bounds definition can be ignored, they can be defined
+at any time using the functions <tt class="function">normalizelfr</tt>
+or <tt class="function">set</tt>.
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b
+<tt class="function">lfrs</tt> c d [2 20] [4 40] [3 25]  <span class="cc">% Nominal value of d not centered</span>
+<tt class="function">lfrs</tt> A complex [2+i] [2.2]
+M = [(1+a)/(2-b-c) A;2*a 3+d];
+<tt class="function">size</tt>(M)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Uncertainty blocks (globally (6 x 6)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ A     1x1   LTI       c           s        |2+1i - A| &lt; 2.2
+ a     2x2   LTI       r           s        [-1,1]
+ b     1x1   LTI       r           s        [-1,1]
+ c     1x1   LTI       r           s        [2,4]
+ d     1x1   LTI       r           s        [20,40], nominal=25</span>
+</pre>
+</p>
+<span class="emphas">It is possible to invert an LFR-object even if
+its nominal value is singular</span>. In this case, a "constant block" is created,
+this artificial block will disappear naturally when the LFR-object is <a class="intext" href="#uplft">evaluated
+at a feasible point</a> or <a class="intext" href="#normalizelfr">normalized at a feasible nominal value</a>.
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b
+X = 1/(a*b);
+<tt class="function">size</tt>(X)
+
+<span class="mresults">LFR-object with 1 output(s), 1 input(s) and 0 state(s).
+Dimension of constant block in uncertainty matrix: 1 <blink><span class="cc"><- !!!!</span></blink>
+Uncertainty blocks (globally (2 x 2)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ a     1x1   LTI       r           s        [-1,1]
+ b     1x1   LTI       r           s        [-1,1]</span>
+</pre>
+</p>
+The function <tt class="function">lfrs</tt> can also be used to define the integrator <tt>1/s</tt> or the delay
+<tt>1/z</tt>. These two objects have reserved names that are respectively <tt>Int</tt>
+and <tt>Delay</tt>.
+
+<p>
+<pre>
+   <tt class="function">lfrs</tt> Int
+   <tt class="function">lfrs</tt> Delay
+</pre>
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="lfr"></a>
+
+<h3>Function <tt class="function">lfr</tt></h3>
+This function offers a lot of possibilities (see <tt>help lfr</tt> for details), it will
+be illustrated here for defining diagonal blocks of the matrix &Delta;. For example:
+<p>
+<pre>
+<span class="cc">% A 4-by-4 real scalar repeated block</span>
+X = <tt class="function">lfr</tt>('x','ltisr',4,[2 8],'minmax');
+
+<span class="cc">% A full complex block with frequency weighted bounds W</span>
+W = ltisys(-10,-10,1,0);
+Y = <tt class="function">lfr</tt>('y','ltifc',[2 4],W,'freq');
+
+<span class="cc">% A 4-by-4 complex scalar repeated block</span>
+Z = <tt class="function">lfr</tt>('z','ltisc',[4 4],[i 1],'disc');
+
+<tt class="function">size</tt>([X;Y;Z])
+
+<span class="mresults">LFR-object with 10 output(s), 4 input(s) and 0 state(s).
+Uncertainty blocks (globally (10 x 12)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ x     4x4   LTI       r           s        [2,8]
+ y     2x4   LTI       c           f        freq. dependent
+ z     4x4   LTI       c           s        |0+1i - z| &lt; 1</span>
+</pre>
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="distlfr"></a>
+
+<h3>Function <tt class="function">distlfr</tt></h3>
+This function computes a lower bound of the distance between two LFR-objects (see
+<tt class="function">udistlfr</tt> <a class="intext" href="approximation.html#udistlfr">for an upper bound</a>).
+It is assumed that parameters belong by default to <tt>[-1,+1]</tt> if variation bounds
+are not defined. The function <tt class="function">rlfr</tt> used below generates random
+LFR-objects.
+
+<p>
+<pre>
+sys1 = <tt class="function">rlfr</tt>(5,2,3,5,5,'d_');
+sys2 = sys1 + 1e-5*<tt class="function">rlfr</tt>(2,2,3,2,5,'d_');
+<tt class="function">distlfr</tt>(sys1,sys2)
+
+<span class="mresults">ans =
+
+  2.6762e-006</span>
+</pre>
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="normalizelfr"></a>
+
+<h3>Function <tt class="function">normalizelfr</tt></h3>
+When you define variation bounds using the functions <tt class="function">lfr</tt>
+or <tt class="function">lfrs</tt>, these
+bounds are stored in the considered LFR-objects.
+Normalization (for example for &micro;-analysis)
+is performed only when the function <tt class="function">normalizelfr</tt> is invoked.
+
+<p>
+This functions normalizes the variations of real/complex scalar parameters. For
+example in the real case, it means that
+a parameter <tt>a</tt> belonging to <tt>[1 5]</tt> is replaced by a parameter <tt>da</tt>
+such that <tt>a = 3 + 2*da</tt> in which <tt>da</tt> belongs to <tt>[-1 +1]</tt>.
+Note that the name of <tt>da</tt> remains <tt>a</tt>.
+</p>
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b [1 10] [5 50]
+X = 1/(a*b);
+<tt class="function">size</tt>(X)
+
+<span class="mresults">LFR-object with 1 output(s), 1 input(s) and 0 state(s).
+Dimension of constant block in uncertainty matrix: 1
+Uncertainty blocks (globally (2 x 2)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ a     1x1   LTI       r           s        [1,5]
+ b     1x1   LTI       r           s        [10,50]</span>
+
+Xn = <tt class="function">normalizelfr</tt>(X);
+<tt class="function">size</tt>(Xn)
+
+<span class="mresults">LFR-object with 1 output(s), 1 input(s) and 0 state(s).
+Uncertainty blocks (globally (2 x 2)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ a     1x1   LTI       r           s        [-1,1]
+ b     1x1   LTI       r           s        [-1,1]</span>
+</pre>
+Note that the variation bounds and nominal values
+can also be entered as <a class="intext" href="modelling.html#model_5">input arguments</a> of
+the function <tt class="function">normalizelfr</tt>. In this case, the corresponding values stored in
+the LFR-object are overwritten. It is also possible to normalize only a selection of
+parameters.
+</p>
+
+<p>
+It is possible to retrieve the original object form a normalized one using the function
+<tt class="function">unnormalize</tt>. In addition, actual values of parameters
+can be retrieved from normalized ones using the function <tt class="function">actualval</tt>.
+<pre>
+<tt class="function">distlfr</tt>(X,<tt class="function">unnormalize</tt>(Xn))
+
+<span class="mresults">ans =
+
+   2.7756e-16</span>
+
+<tt class="function">actualval</tt>(Xn,{'a','b'},[0.5,-0.5])
+
+<span class="mresults">ans =
+
+     4    20</span>
+</pre>
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="uplft"></a>
+
+<h3>Function <tt class="function">uplft</tt></h3>
+This function evaluates an LFR-object for given values of some parameters. In the following
+example, <tt>X</tt> is evaluated for <tt>a=3</tt>, therefore, the resulting LFR-object depends only of <tt>b</tt>, in
+addition, the "<a class="intext" href="#lfrs">constant block</a>" due to the division by <tt>a</tt> vanishes:
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b [1 10] [5 50]
+X = 1/(a*(1+b));
+<tt class="function">size</tt>(X)
+
+<span class="mresults">LFR-object with 1 output(s), 1 input(s) and 0 state(s).
+Dimension of constant block in uncertainty matrix: 1
+Uncertainty blocks (globally (2 x 2)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ a     1x1   LTI       r           s        [1,5]
+ b     1x1   LTI       r           s        [10,50]</span>
+
+X1 = <tt class="function">uplft</tt>(X,{'a'},3);
+<tt class="function">size</tt>(X1)
+
+<span class="mresults">LFR-object with 1 output(s), 1 input(s) and 0 state(s).
+Uncertainty blocks (globally (1 x 1)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ b     1x1   LTI       r           s        [10,50]</span>
+</pre>
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="eval"></a>
+
+<h3>Function <tt class="function">eval</tt></h3>
+This function replaces uncertain parameters by functions of other parameters (see
+<tt class="function">help lfr/eval</tt> for more details). Here, <tt>b</tt> is replaced by
+<tt>c/s</tt> and <tt>a</tt> is replaced by <tt>c^3+1</tt>.
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b [1 10] [5 50]
+X = 1/(a*(1+b));
+<tt class="function">size</tt>(X)
+
+<span class="mresults">LFR-object with 1 output(s), 1 input(s) and 0 state(s).
+Dimension of constant block in uncertainty matrix: 1
+Uncertainty blocks (globally (2 x 2)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ a     1x1   LTI       r           s           [1,5]
+ b     1x1   LTI       r           s           [10,50]</span>
+
+<tt class="function">lfrs</tt> Int c
+b = c*Int;
+a = c^3+1;
+
+X1 = <tt class="function">eval</tt>(X)
+<tt class="function">size</tt>(X1)
+
+<span class="mresults">LFR-object with 1 output(s), 1 input(s) and 1 state(s).
+Uncertainty blocks (globally (4 x 4)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ c     4x4   LTI       r           s           [-1,1]</span> <span class="cc">(bounds lost)</span>
+</pre>
+</p>
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="rob"></a>
+
+<h3>Function <tt class="function">lfr2rob</tt></h3>
+This function transforms LFR-objects into UMAT or USS-objects (Robust Control Toolbox
+Version 3). The converse transformation is performed by invoking <tt class="function">lfr</tt>
+(i.e., <tt class="function">lfr</tt>(<tt class="function">lfr2rob</tt>(X)) = X).
+<p>
+<pre>
+<tt class="function">lfrs</tt> a b c [1 2 3] [3 4 7] [1.5 3 6]
+<tt class="function">lfrs</tt> d e complex [1 i] [2 3]
+A1=[a*b+2 c*b;d 1+e*c];
+<tt class="function">size</tt>(A1)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Uncertainty blocks (globally (7 x 7)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ a     1x1   LTI       r           s        [1,3], nominal=1.5
+ b     2x2   LTI       r           s        [2,4]
+ c     2x2   LTI       r           s        [3,7], nominal=6
+ d     1x1   LTI       c           s        |1 - d| &gt; 2
+ e     1x1   LTI       c           s        |0+1i - e| &gt; 3</span>
+
+<span class="cc">% Transformation to UMAT-object</span>
+A2 = <tt class="function">lfr2rob</tt>(A1)
+
+<span class="mresults">UMAT: 2 Rows, 2 Columns
+  a: real, nominal = 1.5, range = [1  3], 1 occurrence
+  b: real, nominal = 3, range = [2  4], 2 occurrences
+  c: real, nominal = 6, range = [3  7], 2 occurrences
+  d: complex, nominal = 1, radius = 2, 1 occurrence
+  e: complex, nominal = 0+1i, radius = 3, 1 occurrence</span>
+
+<tt class="function">distlfr</tt>(A1,A2)
+
+<span class="mresults">ans =
+
+   1.7002e-14</span>
+
+</pre>
+</p>
+<p>
+The object <tt>A2</tt> can be directly generated as follows:
+<pre>
+a = ureal('a',1.5,'Range',[1 3]);
+b = ureal('b',3);
+c = ureal('c',6,'Range',[3 7]);
+d = ucomplex('d',1,'Radius',2);
+e = ucomplex('e',i,'Radius',3);
+B2=[a*b+2 c*b;d 1+e*c]
+
+<span class="mresults">UMAT: 2 Rows, 2 Columns
+  a: real, nominal = 1.5, range = [1  3], 1 occurrence
+  b: real, nominal = 3, variability = [-1  1], 2 occurrences
+  c: real, nominal = 6, range = [3  7], 2 occurrences
+  d: complex, nominal = 1, radius = 2, 1 occurrence
+  e: complex, nominal = 0+1i, radius = 3, 1 occurrence </span>
+
+<tt class="function">distlfr</tt>(A2,B2)
+
+<span class="mresults">ans =
+
+     0</span>
+</pre>
+</p>
+
+<p>
+Evaluation of these objects at given values of parameters, e.g., <tt>a = 1.9</tt>, <tt>b = 3.2</tt>,
+<tt>c = 3</tt>, <tt>d = 0.5</tt> and <tt>e = i+0.5</tt>.
+<pre>
+<span class="cc">% LFR-object</span>
+<tt class="function">uplft</tt>(A1,'a',1.9,'b',3.2,'c',3,'d',0.5,'e',i+0.5)
+
+<span class="mresults">a is an empty matrix: 0-by-0
+
+b is an empty matrix: 0-by-2
+
+c is an empty matrix: 2-by-0
+
+d =
+   8.0800             9.6000
+   0.5000             2.5000 + 3.0000i
+
+LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Uncertainty blocks (globally (0 x 0)):</span>
+
+<span class="cc">% UMAT-object</span>
+usubs(A2,'a',1.9,'b',3.2,'c',3,'d',0.5,'e',i+0.5)
+
+<span class="mresults">ans =
+
+   8.0800             9.6000
+   0.5000             2.5000 + 3.0000i</span></pre>
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+
+</td></tr></table></center>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body></html>

@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<TITLE>ex_2_10.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Well-posedness</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">non-singularity</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">radii</SPAN>
+
+   <SPAN CLASS="syntax11">lfrs</SPAN> a b c d
+   M <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">+</SPAN>a<SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">/</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">-</SPAN>b<SPAN CLASS="syntax18">-</SPAN>c<SPAN CLASS="syntax18">)</SPAN> <SPAN CLASS="syntax5">2</SPAN>;<SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">*</SPAN>a <SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">+</SPAN>d<SPAN CLASS="syntax18">]</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">M</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">not</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">well-posed</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">b</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">+</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">c</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">2,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">worst</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">case</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">b</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">c</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">1</SPAN>
+
+   <SPAN CLASS="syntax18">[</SPAN>rad_min,rad_max,pertnames,pert<SPAN CLASS="syntax18">]</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">wp_rad</SPAN><SPAN CLASS="syntax18">(</SPAN>M<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">M</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">becomes</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">singular</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">1/3</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">b</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">c</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">d</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">=</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">-1/3</SPAN>
+
+   <SPAN CLASS="syntax18">[</SPAN>rad_min,rad_max,pertnames,pert<SPAN CLASS="syntax18">]</SPAN> <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">ns_rad</SPAN><SPAN CLASS="syntax18">(</SPAN>M<SPAN CLASS="syntax18">)</SPAN>
+</PRE></BODY>
+</HTML>
+

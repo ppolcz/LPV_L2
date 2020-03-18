@@ -1,0 +1,18 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools/text/LPV_L2anal_LPVTools_2020-03-17_12-07-30_i0007_output.txt
+ 
+┌ <a href="matlab:edit('')">Persist.Persist</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',19)">LPV_L2anal_LPVTools:19</a>
+│   [  [INFO]  ] Script `LPV_L2anal_LPVTools` backed up.
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',23)">LPV_L2anal_LPVTools:23</a> - [<strong>LPVTools</strong>]
+│   │    
+│   │   x_limits = [      -0.600  -50.000   -3.000
+│   │                      0.600   50.000    3.000 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',26)">LPV_L2anal_LPVTools:26</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',222)">qLPV_ipend_main:222</a>
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',92)">LPV_L2anal_LPVTools:92</a> - [<strong>LPVTools grid based</strong>] [msg:lpvnorm]
+│   │   │   - Solver time: <strong>0.451393</strong>
+│   │   │   - <strong>gamma = 0.0532347 </strong>(lpvnorm)
+│   │   └ 0.45207 [sec]
+│   └ 1.1028 [sec]
+[  [INFO]  ] Persistence for `LPV_L2anal_LPVTools` initialized [run ID: 0008, 2020.03.17. Tuesday, 12:07:31]

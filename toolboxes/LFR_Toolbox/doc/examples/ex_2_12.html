@@ -1,0 +1,106 @@
+<HTML>
+<HEAD>
+<TITLE>ex_2_12.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">We</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">solve</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">same</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">problem</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">as</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">ex_2_11.m</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">different</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">form</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">considered</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uncertain</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">object.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">illustrates</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">fact</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">block</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Delta</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equal</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">number</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">times</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uncertain</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameters</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">appear</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">used</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">formula.</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Elementary</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFR-objects</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">are</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">created</SPAN>
+
+   <SPAN CLASS="syntax11">lfrs</SPAN> Int d1 d3
+
+   sys2 <SPAN CLASS="syntax18">=</SPAN> d1<SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN>Int d1<SPAN CLASS="syntax18">*</SPAN>d3<SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">1</SPAN> <SPAN CLASS="syntax5">1</SPAN>;<SPAN CLASS="syntax5">0</SPAN> <SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax18">[</SPAN>d1<SPAN CLASS="syntax18">*</SPAN>Int ; d3<SPAN CLASS="syntax18">]</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Alternative</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">form</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">ex_2_11.m)</SPAN>
+
+   sys1 <SPAN CLASS="syntax18">=</SPAN> d1<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">*</SPAN>Int<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN> <SPAN CLASS="syntax18">+</SPAN> d1<SPAN CLASS="syntax18">*</SPAN>d3<SPAN CLASS="syntax18">*</SPAN>Int <SPAN CLASS="syntax18">+</SPAN> d1<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">*</SPAN>d3<SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">We</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">can</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">check</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN>
+
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>sys1<SPAN CLASS="syntax18">)</SPAN>
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>sys2<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Delta</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">matrix</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">now</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">5-by-5</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(sys2)</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">instead</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">8-by-8</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(sys1).</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Using</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">distlfr</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">we</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">can</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">check</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">we</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">have</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">computed</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equivalent</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">objects:</SPAN>
+
+   <SPAN CLASS="syntax11">distlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>sys1,sys2<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">distance</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">should</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">zero.</SPAN>
+</PRE></BODY>
+</HTML>
+

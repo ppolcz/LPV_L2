@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="manually generated">
+   <meta name="keywords" content="lft, lfr, toolbox, lfrt, gain, scheduling, matlab, tutorial, robustness, multimodel, order reduction, pole assignment, observer">
+   <meta name="description" content="Tutorial for using the Linear Fractional Representation Toolbox.">
+
+<title>LFRT tutorial: approximations</title>
+<link rel="stylesheet" href="../green.css" type="text/css">
+</head>
+
+<body text="#330000" bgcolor="#cccccc" link="#000000" vlink="#000000" alink="#000000">
+
+<center><table class="bod"><tr><td>
+<a name="top"></a>
+<h1>LFRT version 2.0: approximations</h1>
+
+<p><hr></p>
+
+<ul>
+   <li><a class="intext" href="index.html">Introduction</a></li>
+   <li><a class="intext" href="basicfunctions.html">Basic functions</a></li>
+   <li><a class="intext" href="realization.html">Realization</a></li>
+   <li><a class="intext" href="ordereduction.html">Order reduction</a></li>
+   <li><span class="focus">Approximation</span>
+       <ul>
+         <li><a title="Approximation based on minlfr or minlfr1" href="#reduclfr"><tt class="function">reduclfr</tt></a></li>
+         <li><a title="Outer-bounds of variation of a real LFR-object" href="#udistlfr"><tt class="function">udistlfr</tt></a></li>
+         <li><a title="LFR-object generation from given variation bounds" href="#bnds2lfr"><tt class="function">bnds2lfr</tt></a></li>
+       </ul></li>
+   <li><a class="intext" href="modelling.html">Modelling a missile</a></li>
+   <li><a class="intext" href="muanalysis.html">&micro;-analysis</a></li>
+</ul>
+</p>
+
+
+<p><hr></p>
+
+It is often quite easy to guess a good approximation of a given LFR-object, for example
+from engineering knowledge or by using <a class="intext" href="ordereduction.html ">order reduction tools</a>.
+This page shows how to use order reduction tools
+for approximation (<tt class="function">reduclfr</tt>). Then, it is shown how to evaluate
+precisely the approximation errors (<tt class="function">udistlfr</tt>) so
+that additional parameters can be defined for modelling these approximation errors
+(<tt class="function">bnds2lfr</tt>).
+
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="reduclfr"></a>
+<h3>Function <tt class="function">reduclfr</tt></h3>
+
+<p>
+The following academic example will be considered (note the small terms that
+will be removed after approximation).
+<pre>
+<tt class="function">lfrs</tt> a b c
+S1 = [3+0.001*a^5-b*c a^4*c;a*b*c^3+2 a^2-0.001*b*c^3+1];
+<tt class="function">size</tt>(S1)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Uncertainty blocks (globally (23 x 23)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ a     12x12 LTI       r           s           [-1,1]
+ b     3x3   LTI       r           s           [-1,1]
+ c     8x8   LTI       r           s           [-1,1]</span>
+</pre>
+</p>
+
+<p>
+The function <tt class="function">reduclfr</tt> is used for automatic approximation.
+This function searches the best tolerance argument of the order reduction algorithms implemented
+in the <a class="intext" href="ordereduction.html ">functions</a> <tt class="function">minlfr</tt> or <tt class="function">minlfr1</tt>.
+The second argument of <tt class="function">reduclfr</tt> defines the
+expected maximum amount of approximation error,
+the third argument <tt>'a'</tt> means that we consider absolute error.
+<pre>
+S2 = <tt class="function">reduclfr</tt>(S1,0.01,'a');
+
+<span class="mresults">Initial size :23
+Dichotomy:16>16>16>16>12>12>12>12>12>12>12>12>12>2>12>
+End because order "oscillations"</span>
+
+<tt class="function">size</tt>(S2)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Uncertainty blocks (globally (12 x 12)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ a     6x6   LTI       r           s           [-1,1]
+ b     2x2   LTI       r           s           [-1,1]
+ c     4x4   LTI       r           s           [-1,1]</span>
+</pre>
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="udistlfr"></a>
+<h3>Function <tt class="function">udistlfr</tt></h3>
+
+<p>
+The 3rd and 4th output arguments of <tt class="function">udistlfr</tt> give
+element-wise <span class="emphas">outer-bounds</span> of approximation errors.
+<pre>
+[distu,dist2,mindiff,maxdiff] = <tt class="function">udistlfr</tt>(S1,S2);
+
+<span class="mresults">Diff. entries (1,1) -> Percent:      100
+Diff. entries (1,2) -> No uncertainties
+Diff. entries (2,1) -> No uncertainties
+Diff. entries (2,2) -> Percent:      100</span>
+
+disp(mindiff);
+
+<span class="mresults">   -0.0012         0
+         0   -0.0012
+</span>
+
+disp(maxdiff);
+
+<span class="mresults">    0.0012         0
+         0    0.0012</span>
+</pre>
+</p>
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="bnds2lfr"></a>
+<h3>Function <tt class="function">bnds2lfr</tt></h3>
+
+<p>
+It remains to replace the approximation errors by additional normalized
+real parameters.
+<pre>
+syserr = <tt class="function">bnds2lfr</tt>('s_',mindiff,maxdiff);
+S3 = S2 + syserr;
+
+size(S3)
+
+<span class="mresults">LFR-object with 2 output(s), 2 input(s) and 0 state(s).
+Uncertainty blocks (globally (14 x 14)):
+ Name  Dims  Type   Real/Cplx   Full/Scal      Bounds
+ a     6x6   LTI       r           s           [-1,1]
+ b     2x2   LTI       r           s           [-1,1]
+ c     4x4   LTI       r           s           [-1,1]
+ s_1_1 1x1   LTI       r           s           [-0.0012252,0.0012252]
+ s_2_2 1x1   LTI       r           s           [-0.0012221,0.0012221]</span>
+</pre>
+In conclusion, <tt>S1</tt> was reduced from order 23 to 14. Two additional parameters
+<tt>s_1_1</tt> and <tt>s_2_2</tt> represent the approximation error in order to
+offer a guarantee that worst cases are not missed if &micro;-analysis is applied to <tt>S3</tt>.
+</p>
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+
+</td></tr></table></center>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body></html>

@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>ex_2_9.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Illustration</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;constant</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">block&quot;</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">introduced</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;inverting&quot;</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">non-invertible</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFR-objects.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Normalization</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">converse.</SPAN>
+
+   S <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">rlfr</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">5</SPAN>,<SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+   S.d <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax9">zeros</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">3</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;Inversion&quot;</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">non-invertible</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFR-object</SPAN>
+
+   invS <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax9">inv</SPAN><SPAN CLASS="syntax18">(</SPAN>S<SPAN CLASS="syntax18">)</SPAN>;
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>invS<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">second</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">line</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">displayed</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">by</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">size</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">shows</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dummy</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameter</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">repeated</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">3</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">times</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">block</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">named</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">&quot;constant</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">block&quot;.</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Modification</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bound</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">information.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Here,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">nominal</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">value</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(4)</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">not</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">centered</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">range</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">variations</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">([2</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">8])</SPAN>
+
+  <SPAN CLASS="syntax9">set</SPAN><SPAN CLASS="syntax18">(</SPAN>invS,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d1</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d2</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">}</SPAN>,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">2</SPAN> <SPAN CLASS="syntax5">8</SPAN> <SPAN CLASS="syntax5">4</SPAN><SPAN CLASS="syntax18">]</SPAN>,<SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">2</SPAN> <SPAN CLASS="syntax5">8</SPAN> <SPAN CLASS="syntax5">4</SPAN><SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">}</SPAN>,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">minmax</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">minmax</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">}</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+  <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>invS<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">'set'</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">changes</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bound</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">information</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">stored</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFR-object</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">but</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bo</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">not</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">modify</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">numerical</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">values.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">For</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">updating</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">nominal</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">value,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">normalizelfr</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">must</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">invoked.</SPAN>
+
+  invS2 <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">normalizelfr</SPAN><SPAN CLASS="syntax18">(</SPAN>invS<SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Inversion</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">feasible</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">now,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">therefore</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dummy</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameter</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">has</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">disappeared</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">as</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">shown</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">below</SPAN>
+
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>invS2<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Note</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">that</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">it</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">possible</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">compute</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">actual</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">values</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">parameters</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">from</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">normalized</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">ones.</SPAN>
+
+   par_nom <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax18">-</SPAN><SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">5</SPAN> <SPAN CLASS="syntax5">0</SPAN>.<SPAN CLASS="syntax5">5</SPAN><SPAN CLASS="syntax18">]</SPAN>;
+   par_act <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">actualval</SPAN><SPAN CLASS="syntax18">(</SPAN>invS2,<SPAN CLASS="syntax18">{</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d1</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d2</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">}</SPAN>,par_nom<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uplft(invS,{'d1','d2'},par_act)</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uplft(invS2,{'d1','d2'},par_nom)</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">are</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">equal.</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">system</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">invS2</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">can</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">be</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">unnormalized</SPAN>
+
+   <SPAN CLASS="syntax11">distlfr</SPAN><SPAN CLASS="syntax18">(</SPAN>invS,<SPAN CLASS="syntax11">unnormalize</SPAN><SPAN CLASS="syntax18">(</SPAN>invS2<SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">)</SPAN>
+</PRE></BODY>
+</HTML>
+

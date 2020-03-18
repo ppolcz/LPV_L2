@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="manually generated">
+   <meta name="keywords" content="lft, lfr, toolbox, lfrt, gain, scheduling, matlab, tutorial, robustness, multimodel, order reduction, pole assignment, observer">
+   <meta name="description" content="Tutorial for using the Linear Fractional Representation Toolbox.">
+
+<title>LFRT tutorial: introduction</title>
+<link rel="stylesheet" href="../green.css" type="text/css">
+</head>
+
+<body text="#330000" bgcolor="#cccccc" link="#000000" vlink="#000000" alink="#000000">
+
+<center><table class="bod"><tr><td>
+
+<a name="top"></a>
+<h1>LFRT version 2.0 for <span class="matlab">Matlab</span>: introduction</h1>
+
+<p><hr></p>
+
+<ul>
+   <li><span class="focus">Introduction</span>
+   <ul>
+       <li><a class="intext" href="#introduction">Introduction</a></li>
+       <li><a class="intext" href="#definition">Definitions</a></li>
+   </ul></li>
+   <li><a class="intext" href="basicfunctions.html">Basic functions</a></li>
+   <li><a class="intext" href="realization.html">Realization</a></li>
+   <li><a class="intext" href="ordereduction.html">Order reduction</a></li>
+   <li><a class="intext" href="approximation.html">Approximation</a></li>
+   <li><a class="intext" href="modelling.html">Modelling a missile</a></li>
+   <li><a class="intext" href="muanalysis.html">&micro;-analysis</a></li>
+</ul>
+</p>
+
+
+January 2006.
+
+<p><table class = "button"><tr>
+   <td class = "button"><a href="../index.html">INDEX</a></td>
+   <td class = "button"><a href="../m_lfrt_doc/lfrt.html">FUNCTIONS</a></td>
+</tr></table></p>
+
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="introduction"></a>
+<h3>Introduction</h3>
+
+<p>
+With this toolbox, LFR-objects (for a definition, <a class="intext" href="#definition">see below</a>) are created:
+<ul>
+  <li>By <a class="intext" href="basicfunctions.html ">combination of 1-by-1 LFR-objects</a> (object oriented realization)</li>
+  <li>By direct <a class="intext" href="realization.html ">realization of symbolic objects</a></li>
+  <li>From numerical data by interpolation</li>
+</ul>
+</p>
+
+<p>
+This toolbox proposes <a class="intext" href="ordereduction.html ">order reduction</a>
+and <a class="intext" href="approximation.html ">approximation</a> tools for after
+are realization.
+</p>
+
+<p>
+It is also possible to consider nonlinear systems, for example the
+continuum of linearized models can be modelled as an LFR-object. This problem is
+addressed considering a simplified <a class="intext" href="modelling.html ">missile model</a>.
+</p>
+
+<p>
+LFR-objects can be used in particular for <a class="intext" href="muanalysis.html ">&micro;-analysis</a>.
+</p>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+
+
+<!-- ================================================================ -->
+<p><hr></p>
+<a name="definition"></a>
+<h3>Definitions</h3>
+
+<p>
+<i>LFT</i>: <b>L</b>inear <b>F</b>ractional <b>T</b>ransformation
+<br>
+<i>LFR</i>: <b>L</b>inear <b>F</b>ractional <b>R</b>epresentation
+</p>
+
+<p>
+<i>State-space representation</i> = <i>realization</i> of a transfer function matrix <tt>G(s)</tt>
+</p>
+
+<center>
+<table><tr><td>
+<img src="images/ssr_fig.png" width="206" hight="248" alt="SSR">
+</td><td>
+<img src="images/ssr_text.png" width="129" hight="53" alt="SSR">
+</td></tr></table>
+</center>
+<p>
+<i>Linear fractional representation</i> = <i>realization</i> of a symbolic expression <tt>G(s,&delta;<sui>1</sui>,&delta;<sui>2</sui>,...)</tt>
+</p>
+
+<center>
+<table><tr><td>
+<img src="images/lfr_fig.png" width="248" hight="345" alt="LFR">
+</td><td>
+<img src="images/lfr_text1.png">
+<br>
+<img src="images/lfr_text2.png">
+</td></tr></table>
+</center>
+
+<p><table class = "button"><tr><td class = "button"><a href="#">TOP</a></td></tr></table></p>
+<!-- ================================================================ -->
+
+</td></tr></table></center>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body></html>

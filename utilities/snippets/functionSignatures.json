@@ -1,0 +1,65 @@
+{
+    "pcz_createLibFunction": {
+        "inputs": [
+            {
+                "kind": "required",
+                "name": "Matlab script",
+                "type": "filepath=*"
+            }
+        ]
+    },
+    "pcz_createLibFunction2": {
+        "inputs": [
+            {
+                "kind": "required",
+                "name": "Matlab script",
+                "type": "filepath=*"
+            }
+        ]
+    },
+    "pcz_createScript": {
+        "inputs": [
+            {
+                "kind": "required",
+                "name": "Matlab script",
+                "type": "filepath=*"
+            }
+        ]
+    },
+    "pcs": {
+        "inputs": [
+            {
+                "kind": "required",
+                "name": "Matlab script",
+                "type": "filepath=*"
+            }
+        ]
+    },
+    "pcz_createClass": {
+        "inputs": [
+            {
+                "kind": "required",
+                "name": "Matlab script",
+                "type": "filepath=*"
+            }
+        ]
+    },
+    "pcz_createSnippet": {
+        "inputs": [
+            {
+                "kind": "required",
+                "name": "Matlab script",
+                "type": "filepath=*"
+            }
+        ]
+    },
+    "pcz_createFunction": {
+        "inputs": [
+            {
+                "kind": "required",
+                "name": "Matlab script",
+                "type": "filepath=*"
+            }
+        ]
+    }
+}

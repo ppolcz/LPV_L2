@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>ex_2_5.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Illustration</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">lower</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">LFT</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">(standard</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">feedback</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">but</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">which</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">removes</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">inputs/outputs)</SPAN>
+
+   G <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">rlfr</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">4</SPAN>,<SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">5</SPAN>,<SPAN CLASS="syntax5">6</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">d_</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+   K <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax9">rand</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Feedback</SPAN>
+
+   Gfb <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax9">zeros</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">0</SPAN>,<SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax10">feedback</SPAN><SPAN CLASS="syntax18">(</SPAN>G,K,<SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax9">zeros</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">0</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Results</SPAN>
+
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>Gfb<SPAN CLASS="syntax18">)</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">new</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">system</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">has</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">no</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">longer</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">inputs</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">outputs</SPAN>
+</PRE></BODY>
+</HTML>
+

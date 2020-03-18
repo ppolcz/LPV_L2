@@ -1,0 +1,162 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools/text/LPV_L2anal_LPVTools_2020-03-17_12-07-35_i0011_output.txt
+ 
+┌ <a href="matlab:edit('')">Persist.Persist</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',19)">LPV_L2anal_LPVTools:19</a>
+│   [  [INFO]  ] Script `LPV_L2anal_LPVTools` backed up.
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',23)">LPV_L2anal_LPVTools:23</a> - [<strong>LPVTools</strong>]
+│   │    
+│   │   x_limits = [      -1.000  -90.000   -3.000
+│   │                      1.000   90.000    3.000 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',26)">LPV_L2anal_LPVTools:26</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',222)">qLPV_ipend_main:222</a>
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/LPV_L2anal_LPVTools.m',92)">LPV_L2anal_LPVTools:92</a> - [<strong>LPVTools grid based</strong>] [msg:lpvnorm]
+│   │   │   - Solver time: <strong>0.744883</strong>
+│   │   │   - <strong>gamma = Inf </strong>(lpvnorm)
+│   │   └ 0.74572 [sec]
+│   └ 1.4726 [sec]
+ls -l
+total 116
+-rw-rw-r-- 1 ppolcz ppolcz  5094 szept 16  2019 LPV_L2anal_Coutinho.m
+-rw-rw-r-- 1 ppolcz ppolcz  8030 márc  12 23:20 LPV_L2anal_Finsler.m
+-rw-rw-r-- 1 ppolcz ppolcz  3662 márc  14 10:40 LPV_L2anal_IQCToolbox.m
+-rw-rw-r-- 1 ppolcz ppolcz  4055 márc  16 15:02 LPV_L2anal_LPVTools.m
+-rw-rw-r-- 1 ppolcz ppolcz  7051 márc  13 16:11 LPV_L2anal_Masubuchi_dual.m
+-rw-rw-r-- 1 ppolcz ppolcz  7574 márc  13 16:03 LPV_L2anal_Masubuchi_primal.m
+-rw-rw-r-- 1 ppolcz ppolcz  3401 márc  12 23:51 LPV_L2anal_RCT.m
+-rw-r--r-- 1 ppolcz ppolcz   606 márc  16 14:49 LPV_L2anal_Tamas_grid.m
+-rw-rw-r-- 1 ppolcz ppolcz  1165 márc  11 13:02 LPV_quick_check_stability.m
+-rw-rw-r-- 1 ppolcz ppolcz 18461 márc  12 17:34 qLPV_ipend_javitott.m
+-rw-rw-r-- 1 ppolcz ppolcz  5588 márc  13 17:08 qLPV_ipend_LPVTools.m
+-rw-rw-r-- 1 ppolcz ppolcz 18212 márc  12 11:03 qLPV_ipend.m
+-rw-rw-r-- 1 ppolcz ppolcz  5629 márc  17 12:06 qLPV_ipend_main.m
+drwxrwxr-x 2 ppolcz ppolcz  4096 márc  14 15:23 results
+-rw-rw-r-- 1 ppolcz ppolcz   992 márc  14 15:11 store_results.m
+
+persist
+
+persist = 
+
+  <a href="matlab:helpPopup Persist" style="font-weight:bold">Persist</a> with properties:
+
+                         tags: {}
+                      pcaller: []
+                          bin: '/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/binary'
+                          mat: '/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/binary'
+                          fig: '/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/media'
+                          txt: '/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/text'
+                          log: '/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/text'
+                         file: [1×1 struct]
+                          bfn: '/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/text/qLPV_ipend_main_2020-03-17_12-07-14_i0001.m'
+                          dfn: '/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/text/qLPV_ipend_main_2020-03-17_12-07-14_i0001_output.txt'
+                    startTime: 1584443235077213
+                    b_inherit: 1
+                      logfile: ''
+                     pub_html: ''
+                  pub_dirname: 'qLPV_ipend_main_2020-03-17_12-07-14_i0001'
+                   pub_reldir: 'files/scripts/qLPV_ipend_main_2020-03-17_12-07-14_i0001'
+                   pub_absdir: '/home/ppolcz/_/8_published/users/public_html/files/scripts/qLPV_ipend_main_2020-03-17_12-07-14_i0001'
+             pub_absdir_thumb: '/home/ppolcz/_/8_published/users/public_html/files/scripts/qLPV_ipend_main_2020-03-17_12-07-14_i0001/thumb'
+                  pub_vidname: ''
+      pub_vid_poster_filename: ''
+        pub_vid_webm_filename: ''
+       pub_backup_script_path: '/home/ppolcz/_/8_published/users/public_html/files/scripts/qLPV_ipend_main_2020-03-17_12-07-14_i0001/qLPV_ipend_main.m'
+    pub_backup_script_relpath: 'files/scripts/qLPV_ipend_main_2020-03-17_12-07-14_i0001/qLPV_ipend_main.m'
+                      simname: 'results'
+                  font_axis08: {'FontSize'  [8]  'FontName'  'TeX Gyre Schola Math'}
+                  font_axis10: {'FontSize'  [10]  'FontName'  'TeX Gyre Schola Math'}
+                  font_axis12: {'FontSize'  [12]  'FontName'  'TeX Gyre Schola Math'}
+                  font_axis14: {'FontSize'  [14]  'FontName'  'TeX Gyre Schola Math'}
+                  font_axis18: {'FontSize'  [18]  'FontName'  'TeX Gyre Schola Math'}
+                  font_axis22: {'FontSize'  [22]  'FontName'  'TeX Gyre Schola Math'}
+                  font_axis26: {'FontSize'  [26]  'FontName'  'TeX Gyre Schola Math'}
+                font_latex18c: {1×10 cell}
+                  font_latex8: {'interpreter'  'latex'  'FontSize'  [8]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                 font_latex10: {'interpreter'  'latex'  'FontSize'  [10]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                 font_latex12: {'interpreter'  'latex'  'FontSize'  [12]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                 font_latex14: {'interpreter'  'latex'  'FontSize'  [14]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                 font_latex16: {'interpreter'  'latex'  'FontSize'  [16]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                 font_latex18: {'interpreter'  'latex'  'FontSize'  [18]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                 font_latex22: {'interpreter'  'latex'  'FontSize'  [22]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                 font_latex26: {'interpreter'  'latex'  'FontSize'  [26]  'FontName'  'TeX Gyre Schola Math'  'Color'  [0 0 0]}
+                   font_latex: {'interpreter'  'latex'}
+                            G: [1×1 struct]
+                        fname: 'workspace/3_ipend_qLPV/qLPV_ipend_main'
+                 fname_active: '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m'
+                        fdate: '2020.03.17. Tuesday, 12:07:14'
+                         date: '2020-03-17_12-07-14'
+                        runID: '0001'
+                  runID_dates: [2×4 table]
+                        stamp: '2020-03-17_12-07-14_i0001'
+
+edit PersistStandalone.m
+edit pglobals.m
+edit Persist.m
+pcz_output2log('/home/ppolcz/_/8_published/LPV_L2/results/log/workspace/3_ipend_qLPV/qLPV_ipend_main/text/qLPV_ipend_main_2020-03-17_12-07-14_i0001_output.txt')
+edit PersistStandalone.m
+edit Logger.m
+
+ans =
+
+    '/tmp/Editor/LiveEditorEvaluationHelperESectionEval55145218'
+
+Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Logger')" style="font-weight:bold">Logger</a>
+Error: <a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/log/Logger.m',1,10)">File: Logger.m Line: 1 Column: 10
+</a>Class name and filename do not agree.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('qLPV_ipend_main', '/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m', 19)" style="font-weight:bold">qLPV_ipend_main</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV/qLPV_ipend_main.m',19,0)">line 19</a>)
+logger = Logger(mfilename('fullpath'));
+
+{Index exceeds the number of array elements (5544).
+
+Error in matlab.internal.editor.evaluateCode
+} 
+{Index exceeds the number of array elements (5544).
+
+Error in matlab.internal.editor.evaluateCode
+} 
+
+ans =
+
+    'LiveEditorEvaluationHelperESectionEval55145218'
+
+qLPV_ipend_main
+
+ans =
+
+    'qLPV_ipend_main'
+
+ls -l
+total 116
+-rw-rw-r-- 1 ppolcz ppolcz  5094 szept 16  2019 LPV_L2anal_Coutinho.m
+-rw-rw-r-- 1 ppolcz ppolcz  8030 márc  12 23:20 LPV_L2anal_Finsler.m
+-rw-rw-r-- 1 ppolcz ppolcz  3662 márc  14 10:40 LPV_L2anal_IQCToolbox.m
+-rw-rw-r-- 1 ppolcz ppolcz  4055 márc  16 15:02 LPV_L2anal_LPVTools.m
+-rw-rw-r-- 1 ppolcz ppolcz  7051 márc  13 16:11 LPV_L2anal_Masubuchi_dual.m
+-rw-rw-r-- 1 ppolcz ppolcz  7574 márc  13 16:03 LPV_L2anal_Masubuchi_primal.m
+-rw-rw-r-- 1 ppolcz ppolcz  3401 márc  12 23:51 LPV_L2anal_RCT.m
+-rw-r--r-- 1 ppolcz ppolcz   606 márc  16 14:49 LPV_L2anal_Tamas_grid.m
+-rw-rw-r-- 1 ppolcz ppolcz  1165 márc  11 13:02 LPV_quick_check_stability.m
+-rw-rw-r-- 1 ppolcz ppolcz 18461 márc  12 17:34 qLPV_ipend_javitott.m
+-rw-rw-r-- 1 ppolcz ppolcz  5588 márc  13 17:08 qLPV_ipend_LPVTools.m
+-rw-rw-r-- 1 ppolcz ppolcz 18212 márc  12 11:03 qLPV_ipend.m
+-rw-rw-r-- 1 ppolcz ppolcz  5557 márc  17 12:40 qLPV_ipend_main.m
+drwxrwxr-x 2 ppolcz ppolcz  4096 márc  14 15:23 results
+-rw-rw-r-- 1 ppolcz ppolcz   992 márc  14 15:11 store_results.m
+
+pcz_headerComment qLPV_ipend_main
+
+ans =
+
+     1
+
+{Unrecognized function or variable 'proot'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_headerComment', '/home/ppolcz/_/8_published/LPV_L2/utilities/snippets/pcz_headerComment.m', 19)" style="font-weight:bold">pcz_headerComment</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/snippets/pcz_headerComment.m',19,0)">line 19</a>)
+    dir = strrep(pwd,proot,'');
+} 
+cd
+
+/home/ppolcz/_/8_published/LPV_L2/workspace/3_ipend_qLPV
+
+logger = Logger('qLPV_ipend_main.log');

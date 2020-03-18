@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>ex_5_1.m</TITLE>
+<STYLE TYPE="text/css"><!--
+.syntax0 {
+color: #000000;
+}
+.syntax1 {
+background: #ffffcc;
+color: #ff3333;
+}
+.syntax2 {
+background: #ffffcc;
+color: #ff0033;
+}
+.syntax3 {
+color: #6600cc;
+}
+.syntax4 {
+color: #cc6600;
+}
+.syntax5 {
+color: #990099;
+}
+.syntax6 {
+color: #9966ff;
+}
+.syntax7 {
+background: #ffffcc;
+color: #ff0066;
+}
+.syntax8 {
+color: #cc0000;
+font-weight: bold;
+}
+.syntax9 {
+color: #009900;
+font-weight: bold;
+}
+.syntax10 {
+color: #ff9900;
+font-weight: bold;
+}
+.syntax11 {
+color: #3333ff;
+font-weight: bold;
+}
+.syntax12 {
+color: #02b902;
+}
+.syntax13 {
+color: #ff00cc;
+}
+.syntax14 {
+color: #ff9999;
+}
+.syntax15 {
+color: #ff99ff;
+}
+.syntax16 {
+color: #ff0033;
+font-weight: bold;
+}
+.syntax17 {
+color: #9999ff;
+font-weight: bold;
+}
+.syntax18 {
+color: #003333;
+font-weight: bold;
+}
+-->
+</STYLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<PRE><SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">This</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">example</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">illustrates</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">modelling</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">of</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">a</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">full</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">dynamic</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">uncertainty</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">block</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">The</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">lfr</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">offers</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">an</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">option</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">for</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">defining</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">full</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">blocks</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">with</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">frequency</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">domain</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">bounds.</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">However,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">this</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">feature</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">not</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">already</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">interfaced</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">with</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">MATLAB</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">functions,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">therefore,</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">it</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">is</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">suggested</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">build</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">normalized</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">full</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">blocks</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">to</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">add</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">manually</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">weighting</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">function</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">W(s).</SPAN>
+<SPAN CLASS="syntax2">%</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">+---[W]---[Delta]---+</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">|</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">|</SPAN>
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">------&gt;o-------------------+---[M]---&gt;</SPAN>
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">An</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">lfr-system</SPAN>
+   M <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">rlfr</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">5</SPAN>,<SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">3</SPAN>,<SPAN CLASS="syntax5">4</SPAN>,<SPAN CLASS="syntax5">4</SPAN>,<SPAN CLASS="syntax5">4</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">m</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Weightings</SPAN>
+   W <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">ss</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax11">tf</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">30</SPAN> <SPAN CLASS="syntax5">100</SPAN><SPAN CLASS="syntax18">]</SPAN>,<SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">1</SPAN> <SPAN CLASS="syntax5">100</SPAN><SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">^</SPAN><SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">*</SPAN><SPAN CLASS="syntax9">eye</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Full</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">complex</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">block</SPAN>
+   Delta <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax11">lfr</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">Delta</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax13">'</SPAN><SPAN CLASS="syntax13">ltifc</SPAN><SPAN CLASS="syntax13">'</SPAN>,<SPAN CLASS="syntax18">[</SPAN><SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">]</SPAN><SPAN CLASS="syntax18">)</SPAN>;
+
+<SPAN CLASS="syntax2">%</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Now</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">we</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">put</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">in</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">series</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">M</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">and</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">the</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">identity</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">with</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">feedback</SPAN><SPAN CLASS="syntax2"> </SPAN><SPAN CLASS="syntax2">Delta*W</SPAN>
+   sys <SPAN CLASS="syntax18">=</SPAN> <SPAN CLASS="syntax10">feedback</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax11">lfr</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax9">eye</SPAN><SPAN CLASS="syntax18">(</SPAN><SPAN CLASS="syntax5">2</SPAN>,<SPAN CLASS="syntax5">2</SPAN><SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">)</SPAN>,Delta<SPAN CLASS="syntax18">*</SPAN>W,<SPAN CLASS="syntax5">1</SPAN><SPAN CLASS="syntax18">)</SPAN><SPAN CLASS="syntax18">*</SPAN>M;
+   <SPAN CLASS="syntax9">size</SPAN><SPAN CLASS="syntax18">(</SPAN>sys<SPAN CLASS="syntax18">)</SPAN>
+
+</PRE></BODY>
+</HTML>
+
