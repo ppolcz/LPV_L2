@@ -1,0 +1,146 @@
+[  INFO  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0325224218.txt
+ 
+┌ model2_ipend
+│   Model parameters:
+│   
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   k = 5
+│   I = 1.3333
+│   State and input bounds:
+│   
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   OK   ] A(p) was stable in all sample points
+│    
+│   ┌ method3_IQC_LFT_IQCToolbox:11 - IQCToolbox
+
+ Solver for linear objective minimization under LMI constraints 
+
+ Iterations   :    Best objective value so far 
+ 
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+     9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    26
+    27
+    28
+    29
+    30
+    31
+    32
+    33
+    34
+    35
+    36
+    37
+    38
+    39
+    40
+    41                 863.295881
+    42                 128.529326
+    43                 128.529326
+    44                 128.529326
+    45                 128.529326
+    46                  95.625303
+    47                  95.625303
+    48                  79.963300
+    49                  79.963300
+    50                  73.188861
+    51                  73.188861
+    52                  73.188861
+    53                  34.979298
+    54                  34.979298
+    55                  29.404775
+    56                  29.404775
+    57                  29.404775
+    58                  17.090871
+    59                  17.090871
+    60                  17.090871
+    61                  10.847540
+    62                  10.847540
+    63                  10.847540
+    64                   6.975810
+    65                   6.975810
+    66                   6.975810
+    67                   5.016314
+    68                   5.016314
+    69                   5.016314
+    70                   3.987766
+    71                   3.987766
+    72                   3.987766
+    73                   3.987766
+    74                   1.677453
+    75                   1.677453
+* switching to QR
+    76                   1.677453
+    77                   1.616965
+    78                   1.616965
+    79                   1.616965
+    80                   1.428739
+    81                   1.428739
+    82                   1.380422
+    83                   1.380422
+    84                   1.341020
+    85                   1.341020
+    86                   1.324502
+    87                   1.324502
+    88                   1.314654
+    89                   1.314654
+    90                   1.310953
+    91                   1.310953
+***                 new lower bound:     1.302708
+
+ Result:  feasible solution of required accuracy
+          best objective value:     1.310953
+          guaranteed relative accuracy:  6.29e-03
+          f-radius saturation:  25.206% of R =  1.00e+09 
+ 
+Elapsed time is 21.018636 seconds.
+1 uncertainty block(s)-
+
+	1. LTVS Block
+		Pole: -2 -2 -2
+		Length: 2 2 2
+		Relax: 1
+		Active: 1
+
+IQC problem solutions-
+
+	tmin: 
+	gopt: 1.144969e+00
+	Scaling: {0x0 cell}
+	Lyap: [23x23 double]
+	tgplot: [0x0 double]
+
+│   └ 22.9235 [sec]
+└ 23.6479 [sec]

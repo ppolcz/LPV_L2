@@ -171,6 +171,12 @@ methods (Access = public)
             
     [X,Y] = adapt_channels(X,Y)
 
+
+    function name = name_full(N)
+        args_str = strjoin(cellfun(@(v) {char(v)}, num2cell(N.vars)),',');
+        name = sprintf('%s(%s)', N.name, args_str);
+    end
+    
     function ret = issym(N)
         ret = ~isempty(N.symbolic);
     end

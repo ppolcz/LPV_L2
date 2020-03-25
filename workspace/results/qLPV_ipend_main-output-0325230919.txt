@@ -1,0 +1,33 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0325230919.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Model parameters:
+│   
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   k = 5
+│   I = 1.3333
+│   State and input bounds:
+│   
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m')">method2_descriptor_dual</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',171)">model2_ipend:171</a>
+{Unable to resolve the name M_plfr.m1.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method2_descriptor_dual', '/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m', 66)" style="font-weight:bold">method2_descriptor_dual</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m',66,0)">line 66</a>)
+m1 = M_plfr.m1;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model2_ipend', '/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m', 171)" style="font-weight:bold">model2_ipend</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',171,0)">line 171</a>)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
+} 
+opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m',66,0)
+model2_ipend

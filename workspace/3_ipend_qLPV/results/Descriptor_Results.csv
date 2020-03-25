@@ -1,3 +1,0 @@
-Stamp|x1_max|x2_max|x3_max|Lower|Upper|Solver_Time|Solver_info|Method|Use_MinLFR
-2020.03.18. Wednesday, 08:45:54|0.1|8|1|0.308859440274282|1234567890|190.211569|Successfully solved (MOSEK)|primal|1
-2020.03.18. Wednesday 09:18:00|0.1|8|1|2.35856321964398e-154|0|2.774894|User terminated (MOSEK)|primal|1

@@ -1,0 +1,2 @@
+Model|Stamp|Lower|Upper|Solver_Time|Solver_info|Method
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 22:42:40 2228|0|1.14496858469432|21.018619|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs

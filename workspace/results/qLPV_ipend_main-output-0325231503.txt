@@ -1,0 +1,1235 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0325231503.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Model parameters:
+│   
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   k = 5
+│   I = 1.3333
+│   State and input bounds:
+│   
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m')">method2_descriptor_primal</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │   1. corner (0,0,0) of R
+│   │   
+│   │       1.1. Combination nr. 1:
+│   │           1.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       1.2. Combination nr. 2:
+│   │           1.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       1.3. Combination nr. 3:
+│   │           1.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           1.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       1.4. Combination nr. 4:
+│   │           1.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       1.5. Combination nr. 5:
+│   │           1.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       1.6. Combination nr. 6:
+│   │           1.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           1.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       1.7. Combination nr. 7:
+│   │           1.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           1.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       1.8. Combination nr. 8:
+│   │           1.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           1.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       1.9. Combination nr. 9:
+│   │           1.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           1.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           1.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           1.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       1.10. Combination nr. 10:
+│   │           1.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       1.11. Combination nr. 11:
+│   │           1.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       1.12. Combination nr. 12:
+│   │           1.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           1.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       1.13. Combination nr. 13:
+│   │           1.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       1.14. Combination nr. 14:
+│   │           1.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       1.15. Combination nr. 15:
+│   │           1.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           1.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       1.16. Combination nr. 16:
+│   │           1.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           1.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       1.17. Combination nr. 17:
+│   │           1.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           1.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       1.18. Combination nr. 18:
+│   │           1.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           1.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           1.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           1.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       1.19. Combination nr. 19:
+│   │           1.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           1.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       1.20. Combination nr. 20:
+│   │           1.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           1.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       1.21. Combination nr. 21:
+│   │           1.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           1.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           1.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           1.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       1.22. Combination nr. 22:
+│   │           1.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           1.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       1.23. Combination nr. 23:
+│   │           1.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           1.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       1.24. Combination nr. 24:
+│   │           1.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           1.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           1.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           1.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       1.25. Combination nr. 25:
+│   │           1.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           1.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           1.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           1.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       1.26. Combination nr. 26:
+│   │           1.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           1.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           1.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           1.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       1.27. Combination nr. 27:
+│   │           1.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           1.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           1.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           1.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           1.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           1.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           1.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           1.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+│   │   2. corner (0,0,1) of R
+│   │   
+│   │       2.1. Combination nr. 1:
+│   │           2.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       2.2. Combination nr. 2:
+│   │           2.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       2.3. Combination nr. 3:
+│   │           2.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           2.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       2.4. Combination nr. 4:
+│   │           2.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       2.5. Combination nr. 5:
+│   │           2.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       2.6. Combination nr. 6:
+│   │           2.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           2.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       2.7. Combination nr. 7:
+│   │           2.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           2.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       2.8. Combination nr. 8:
+│   │           2.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           2.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       2.9. Combination nr. 9:
+│   │           2.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           2.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           2.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           2.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       2.10. Combination nr. 10:
+│   │           2.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       2.11. Combination nr. 11:
+│   │           2.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       2.12. Combination nr. 12:
+│   │           2.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           2.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       2.13. Combination nr. 13:
+│   │           2.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       2.14. Combination nr. 14:
+│   │           2.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       2.15. Combination nr. 15:
+│   │           2.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           2.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       2.16. Combination nr. 16:
+│   │           2.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           2.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       2.17. Combination nr. 17:
+│   │           2.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           2.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       2.18. Combination nr. 18:
+│   │           2.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           2.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           2.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           2.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       2.19. Combination nr. 19:
+│   │           2.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           2.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       2.20. Combination nr. 20:
+│   │           2.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           2.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       2.21. Combination nr. 21:
+│   │           2.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           2.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           2.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           2.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       2.22. Combination nr. 22:
+│   │           2.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           2.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       2.23. Combination nr. 23:
+│   │           2.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           2.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       2.24. Combination nr. 24:
+│   │           2.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           2.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           2.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           2.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       2.25. Combination nr. 25:
+│   │           2.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           2.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           2.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           2.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       2.26. Combination nr. 26:
+│   │           2.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           2.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           2.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           2.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       2.27. Combination nr. 27:
+│   │           2.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           2.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           2.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           2.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           2.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           2.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           2.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           2.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+│   │   3. corner (0,1,0) of R
+│   │   
+│   │       3.1. Combination nr. 1:
+│   │           3.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       3.2. Combination nr. 2:
+│   │           3.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       3.3. Combination nr. 3:
+│   │           3.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           3.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       3.4. Combination nr. 4:
+│   │           3.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       3.5. Combination nr. 5:
+│   │           3.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       3.6. Combination nr. 6:
+│   │           3.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           3.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       3.7. Combination nr. 7:
+│   │           3.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           3.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       3.8. Combination nr. 8:
+│   │           3.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           3.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       3.9. Combination nr. 9:
+│   │           3.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           3.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           3.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           3.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       3.10. Combination nr. 10:
+│   │           3.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       3.11. Combination nr. 11:
+│   │           3.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       3.12. Combination nr. 12:
+│   │           3.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           3.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       3.13. Combination nr. 13:
+│   │           3.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       3.14. Combination nr. 14:
+│   │           3.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       3.15. Combination nr. 15:
+│   │           3.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           3.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       3.16. Combination nr. 16:
+│   │           3.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           3.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       3.17. Combination nr. 17:
+│   │           3.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           3.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       3.18. Combination nr. 18:
+│   │           3.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           3.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           3.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           3.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       3.19. Combination nr. 19:
+│   │           3.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           3.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       3.20. Combination nr. 20:
+│   │           3.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           3.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       3.21. Combination nr. 21:
+│   │           3.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           3.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           3.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           3.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       3.22. Combination nr. 22:
+│   │           3.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           3.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       3.23. Combination nr. 23:
+│   │           3.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           3.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       3.24. Combination nr. 24:
+│   │           3.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           3.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           3.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           3.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       3.25. Combination nr. 25:
+│   │           3.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           3.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           3.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           3.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       3.26. Combination nr. 26:
+│   │           3.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           3.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           3.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           3.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       3.27. Combination nr. 27:
+│   │           3.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           3.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           3.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           3.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           3.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           3.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           3.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           3.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+│   │   4. corner (0,1,1) of R
+│   │   
+│   │       4.1. Combination nr. 1:
+│   │           4.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       4.2. Combination nr. 2:
+│   │           4.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       4.3. Combination nr. 3:
+│   │           4.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           4.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       4.4. Combination nr. 4:
+│   │           4.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       4.5. Combination nr. 5:
+│   │           4.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       4.6. Combination nr. 6:
+│   │           4.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           4.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       4.7. Combination nr. 7:
+│   │           4.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           4.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       4.8. Combination nr. 8:
+│   │           4.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           4.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       4.9. Combination nr. 9:
+│   │           4.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           4.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           4.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           4.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       4.10. Combination nr. 10:
+│   │           4.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       4.11. Combination nr. 11:
+│   │           4.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       4.12. Combination nr. 12:
+│   │           4.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           4.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       4.13. Combination nr. 13:
+│   │           4.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       4.14. Combination nr. 14:
+│   │           4.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       4.15. Combination nr. 15:
+│   │           4.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           4.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       4.16. Combination nr. 16:
+│   │           4.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           4.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       4.17. Combination nr. 17:
+│   │           4.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           4.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       4.18. Combination nr. 18:
+│   │           4.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           4.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           4.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           4.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       4.19. Combination nr. 19:
+│   │           4.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           4.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       4.20. Combination nr. 20:
+│   │           4.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           4.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       4.21. Combination nr. 21:
+│   │           4.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           4.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           4.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           4.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       4.22. Combination nr. 22:
+│   │           4.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           4.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       4.23. Combination nr. 23:
+│   │           4.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           4.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       4.24. Combination nr. 24:
+│   │           4.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           4.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           4.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           4.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       4.25. Combination nr. 25:
+│   │           4.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           4.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           4.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           4.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       4.26. Combination nr. 26:
+│   │           4.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           4.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           4.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           4.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       4.27. Combination nr. 27:
+│   │           4.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           4.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           4.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           4.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           4.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           4.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           4.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           4.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+│   │   5. corner (1,0,0) of R
+│   │   
+│   │       5.1. Combination nr. 1:
+│   │           5.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       5.2. Combination nr. 2:
+│   │           5.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       5.3. Combination nr. 3:
+│   │           5.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           5.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       5.4. Combination nr. 4:
+│   │           5.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       5.5. Combination nr. 5:
+│   │           5.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       5.6. Combination nr. 6:
+│   │           5.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           5.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       5.7. Combination nr. 7:
+│   │           5.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           5.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       5.8. Combination nr. 8:
+│   │           5.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           5.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       5.9. Combination nr. 9:
+│   │           5.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           5.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           5.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           5.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       5.10. Combination nr. 10:
+│   │           5.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       5.11. Combination nr. 11:
+│   │           5.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       5.12. Combination nr. 12:
+│   │           5.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           5.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       5.13. Combination nr. 13:
+│   │           5.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       5.14. Combination nr. 14:
+│   │           5.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       5.15. Combination nr. 15:
+│   │           5.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           5.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       5.16. Combination nr. 16:
+│   │           5.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           5.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       5.17. Combination nr. 17:
+│   │           5.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           5.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       5.18. Combination nr. 18:
+│   │           5.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           5.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           5.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           5.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       5.19. Combination nr. 19:
+│   │           5.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           5.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       5.20. Combination nr. 20:
+│   │           5.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           5.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       5.21. Combination nr. 21:
+│   │           5.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           5.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           5.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           5.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       5.22. Combination nr. 22:
+│   │           5.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           5.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       5.23. Combination nr. 23:
+│   │           5.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           5.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       5.24. Combination nr. 24:
+│   │           5.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           5.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           5.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           5.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       5.25. Combination nr. 25:
+│   │           5.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           5.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           5.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           5.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       5.26. Combination nr. 26:
+│   │           5.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           5.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           5.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           5.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       5.27. Combination nr. 27:
+│   │           5.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           5.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           5.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           5.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           5.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           5.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           5.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           5.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+│   │   6. corner (1,0,1) of R
+│   │   
+│   │       6.1. Combination nr. 1:
+│   │           6.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       6.2. Combination nr. 2:
+│   │           6.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       6.3. Combination nr. 3:
+│   │           6.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           6.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       6.4. Combination nr. 4:
+│   │           6.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       6.5. Combination nr. 5:
+│   │           6.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       6.6. Combination nr. 6:
+│   │           6.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           6.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       6.7. Combination nr. 7:
+│   │           6.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           6.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       6.8. Combination nr. 8:
+│   │           6.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           6.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       6.9. Combination nr. 9:
+│   │           6.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           6.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           6.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           6.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       6.10. Combination nr. 10:
+│   │           6.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       6.11. Combination nr. 11:
+│   │           6.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       6.12. Combination nr. 12:
+│   │           6.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           6.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       6.13. Combination nr. 13:
+│   │           6.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       6.14. Combination nr. 14:
+│   │           6.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       6.15. Combination nr. 15:
+│   │           6.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           6.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       6.16. Combination nr. 16:
+│   │           6.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           6.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       6.17. Combination nr. 17:
+│   │           6.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           6.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       6.18. Combination nr. 18:
+│   │           6.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           6.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           6.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           6.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       6.19. Combination nr. 19:
+│   │           6.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           6.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       6.20. Combination nr. 20:
+│   │           6.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           6.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       6.21. Combination nr. 21:
+│   │           6.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           6.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           6.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           6.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       6.22. Combination nr. 22:
+│   │           6.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           6.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       6.23. Combination nr. 23:
+│   │           6.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           6.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       6.24. Combination nr. 24:
+│   │           6.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           6.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           6.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           6.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       6.25. Combination nr. 25:
+│   │           6.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           6.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           6.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           6.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       6.26. Combination nr. 26:
+│   │           6.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           6.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           6.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           6.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       6.27. Combination nr. 27:
+│   │           6.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           6.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           6.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           6.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           6.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           6.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           6.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           6.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+│   │   7. corner (1,1,0) of R
+│   │   
+│   │       7.1. Combination nr. 1:
+│   │           7.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       7.2. Combination nr. 2:
+│   │           7.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       7.3. Combination nr. 3:
+│   │           7.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           7.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       7.4. Combination nr. 4:
+│   │           7.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       7.5. Combination nr. 5:
+│   │           7.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       7.6. Combination nr. 6:
+│   │           7.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           7.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       7.7. Combination nr. 7:
+│   │           7.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           7.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       7.8. Combination nr. 8:
+│   │           7.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           7.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       7.9. Combination nr. 9:
+│   │           7.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           7.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           7.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           7.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       7.10. Combination nr. 10:
+│   │           7.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       7.11. Combination nr. 11:
+│   │           7.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       7.12. Combination nr. 12:
+│   │           7.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           7.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       7.13. Combination nr. 13:
+│   │           7.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       7.14. Combination nr. 14:
+│   │           7.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       7.15. Combination nr. 15:
+│   │           7.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           7.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       7.16. Combination nr. 16:
+│   │           7.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           7.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       7.17. Combination nr. 17:
+│   │           7.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           7.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       7.18. Combination nr. 18:
+│   │           7.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           7.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           7.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           7.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       7.19. Combination nr. 19:
+│   │           7.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           7.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       7.20. Combination nr. 20:
+│   │           7.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           7.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       7.21. Combination nr. 21:
+│   │           7.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           7.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           7.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           7.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       7.22. Combination nr. 22:
+│   │           7.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           7.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       7.23. Combination nr. 23:
+│   │           7.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           7.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       7.24. Combination nr. 24:
+│   │           7.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           7.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           7.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           7.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       7.25. Combination nr. 25:
+│   │           7.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           7.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           7.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           7.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       7.26. Combination nr. 26:
+│   │           7.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           7.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           7.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           7.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       7.27. Combination nr. 27:
+│   │           7.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           7.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           7.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           7.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           7.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           7.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           7.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           7.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+│   │   8. corner (1,1,1) of R
+│   │   
+│   │       8.1. Combination nr. 1:
+│   │           8.1.1. Corner points of term  1: (0,0,0) and (0,0,0)
+│   │    
+│   │       8.2. Combination nr. 2:
+│   │           8.2.1. Corner points of term  1: (0,0,1) and (0,0,1)
+│   │    
+│   │       8.3. Combination nr. 3:
+│   │           8.3.1. Corner points of term  1: (0,0,0) and (0,0,1)
+│   │           8.3.2. Corner points of term  2: (0,0,1) and (0,0,0)
+│   │    
+│   │       8.4. Combination nr. 4:
+│   │           8.4.1. Corner points of term  1: (0,1,0) and (0,1,0)
+│   │    
+│   │       8.5. Combination nr. 5:
+│   │           8.5.1. Corner points of term  1: (0,1,1) and (0,1,1)
+│   │    
+│   │       8.6. Combination nr. 6:
+│   │           8.6.1. Corner points of term  1: (0,1,0) and (0,1,1)
+│   │           8.6.2. Corner points of term  2: (0,1,1) and (0,1,0)
+│   │    
+│   │       8.7. Combination nr. 7:
+│   │           8.7.1. Corner points of term  1: (0,0,0) and (0,1,0)
+│   │           8.7.2. Corner points of term  2: (0,1,0) and (0,0,0)
+│   │    
+│   │       8.8. Combination nr. 8:
+│   │           8.8.1. Corner points of term  1: (0,0,1) and (0,1,1)
+│   │           8.8.2. Corner points of term  2: (0,1,1) and (0,0,1)
+│   │    
+│   │       8.9. Combination nr. 9:
+│   │           8.9.1. Corner points of term  1: (0,0,0) and (0,1,1)
+│   │           8.9.2. Corner points of term  2: (0,0,1) and (0,1,0)
+│   │           8.9.3. Corner points of term  3: (0,1,0) and (0,0,1)
+│   │           8.9.4. Corner points of term  4: (0,1,1) and (0,0,0)
+│   │    
+│   │       8.10. Combination nr. 10:
+│   │           8.10.1. Corner points of term  1: (1,0,0) and (1,0,0)
+│   │    
+│   │       8.11. Combination nr. 11:
+│   │           8.11.1. Corner points of term  1: (1,0,1) and (1,0,1)
+│   │    
+│   │       8.12. Combination nr. 12:
+│   │           8.12.1. Corner points of term  1: (1,0,0) and (1,0,1)
+│   │           8.12.2. Corner points of term  2: (1,0,1) and (1,0,0)
+│   │    
+│   │       8.13. Combination nr. 13:
+│   │           8.13.1. Corner points of term  1: (1,1,0) and (1,1,0)
+│   │    
+│   │       8.14. Combination nr. 14:
+│   │           8.14.1. Corner points of term  1: (1,1,1) and (1,1,1)
+│   │    
+│   │       8.15. Combination nr. 15:
+│   │           8.15.1. Corner points of term  1: (1,1,0) and (1,1,1)
+│   │           8.15.2. Corner points of term  2: (1,1,1) and (1,1,0)
+│   │    
+│   │       8.16. Combination nr. 16:
+│   │           8.16.1. Corner points of term  1: (1,0,0) and (1,1,0)
+│   │           8.16.2. Corner points of term  2: (1,1,0) and (1,0,0)
+│   │    
+│   │       8.17. Combination nr. 17:
+│   │           8.17.1. Corner points of term  1: (1,0,1) and (1,1,1)
+│   │           8.17.2. Corner points of term  2: (1,1,1) and (1,0,1)
+│   │    
+│   │       8.18. Combination nr. 18:
+│   │           8.18.1. Corner points of term  1: (1,0,0) and (1,1,1)
+│   │           8.18.2. Corner points of term  2: (1,0,1) and (1,1,0)
+│   │           8.18.3. Corner points of term  3: (1,1,0) and (1,0,1)
+│   │           8.18.4. Corner points of term  4: (1,1,1) and (1,0,0)
+│   │    
+│   │       8.19. Combination nr. 19:
+│   │           8.19.1. Corner points of term  1: (0,0,0) and (1,0,0)
+│   │           8.19.2. Corner points of term  2: (1,0,0) and (0,0,0)
+│   │    
+│   │       8.20. Combination nr. 20:
+│   │           8.20.1. Corner points of term  1: (0,0,1) and (1,0,1)
+│   │           8.20.2. Corner points of term  2: (1,0,1) and (0,0,1)
+│   │    
+│   │       8.21. Combination nr. 21:
+│   │           8.21.1. Corner points of term  1: (0,0,0) and (1,0,1)
+│   │           8.21.2. Corner points of term  2: (0,0,1) and (1,0,0)
+│   │           8.21.3. Corner points of term  3: (1,0,0) and (0,0,1)
+│   │           8.21.4. Corner points of term  4: (1,0,1) and (0,0,0)
+│   │    
+│   │       8.22. Combination nr. 22:
+│   │           8.22.1. Corner points of term  1: (0,1,0) and (1,1,0)
+│   │           8.22.2. Corner points of term  2: (1,1,0) and (0,1,0)
+│   │    
+│   │       8.23. Combination nr. 23:
+│   │           8.23.1. Corner points of term  1: (0,1,1) and (1,1,1)
+│   │           8.23.2. Corner points of term  2: (1,1,1) and (0,1,1)
+│   │    
+│   │       8.24. Combination nr. 24:
+│   │           8.24.1. Corner points of term  1: (0,1,0) and (1,1,1)
+│   │           8.24.2. Corner points of term  2: (0,1,1) and (1,1,0)
+│   │           8.24.3. Corner points of term  3: (1,1,0) and (0,1,1)
+│   │           8.24.4. Corner points of term  4: (1,1,1) and (0,1,0)
+│   │    
+│   │       8.25. Combination nr. 25:
+│   │           8.25.1. Corner points of term  1: (0,0,0) and (1,1,0)
+│   │           8.25.2. Corner points of term  2: (0,1,0) and (1,0,0)
+│   │           8.25.3. Corner points of term  3: (1,0,0) and (0,1,0)
+│   │           8.25.4. Corner points of term  4: (1,1,0) and (0,0,0)
+│   │    
+│   │       8.26. Combination nr. 26:
+│   │           8.26.1. Corner points of term  1: (0,0,1) and (1,1,1)
+│   │           8.26.2. Corner points of term  2: (0,1,1) and (1,0,1)
+│   │           8.26.3. Corner points of term  3: (1,0,1) and (0,1,1)
+│   │           8.26.4. Corner points of term  4: (1,1,1) and (0,0,1)
+│   │    
+│   │       8.27. Combination nr. 27:
+│   │           8.27.1. Corner points of term  1: (0,0,0) and (1,1,1)
+│   │           8.27.2. Corner points of term  2: (0,0,1) and (1,1,0)
+│   │           8.27.3. Corner points of term  3: (0,1,0) and (1,0,1)
+│   │           8.27.4. Corner points of term  4: (0,1,1) and (1,0,0)
+│   │           8.27.5. Corner points of term  5: (1,0,0) and (0,1,1)
+│   │           8.27.6. Corner points of term  6: (1,0,1) and (0,1,0)
+│   │           8.27.7. Corner points of term  7: (1,1,0) and (0,0,1)
+│   │           8.27.8. Corner points of term  8: (1,1,1) and (0,0,0)
+│   │    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1249            
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 224             
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.01    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1249            
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 224             
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 1249
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 224               scalarized             : 26648           
+Factor     - setup time             : 0.38              dense det. time        : 0.00            
+Factor     - ML order time          : 0.04              GP order time          : 0.00            
+Factor     - nonzeros before factor : 7.81e+05          after factor           : 7.81e+05        
+Factor     - dense dim.             : 0                 flops                  : 1.65e+09        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   6.3e+01  4.0e+00  2.6e+02  0.00e+00   1.023999935e+03   0.000000000e+00   1.0e+00  0.60  
+1   2.9e+01  1.9e+00  1.1e+02  -5.72e-01  7.525656464e+02   -7.915904670e-01  4.7e-01  4.95  
+2   1.9e+00  1.2e-01  1.5e+01  -1.00e-01  7.417189053e+01   -2.785691814e+00  3.0e-02  9.31  
+3   3.2e-02  2.0e-03  3.7e+00  1.04e+00   -1.661052930e+00  -2.840641241e+00  5.0e-04  13.68 
+4   8.2e-03  5.2e-04  3.4e+00  1.91e+00   -7.781974870e-01  -9.487747970e-01  1.3e-04  18.05 
+5   4.1e-03  2.6e-04  2.1e+00  1.19e+00   -7.451634410e-01  -8.303627208e-01  6.6e-05  22.31 
+6   2.6e-03  1.6e-04  1.5e+00  1.00e+00   -7.453060671e-01  -7.999124228e-01  4.1e-05  26.57 
+7   9.4e-04  5.9e-05  8.2e-01  9.87e-01   -7.577728052e-01  -7.780573415e-01  1.5e-05  30.84 
+8   9.0e-05  5.7e-06  2.3e-01  9.31e-01   -7.645018476e-01  -7.665891713e-01  1.4e-06  35.19 
+9   1.3e-05  8.5e-07  7.6e-02  8.19e-01   -7.643975637e-01  -7.647436843e-01  2.1e-07  39.57 
+10  2.1e-06  1.3e-07  2.9e-02  9.81e-01   -7.645767671e-01  -7.646315319e-01  3.2e-08  48.18 
+11  1.9e-07  1.2e-08  8.9e-03  9.98e-01   -7.646022822e-01  -7.646070985e-01  2.7e-09  52.55 
+12  1.2e-07  7.6e-09  7.1e-03  1.00e+00   -7.646006481e-01  -7.646037562e-01  1.8e-09  56.84 
+13  4.0e-08  1.1e-09  2.8e-03  1.00e+00   -7.645954183e-01  -7.645958858e-01  2.5e-10  61.20 
+14  3.9e-08  1.1e-09  2.7e-03  1.00e+00   -7.645951164e-01  -7.645955525e-01  2.4e-10  65.49 
+15  3.5e-08  8.1e-10  2.0e-03  1.00e+00   -7.645924466e-01  -7.645926844e-01  1.5e-10  69.77 
+16  3.0e-08  1.9e-09  1.2e-03  1.00e+00   -7.645892151e-01  -7.645892986e-01  6.1e-11  74.10 
+17  3.0e-08  1.9e-09  1.2e-03  1.00e+00   -7.645892151e-01  -7.645892986e-01  6.1e-11  78.67 
+Optimizer terminated. Time: 78.89   
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -7.6458921508e-01   nrm: 3e+00    Viol.  con: 1e-05    barvar: 0e+00  
+  Dual.    obj: -7.6458929860e-01   nrm: 6e+03    Viol.  con: 0e+00    barvar: 6e-09  
+Optimizer summary
+  Optimizer                 -                        time: 78.89   
+    Interior-point          - iterations : 18        time: 78.84   
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - Saved to workspace: X
+│   │   gamma = 0.87441
+│   │   solver_time = 79.5403
+│   │   - Successfully solved (MOSEK)
+│   │   X(p1,p2,p3) = 1 * X0 + p1 * X1 + p2 * X2 + p3 * X3 + p1*p2 * X4 + p1*p3 * X5 + p2*p3 * X6 + p1*p2*p3 * X7
+│   │    
+│   │   X0 = [      -85.2 -19.927    18.9       0       0       0       0       0       0       0       0       0       0
+│   │             -19.927  15.429  3.2034       0       0       0       0       0       0       0       0       0       0
+│   │                18.9  3.2034  3.7968       0       0       0       0       0       0       0       0       0       0
+│   │             -603.75  -96.78  221.26  2.2201 -8.3292  98.982  52.047 -269.77  79.507  499.11 -342.27  164.53 -76.725
+│   │              816.04  152.34 -63.544  10.155  0.9499  3.9832  60.596 -89.216  763.68  161.36  52.401 -1009.9  107.16
+│   │             -57.708 -141.44 -200.86 -78.914  24.547  87.553  172.91 -390.91 -311.48 -59.079  -159.7 -35.074 -15.226
+│   │              199.86  -94.84 -148.66 -24.957 -32.246  -3.935 -65.938  90.561   63.43  130.43 -45.128 -23.044 -372.92
+│   │             -559.52  -120.6  264.18  212.62  3.4284  8.0321  20.386  14.188 -666.21 -60.268 -52.049  124.31  323.84
+│   │              77.978  630.75  58.147 -117.79  39.069  105.72  -9.471 -0.6355  969.87  32.257   376.6   -2239 -256.19
+│   │             -120.45  390.96 -223.82 -259.82 -69.732 -18.838 -17.249  10.339 -18.966 -141.82  771.07  -1.956 -118.64
+│   │             -100.79 -267.34  17.997  378.66 -52.128 -4.5148   26.09  44.118   67.79 -360.45 -147.27  651.36  200.83
+│   │             -514.71  301.49 -207.52 -287.49  536.75  11.261  -3.425   37.07 -352.84 -730.79 -81.685  2100.5 -551.69
+│   │              568.11  315.47 -386.93  195.08  6.7693   6.424  12.896  6.9299  33.157  97.597 -36.692 -66.677  1462.8 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │    
+│   │   X1 = [     89.855  22.073 -20.366       0       0       0       0       0       0       0       0       0       0
+│   │              22.073  0.5139 -3.5307       0       0       0       0       0       0       0       0       0       0
+│   │             -20.366 -3.5307 -0.0239       0       0       0       0       0       0       0       0       0       0
+│   │              634.84   81.69 -343.32 -1.5212 -500.16 -200.88 -9.3837 -2.1393 -1902.9 -101.03 -304.55 -1873.9  1076.6
+│   │             -865.71 -235.22  72.327  497.91  -0.028 -199.88  91.297  1.5649 -1482.4 -978.13  429.26  2678.7 -515.24
+│   │              61.359  129.33  201.54  181.07  169.51 -83.641 -167.75  367.31  221.97  84.254  201.99  193.72  40.843
+│   │             -173.81  111.88  146.88 -7.1837 -112.37 -5.2431  43.451 -135.37 -63.979 -132.25  16.332 -126.65  380.93
+│   │              569.94  89.577 -279.89  58.242  90.457 -16.728  22.127  66.336  690.27  67.543  0.9432 -141.16 -376.33
+│   │             -78.145 -900.67  -58.98  1940.8  659.33 -27.153   9.163 -1.8012 -929.09 -2.9846 -649.66  2796.5  291.46
+│   │              124.14 -342.05  216.06 -144.88  883.03 -6.1013  14.423 -17.237 -11.031  136.91 -654.43  729.36  106.75
+│   │              107.58  177.93 -32.711  243.46 -492.04  -49.42  12.112 -27.656 -59.191  291.67  56.251 -1269.8  30.576
+│   │              548.03 -483.23  205.95  1638.7 -2133.7 -35.532  48.535  26.541  337.99  581.42  122.33 -3218.4  990.02
+│   │             -584.11 -187.18  381.67 -1199.6  395.97 -32.101  -10.67  38.242  -62.74 -84.961 -61.116 -74.374 -1373.5 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │    
+│   │   X2 = [     89.888  22.524 -19.963       0       0       0       0       0       0       0       0       0       0
+│   │              22.524 -1.2256 -4.2487       0       0       0       0       0       0       0       0       0       0
+│   │             -19.963 -4.2487 -0.4612       0       0       0       0       0       0       0       0       0       0
+│   │              703.03  147.26 -663.65 -1.5049 -97.242 -198.78 -21.898 -27.008 -1467.7  -438.2  686.49  112.71  189.09
+│   │             -842.23 -219.69 -70.501  95.046 -0.0208  -211.8   64.18   39.57 -2282.7 -1063.8  675.91    1368 -281.96
+│   │              241.89  313.41  363.82     160  155.18 -196.86   223.5 -221.16  1281.5  344.24 -31.117  642.62  2890.9
+│   │             -275.93  229.29  244.79 -71.826 -112.88 -588.65  133.33  79.287  317.95 -143.58  315.83  736.28  724.77
+│   │              646.64  237.33  -404.9  150.69  146.15  1039.3 -249.65 -127.11    1017  934.75  536.12  716.73 -1672.3
+│   │             -229.23 -1348.1 -63.283  1808.4  681.26 -818.06 -289.34  298.18 -1997.5 -1063.9 -1055.7 -1311.3 -2967.6
+│   │              290.31 -737.14  433.94 -42.724  868.98 -167.11 -81.489 -918.69  1048.8  289.61 -936.57 -1502.2 -1311.8
+│   │              192.76  666.78 -24.185 -706.14 -720.81  393.71 -256.16  -510.9 -284.99  175.07  536.38  380.64 -1235.6
+│   │              594.87 -131.83   932.9   206.7 -349.18 -753.28 -681.17 -1027.8  5596.8  2884.1 -1005.2 -1802.8  1281.4
+│   │             -1109.3 -588.44  951.49 -430.61  18.035 -2945.2 -174.05  1538.7  3893.1  1434.2   972.6 -470.61 -3158.7 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │    
+│   │   X3 = [      8.919  15.611 -2.9554       0       0       0       0       0       0       0       0       0       0
+│   │              15.611 -18.677 -2.5583       0       0       0       0       0       0       0       0       0       0
+│   │             -2.9554 -2.5583  7.8941       0       0       0       0       0       0       0       0       0       0
+│   │              226.76  293.35  -478.7 -5.3812  16.677  38.305 -130.19  -115.6 -393.01 -243.56   100.3 -1896.4 -167.58
+│   │              5.9123 -198.11 -318.56 -25.205 -3.0991 -30.342 -91.503  87.428 -687.46 -188.89 -168.56 -685.51  35.008
+│   │              -225.6  107.59  -192.7  -5.668  8.6019 -28.773  39.435  32.888 -291.82 -233.54  139.35  613.98  227.77
+│   │             -448.33 -20.413  27.202 -4.1031  4.6209 -5.9608 -33.268  -83.58 -42.673 -151.66 -34.309  148.04  256.42
+│   │              930.03  117.76  -214.9  -6.252 -4.0586 -13.011  7.6584  297.91  363.16  30.844 -120.81  51.733 -855.94
+│   │              77.824 -584.49 -166.77  131.51  264.18   76.97  -34.66  26.308  1406.7 -157.35 -434.83  2313.4  712.13
+│   │               32.34  69.233 -369.51   70.54 -61.934  12.755 -18.782  65.519  55.985 -261.79 -412.11 -151.48  132.03
+│   │              183.31 -370.28 -411.86  58.016  61.908 -29.073 -12.009  23.065  220.66  249.46 -588.61  1366.4 -840.47
+│   │             -175.19  0.0039  340.67  50.195  38.589 -117.94  26.545  19.396 -438.82  370.75 -205.06  54.056  84.452
+│   │             -282.62 -253.41  12.004  70.829  81.784 -101.33 -211.46  406.47  120.08 -12.528  86.275 -170.98  3.0392 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │    
+│   │   X4 = [    -93.406 -23.009  20.582       0       0       0       0       0       0       0       0       0       0
+│   │             -23.009  1.2032  4.2828       0       0       0       0       0       0       0       0       0       0
+│   │              20.582  4.2828  0.3092       0       0       0       0       0       0       0       0       0       0
+│   │             -650.88 -369.59  318.89  1.6943  550.15  214.69 -44.298 -2.4553  1924.1  192.17 -908.95 -100.67 -1141.9
+│   │              895.86  590.26 -65.281 -548.57  0.4698  206.53 -98.507  10.778  1537.9  993.04 -420.63 -1187.7  566.11
+│   │             -247.03 -308.23 -381.41 -182.62 -173.55  188.73 -200.64   272.1 -1240.7 -345.29  54.918 -605.71 -2786.9
+│   │              234.64 -259.42 -241.32    69.1  123.58  572.14 -92.727  46.677 -313.84   147.3 -348.55 -817.18 -748.87
+│   │             -655.72 -278.66  409.38 -96.751 -111.25 -1025.3  125.55 -7.9055 -1039.6 -954.05 -597.47 -762.29  1797.9
+│   │              236.59  1387.5  64.569 -1859.5 -707.62  824.23  279.59 -312.41  1944.2    1020    1085  1332.3  3004.6
+│   │              -298.5  787.04 -423.66  42.378  -890.9  156.37   87.66  938.59 -1005.4 -281.92  992.77    1589  1294.1
+│   │             -208.77 -711.71   24.94  707.36  832.35 -421.87   275.5  566.08   215.4 -178.47 -577.68 -286.81  1225.9
+│   │             -646.82  151.82 -948.58  -339.7  401.45  738.68   765.6  1159.5 -5896.6 -2953.1  1008.2  1985.2 -1353.9
+│   │              1134.9  414.06 -948.49  1272.5 -441.15  2840.1  176.97 -1654.3   -3873   -1442 -1187.5   55.42    2968 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │    
+│   │   X5 = [    -9.4186 -15.829  3.0534       0       0       0       0       0       0       0       0       0       0
+│   │             -15.829  19.078  2.8295       0       0       0       0       0       0       0       0       0       0
+│   │              3.0534  2.8295 -7.8292       0       0       0       0       0       0       0       0       0       0
+│   │             -230.63 -294.69  667.22   5.393  1299.4 -67.682  391.04  788.27  724.86  789.31  3084.3  1146.6  173.77
+│   │             -4.4984  385.67  228.52 -1290.9  2.9567 -236.52  55.993  152.28  2124.9  573.12  1639.8    69.3  -36.58
+│   │              228.85 -114.82  209.87  34.164  256.69  30.147 -39.523 -11.672  277.36  303.21 -127.37 -293.52 -230.72
+│   │              452.78  58.432 -22.874 -253.92  30.634  4.7606  35.225   65.69  97.141  163.92  103.74 -141.99 -253.14
+│   │             -943.08 -25.166  212.82 -663.86 -230.33 -10.268  10.979 -307.88  -409.2 -135.47  210.69 -207.53   867.3
+│   │             -77.622   628.8  175.91 -463.28 -1715.8 -15.588 -20.371  5.0853 -1365.4  75.243  442.19 -2509.9 -763.54
+│   │             -34.912 -22.499  357.57  -481.5 -385.98 -68.301  14.486  33.293  31.162  253.83  226.76  -218.6 -160.36
+│   │             -186.76  827.62   462.1 -3235.4 -1345.8  10.414 -18.081 -17.102 -181.71  19.648    1050 -2329.8  855.93
+│   │              177.43 -236.69 -243.49  1644.8   602.2 -24.516  -8.875 -39.861 -360.53  -250.7  18.914  372.06 -82.014
+│   │              287.39  258.29 -10.849 -71.678   -82.5  102.11  213.63 -410.04 -118.06  10.502 -87.182  172.52 -3.3733 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │    
+│   │   X6 = [    -10.542 -16.013  4.1424       0       0       0       0       0       0       0       0       0       0
+│   │             -16.013  18.562   1.435       0       0       0       0       0       0       0       0       0       0
+│   │              4.1424   1.435 -9.2675       0       0       0       0       0       0       0       0       0       0
+│   │              -390.4 -442.99  748.21  5.4907  129.96 -94.402  504.95  936.64  1492.3  613.04  1162.7  2081.1  285.77
+│   │             -57.838  130.18  612.89 -120.79  2.9658 -228.69    87.6  155.84    2739  916.58  1057.8   966.4  -164.6
+│   │              272.41 -158.87  1030.2  15.544  265.16  52.977 -211.54 -350.98  1600.1  1049.4  -966.8 -1412.6 -274.96
+│   │              400.33 -90.855  74.644 -242.02  71.876  133.29  85.968  388.89 -67.215  322.63  -260.1 -806.07    -117
+│   │              -933.2 -184.13 -24.379 -648.74 -291.83  301.61 -325.44 -506.09 -143.39 -790.55 -689.14 -941.11  1026.2
+│   │              14.481  1158.7 -405.22 -1023.1 -1804.6 -1201.8  144.63 -688.62 -2995.1 -1835.7 -1221.9 -1406.6 -1594.5
+│   │              -152.4 -317.04  467.53 -278.41 -448.78 -215.84  46.521  452.42  1535.5  328.22  80.689 -1042.8 -206.01
+│   │             -289.04  373.77  624.38 -1500.5 -1019.6  773.29  298.27     843  2094.1 -22.968  596.39  50.605  1516.4
+│   │              119.74     127 -559.23  839.71  356.67  270.03   571.9   682.2 -974.04   576.6 -896.39 -1081.8  141.74
+│   │               283.3  264.01 -9.8649 -72.086 -82.953  103.64  213.24 -414.42 -97.871  42.266 -88.609  176.26 -2.7663 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   │    
+│   │   X7 = [     11.009  16.194  -4.242       0       0       0       0       0       0       0       0       0       0
+│   │              16.194 -18.947 -1.6893       0       0       0       0       0       0       0       0       0       0
+│   │              -4.242 -1.6893  9.2083       0       0       0       0       0       0       0       0       0       0
+│   │              266.82  93.715 -823.47 -5.7316 -1381.9  43.096  -384.8 -779.65 -1015.1 -668.12 -1543.2 -789.02 -189.81
+│   │             -1.1039 -437.45 -216.83  1373.1 -3.2908  242.44 -33.728 -192.67 -2217.1    -620 -1402.9 -108.23  32.253
+│   │             -282.02  192.93 -1046.8 -11.128 -269.98 -55.888  226.43   369.1 -1702.4 -1110.3  1015.1  1455.5  284.18
+│   │             -399.04  85.487 -74.115  248.62 -66.734 -140.55 -94.135 -403.71  55.009 -326.91  255.56  835.12  101.86
+│   │              944.71   188.5  26.001  660.75  296.25 -317.77   342.1  538.01  12.367  799.67  707.99  957.38 -1060.6
+│   │             -23.497 -969.46  399.74  957.77  1762.3  1272.3 -118.14  712.35  2821.8  1787.9  1445.8  1420.6  1746.6
+│   │              136.25  330.21 -430.64  278.12   431.9   264.3 -27.624 -458.75 -1490.7 -302.18 -65.947  927.64   246.6
+│   │              292.68 -400.01 -620.37  1523.4  1056.5  -782.6 -301.36 -881.82 -1898.7  21.803 -627.23 -65.677 -1556.7
+│   │             -127.15 -138.48  356.45  -801.2 -356.64 -285.39 -567.23 -666.84  889.49 -776.49  933.01  1176.3 -253.24
+│   │             -288.26 -269.36  8.9875  73.059  83.967 -104.66 -215.51  417.83  95.994 -40.699  89.839 -177.99  3.3411 ]
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_primal.m',309)">method2_descriptor_primal:309</a>
+│   │   - <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',170)">model2_ipend:170</a>
+│   └ 94.356 [sec]
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m')">method2_descriptor_dual</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',171)">model2_ipend:171</a>
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1249            
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 224             
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.01            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.02    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1249            
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 224             
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 1249
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 224               scalarized             : 26648           
+Factor     - setup time             : 0.39              dense det. time        : 0.00            
+Factor     - ML order time          : 0.04              GP order time          : 0.00            
+Factor     - nonzeros before factor : 7.81e+05          after factor           : 7.81e+05        
+Factor     - dense dim.  

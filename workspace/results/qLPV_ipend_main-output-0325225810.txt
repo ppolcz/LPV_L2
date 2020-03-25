@@ -1,0 +1,28 @@
+[  [INFO]  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0325225810.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Model parameters:
+│   
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   k = 5
+│   I = 1.3333
+│   State and input bounds:
+│   
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+{Unrecognized function or variable 'Use_MinLFR'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model2_ipend', '/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m', 171)" style="font-weight:bold">model2_ipend</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',171,0)">line 171</a>)
+LPV_L2anal_Masubuchi_dual(A_fh,B_fh,C_fh,D_fh,Use_MinLFR,xw_lim,p_expr,p_lim,dp_lim)
+} 
+opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',171,0)
+model2_ipend

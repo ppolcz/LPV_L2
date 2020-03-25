@@ -47,19 +47,15 @@ if nargin==0
     
     [gam,~]=lpvL2gain(lpvsys,pargrd,Pbase,Pbase_der,gammin);
     return
-end;
+end
     
 %% Initialization
 
 if ~exist('gammin','var'), gammin=1e-5; end;
 
 % generating the parameter grid
-pgrd=multigrid(pargrd{:})
+pgrd=multigrid(pargrd{:});
 sizeofgrd=size(pgrd,1); 
-
-pgrd(1,:)
-Pbase
-Pbase(pgrd(1,:))
 
 % initialization of some variables
 nbf=length(Pbase(pgrd(1,:)));
@@ -75,7 +71,7 @@ yalmip('clear');
 Pvars=cell(1,nbf); 
 for i=1:nbf
     Pvars{i}=sdpvar(nx);
-end;
+end
 gam2=sdpvar(1);
 Cons=posdef(gam2-gammin*gammin);
 
@@ -91,10 +87,10 @@ for k=1:sizeofgrd
     for i=1:nbf
         P=P+bf(i)*Pvars{i};
         Pdot=Pdot+bfdot(i)*Pvars{i};
-    end;
+    end
     BRL=-[Pdot+P*A+A'*P+C'*C P*B+C'*D; B'*P+D'*C D'*D-gam2*eye(nw)];
     Cons=[Cons, posdef(P), posdef(BRL)];
-end;
+end
 
 % calling the solver
 fprintf('\nCalling the solver..............');
@@ -106,17 +102,17 @@ if sol.problem ~= 0
     fprintf('\n    Something went wrong, but we check the results though!');
 else
     fprintf('OK (T=%6.2f)',telapsed);
-end;
+end
 gam=sqrt(double(gam2)); 
 for i=1:nbf
     Pvars{i}=double(Pvars{i});
-end;
+end
 
 
 fprintf('\nChecking the result.............');
 [pres,dres]=check(Cons);
 msg='OK';
-if any(pres<0) ||  any(dres<0), 
+if any(pres<0) ||  any(dres<0)
     for k=1:sizeofgrd
         [A,B,C,D]=lpvsys(pgrd(k,:));
         bf=Pbase(pgrd(k,:));
@@ -125,14 +121,14 @@ if any(pres<0) ||  any(dres<0),
         for i=1:nbf
             P=P+bf(i)*Pvars{i};
             Pdot=Pdot+bfdot(i)*Pvars{i};
-        end;
+        end
         BRL=-[Pdot+P*A+A'*P+C'*C P*B+C'*D; B'*P+D'*C D'*D-gam^2*eye(nw)];
         if any(eig(P)<0) || any(eig(BRL)<0), 
             msg='FAILED'; 
             break;
-        end;
-    end;
-end;
+        end
+    end
+end
 fprintf('%s\n',msg);
 fprintf('Gamma value:  %6.4f\n',gam);
 

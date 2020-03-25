@@ -1,8 +1,0 @@
-Version 2.0 pre 1 released on January 26, 2006
-Authors: S. Hecker, J.F. Magni, A. Varga
-
-Version 2.1 released on April 1, 2014
-Revision: C. Roos (ONERA)
-Modification of symtreed.m and sym2lfr.m to ensure compatibility with MuPAD symbolic engine
-Creation of power.m, rdivide.m and times.m
-

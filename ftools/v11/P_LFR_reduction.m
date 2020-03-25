@@ -196,7 +196,8 @@ Pi0 = Ir * tPi0;
 
 pF = eye(p) - pDelta*pD;
 pG = -pDelta*pC;
-pPi = simplify(-pF\pG*x);
+pPI = simplify(-pF\pG);
+pPi = simplify(pPI*x);
 pEq = pA*x + pB*pPi;
 pcz_symeq_report(tEq,pEq, 'Equation of the permuted model should be the same')
 
@@ -206,6 +207,7 @@ lfr_reduced.LFR_permuted.C = pC;
 lfr_reduced.LFR_permuted.D = pD;
 lfr_reduced.LFR_permuted.M = [pA pB ; pC pD];
 lfr_reduced.LFR_permuted.Delta = pDelta;
+lfr_reduced.LFR_permuted.PI = pPI;
 lfr_reduced.LFR_permuted.Pi = pPi;
 lfr_reduced.LFR_permuted.Permutation_Matrix = Is;
 
@@ -253,7 +255,9 @@ I = eye(k);
 F = I - Delta*D;
 G = -Delta*C;
 % Pi = simplify(-F\G*x)
+PI = pPI(1:k,:);
 Pi = pPi(1:k,:);
+PI_b = [ eye(n) ; PI ];
 Pib = [ x ; Pi ];
 Eq = A*x + B*Pi;
 
@@ -275,7 +279,7 @@ pcz_symeq_report(tEq,Eq,1e-5,'Equation of the reduced model should be the same')
 
 LFR_reduced = struct;
 lfr_reduced.LFR_reduced = pcz_struct_append(LFR_reduced,...
-    A,B,C,D,M,Delta,Pi,S,Gamma);
+    A,B,C,D,M,Delta,PI,PI_b,Pi,Pib,S,Gamma);
 
 % pcz_dispFunctionStackTrace
 
