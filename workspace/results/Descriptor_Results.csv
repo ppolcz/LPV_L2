@@ -3,3 +3,4 @@ ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:00:43 2231|0|0.8744023769
 ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:02:52 2232|0|0.874205468815763|92.97434|Successfully solved (MOSEK)|dual explicit LMI form
 ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:12:16 2234|0|0.874205468815763|93.478502|Successfully solved (MOSEK)|dual explicit LMI form
 ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:16:38 2235|0|0.874407970344914|79.540306|Successfully solved (MOSEK)|primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:18:26 2235|0|0.87440237696179|97.15744|Successfully solved (MOSEK)|dual condensed LMI form
