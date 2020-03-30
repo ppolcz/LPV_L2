@@ -136,7 +136,7 @@ pdp_lim = [
     ];
 
 % Check stability in random point
-check_stability(A_fh, B_fh, C_fh, D_fh, p_lim)
+helper_check_stability(A_fh, B_fh, C_fh, D_fh, p_lim)
 
 % Give some nice domains, where the rational matrices are well-defined and
 % on which the numerical computations will be performed (minimal generator
@@ -153,127 +153,53 @@ pdp_lims_comp = [
     -1 1
     ];
 
+%% Basis functions for the grid-based methods
+
+bases = [
+                   1
+                  p1
+                  p2
+                  p3
+ -(p1*p2)/(p2^2 - 7)
+      -p1/(p2^2 - 7)
+      -p2/(p2^2 - 7)
+     p2^2/(p2^2 - 7)
+ -(p2*p3)/(p2^2 - 7)
+      -p3/(p2^2 - 7)
+    ];
+
+bases_Jac = jacobian(bases,p);
+
+
 %%
+
+method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
+
+% Greedy grid 
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[5 5 5]');
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[15 15 15]');
+
+% As proposed by Wu (1995,1996)
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[5 5 5]','delta',1e-4,'T',10000);
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[5 5 5]','delta',1e-3,'T',1000);
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[5 5 5]','delta',1e-2,'T',100);
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[5 5 5]','delta',1e-1,'T',100);
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[5 5 5]','delta',1e-2,'T',10);
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',[5 5 5]','delta',1e-1,'T',10);
+
+method2_descriptor_primal(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,1)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
+
+% IQC/LFT approaches for LPV with rate-bounded parameters
+method3_IQC_LFT_IQCToolbox(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+
+method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,xw_lim,p_expr,p_lim,dp_lim,p_lims_comp,pdp_lims_comp);
 
 % Imported variables to the base workspace: Q, dQ, PI_x, gamma
-% method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,p_expr);
-
-
-% method0_grid_author(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,[5 5 5])
-% method0_grid_author(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,[10 10 10])
-% method0_grid_author(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,[15 15 15])
-% method0_grid_author(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,[20 20 20])
-
-% method3_IQC_LFT_IQCToolbox(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
-%
-% Use_MinLFR = 1;
-% method2_descriptor_primal(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
-% method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
-%
-% opts.lpvnorm_GRID = 1;
-% opts.Resolution = [5 5 5]';
-% opts.lpvnorm_IQC = 1;
-% opts.lpvwcgain_IQC = 1;
-% LPV_L2anal_LPVTools(A_fh,B_fh,C_fh,D_fh,xw_lim,p_lim,dp_lim,opts);
-%
-% opts.lpvnorm_GRID = 1;
-% opts.Resolution = [5 5 5]';
-% opts.Resolution = [10 10 10]';
-% opts.Resolution = [15 15 15]';
-% opts.lpvnorm_IQC = 0;
-% opts.lpvwcgain_IQC = 0;
-% LPV_L2anal_LPVTools(A_fh,B_fh,C_fh,D_fh,xw_lim,p_lim,dp_lim,opts);
-%
-% LPV_L2anal_Finsler_old_symbolical(A_fh,B_fh,C_fh,D_fh,xw_lim,p_expr,p_lim,dp_lim,p_lims_comp,pdp_lims_comp);
-
-%{ 
-%%
-
-TMP_oyXrvtrEzBjWNTyEyMog = pcz_dispFunctionName('Generate iso-surface of the Lyapunov/storage function');
-
-Qx = Q.set_channels([1 p_expr.'],x);
-
-PI_x_subs = subs(PI_x(p_expr));
-
-V = matlabFunction(x.' * PI_x_subs.' * sym(Qx) * PI_x_subs * x);
-
-resolution = [
-    55
-    55
-    55
-    ];
-
-xw_lim = xw_lim(1:nx,:);
-lspace = cellfun(@(o) {linspace(o{:})+eps}, num2cell(num2cell([xw_lim resolution]),2));
-xx = cell(1,nx);
-[xx{:}] = ndgrid(lspace{:});
-
-VV = V(xx{:});
-
-alpha = sdpvar;
-
-% Hard coded (Now, I am a too lazy, to find a more adequate solution)
-CONS = [
-    VV([1 end],:,:) >= alpha+eps
-    VV(:,[1 end],:) >= alpha+eps
-    VV(:,:,[1 end]) >= alpha+eps
-    ];
-
-sol_alpha = optimize(CONS,-alpha,sdpsettings('verbose',0));
-alpha = double(alpha);
-
-pcz_dispFunction2('alpha = %g', alpha)
-pcz_dispFunction2('gamma = %g', gamma)
-pcz_info('|u|_L2 < M = alpha/gamma = %g', alpha/gamma)
-
-pcz_2basews
-
-if alpha > eps
-
-    figure('Color', [1 1 1])
-    ph = patch(isosurface(xx{:},VV,alpha));
-    ph_Vertices = ph.Vertices;
-    ph_Faces = ph.Faces;
-    set(ph,'FaceColor','red','EdgeColor','none', 'FaceAlpha', 0.8);
-
-
-    axis equal
-    light('Position',[-5 0 0]),
-    view([-14 15])
-    xlabel $x_1$ interpreter latex
-    ylabel $x_2$ interpreter latex
-    zlabel $x_3$ interpreter latex
-
-    grid on
-    axlims = xw_lim';
-    axis(axlims(:)),
-    box on
-    % set(gca,'LineWidth',1)
-
-    set(gca, Logger.font_axis12{:})
-    Logger.latexify_axis(gca,20)
-    Labels = Logger.latexified_labels(gca,28,'$x_1 = v$','$x_2 = \vartheta$','$x_3 = \omega$');
-    Labels{1}.VerticalAlignment = 'middle';
-    Labels{2}.VerticalAlignment = 'bottom';
-
-    good = VV < alpha;
-    all = ones(size(VV));
-
-    VOLUME = prod(xw_lim(:,2) - xw_lim(:,1)) * ( sum(good(:))/sum(all(:)) );
-
-	pcz_dispFunction2('Approximated volume of the invariant domain: %g', VOLUME)
-
-    rotate3d on
-
-else
-
-    pcz_info(0,'Iso surface completely inside X not found')
-
-end
-
-pcz_dispFunctionEnd(TMP_oyXrvtrEzBjWNTyEyMog);
-
-%}
+method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,p_expr);
+helper_generate_isosurface_method5(Q,PI_x,gamma,p_expr,xw_lim(1:nx,:),[1,1,1]*101);
 
 %%
 

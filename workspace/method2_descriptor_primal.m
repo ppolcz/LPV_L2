@@ -1,4 +1,4 @@
-function method2_descriptor_primal(modelname, A_fh, B_fh, C, D, p_lim, dp_lim, varargin)
+function method2_descriptor_primal(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp_lim, varargin)
 %%
 %  
 %  File: LPV_L2anal_Masubuchi_dual.m
@@ -43,20 +43,16 @@ TMP_yMJTNGorRueTwiaHttwA = pcz_dispFunctionName;
 
 %% Build up a descriptor model representation
 
-% Find out np, nw and nz
-[nz,nx] = size(C);
-[~,nw] = size(D);
+[~,B_lfr,C_lfr,~,~,~,M_lfr] = helper_convert(A_fh, B_fh, C_fh, D_fh, p_lim);
+
+% Dimensions
+nx = size(B_lfr,1);
+nu = size(B_lfr,2);
+ny = size(C_lfr,1);
 np = size(p_lim,1);
 
-P_generate_symvars(nx,np,nw,nz);
-
-[~,p_lfr_cell] = pcz_generateLFRStateVector('p',p_lim);
-
-M_fh = @(varargin) [
-    A_fh(varargin{:}) , B_fh(varargin{:})
-    C                 , D
-    ];
-M_lfr = M_fh(p_lfr_cell{:});
+% Generate symbolic variables
+P_generate_symvars(nx,np,nu,ny);
 
 % Here, we use the numerical n-D order reduction proposed by
 %
@@ -65,7 +61,6 @@ M_lfr = M_fh(p_lfr_cell{:});
 % the 1997 American Control Conference (Cat. No.97CH36041), 6:3557-3561
 % vol.6, 1997.
 M_plfr = plfr(minlfr(M_lfr));
-
 m1 = M_plfr.m1;
 
 %%%
@@ -77,36 +72,20 @@ m1 = M_plfr.m1;
 %   pi = Delta eta
 %
 F = cell(3,3);
-[F{:}] = pcz_split_matrix(M_plfr.M,[nx,nz,m1],[nx,nw,m1],'RowWise',0);
+[F{:}] = pcz_split_matrix(M_plfr.M,[nx,ny,m1],[nx,nu,m1],'RowWise',0);
 Delta = M_plfr.Delta;
 
-%%%
+% Helper
+delta = diag(Delta);
+dfh = matlabFunction(delta,'vars',{p});
+
+%%
 % Descriptor model:
 %
 %   E dX = A(p) Xi + B(p) u,     where X = [ x
 %      y = C    Xi + D    u,                 pi ] in R^n
 %
 E = blkdiag(I(nx), O(m1));
-
-A_sym = [
-    F{1,1}       F{1,3}
-    Delta*F{3,1} Delta*F{3,3}-I(m1)
-    ];
-n = nx + m1;
-
-B_sym = [
-    F{1,2}
-    Delta*F{3,2}
-    ];
-
-C = [ F{2,1} F{2,3} ];
-
-D = F{2,2};
-
-%%
-
-delta = diag(Delta);
-dfh = matlabFunction(delta,'vars',{p});
 
 A = @(x) [
     F{1,1}              F{1,3}
@@ -118,10 +97,11 @@ B = @(x) [
     diag(dfh(x))*F{3,2}
     ];
 
+C = [ F{2,1} F{2,3} ];
 
-%%
+D = F{2,2};
 
-% Generate every multi-affine monoms of p
+%% Render multiaffine monoms and multiaffine decision variables
 %
 %  degree 1 monoms: p1, p2, ...
 %  degree 2 monoms: p1*p2, p1*p3, p1*p4, p2*p3, ....
@@ -149,7 +129,7 @@ nxi = 2^np;
 %        X2 X3 ], where X1 = X1'
 %
 X_Theta = cellfun(@(X1,X23) { [ X1 O(nx,m1) ; X23 ] }, ...
-    sdpvar(ones(1,nxi)*nx,ones(1,nxi)*nx,'symmetric'),...
+    sdpvar(ones(1,nxi)*nx),...
     sdpvar(ones(1,nxi)*m1,ones(1,nxi)*(nx+m1),'full'));
 
 %%%
@@ -162,10 +142,10 @@ X_Theta = cellfun(@(X1,X23) { [ X1 O(nx,m1) ; X23 ] }, ...
 %  W1 = [ 0       and  W2 = [ 0
 %         W12 ],              W22 ]
 %
-W1_Theta = cellfun(@(W) { [ O(nx,nw) ; W ] }, ...
-    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nw,'full') );
-W2_Theta = cellfun(@(W) { [ O(nx,nz) ; W ] }, ...
-    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nz,'full') );
+W1_Theta = cellfun(@(W) { [ O(nx,nu) ; W ] }, ...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*nu,'full') );
+W2_Theta = cellfun(@(W) { [ O(nx,ny) ; W ] }, ...
+    sdpvar(ones(1,nxi)*m1,ones(1,nxi)*ny,'full') );
 
 X = PGenAffineMatrix(X_Theta,xi,p);
 W1 = PGenAffineMatrix(W1_Theta,xi,p);
@@ -229,10 +209,10 @@ combs = repmat({ { {0 0} , {1 1} , num2cell([ 0 1 ; 1 0 ],1) } },[1 np]);
 combs = allcomb(combs{:});
 
 
-% Matrices of the supply function
-Pi22 = -eye(nw)*gammaSqr;
-Pi12 = 0;
-Gamma11 = eye(nz);
+% Matrices related to the supply function
+Pi22 = -eye(nu)*gammaSqr;
+Pi12 = O(ny,nu);
+Gamma11 = eye(ny);
 
 stringify1 = @(fv) sprintf('(%s)', strjoin(cellfun(@(n) {num2str(n)}, num2cell(fv)),','));
 stringify = @(fv) cellfun(@(c) {stringify1(c)}, num2cell(fv,2));
@@ -240,7 +220,7 @@ stringify = @(fv) cellfun(@(c) {stringify1(c)}, num2cell(fv,2));
 % I walk through the corner points of R
 for l = 1:Nr_Combs_dp
 
-    pcz_dispFunction2('%d. corner %s of R\n', l, stringify1(R_v_corners(l,:)))
+    % pcz_dispFunction2('%d. corner %s of R\n', l, stringify1(R_v_corners(l,:)))
 
     % Behelyettesitem dP(p,dp=vR) = dP(p), ahol vR az R egy sarokpontja.
     % Ezutan dP(p) mar csak p-tol fog fuggeni.
@@ -260,19 +240,20 @@ for l = 1:Nr_Combs_dp
         fv = allcomb(combk{:,1});
         gv = allcomb(combk{:,2});
 
-        pcz_dispFunction2('    %d.%d. Combination nr. %d:', l,k,k)
+        % pcz_dispFunction2('    %d.%d. Combination nr. %d:', l,k,k)
 
         str = cellfun(@(f,g) { [f ' and ' g] }, stringify(fv),stringify(gv));
-        for j = 1:numel(str)
-            pcz_dispFunction2('        %d.%d.%d. Corner points of term %2d: %s', l,k,j, j, str{j})
-        end
-        pcz_dispFunction2 ' '
+        
+        % for j = 1:numel(str)
+        %     pcz_dispFunction2('        %d.%d.%d. Corner points of term %2d: %s', l,k,j, j, str{j})
+        % end
+        % pcz_dispFunction2 ' '
 
         TERMS_k = cellfun( @(A,B,X,dX,W1,W2) { 
             [
             He(X'*A)+dX'*E     , X'*B+C'*Pi12+A'*W1     , C'*Gamma11+A'*W2
             B'*X+Pi12'*C+W1'*A , Pi22+He(D'*Pi12+W1'*B) , D'*Gamma11+B'*W2
-            Gamma11'*C+W2'*A   , Gamma11'*D+W2'*B       , -eye(nz)
+            Gamma11'*C+W2'*A   , Gamma11'*D+W2'*B       , -eye(ny)
             ]
             }, A_(fv), B_(fv), X_(gv), dX_(gv), W1_(gv), W2_(gv));
 
@@ -288,6 +269,8 @@ end
 
 sol = optimize(CONS,gammaSqr,sdpsettings('solver','mosek'));
 gamma = sqrt(value(gammaSqr));
+
+Overall_Time = toc(TMP_yMJTNGorRueTwiaHttwA);
 
 X = value(X);
 X.name = 'X';
@@ -309,10 +292,11 @@ for i = 1:numel(X_cell)
     pcz_dispFunction_num2str(X_cell{i}, 'format', '%7.5g','name',X_names{i})    
 end
 
-store_results('Descriptor_Results.csv', modelname, 0, gamma, sol.solvertime, ...
+
+store_results('Descriptor_Results.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
     sol.info, 'primal')
 
-store_results('Results_All.csv', modelname, 0, gamma, sol.solvertime, ...
+store_results('Results_All.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
     sol.info, 'Descriptor - primal')
 
 %%

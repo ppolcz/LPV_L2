@@ -1,4 +1,4 @@
-function store_results(fname, modelname, gamma_lower, gamma_upper, solution_time, info, method)
+function store_results(fname, modelname, gamma_lower, gamma_upper, solver_time, overall_time, info, method)
 %  
 %  File: store_results.m
 %  Directory: 8_published/LPV_L2/workspace
@@ -12,11 +12,12 @@ if ~RUN_ID
 end
 
 s.Model = modelname;
-s.Stamp = [ datestr(now, 'yyyy.mm.dd. dddd HH:MM:SS') ' ' RUN_ID ];
+s.Stamp = [ datestr(now, 'yyyy.mm.dd. dddd HH:MM:SS') ' id:' RUN_ID ];
 s.Lower = gamma_lower;
 s.Upper = gamma_upper;
-s.Solver_Time = solution_time;
-s.Solver_info = info;
+s.Solver_Time = solver_time;
+s.Overall_Time = overall_time;
+s.Solver_Info = info;
 s.Method = method;
 
 if isempty(s.Lower)
@@ -34,12 +35,15 @@ if exist(Results_csv, 'file')
 end
 
 if ~exist('Results', 'var')
-    Cols = { 'Model', 'Stamp', 'Lower', 'Upper', 'Solver_Time', 'Solver_info', 'Method' };
+    Cols = { 'Model', 'Stamp', 'Lower', 'Upper', 'Solver_Time', 'Overall_Time', 'Solver_Info', 'Method' };
     Results = cell2table(cell(0,numel(Cols)), 'VariableNames', Cols);
 end
 
 Results = [ Results ; struct2table(s) ];
 
 writetable(Results,Results_csv,'Delimiter','|');
+
+pcz_dispFunction('Results stored in `%s''', Results_csv);
+pcz_dispFunction2(evalc('disp(s)'))
 
 end

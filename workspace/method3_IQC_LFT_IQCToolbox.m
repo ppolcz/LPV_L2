@@ -8,53 +8,29 @@ function method3_IQC_LFT_IQCToolbox(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp
 %  Created on 2020. March 13. (2019b)
 %
 
-TMP_quNJgGJNllaEMSewPAvy = pcz_dispFunctionName('IQCToolbox');
-
-% Find out np, nw and nz
-[ny,nx] = size(C_fh);
-[~,nu] = size(D_fh);
-np = size(p_lim,1);
-
-% Generate symbolic lfr variables
-[~,p_cell] = pcz_generateLFRStateVector('p',p_lim);
-
-% Hack
-p_cell{1} = p_cell{1} + 1;
-p_cell{2} = p_cell{2} + 1;
-p_lim(1:2,1:2) = p_lim(1:2,1:2) - 1;
-
-
-% LFR realization of matrix A(p):
-A_lfr = A_fh(p_cell{:});
-
-% LFR realization of matrix B(p):
-B_lfr = B_fh(p_cell{:});
-
-F_lfr_initial = [
-    A_lfr B_lfr
-    C_fh  D_fh
-    ];
-
-F_lfr = minlfr(F_lfr_initial);
-% P_lfr = P_lfrdata_v6(F_lfr_initial)
-
 %%
 
-m = size(F_lfr.a,1);
+TMP_quNJgGJNllaEMSewPAvy = pcz_dispFunctionName('IQCToolbox');
+
+% Translate the parameter bounds such that the origin be in the middle.
+p_nom = sum(p_lim,2)/2;
+p_centered_lim = p_lim - p_nom;
+
+% Generate translated lfr variables
+[~,p_cell] = pcz_generateLFRStateVector('p',p_centered_lim);
+p_centered_cell = cellfun(@(p,p0) { p + p0 }, p_cell(:), num2cell(p_nom));
+
+[~,~,~,~,~,~,M_lfr,nx,~,nu,ny] = helper_convert(A_fh,B_fh,C_fh,D_fh,p_centered_cell);
+
+M_lfr = minlfr(M_lfr);
 
 Fij = [
-    F_lfr.d F_lfr.c
-    F_lfr.b F_lfr.a
+    M_lfr.d M_lfr.c
+    M_lfr.b M_lfr.a
     ];
+
 F = cell(3);
-
-F{1,1} = Fij(1:nx       ,1:nx); F{1,2} = Fij(1:nx       ,nx+1:nx+nu); F{1,3} = Fij(1:nx       ,nx+nu+1:end);
-F{2,1} = Fij(nx+1:nx+nu ,1:nx); F{2,2} = Fij(nx+1:nx+nu ,nx+1:nx+nu); F{2,3} = Fij(nx+1:nx+nu ,nx+nu+1:end);
-F{3,1} = Fij(nx+nu+1:end,1:nx); F{3,2} = Fij(nx+nu+1:end,nx+1:nx+nu); F{3,3} = Fij(nx+nu+1:end,nx+nu+1:end);
-
-% A possible shorthand:
-% [F{:}] = pcz_split_matrix(Fij, [nx nz m], [nx nw m], 'RowWise', false);
-
+[F{:}] = pcz_split_matrix(Fij,[nx,ny,Inf],[nx,nu,Inf],'RowWise',0);
 
 % In my model
 %
@@ -68,7 +44,7 @@ F{3,1} = Fij(nx+nu+1:end,1:nx); F{3,2} = Fij(nx+nu+1:end,nx+1:nx+nu); F{3,3} = F
 %  y = F31 x + F33 Pi + F32 w
 %  z = F21 x + F23 Pi + F22 w
 
-A = F{1,1} - eye(3)*eps;
+A = F{1,1} - eye(size(F{1,1}))*eps;
 
 B = [
     F{1,3} F{1,2}
@@ -88,16 +64,20 @@ M = ss(A,B,C,D);
 
 iqc = iqcpb(M);
 
-[iqc,~] = iqcuc(iqc,'ltvs',F_lfr.blk.desc(1,:),[p_lim' dp_lim'],'box');
+[iqc,~] = iqcuc(iqc,'ltvs',M_lfr.blk.desc(1,:),[p_centered_lim' dp_lim'],'box');
  
-iqc = set(iqc,1,'Pole',[-2 -2 -2]);
-iqc = set(iqc,1,'Length',[2 2 2]);
+nr_blocks = numel(M_lfr.blk.desc(1,:));
+Pole = -2 * ones(1,nr_blocks);
+Length = 2 * ones(1,nr_blocks);
+
+iqc = set(iqc,1,'Pole',Pole);
+iqc = set(iqc,1,'Length',Length);
 iqc = set(iqc,1,'Relax',1);
 iqc = set(iqc,1,'Active',1);
 
 tic
 iqc = iqcsolve(iqc);
-IQC_solution_time = toc;
+Overall_Time = toc;
 toc
 
 get(iqc)
@@ -107,10 +87,15 @@ if isempty(gamma)
     gamma = 0;
 end
 
-info = [ 'Pole: [' num2str(get(iqc,1,'Pole')) '], Length: [' num2str(get(iqc,1,'Length')) '], Relax: ' num2str(get(iqc,1,'Relax')) ', Active: ' num2str(get(iqc,1,'Active')) ];
+pcz_dispFunction(2,'Model: %s', modelname);
+pcz_dispFunction(2,'Overall time: %g', Overall_Time);
+pcz_dispFunction(2,'<strong>Gamma = %g</strong> ', gamma);
+pcz_dispFunction(' ');
 
-store_results('IQCToolbox_Results.csv',modelname,0,gamma,IQC_solution_time,info,'IQCToolbox - ltvs')
-store_results('Results_All.csv',modelname,0,gamma,IQC_solution_time,info,'IQCToolbox - ltvs')
+info = [ 'Pole: [' num2str(Pole) '], Length: [' num2str(Length) '], Relax: ' num2str(get(iqc,1,'Relax')) ', Active: ' num2str(get(iqc,1,'Active')) ];
+
+store_results('IQCToolbox_Results.csv',modelname,0,gamma,0,Overall_Time,info,'IQCToolbox - ltvs')
+store_results('Results_All.csv',modelname,0,gamma,0,Overall_Time,info,'IQCToolbox - ltvs')
 
 %%
 pcz_dispFunctionEnd(TMP_quNJgGJNllaEMSewPAvy);

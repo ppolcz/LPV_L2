@@ -1,0 +1,7 @@
+Model|Stamp|Lower|Upper|Solver_Time|Overall_Time|Solver_Info|Method
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:42:12 id:2245|0|0.871619359138664|0|311.903274|pgrid (5x5x5)x(2x2x2)|grid
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 14:17:25 id:2247|0|1.13861440358552|0|161.702266|tvreal, lpvnorm|LFT/IQC
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 14:22:15 id:2247|0.554086961035749|1.13861440358552|0|289.365685|tvreal, lpvwcgain|LFT/IQC
+simple2D_1x1_LFR|2020.03.29. Sunday 16:26:28 id:2249|0|3.34696452543098|0|0.400856|pgrid (5x5x5)x(2x2x2)|grid
+simple2D_1x1_LFR|2020.03.30. Monday 03:16:16 id:2249|0|3.34696452509642|0|0.419028|pgrid (5x5x5)x(2x2x2)|grid
+simple2D_1x1_LFR|2020.03.30. Monday 17:50:01 id:2249|0|1.33386090163055|0|0.43981|pgrid (5x5x5)x(2x2x2)|grid

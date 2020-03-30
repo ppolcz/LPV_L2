@@ -1,0 +1,109 @@
+function [A_lfr,B_lfr,C_lfr,D_lfr,AC_lfr,BD_lfr,M_lfr,nx,np,nu,ny] = helper_fh2lfr(A_fh, B_fh, C_fh, D_fh, p_lim, Class_user)
+%% helper_fh2lfr
+%
+%  File: helper_fh2lfr.m
+%  Directory: 8_published/LPV_L2/workspace
+%  Author: Peter Polcz (ppolcz@gmail.com)
+%
+%  Created on 2020. March 25. (2019b)
+%
+
+%%
+
+if ~isa(p_lim,'cell')
+    [~,p_cell] = pcz_generateLFRStateVector('p',p_lim);
+else
+    p_cell = p_lim;
+end
+
+Class = class(p_cell{1});
+if nargin > 5
+    Class = Class_user;
+end
+
+Cast = @(M) sprintf('%s(%s)',Class,inputname(1));
+
+% LFR realization of matrix A(p):
+if isdouble(A_fh)
+    A_lfr = eval(Cast(A_fh));
+elseif strcmp(Class,'lfr') && (isa(A_fh,'plfr') || isa(A_fh,'lfr'))
+    A_lfr = lfr(A_fh);
+else
+    A_lfr = A_fh(p_cell{:});
+end
+
+% LFR realization of matrix B(p):
+if isdouble(B_fh)
+    B_lfr = eval(Cast(B_fh));
+elseif strcmp(Class,'lfr') && (isa(B_fh,'plfr') || isa(B_fh,'lfr'))
+    B_lfr = lfr(B_fh);
+else
+    B_lfr = B_fh(p_cell{:});
+end
+
+% LFR realization of matrix C(p):
+if isdouble(C_fh)
+    C_lfr = eval(Cast(C_fh));
+elseif strcmp(Class,'lfr') && (isa(C_fh,'plfr') || isa(C_fh,'lfr'))
+    C_lfr = lfr(C_fh);
+else
+    C_lfr = C_fh(p_cell{:});
+end
+
+% LFR realization of matrix D(p):
+if isdouble(D_fh)
+    D_lfr = eval(Cast(D_fh));
+elseif strcmp(Class,'lfr') && (isa(D_fh,'plfr') || isa(D_fh,'lfr'))
+    D_lfr = lfr(D_fh);
+else
+    D_lfr = D_fh(p_cell{:});
+end
+
+A_lfr
+B_lfr
+C_lfr
+D_lfr
+
+
+AC_lfr = [
+    A_lfr
+    C_lfr
+    ];
+
+BD_lfr = [
+    B_lfr
+    D_lfr
+    ];
+
+M_lfr = [ AC_lfr BD_lfr ];
+
+np = numel(p_cell);
+nx = size(A_lfr,1);
+nu = size(B_lfr,2);
+ny = size(C_lfr,1);
+
+    function dstobj = convert(srcobj)
+
+        if isdouble(srcobj)
+            
+            % double -> CLASS
+            dstobj = eval(Cast(srcobj));
+            
+        elseif strcmp(Class,'lfr') && (isa(srcobj,'plfr') || isa(srcobj,'lfr'))
+        
+            % lfr|plfr -> lfr
+            dstobj = lfr(srcobj);
+            
+        elseif strcmp(Class,'plftmat') && (isa(srcobj,'plfr') || isa(srcobj,'lfr'))
+            
+            % lfr|plfr -> plftmat
+            
+        else
+            
+            % fh -> CLASS
+            % plfr -> umat
+            dstobj = srcobj(p_cell{:});
+        end
+    end
+
+end

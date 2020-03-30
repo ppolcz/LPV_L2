@@ -1,16 +1,20 @@
-function [ret] = check_stability(A_fh, B_fh, C_fh, D_fh, p_lim)
-%% LPV_quick_check_stability
-%
-%  File: LPV_quick_check_stability.m
-%  Directory: 1_PhD_projects/22_Hinf_norm/LPV_TAC_v3_newmod
-%  Author: Peter Polcz (ppolcz@gmail.com)
-%
+function [ret] = helper_check_stability(A_fh, B_fh, C_fh, D_fh, p_lim)
+% 
+%  File: helper_check_stability.m
+%  Directory: 8_published/LPV_L2/workspace
+%  Author: Peter Polcz (ppolcz@gmail.com) 
+% 
 %  Created on 2018. November 19.
+%  Major review on 2020. March 26. (2019b)
 %
 
 %%
 
-[A_fh, B_fh, C_fh, D_fh] = helper_fh2fh(A_fh, B_fh, C_fh, D_fh);
+if nargin == 5
+    [A_fh, B_fh, C_fh, D_fh] = helper_fh2fh(A_fh, B_fh, C_fh, D_fh);
+else
+    p_lim = B_fh;
+end
 
 pcz_dispFunctionSeparator
 pcz_dispFunction('Stability check in random points')
@@ -23,8 +27,7 @@ for i = 1:100
         eig(A_fh(p_cell{:}))
     end
     
-    sys = ss(A_fh(p_cell{:}), B_fh(p_cell{:}), C_fh(p_cell{:}), D_fh(p_cell{:}));
-    
+    % sys = ss(A_fh(p_cell{:}), B_fh(p_cell{:}), C_fh(p_cell{:}), D_fh(p_cell{:}));
     % pcz_dispFunction2('If p = [%6.3g,%6.3g,%6.3g], norm = %g.', p_num, norm(sys,Inf))
 end
 

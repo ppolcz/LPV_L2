@@ -4,7 +4,7 @@ function grd=multigrid(varargin)
 %Syntax: grd=MULTIGRID(...)
 %Example:
 %   grd = multigrid([-1,2],[3 4],[5 6])
-%   grd =       JAVITANI!!!! -1     3     5
+%   grd =       -1     3     5
 %                2     3     5
 %               -1     4     5
 %                2     4     5

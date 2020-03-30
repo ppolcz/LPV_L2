@@ -18,7 +18,7 @@ He = he;
 
 TMP_vFNECEAeLZsYsUxvlgqL = pcz_dispFunctionName('model generation');
 
-[~,~,~,~,AC_lfr,BD_lfr] = helper_fh2lfr(A_fh, B_fh, C_fh, D_fh, p_lim);
+[~,~,~,~,AC_lfr,BD_lfr] = helper_convert(A_fh, B_fh, C_fh, D_fh, p_lim);
 
 % Dimensions
 nx = size(AC_lfr,2);
@@ -199,8 +199,11 @@ pcz_feasible(sol, CONS, 'tol', 1e-6);
 
 gamma = double(gammaSqr)^(0.5);
 
+Overall_Time = toc(TMP_BIvQLYBqfFOwenhowBxT);
+
 pcz_dispFunction
 pcz_dispFunction(2,'Model: %s', modelname);
+pcz_dispFunction(2,'Overall time: %g', Overall_Time);
 pcz_dispFunction(2,'<strong>Gamma = %g</strong> ', gamma);
 pcz_dispFunction(2,'size(N)  =%4d, size(PI)   =%4d', size(N.lfrtbx_obj));
 pcz_dispFunction(2,'size(Na) =%4d, size(PI_a) =%4d', size(Na.lfrtbx_obj));
@@ -223,7 +226,7 @@ pcz_dispFunction_num2str(dp_lim);
 % pcz_dispFunction_num2str(Pi_indices, 'format', '%d', 'pref', ' ');
 % pcz_dispFunction(msg);
 
-store_results('Results_All.csv',modelname,[],gamma,sol.solvertime,sol.info,'Polytopic a. with Finsler')
+store_results('Results_All.csv',modelname,0,gamma,sol.solvertime,Overall_Time,sol.info,'Polytopic a. with Finsler')
 
 pcz_dispFunctionEnd(TMP_UFTXCLDbxHBtWRStETWI);
 

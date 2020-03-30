@@ -1,4 +1,4 @@
-function method2_descriptor_dual(modelname, A_fh, B_fh, C, D, p_lim, dp_lim, varargin)
+function method2_descriptor_dual(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp_lim, CONDENSED_LMI)
 %%
 %
 %  File: LPV_L2anal_Masubuchi_dual.m
@@ -18,10 +18,9 @@ function method2_descriptor_dual(modelname, A_fh, B_fh, C, D, p_lim, dp_lim, var
 % [MAS99] Masubuchi (1999). An exact solution to parameter-dependent convex
 % differential inequalities. 1999 European Control Conference (ECC),
 % 1043-1048, 1999.
-
+%
 % 1: CONDENSED LMI FORM as proposed by [MAS08]
 % 0: Equivalent EXPLICIT LMI FORM as proposed by Author based on  [MAS08]
-CONDENSED_LMI = 1;
 
 LMI_form = {'explicit LMI form', 'condensed LMI form'};
 
@@ -37,20 +36,16 @@ TMP_yMJTNGorRueTwiaHttwA = pcz_dispFunctionName;
 
 %% Build up a descriptor model representation
 
-% Find out np, nw and nz
-[nz,nx] = size(C);
-[~,nw] = size(D);
+[~,B_lfr,C_lfr,~,~,~,M_lfr] = helper_convert(A_fh, B_fh, C_fh, D_fh, p_lim);
+
+% Dimensions
+nx = size(B_lfr,1);
+nu = size(B_lfr,2);
+ny = size(C_lfr,1);
 np = size(p_lim,1);
 
-P_generate_symvars(nx,np,nw,nz);
-
-[~,p_lfr_cell] = pcz_generateLFRStateVector('p',p_lim);
-
-M_fh = @(varargin) [
-    A_fh(varargin{:}) , B_fh(varargin{:})
-    C                 , D
-    ];
-M_lfr = M_fh(p_lfr_cell{:});
+% Generate symbolic variables
+P_generate_symvars(nx,np,nu,ny);
 
 % Here, we use the numerical n-D order reduction proposed by
 %
@@ -59,7 +54,6 @@ M_lfr = M_fh(p_lfr_cell{:});
 % the 1997 American Control Conference (Cat. No.97CH36041), 6:3557-3561
 % vol.6, 1997.
 M_plfr = plfr(minlfr(M_lfr));
-
 m1 = M_plfr.m1;
 
 %%%
@@ -71,7 +65,7 @@ m1 = M_plfr.m1;
 %   pi = Delta eta
 %
 F = cell(3,3);
-[F{:}] = pcz_split_matrix(M_plfr.M,[nx,nz,m1],[nx,nw,m1],'RowWise',0);
+[F{:}] = pcz_split_matrix(M_plfr.M,[nx,ny,m1],[nx,nu,m1],'RowWise',0);
 Delta = M_plfr.Delta;
 
 % Helper
@@ -84,50 +78,27 @@ dfh = matlabFunction(delta,'vars',{p});
 %   E dX = A(p) Xi + B(p) u,     where X = [ x
 %      y = C    Xi + D    u,                 pi ] in R^n
 %
-
 E = blkdiag(I(nx), O(m1));
 
-A = @(x) [
+A = @(x) [ % size: (nx+m1)x(nx+m1)
     F{1,1}              F{1,3}
     diag(dfh(x))*F{3,1} diag(dfh(x))*F{3,3}-I(m1)
     ];
 
-B = @(x) [
+B = @(x) [ % size: (nx+m1)x(nu)
     F{1,2}
     diag(dfh(x))*F{3,2}
     ];
 
-C = [ F{2,1} F{2,3} ];
+C = [ F{2,1} F{2,3} ]; % size: (nu)x(nx+m1)
 
-D = F{2,2};
-
-%% Matrices related to the supply function
-
-gammaSqr = sdpvar;
-
-Pi22 = -eye(nw)*gammaSqr;
-Pi12 = O(nz,nw);
-Gamma11 = eye(nz);
-q = nz;
-
-Pi1s = [ Pi12 Gamma11 ];
-Psi = [ I(nw) zeros(nw,q) ];
-Pi2a = blkdiag(Pi22,-I(q));
-
-%% 
-% Matrix used for the condensed LMI form ([MAS08] Eqs. between (4) and (5))
-% 
-%   M = [ ~Acl ~Bcl ] = [ Acl          Bcl Psi        ]
-%       [ ~Ccl ~Dcl ]   [ PI'_1* Ccl   PI'_1* Dcl Psi ]
-% 
-% 
-M = @(p) [
-    A(p)    , B(p)*Psi
-    Pi1s'*C , Pi1s'*D*Psi
-    ];
+D = F{2,2}; % size: (ny)x(nu)
 
 %% Render multiaffine monoms and multiaffine decision variables
-
+%
+%  degree 1 monoms: p1, p2, ...
+%  degree 2 monoms: p1*p2, p1*p3, p1*p4, p2*p3, ....
+%  degree 3 monoms: p1*p2*p3, p1*p2*p4, ....
 monoms = cellfun( @(k) { prod(combnk(p,k),2) }, num2cell(1:np) );
 
 xi = [
@@ -155,18 +126,6 @@ Y_Theta = cellfun(@(Y11,Yi2) { [ [ Y11 ; O(m1,nx) ] , Yi2 ] }, ...
     sdpvar(ones(1,nxi)*nx),...
     sdpvar(ones(1,nxi)*(nx+m1),ones(1,nxi)*m1));
 
-%%%
-% Constraint: [condensed form]
-%
-%  E Z' = 0
-%
-% Structure for Z:
-%
-%  Z = [ 0 Z2 ]
-%
-% Z used for the condensed LMI form [MAS08]
-Z_Theta = cellfun(@(Z2) { [ O(nw+q,nx) Z2 ] }, ...
-    sdpvar(ones(1,nxi)*(nw+q),ones(1,nxi)*m1) );
 
 %%%
 % Constraint: [explicit form]
@@ -178,19 +137,19 @@ Z_Theta = cellfun(@(Z2) { [ O(nw+q,nx) Z2 ] }, ...
 %  Z1 = [ 0 Z12 ]  and  Z2 = [ 0 Z22 ]
 %
 % Z1 and Z2 used for the explicit LMI form derived by the author
-Z1_Theta = cellfun(@(Z2) { [ O(nw,nx) Z2 ] }, ...
-    sdpvar(ones(1,nxi)*nw,ones(1,nxi)*m1,'full') );
-Z2_Theta = cellfun(@(Z2) { [ O(nz,nx) Z2 ] }, ...
-    sdpvar(ones(1,nxi)*nz,ones(1,nxi)*m1,'full') );
+Z1_Theta = cellfun(@(Z2) { [ O(nu,nx) Z2 ] }, ...
+    sdpvar(ones(1,nxi)*nu,ones(1,nxi)*m1,'full') );
+Z2_Theta = cellfun(@(Z2) { [ O(ny,nx) Z2 ] }, ...
+    sdpvar(ones(1,nxi)*ny,ones(1,nxi)*m1,'full') );
 
 
 Y = PGenAffineMatrix(Y_Theta,xi,p);
-Z = PGenAffineMatrix(Z_Theta,xi,p);
 Z1 = PGenAffineMatrix(Z1_Theta,xi,p);
 Z2 = PGenAffineMatrix(Z2_Theta,xi,p);
 
 dY = Y.set_channels(dxi,pdp);
 
+gammaSqr = sdpvar;
 
 %%
 % (LMI-1) Y(p) E' > 0
@@ -223,31 +182,33 @@ Nr_Combs_dp = 2^np;
 % Evaluation in each corner point
 Evaluate = @(f) cellfun( @(x_num) { f(x_num) }, num2cell(P_v',1));
 
-A_eval = Evaluate(A);   % used for explicit LMI form
-B_eval = Evaluate(B);   % used for explicit LMI form
-M_eval = Evaluate(M);   % used for condensed LMI form
-Y_eval = Evaluate(Y);   % used for both LMI forms
-Z_eval = Evaluate(Z);   % used for condensed LMI form
-Z1_eval = Evaluate(Z1); % used for explicit LMI form
-Z2_eval = Evaluate(Z2); % used for explicit LMI form
+A_eval = Evaluate(A);
+B_eval = Evaluate(B);
+Y_eval = Evaluate(Y);
+Z1_eval = Evaluate(Z1);
+Z2_eval = Evaluate(Z2);
 
 % Get corner index -- mapping from a corner to an index:
 % [0 0 0] -> 1
 % [0 0 1] -> 2
 % [1 1 1] -> 8
 get_corner_index = @(corner) corner * (2.^(np-1:-1:0))' + 1;
-A_ = @(corner) A_eval( get_corner_index(corner) );   % used for explicit LMI form
-B_ = @(corner) B_eval( get_corner_index(corner) );   % used for explicit LMI form
-M_ = @(corner) M_eval( get_corner_index(corner) );   % used for condensed LMI form
-Y_ = @(corner) Y_eval( get_corner_index(corner) );   % used for both LMI forms
-Z_ = @(corner) Z_eval( get_corner_index(corner) );   % used for condensed LMI form
-Z1_ = @(corner) Z1_eval( get_corner_index(corner) ); % used for explicit LMI form
-Z2_ = @(corner) Z2_eval( get_corner_index(corner) ); % used for explicit LMI form
+A_ = @(corner) A_eval( get_corner_index(corner) );
+B_ = @(corner) B_eval( get_corner_index(corner) );
+Y_ = @(corner) Y_eval( get_corner_index(corner) );
+Z1_ = @(corner) Z1_eval( get_corner_index(corner) );
+Z2_ = @(corner) Z2_eval( get_corner_index(corner) );
 
 
 % I render the corner combinations of [MAS99] in advance:
 combs = repmat({ { {0 0} , {1 1} , num2cell([ 0 1 ; 1 0 ],1) } },[1 np]);
 combs = allcomb(combs{:});
+
+
+% Matrices related to the supply function
+Pi22 = -eye(nu)*gammaSqr;
+Pi12 = O(ny,nu);
+Gamma11 = eye(ny);
 
 stringify1 = @(fv) sprintf('(%s)', strjoin(cellfun(@(n) {num2str(n)}, num2cell(fv)),','));
 stringify = @(fv) cellfun(@(c) {stringify1(c)}, num2cell(fv,2));
@@ -278,31 +239,50 @@ for l = 1:Nr_Combs_dp
         % pcz_dispFunction2('    %d.%d. Combination nr. %d:', l,k,k)
 
         str = cellfun(@(f,g) { [f ' and ' g] }, stringify(fv),stringify(gv));
-        for j = 1:numel(str)
-            % pcz_dispFunction2('        %d.%d.%d. Corner points of term %2d: %s', l,k,j, j, str{j})
-        end
+
+        % for j = 1:numel(str)
+        %     pcz_dispFunction2('        %d.%d.%d. Corner points of term %2d: %s', l,k,j, j, str{j})
+        % end
         % pcz_dispFunction2 ' '
 
         if CONDENSED_LMI
 
-            % Condensed LMI form [MAS08]
-            TERMS_k = cellfun( @(M,Y,dY,Z) {
-                He{ M * [ Y' Z' ; O(nw+q,nx+m1) I(nw+q) ] } + blkdiag( -E*dY' , Pi2a )
-                }, M_(fv), Y_(gv), dY_(gv), Z_(gv));
+            % Condensed LMI form [MAS08]:
+            %
+            %  He{ M [ Y' Z'] } + [ -E dY'   0   ]
+            %    {   [ 0  I ] }   [   0     Pi2a ]
+            %
+            TERMS_k = cellfun( @(A,B,Y,dY,Z1,Z2) {
+                He{ ...
+                    ... Matrix M:
+                    [
+                        A          , B           , zeros(nx+m1,ny)
+                        Pi12'*C    , Pi12'*D     , zeros(nu,ny)
+                        Gamma11'*C , Gamma11'*D  , zeros(ny,ny)
+                    ] ...
+                    * ... Matrix [ Y' Z' ; 0 I ]:
+                    [
+                        Y'          , Z1'      , Z2'
+                        O(nu,nx+m1) , I(nu)    , O(nu,ny)
+                        O(ny,nx+m1) , O(ny,nu) , I(ny)
+                    ] ...
+                } + blkdiag( -E*dY' , Pi22 , -I(ny) )
+                ...
+            },  A_(fv), B_(fv), Y_(gv), dY_(gv), Z1_(gv), Z2_(gv));
 
         else
-            
+
             % Explicit LMI (equivalent form of condensed LMI)
             TERMS_k = cellfun( @(A,B,Y,dY,Z1,Z2) {
                 [
-                He(A*Y')-E*dY'      , B+Y*C'*Pi12+A*Z1'             , Y*C'*Gamma11+A*Z2'
-                B'+Pi12'*C*Y'+Z1*A' , Pi22+He(Pi12'*D+Pi12'*C*Z1')  , (D'+Z1*C')*Gamma11+Pi12'*C*Z2'
-                Gamma11'*C*Y'+Z2*A' , Gamma11'*(D+C*Z1')+Z2*C'*Pi12 , He(Gamma11'*C*Z2')-eye(nz)
+                    He(A*Y')-E*dY'      , B+Y*C'*Pi12+A*Z1'             , Y*C'*Gamma11+A*Z2'
+                    B'+Pi12'*C*Y'+Z1*A' , Pi22+He(Pi12'*D+Pi12'*C*Z1')  , (D'+Z1*C')*Gamma11+Pi12'*C*Z2'
+                    Gamma11'*C*Y'+Z2*A' , Gamma11'*(D+C*Z1')+Z2*C'*Pi12 , He(Gamma11'*C*Z2')-eye(ny)
                 ]
                 }, A_(fv), B_(fv), Y_(gv), dY_(gv), Z1_(gv), Z2_(gv));
-            
+
         end
-            
+
         if numel(TERMS_k) == 1
             CONS = [ CONS , posdef(-TERMS_k{1}) ];
         else
@@ -316,6 +296,8 @@ end
 sol = optimize(CONS,gammaSqr,sdpsettings('solver','mosek'));
 gamma = sqrt(value(gammaSqr));
 
+Overall_Time = toc(TMP_yMJTNGorRueTwiaHttwA);
+
 Y = value(Y);
 Y.name = 'Y';
 
@@ -326,7 +308,7 @@ pcz_dispFunction_scalar(gamma, solver_time);
 pcz_dispFunction(sol.info);
 
 Y_cell = Y.get_matrices;
-Y_names = cellfun(@(i) {sprintf('Y%d',i)}, num2cell(0:numel(Y_cell)-1)');
+Y_names = cellfun(@(i) {sprintf('%s%d',Y.name,i)}, num2cell(0:numel(Y_cell)-1)');
 Y_channels = cellfun(@char,num2cell(Y.channels),'UniformOutput',0);
 
 pcz_dispFunction2('%s = %s', Y.name_full, ...
@@ -337,10 +319,10 @@ for i = 1:numel(Y_cell)
 end
 
 
-store_results('Descriptor_Results.csv', modelname, 0, gamma, sol.solvertime, ...
+store_results('Descriptor_Results.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
     sol.info, [ 'dual ' LMI_form{CONDENSED_LMI+1} ])
 
-store_results('Results_All.csv', modelname, 0, gamma, sol.solvertime, ...
+store_results('Results_All.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
     sol.info, [ 'Descriptor - dual ' LMI_form{CONDENSED_LMI+1} ])
 
 %%

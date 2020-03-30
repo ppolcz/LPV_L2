@@ -1,6 +1,16 @@
-Model|Stamp|Lower|Upper|Solver_Time|Solver_info|Method
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:00:43 2231|0|0.87440237696179|97.6446|Successfully solved (MOSEK)|dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:02:52 2232|0|0.874205468815763|92.97434|Successfully solved (MOSEK)|dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:12:16 2234|0|0.874205468815763|93.478502|Successfully solved (MOSEK)|dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:16:38 2235|0|0.874407970344914|79.540306|Successfully solved (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.25. Wednesday 23:18:26 2235|0|0.87440237696179|97.15744|Successfully solved (MOSEK)|dual condensed LMI form
+Model|Stamp|Lower|Upper|Solver_Time|Overall_Time|Solver_Info|Method
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:56:07 id:2246|0|0.874407970344914|80.451767|95.348281|Successfully solved (MOSEK)|primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:58:01 id:2246|0|0.874385665021191|103.744467|113.558529|Successfully solved (MOSEK)|dual condensed LMI form
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:59:55 id:2246|0|0.874385665021191|100.115181|114.015097|Successfully solved (MOSEK)|dual explicit LMI form
+simple2D_1x1_LFR|2020.03.29. Sunday 16:41:14 id:2249|0|3.6766120231177|0.433153|2.24996|Successfully solved (MOSEK)|primal
+simple2D_1x1_LFR|2020.03.29. Sunday 16:41:16 id:2249|0|4.53063048012933|0.286593|1.882565|Successfully solved (MOSEK)|dual condensed LMI form
+simple2D_1x1_LFR|2020.03.29. Sunday 16:41:18 id:2249|0|4.53063048012933|0.291183|1.858616|Successfully solved (MOSEK)|dual explicit LMI form
+simple2D_1x1_LFR|2020.03.30. Monday 03:21:46 id:2249|0|1.70620232297237|0.712403|2.449494|Successfully solved (MOSEK)|primal
+simple2D_1x1_LFR|2020.03.30. Monday 03:21:48 id:2249|0|4.59295519791357|1.094617|2.64619|Successfully solved (MOSEK)|dual condensed LMI form
+simple2D_1x1_LFR|2020.03.30. Monday 03:21:51 id:2249|0|4.59295519791357|1.09476|2.713486|Successfully solved (MOSEK)|dual explicit LMI form
+simple2D_1x1_LFR|2020.03.30. Monday 03:24:39 id:2249|0|1.70619981546232|0.734371|2.651232|Successfully solved (MOSEK)|primal
+simple2D_1x1_LFR|2020.03.30. Monday 03:24:41 id:2249|0|4.51988784446352|0.848287|2.407703|Successfully solved (MOSEK)|dual condensed LMI form
+simple2D_1x1_LFR|2020.03.30. Monday 03:24:44 id:2249|0|4.51988784446352|0.857|2.427636|Successfully solved (MOSEK)|dual explicit LMI form
+simple2D_1x1_LFR|2020.03.30. Monday 17:51:04 id:2249|0|3.67667184141518|0.758389|2.839508|Successfully solved (MOSEK)|primal
+simple2D_1x1_LFR|2020.03.30. Monday 17:51:41 id:2249|0|4.52930009832253|0.7423|2.426627|Successfully solved (MOSEK)|dual condensed LMI form
+simple2D_1x1_LFR|2020.03.30. Monday 17:51:44 id:2249|0|4.52930009832253|0.628811|2.724301|Successfully solved (MOSEK)|dual explicit LMI form

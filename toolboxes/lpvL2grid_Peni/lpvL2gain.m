@@ -1,4 +1,4 @@
-function [gam,Pvars]=lpvL2gain(lpvsys,pargrd,Pbase,Pbase_der,gammin)
+function [gam,Pvars,telapsed]=lpvL2gain(lpvsys,pargrd,Pbase,Pbase_der,gammin)
 % Computes an upper bound for the induced L2 gain of an LPV system. 
 % Syntax: [gam,Pvars,chkres]=LPVL2GAIN(lpvsys,pargrd,Pbase,Pbase_der,gammin) 
 % Arguments: 
@@ -79,7 +79,7 @@ Cons=posdef(gam2-gammin*gammin);
          
 fprintf('Collecting the LMI constraints.........');    
 for k=1:sizeofgrd
-    fprintf('\b\b\b\b\b\b\b%6.2f%%',100*k/sizeofgrd); 
+    % fprintf('\b\b\b\b\b\b\b%6.2f%%',100*k/sizeofgrd); 
     [A,B,C,D]=lpvsys(pgrd(k,:));
     bf=Pbase(pgrd(k,:));
     bfdot=Pbase_der(pgrd(k,:));

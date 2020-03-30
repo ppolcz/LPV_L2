@@ -1,12 +1,11 @@
-function method1_RCT(A_fh, B_fh, C, D, xw_lim, p_lim)
-%% LPV_L2anal_RCT
-%
-%  File: LPV_L2anal_RCT.m
-%  Directory: 1_PhD_projects/22_Hinf_norm/LPV_TAC_v3_newmod
-%  Author: Peter Polcz (ppolcz@gmail.com)
-%
+function method1_RCT(modelname, A_fh, B_fh, C_fh, D_fh, p_lim)
+%%
+%  File: method1_grid_RCT.m
+%  Directory: 8_published/LPV_L2/workspace
+%  Author: Peter Polcz (ppolcz@gmail.com) 
+% 
 %  Created on 2018. November 19.
-%
+%  Major review on 2020. March 26. (2019b)
 
 
 %%
@@ -14,21 +13,16 @@ function method1_RCT(A_fh, B_fh, C, D, xw_lim, p_lim)
 
 TMP_lfqlHdooTxNFOfYScyqG = pcz_dispFunctionName('Robust Control Toolbox');
 
-[nz,nx] = size(C);
-[~,nw] = size(D);
 np = size(p_lim,1);
+p_nom = sum(p_lim,2)/2;
 
 p_cell = cell(1,np);
 for i = 1:np
     name = [ 'p' num2str(i) ];
-    p_nom = sum(p_lim(i,:))/2;
-    p_cell{i} = ureal(name, p_nom, 'Range', p_lim(i,:));
+    p_cell{i} = ureal(name, p_nom(i), 'Range', p_lim(i,:));
 end
 
-A_unc = A_fh(p_cell{:});
-B_unc = B_fh(p_cell{:});
-C_unc = umat(C);
-D_unc = umat(D);
+[A_unc,B_unc,C_unc,D_unc] = helper_convert(A_fh,B_fh,C_fh,D_fh,p_cell,'umat');
 
 sys_unc = ss(A_unc,B_unc,C_unc,D_unc);
 simplify(sys_unc,'full');
@@ -62,11 +56,13 @@ simplify(sys_unc,'full');
     TMP_KZWeXiYFmdpQdsgidKeG = pcz_dispFunctionName('Pure wcgain');
     [wcg,wcu,info] = wcgain(sys_unc);
 
+    pcz_dispFunction2(evalc('display(info)'));
+    
     bounds = [wcg.LowerBound , wcg.UpperBound];
 
-    solver_time = toc(TMP_KZWeXiYFmdpQdsgidKeG);
+    Overall_Time = toc(TMP_KZWeXiYFmdpQdsgidKeG);
     
-    pcz_dispFunction('Solver time: <strong>%g</strong>', solver_time)
+    pcz_dispFunction('Solver time: <strong>%g</strong>', Overall_Time)
     pcz_dispFunction(2, 'Bounds: [<strong>%g</strong>,%g] = [%g,%g] dB ', bounds, 20*log10(bounds))
     parnames = fields(wcu);
     for fld = 1:numel(parnames)
@@ -76,58 +72,11 @@ simplify(sys_unc,'full');
     pcz_dispFunctionEnd(TMP_KZWeXiYFmdpQdsgidKeG);
 
     
-    store_results('Results_All.csv', xw_lim, bounds(1), bounds(2), solver_time, ...
-        '[no info]', 'Robust Control Toolbox', 0)
+    store_results('Results_All.csv', modelname, bounds(1), bounds(2), 0, Overall_Time, ...
+        '[no info]', 'Robust Control Toolbox')
     
 % -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
-
-%{
-    figure('Position', [  520.000 ,  492.000 , 1119.000 ,  359.000 ], 'Color', [1 1 1])
-    opts = wcOptions('VaryFrequency','on','Display','on');
-    [wcg,~,info] = wcgain(sys_unc,linspace(2.1,2.2,500),opts)
-    subplot(121), semilogx(info.Frequency,info.Bounds), grid on
-
-    title('Worst-Case Gain vs. Frequency')
-    ylabel('Gain')
-    xlabel('Frequency')
-    legend('Lower bound','Upper bound','Location','northwest')
-
-    wc_sys = usubs(sys_unc,wcu);
-    subplot(122), sigma(wc_sys), grid on
-
-    store_results('Results_All.csv', xw_lim, bounds(1), bounds(2), solver_time, ...
-        '[no info]', 'Robust Control Toolbox', 0)
-
-%}
-% -------------------------------------------------------------------------
-
-%{
-
-wcmargin(sys_unc)
-
-%}
-
-
-%{
-% -------------------------------------------------------------------------
-% Compute analytically the DC-gain
-
-    [A,C,B,D] = pcz_split_matrix(F_fh(wcu.p1),[nx,nz],[nx,nw], 'RowWise', false);
-    wc_sys_ = tf(ss(A,B,C,D));
-
-    pcz_dispFunction('DC gain: %g', dcgain(wc_sys_))
-
-% -------------------------------------------------------------------------
-%}
-
 
 pcz_dispFunctionEnd(TMP_lfqlHdooTxNFOfYScyqG)
 
 end
-
-
-%%
-
-% sys = ss(A_fh(wcu.p1,wcu.p2,wcu.p3)-B_fh(wcu.p1,wcu.p2,wcu.p3)*K, B_fh(wcu.p1,wcu.p2,wcu.p3), C, D);
-% bode(sys)
-% grid on
