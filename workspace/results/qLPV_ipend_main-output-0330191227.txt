@@ -1,0 +1,23 @@
+[  INFO  ] Output logging (with `diary'): results/qLPV_ipend_main-output-0330191227.txt
+ 
+┌ model2_ipend
+│   RUN_ID = NaN
+│   Model parameters:
+│   
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   k = 5
+│   I = 1.3333
+│   State and input bounds:
+│   
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   OK   ] A(p) was stable in all sample points
+└ 3.6483 [sec]

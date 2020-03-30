@@ -28,7 +28,7 @@ rnd = @(varargin) randn(varargin{:});
 
 nx = 3;
 np = 2;
-nu = 2;
+nu = 3;
 ny = 1;
 
 r = [0 2 1];
@@ -36,7 +36,7 @@ m1 = sum(r);
 m = nx + m1;
 
 p_lim = repmat([4,5],[np,1]);
-dp_lim = repmat([-4,4],[np,1]);
+dp_lim = repmat([-1,1],[np,1]);
 
 pdp_lim = [ p_lim ; dp_lim ];
 
@@ -156,28 +156,23 @@ pcz_feasible(sol, CONS, 'tol', 1e-6);
 pcz_feasible_Finsler(Q,L,N,p_lim,'title','Dissipativity relation')
 pcz_feasible_Finsler(-Qd,-Ld,Nd,pdp_lim,'title','Dissipativity relation')
 
-H = double(H);
 Q = double(Q);
 L = double(L);
 Qd = double(Qd);
 Ld = double(Ld);
 
-H_lfr = plfr(H,p_lfr_cell);
-Q_lfr = plfr(Q,p_lfr_cell);
-Qd_lfr = plfr(Qd,pdp_lfr_cell);
-
 %%
 
-LMI_2 = He{ Ld*Nd } + Qd_lfr;
+LMI_2 = He{ Ld*Nd } + plfr(Qd,p_lfr_cell);
 helper_check_stability(LMI_2,pdp_lim)
 
-LMI_2 = PI_d' * Qd_lfr * PI_d;
+LMI_2 = PI_d' * plfr(double(Qd)) * PI_d;
 helper_check_stability(LMI_2,pdp_lim)
 
 %%
 
-QQ = PI' * Q_lfr * PI;
-HH = H_lfr * PI;
+QQ = PI' * plfr(double(Q)) * PI;
+HH = plfr(double(H)) * PI;
 
 % H = K*Q  ==>  K = H/Q
 KK = HH / QQ;
@@ -188,8 +183,6 @@ Ak_lfr = A_lfr - B_lfr*KK;
 
 
 helper_check_stability(Ak_lfr,p_lim)
-
-% return
 
 %%
 
@@ -224,15 +217,15 @@ method1_RCT(modelname,A,B,C,D,p_lim)
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',1000,'delta',1e-2,'T',10);
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',1000,'delta',1e-1,'T',10);
 % 
-% method2_descriptor_primal(modelname,A,B,C,D,p_lim,dp_lim)
-% method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,1)
-% method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,0)
+method2_descriptor_primal(modelname,A,B,C,D,p_lim,dp_lim)
+method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,1)
+method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,0)
 % 
-% % IQC/LFT approaches for LPV with rate-bounded parameters
-% method3_IQC_LFT_IQCToolbox(modelname,A,B,C,D,p_lim,dp_lim);
-% method3_IQC_LFT_LPVTools(modelname,A,B,C,D,p_lim,dp_lim);
-% 
-% method4_authors_old_symbolical(modelname,A,B,C,D,p_lim,dp_lim);
+% IQC/LFT approaches for LPV with rate-bounded parameters
+method3_IQC_LFT_IQCToolbox(modelname,A,B,C,D,p_lim,dp_lim);
+method3_IQC_LFT_LPVTools(modelname,A,B,C,D,p_lim,dp_lim);
+
+method4_authors_old_symbolical(modelname,A,B,C,D,p_lim,dp_lim);
 
 % Imported variables to the base workspace: Q, dQ, PI_x, gamma
 method5_proposed_approach(modelname,A,B,C,D,p_lim,dp_lim,p_lim,pdp_lim,[]);

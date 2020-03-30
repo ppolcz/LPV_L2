@@ -19,6 +19,8 @@ else
     setenv('RUN_ID', num2str(str2double(getenv('RUN_ID')) + 1))
 end
 
+pcz_dispFunction('Run ID = %s', getenv('RUN_ID'));
+
 %% Model parameters
 
 m = 1;       % Mass of the rod [kg]
@@ -195,7 +197,7 @@ method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
 method3_IQC_LFT_IQCToolbox(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 
-method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,xw_lim,p_expr,p_lim,dp_lim,p_lims_comp,pdp_lims_comp);
+method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 
 % Imported variables to the base workspace: Q, dQ, PI_x, gamma
 method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,p_expr);

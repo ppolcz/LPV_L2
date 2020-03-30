@@ -8,21 +8,23 @@ function [N_lfr,samples,sampleserr,err] = P_affine_annihilator_for_LFR(PI, vars_
 %  Created on 2019. March 10.
 %
 
+TMP_fzhqgrIAPDdmVUZqZFHF = pcz_dispFunctionName;
+
+%%
+
+if isa(PI,'lfr')
+    PI = plfr(PI);
+end
+
 args.proj = @(W) W;
 args.symbolic = 0;
 args.precision = 10;
 args.samples = [];
 args.sampleserr = [];
-args.lims = [];
+args.lims_or_np = PI.np;
 args = parsepropval(args,varargin{:});
 
 %%
-
-TMP_fzhqgrIAPDdmVUZqZFHF = pcz_dispFunctionName;
-
-if isa(PI,'lfr')
-    PI = plfr(PI);
-end
 
 % 2019.11.21. (november 21, csütörtök), 12:04
 vars = sym(plfr(vars_lfr));
@@ -47,7 +49,7 @@ N_times_PI = N_kiemelt_lfr*PI.lfrtbx_obj;
 % MODOSITVA: 2019.11.21. (november 21, csütörtök), 12:06
 % `N_times_PI' --> plfr(N_times_PI',vars_lfr)'
 [N_ThetaT,~,samples,sampleserr,err] = P_constKer_for_LFR(plfr(N_times_PI',vars), 'proj', args.proj,...
-    'samples', args.samples, 'sampleserr', args.sampleserr, 'lims', args.lims);
+    'samples', args.samples, 'sampleserr', args.sampleserr, 'lims', args.lims_or_np);
 
 N_Theta = N_ThetaT';
 

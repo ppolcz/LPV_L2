@@ -20,7 +20,7 @@ args.proj = @(W) W;
 args.N = 0;
 args.samples = [];
 args.sampleserr = [];
-args.lims = zeros(np,0);
+args.lims = np;
 args = parsepropval(args,varargin{:});
 
 %%
@@ -160,8 +160,8 @@ end
 
 function samples = generate(N,lims,proj)
 
-    if isempty(lims)
-        samples = proj(randn(size(lims,1),N));
+    if isscalar(lims)
+        samples = proj(randn(lims,N));
     else    
         samples_cell = cellfun(@(a,b) {rand(1,N)*(b-a)+a}, num2cell(lims(:,1)), num2cell(lims(:,2)));
         samples = proj(vertcat(samples_cell{:}));

@@ -56,3 +56,27 @@ simple2D_1x1_LFR|2020.03.30. Monday 17:52:12 id:2249|0|2.10175010475715|0|3.9723
 simple2D_1x1_LFR|2020.03.30. Monday 18:11:43 id:|0|1.39131850961466|2.28595|17.544807|Successfully solved (MOSEK)|Polytopic a. with Finsler
 simple2D_1x1_LFR|2020.03.30. Monday 19:04:28 id:|0|1.2533727284346|2.449805|10.897543|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
 simple2D_1x1_LFR|2020.03.30. Monday 19:05:00 id:|0|1.41159673686587|2.288504|16.975463|Successfully solved (MOSEK)|Polytopic a. with Finsler
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:12:50 id:2241|0|0.863059431916671|3.265526|12.522611|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:13:15 id:2241|0|0|5.766856|20.582573|User terminated (MOSEK)|Descriptor - primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:19:48 id:2242|0|0.871619359138664|0|306.958556|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:19:59 id:2242|0|0.863059431916671|3.049714|9.617677|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:24:38 id:2242|0|0.863357022191555|140.481565|278.45836|15x15x15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:24:49 id:2242|0|0.881365062151405|3.214705|10.208699|5x5x5, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 53486197x136308911x598465449 (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:24:59 id:2242|0|0.887457877701511|2.677614|9.121204|5x5x5, Successfully solved (MOSEK)|Req grid for T=1000, delta=0.001: 534862x1363090x5984655 (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:09 id:2242|0|0.982356017719424|2.572922|9.020644|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.01: 5349x13631x59847 (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:19 id:2242|0|1.56089462816006|2.552463|9.013856|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.1: 535x1364x5985 (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:28 id:2242|0|1.47978421203999|2.496605|8.897868|5x5x5, Successfully solved (MOSEK)|Req grid for T=10, delta=0.01: 535x1364x5985 (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:38 id:2242|0|1.60555726501108e+55|2.539423|8.917843|5x5x5, Infeasible problem (MOSEK)|Req grid for T=10, delta=0.1: 54x137x599 (Wu, 1995)
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:27:11 id:2242|0|0.874407970344914|78.531738|92.702363|Successfully solved (MOSEK)|Descriptor - primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:28:56 id:2242|0|0.874385665021191|95.474945|104.794279|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:30:48 id:2242|0|0.874385665021191|98.207731|111.363625|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:31:09 id:2242|0|1.14508313368057|0|20.472061|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:33:49 id:2242|0|1.13861440358552|0|158.89776|tvreal, lpvnorm|LPVTools - LFT/IQC
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:38:35 id:2242|0.554086961035749|1.13861440358552|0|285.163116|tvreal, lpvwcgain|LPVTools - LFT/IQC
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 20:17:42 id:2242|0|0.87013247959827|1368.82332|1390.571734|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
+random_5D_1x3_LFR|2020.03.30. Monday 21:36:38 id:2242|4.28508764461927|Inf|0|3.078474|[no info]|Robust Control Toolbox
+random_5D_1x3_LFR|2020.03.30. Monday 21:52:25 id:2242|0|1.16762768343838|106.161694|113.991544|Infeasible problem (MOSEK)|Descriptor - primal
+random_5D_1x3_LFR|2020.03.30. Monday 22:00:25 id:2242|0|NaN|NaN|363.105328|Unknown problem in solver (Turn on 'debug' in sdpsettings) (Reference to non-existent field 'sol'.)|Polytopic a. with Finsler
+random_3D_1x3_LFR|2020.03.31. Tuesday 00:39:48 id:2242|3.91548291794238|3.92671507342742|0|5.864168|[no info]|Robust Control Toolbox
+random_3D_1x3_LFR|2020.03.31. Tuesday 00:56:13 id:2242|0.735133639490325|0.736604089822234|0|9.839879|[no info]|Robust Control Toolbox
+random_3D_1x2_LFR|2020.03.31. Tuesday 00:58:04 id:2242|3.2089061978002|3.2175211911065|0|4.280328|[no info]|Robust Control Toolbox

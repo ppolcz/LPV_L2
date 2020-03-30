@@ -130,10 +130,10 @@ Ga = [ I(nu) O(nu,m2+m1) ];
 %% Construct annihilators
 
 [N,~,~,N_err] = P_affine_annihilator_for_LFR(PI_x,p_lfr,'lims',p_lims_comp);
-pcz_lfrzero_report(minlfr(N*PI_x), N_err, 'Annihilator N');
+pcz_lfrzero_report(N*PI_x, p, N_err, 'Annihilator N');
 
 [Na,~,~,Na_err] = P_affine_annihilator_for_LFR(PI_a,[p_lfr;dp_lfr],'lims',pdp_lims_comp);
-pcz_lfrzero_report(Na*PI_a, Na_err, 'Annihilator Na');
+pcz_fhzero_report(@(pdp) Na(pdp)*PI_a(pdp), pdp, Na_err, 'Annihilator Na');
 
 %% Optimization
 
