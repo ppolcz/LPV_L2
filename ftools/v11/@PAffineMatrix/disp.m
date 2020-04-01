@@ -28,12 +28,34 @@ function disp(N)
         fprintf('Theta: ');
         display(N.Theta);
     else
-        fprintf('Theta: [%dx%d]', size(N.Theta));
         if numel(N.Theta) > 200
-            fprintf(', values between (%g, %g)\n', min(N.Theta(:)), max(N.Theta(:)))
+            fprintf('Theta: [%dx%d], values between (%g, %g)\n', size(N.Theta), min(N.Theta(:)), max(N.Theta(:)))
         else
-            disp ' '
-            disp(N.Theta);
+            % 2020.03.31. (március 31, kedd), 00:24
+            if N.isright
+                fprintf('Theta: [%dx%d] = [(%dx%d)x%d]\n', N.ny, N.nu*N.s, N.ny, N.s, N.nu);
+                indices = reshape(1:N.s*N.m,[N.s,N.m]);
+            else
+                fprintf('Theta: [%dx%d] = [(%dx%d)x%d]\n', N.ny, N.nu*N.s, N.ny, N.nu, N.s);
+                indices = reshape(1:N.s*N.m,[N.m,N.s]);
+            end
+            indices_cell = num2cell(indices,1);
+            blocks_cell = cellfun(@(ind) {N.Theta(:,ind)}, indices_cell);
+
+            blocks_str_cell = cellfun(@(block) { split(evalc('disp(block)'),newline) }, blocks_cell);
+            blocks_str_cell = num2cell(horzcat(blocks_str_cell{:}),2);
+
+            separator = ' ,';
+            disp_line_by_line = cellfun(@(c) { strjoin(c,separator) }, blocks_str_cell);
+
+            % get rid of empty rows:
+            row_length = cellfun(@numel, disp_line_by_line);
+
+            disp_line_by_line = disp_line_by_line(row_length > numel(separator) * numel(blocks_cell));
+
+            disp_all = strjoin(disp_line_by_line, newline);
+
+            disp(disp_all);
         end
     end
 

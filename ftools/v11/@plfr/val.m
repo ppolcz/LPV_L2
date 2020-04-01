@@ -9,7 +9,7 @@ function varargout = val(pLFR,varargin)
 %  1. case: varargin{1} = [ p11   p21   ...   pN1
 %                           ...   ...   ...   ...
 %                           p1np  p2np  ...   pNnp ]
-%           assumption: pLFR is vertical!
+%           assumption: pLFR is vertical
 %           output:     horzcat({:})
 %
 %  2. case: varargin{1} = [ p11  ...  p1np

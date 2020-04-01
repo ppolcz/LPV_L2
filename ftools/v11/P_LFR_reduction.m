@@ -263,7 +263,7 @@ Eq = A*x + B*Pi;
 
 % pcz_2basews
 
-pcz_symeq(S*Pib,tPib, sprintf('Pi [dim: %d] = S * (reduced Pi [dim: %d]).', numel(tPib), numel(Pib)));
+pcz_symeq_report(S*Pib,tPib, sprintf('Pi [dim: %d] = S * (reduced Pi [dim: %d]).', numel(tPib), numel(Pib)));
 
 % H_inner = [ A B ]
 % Pib
@@ -286,7 +286,7 @@ lfr_reduced.LFR_reduced = pcz_struct_append(LFR_reduced,...
 % pcz_display(A,B,C,D,Delta,F,G,Pi,Pib,Eq,tEq)
 
 % Compatibility with FinslerTools-v11
-pLFR = plfr(A,B,C,D,Delta,[]);
+pLFR = plfr(A,B,C,D,Delta,[],lfr.blk);
 
 %%
 

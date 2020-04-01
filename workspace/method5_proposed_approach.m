@@ -18,15 +18,14 @@ He = he;
 
 TMP_vFNECEAeLZsYsUxvlgqL = pcz_dispFunctionName('model generation');
 
-[~,~,~,~,AC_lfr,BD_lfr,~,nx,np,nu,ny] = helper_convert(A_fh, B_fh, C_fh, D_fh, p_lim);
+% Generate lfr variables
+[p_lfr,p_lfr_cell] = pcz_generateLFRStateVector('p',p_lim,dp_lim);
+[dp_lfr,dp_lfr_cell] = pcz_generateLFRStateVector('dp',dp_lim);
+
+[~,~,~,~,AC_lfr,BD_lfr,~,nx,np,nu,ny] = helper_convert(A_fh, B_fh, C_fh, D_fh, p_lfr_cell);
 
 % Generate symbolic variables
 P_generate_symvars(nx,np,nu,ny);
-
-% Generate lfr variables
-[p_lfr,p_cell] = pcz_generateLFRStateVector('p',p_lim,dp_lim);
-[dp_lfr,dp_cell] = pcz_generateLFRStateVector('dp',dp_lim);
-
 
 %%
 % We used LFR Toolbox objects (class `lfr'), which are often wrapped into a
@@ -89,7 +88,7 @@ mu = nu + m2;
 PI_ax = [ % lfr object
     PI_x.lfrtbx_obj
     PI_1 * ( F{1,1} + F{1,3}*PI_1 )
-    PI_1.diff(p_cell,dp_cell)
+    PI_1.diff(p_lfr_cell,dp_lfr_cell)
     ];
 
 % Lower-right block matrix of $\Pi_a$ (LFR Toolbox object)
@@ -131,6 +130,8 @@ Ga = [ I(nu) O(nu,m2+m1) ];
 
 [N,~,~,N_err] = P_affine_annihilator_for_LFR(PI_x,p_lfr,'lims',p_lims_comp);
 pcz_lfrzero_report(minlfr(N*PI_x), N_err, 'Annihilator N');
+
+
 
 [Na,~,~,Na_err] = P_affine_annihilator_for_LFR(PI_a,[p_lfr;dp_lfr],'lims',pdp_lims_comp);
 pcz_lfrzero_report(Na*PI_a, Na_err, 'Annihilator Na');

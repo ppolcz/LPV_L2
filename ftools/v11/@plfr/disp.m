@@ -51,6 +51,38 @@ function disp(G)
     lfrvars_ind = strfind(lfrvars,newline);
     lfrvars = lfrvars(lfrvars_ind+1:end);
     
+    lines = split(lfrvars,newline);
+    
+    charnr = max(cellfun(@numel,lines)) + 3;
+    
+    ws = @(n) repmat(' ',[1 n]);
+    if size(G.desc,1) >= 13
+        desc_not1 = G.desc(12:13,sum(abs(G.desc(7:11,:)),1) > 0);
+        
+        assert(size(desc_not1,2) == G.ns, 'size(desc_not1,2) = %d ~= %d = G.ns', ...
+            size(desc_not1,2), G.ns)
+        
+        rbound_cell = num2cell(desc_not1);
+        rbound_str_cell = num2cell(cellfun(@(n) {num2str(n)}, rbound_cell),1);
+        rbount_str = cellfun(@(c) {sprintf('[%s]',strjoin(c,','))}, rbound_str_cell);
+        
+        rbound_str = [ 'Rate Bounds' ; rbount_str.' ];
+        
+        ind = find(cellfun(@(l) contains(l,'Bounds'), lines),1);
+        
+        if numel(lines) < ind + G.ns
+            disp(lines)
+            disp(desc_not1)
+            error('numel(lines) = %d < %d + %d = ind + size(G.desc,2)', ...
+                numel(lines), ind, G.ns)
+        end
+        
+        lines(ind:ind+G.ns) = cellfun(@(l,r) {sprintf('%s%s%s', l, ws(charnr-numel(l)),r)}, ...
+            lines(ind:ind+G.ns), rbound_str);
+        
+        lfrvars = strjoin(lines,newline);
+    end
+    
     if ~isempty(G.names)
     
         % Ezt varom el: '1 (2x2), p1 (3x3), p2(2x2)'
@@ -61,8 +93,8 @@ function disp(G)
 
         fprintf('PLFR object (%d x %d), uncertainty block: (%d x %d)\n', ...
             G.ny, G.nu, sum(G.desc(1,:)), sum(G.desc(2,:)))
-        fprintf('Dimensions: np = %d, ny = %d, nu = %d, m1 = %d.\n', ...
-            G.np, G.ny, G.nu, G.m1)
+        fprintf('Dimensions: ny = %d, nu = %d, m1 = %d.\n', ...
+            G.ny, G.nu, G.m1)
 
         fprintf('-- \n%s\n', lfrvars)
 
@@ -70,11 +102,11 @@ function disp(G)
         fhstr_ind = strfind(fhstr,',ZERO)');
         fhargs = [ fhstr(1:fhstr_ind(1)-1) ')' ];
 
-        fprintf('Names, dimensions:    %s \n', names)
+        % fprintf('Names, dimensions:    %s \n', names)
         fprintf('Blocks (vars):        %s (%s)\n', stringify(G.vars), class(G.vars))
-        fprintf('Symvars:              %s (%s, np = %d)\n', stringify(G.symvars), class(G.symvars), G.np)
-        fprintf('Substitute into:      %s (%s)\n', stringify(G.subsvars), class(G.subsvars))
-        fprintf('Function handle args: %s             TODO: too many redundant fields\n', fhargs)
+        % fprintf('Symvars:              %s (%s)\n', stringify(G.symvars), class(G.symvars))
+        % fprintf('Substitute into:      %s (%s)\n', stringify(G.subsvars), class(G.subsvars))
+        fprintf('Function handle args: %s\n', fhargs)
     
     else
         

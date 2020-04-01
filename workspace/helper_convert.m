@@ -135,7 +135,7 @@ ny = size(C_,1);
             if isa(srcobj,'lfr')
                 srcobj = plfr(srcobj);
             end
-            
+          
             % fh|plfr -> CLASS
             dstobj = srcobj(p_cell{:});
         end

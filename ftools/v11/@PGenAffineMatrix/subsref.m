@@ -19,7 +19,7 @@ switch S(1).type
         
         if size(x,1) ~= numel(N.vars)
             display(x,pcz_OK_FAILED(0,'subsref input arguments'))
-            error('You need to substitute into %s, but only %d values provided (see above).', ...
+            error('You need to substitute into %s, but %d values provided (see above).', ...
             N.stringify(N.vars), size(x,1))
         end
         

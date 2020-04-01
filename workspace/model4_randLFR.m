@@ -35,8 +35,8 @@ r = [0 2 1];
 m1 = sum(r);
 m = nx + m1;
 
-p_lim = repmat([4,5],[np,1]);
-dp_lim = repmat([-4,4],[np,1]);
+p_lim = repmat([-1,1],[np,1]);
+dp_lim = repmat([-0.1,0.1],[np,1]);
 
 pdp_lim = [ p_lim ; dp_lim ];
 

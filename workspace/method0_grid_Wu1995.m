@@ -35,7 +35,8 @@ end
 if isinf(T) || delta == 0
     res_req = res_max * Inf;
 else
-    res_req = approximate_necessary_grid_density_Wu1995(A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,args);
+    [res_req,hjmin_tT_pdelta,Maij,Mbij,Mffijk,Mfij] = ...
+        approximate_necessary_grid_density_Wu1995(A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,args);
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -56,9 +57,11 @@ pcz_dispFunction2(strtrim(evalc('display(res_used, ''Acutally used grid resoluti
 
 [A_f,B_f,C_f,D_f] = helper_fh2fh_vec(A_fh,B_fh,C_fh,D_fh,p_lim);
 
+N = numel(bases);
+np = size(p_lim,1);
 nx = size(A_f(p_lim(:,1)),1);
-nu = size(B_sym,2);
-ny = size(C_sym,1);
+nu = size(B_f(p_lim(:,1)),2);
+ny = size(C_f(p_lim(:,1)),1);
 
 p = sym('p',[np,1]);
 dp = sym('dp',[np,1]);
@@ -158,7 +161,8 @@ pcz_dispFunctionEnd(TMP_WRUEESbUvbMihFnquvuF);
 
 end
 
-function res_req = approximate_necessary_grid_density_Wu1995(A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,args)
+function [res_req,hjmin_tT_pdelta,Maij,Mbij,Mffijk,Mfij] = ...
+    approximate_necessary_grid_density_Wu1995(A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,args)
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Approximate the necessary grid density 
 

@@ -13,9 +13,13 @@ function varargout = subsref(pLFR, S)
 switch S(1).type
     case '()'
         
-        % ([1;2],[3 4],5) --> {1 ; 2 ; 3 ; 4 ; 5}
-        subs = cellfun(@(c) {c(:)},S.subs);
-        x = num2cell(vertcat(subs{:}));
+        if isnumeric(S.subs{1})
+            % ([1;2],[3 4],5) --> {1 ; 2 ; 3 ; 4 ; 5}
+            subs = cellfun(@(c) {c(:)},S.subs);
+            x = num2cell(vertcat(subs{:}));
+        else
+            x = S.subs;
+        end
         
         if numel(x) == numel(pLFR.subsvars)    
             

@@ -1,4 +1,4 @@
-function N = set_channels(N, channels)
+function N = set_channels(N, channels_, vars_)
 %% set_channels
 %  
 %  File: set_channels.m
@@ -10,6 +10,22 @@ function N = set_channels(N, channels)
 
 %%
 
-N = PAffineMatrix(N.get_channels__(channels),channels,N.subsvars);
+if nargin == 2
+    
+    % Old operation mode (for compatibility reasonse)
+    N = PAffineMatrix(N.get_channels__(channels_),channels_,N.subsvars);
 
+elseif nargin == 3
+    
+    % New operation mode (same as in PGenAffineMatrix)
+
+    if N.s ~= numel(channels_)
+        error('Nr. of channels (%d) must conincide to the nr. of requested channels (%d)',...
+            N.s, numel(channels_));
+    end
+
+    N.channels = channels_;
+    N = N.set_vars(vars_);
+end
+    
 end

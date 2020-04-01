@@ -19,3 +19,11 @@ ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:27:11 id:2242|0|0.8744079703
 ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:28:56 id:2242|0|0.874385665021191|95.474945|104.794279|Successfully solved (MOSEK)|dual condensed LMI form
 ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:30:48 id:2242|0|0.874385665021191|98.207731|111.363625|Successfully solved (MOSEK)|dual explicit LMI form
 random_5D_1x3_LFR|2020.03.30. Monday 21:52:25 id:2242|0|1.16762768343838|106.161694|113.991544|Infeasible problem (MOSEK)|primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:23:13 id:2243|0|0|2.340939|17.724061|User terminated (MOSEK)|primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:23:32 id:2243|0|0|3.174877|13.61944|User terminated (MOSEK)|dual condensed LMI form
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:39:57 id:2244|0|0.874407970344914|80.71625|95.532801|Successfully solved (MOSEK)|primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:41:43 id:2244|0|0.874385665021191|96.156184|105.893164|Successfully solved (MOSEK)|dual condensed LMI form
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:43:33 id:2244|0|0.874385665021191|95.812563|109.516897|Successfully solved (MOSEK)|dual explicit LMI form
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:43:58 id:2261|0|0.874407970344914|77.816458|92.614879|Successfully solved (MOSEK)|primal
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:45:44 id:2261|0|0.874385665021191|95.417716|104.953068|Successfully solved (MOSEK)|dual condensed LMI form
+ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:47:33 id:2261|0|0.874385665021191|95.575402|109.070477|Successfully solved (MOSEK)|dual explicit LMI form

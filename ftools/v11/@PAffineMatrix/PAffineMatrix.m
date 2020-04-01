@@ -262,8 +262,9 @@ methods (Access = public)
 
     [N_new] = to_symTheta(N,name,assumptions);
     
-	N = set_subsvars(N, subsvars);
-    N = set_channels(N, channels);
+	N = set_subsvars(N, subsvars); % old
+    N = set_vars(N, vars); % new (as in PGenAffineMatrix)
+    N = set_channels(N, channels, vars);
     N = generate_symbolic(N);
     Ni = get_channels(N,varargin);
     [Ni,Ni_cell] = get_matrices(N,varargin);
