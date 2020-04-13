@@ -13,6 +13,45 @@ function [ret] = method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp
 % (lpvnorm) of nominal (not uncertain) rate-bounded LFT-based LPV systems
 % [7].'' (LPVToolbox Manual)
 % 
+% ``In the LFT case, lpvnorm implements a computation of the induced L2
+% norm only based on the derivation by [1]**. lpvwcgain computes the upper
+% bound on the induced L2 norm of an uncertain LPV system (grid- or
+% LFT-based). Its implementation is based on [3], and [8]***.'' ([2])
+% 
+% 
+% ** Author's comment: when the rate bounds are not specified. Otherwise,
+% `plftss/lpvnorm' calls `plftss/lpvwcgain'.
+% 
+% *** Author's comment: The structure of the dynamic multiplier block
+% corresponding to the smooth time-varying parametric uncertainty is
+% similar to that in [7] obtained through the swapping lemma. Differently
+% from [7], in which only an LPV stability test is proposed,
+% lpvnorm/lpvwcgain can handle a performance channel (multiplier block) to
+% compute an upper-bound on the L2-gain.
+% 
+% 
+% 1. In lpvwcgain, the basis functions for the dynamic multiplier are
+% considered similarly to [8,9]. The difference is that instead of the
+% repeated poles [ 1 1/(s-p) ... 1/(s-p)^k ] of [8,9], lpvnorm/lpvwcgain
+% considered multiple poles [1 1/(s-p1) ... 1/(s-pk) ] appearing once in a
+% multiplier block.
+% 
+% 2. lpvwcgain does NOT solve the KYP LMI associated with the IQC analysis.
+% Instead, it enforces the corresponding frequency domain constraint on a
+% frequency grid. The implementation is iterative based on the cutting
+% plane algorithm of [10].
+% 
+% 
+% References
+% 
+% [1] Apkarian and Gahinet (1995). A convex characterization of
+% gain-scheduled H_∞ controllers. IEEE Transactions on Automatic Control,
+% 40(5):853-864, 1995.
+% 
+% [2] Hjartarson, Seiler and Packard (2015). LPVTools: a toolbox for
+% modeling, analysis, and synthesis of parameter varying control systems.
+% IFAC-PapersOnLine, 48(26):139-145, 2015.
+% 
 % [3] Pfifer and Seiler (2015). Robustness analysis of linear parameter
 % varying systems using integral quadratic constraints. International
 % Journal of Robust and Nonlinear Control, Wiley Online Library,
@@ -32,6 +71,18 @@ function [ret] = method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp
 % [7] Helmersson (1999). An IQC-based stability criterion for systems with
 % slowly varying parameters. IFAC Proceedings Volumes, 32(2):3183-3188,
 % 1999.
+% 
+% [8] Veenman and Scherer (2014). IQC-synthesis with general dynamic
+% multipliers. International Journal of Robust and Nonlinear Control, Wiley
+% Online Library, 24(17):3027-3056, 2014.
+% 
+% [9] Köroğlu and Scherer (2006). Robust stability analysis against
+% perturbations of smoothly time-varying parameters. 45th IEEE Conference
+% on Decision and Control, :2895-2900, 2006.
+% 
+% [10] Wallin, Kao and Hansson (2008). A cutting plane method for solving
+% KYP-SDPs. Automatica, 44(2):418-429, 2008.
+% 
 
 
 %%
@@ -50,9 +101,10 @@ end
 [A_unc,B_unc,C_unc,D_unc] = helper_convert(A_fh,B_fh,C_fh,D_fh,p_cell,'plftmat');
 
 sys_unc_LFT = ss(A_unc,B_unc,C_unc,D_unc);
-simplify(sys_unc_LFT,'full');
+sys_unc_LFT = simplify(sys_unc_LFT,'full');
 
 %% Computations -- LPVNORM
+%{
 
 % -------------------------------------------------------------------------
 TMP_cwCXkgHfZmFQRzNVUlCO = pcz_dispFunctionName('LPVTools LFT/IQC', 'lpvnorm');
@@ -73,6 +125,8 @@ pcz_dispFunctionEnd(TMP_cwCXkgHfZmFQRzNVUlCO);
 
 store_results('LPVTools_Results.csv', modelname, 0, lpv_gamma, 0, lpvnorm_time, 'tvreal, lpvnorm', 'LFT/IQC')
 store_results('Results_All.csv', modelname, 0, lpv_gamma, 0, lpvnorm_time, 'tvreal, lpvnorm', 'LPVTools - LFT/IQC')
+
+%}
 
 %% Computations -- LPVWCGAIN
 

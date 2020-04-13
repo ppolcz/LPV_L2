@@ -67,7 +67,7 @@ iqc = iqcpb(M);
 [iqc,~] = iqcuc(iqc,'ltvs',M_lfr.blk.desc(1,:),[p_centered_lim' dp_lim'],'box');
  
 nr_blocks = numel(M_lfr.blk.desc(1,:));
-Pole = -2 * ones(1,nr_blocks);
+Pole = -1 * ones(1,nr_blocks);
 Length = 2 * ones(1,nr_blocks);
 
 iqc = set(iqc,1,'Pole',Pole);

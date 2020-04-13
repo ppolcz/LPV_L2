@@ -6,11 +6,9 @@
 %  Created on 2020. March 25. (2019b)
 
 G_reset
+P_init(11)
 
 %%
-
-logger = Logger('results/qLPV_ipend_main-output.txt');
-TMP_vcUXzzrUtfOumvfgWXDd = pcz_dispFunctionName;
 
 RUN_ID = str2double(getenv('RUN_ID'));
 if isnan(RUN_ID) || ceil(log10(RUN_ID + 1)) ~= 4
@@ -18,6 +16,9 @@ if isnan(RUN_ID) || ceil(log10(RUN_ID + 1)) ~= 4
 else
     setenv('RUN_ID', num2str(str2double(getenv('RUN_ID')) + 1))
 end
+
+logger = Logger(['results/' mfilename '-output.txt']);
+TMP_vcUXzzrUtfOumvfgWXDd = pcz_dispFunctionName;
 
 pcz_dispFunction2('Run ID = %s', getenv('RUN_ID'));
 
@@ -27,7 +28,7 @@ m = 1;       % Mass of the rod [kg]
 M = 2;       % Mass of the car [kg]
 L = 1;       % Length of the rod [m]
 g = 10;      % Gravitational acceleration [m/s^2]
-k = 5;       % Friction coefficient
+k = 5;       % Friction coefficient [kg/s]
 
 % Moment of inertia of a rod of length 2L and mass m, rotating about one
 % end. This expression assumes that the rod is an infinitely thin (but
@@ -175,6 +176,8 @@ bases_Jac = jacobian(bases,p);
 
 %%
 
+% method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
+
 % method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
 % 
 % % Greedy grid 
@@ -182,6 +185,8 @@ bases_Jac = jacobian(bases,p);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',15);
 % 
 % % As proposed by Wu (1995,1996)
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-6,'T',1e6);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-5,'T',100000);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-4,'T',10000);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-3,'T',1000);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',100);
@@ -194,15 +199,66 @@ bases_Jac = jacobian(bases,p);
 % method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
 % 
 % % IQC/LFT approaches for LPV with rate-bounded parameters
-% method3_IQC_LFT_IQCToolbox(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+% method3_IQC_LFT_IQCToolbox(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);fi
 % method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
-
+% 
 % method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 % 
 % % Imported variables to the base workspace: Q, dQ, PI_x, gamma
 % method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,p_expr);
-% helper_generate_isosurface_method5(Q,PI_x,gamma,p_expr,xw_lim(1:nx,:),[1,1,1]*101);
+% helper_generate_isosurface_method5(Q,PI_x,gamma,p_expr,xw_lim(1:nx,:),p_lim,dp_lim,[1,1,1]*101);
 
+%% 
+%{
+
+global LPVTools_vars
+
+IQCinfoS = LPVTools_vars.IQCinfoS
+
+omega = LPVTools_vars.omega;
+[~,index] = min(abs(omega - 2*pi));
+omega = omega(index);
+
+Psi = cell(1,np);
+[Psi{:}] = LPVTools_vars.IQCinfoS.PsiPi;
+
+Ts_sym = sym([])
+Ts = [];
+Us = [];
+Vs = [];
+syms s
+for i = 1:np
+    pl = LPVTools_vars.polelist.(['p' num2str(i)]);
+    pl(isinf(pl)) = [];
+    pl = abs(1./(1i*omega-pl)');
+    % pl = reshape(pl, [1,1,numel(pl)]);
+        
+    z = sym('z',size(pl));
+    
+    Psi_i1 = abs(Psi{i}{1}(:,:,index));
+    Psi_i2 = abs(Psi{i}{2}(:,:,index));
+    
+    Psi_i = [
+        Psi_i1(1:IQCinfoS(i).ExtBlkDim(1),:)
+        Psi_i2(1:numel(pl),:)
+        Psi_i1(IQCinfoS(i).ExtBlkDim(1)+1:end,:)
+        Psi_i2(numel(pl)+1:end,:)
+    ];
+    
+    Tsi = Psi_i1(1:IQCinfoS(i).ExtBlkDim(1),1:IQCinfoS(i).OrigBlkDim(1));
+    Tsi_sym = sym(round(Tsi,10));
+    Tsi_sym(abs(Tsi - 1) > 1e-10) = 0;
+    for j = 1:numel(pl)
+        Tsi_sym(abs(Tsi - pl(j)) < 1e-10) = 1/(s - z(j));
+    end
+
+    Ts_sym = blkdiag(Ts_sym, Tsi_sym);
+    Ts = blkdiag(Ts, Tsi);
+    Us = blkdiag(Us, Psi_i2(1:numel(pl),1:IQCinfoS(i).OrigBlkDim(1)));    
+    Vs = blkdiag(Vs, Psi_i1(IQCinfoS(i).ExtBlkDim(1)+1:end,2*IQCinfoS(i).OrigBlkDim(2)+1:end));
+end
+
+%}
 %%
 
 pcz_dispFunctionEnd(TMP_vcUXzzrUtfOumvfgWXDd);

@@ -1,0 +1,4835 @@
+[  INFO  ] Output logging (with `diary'): results/model5_gasturbine_engine-output-0410233030_id2313.txt
+ 
+┌ model5_gasturbine_engine
+│   Run ID = 2314
+│    
+│   ┌ method1_RCT:14 - Robust Control Toolbox
+│   │    
+│   │   ┌ method1_RCT:56 - Pure wcgain
+│   │   │   
+│   │   │   info = 
+│   │   │   
+│   │   │     struct with fields:
+│   │   │   
+│   │   │                    Model: 1
+│   │   │                Frequency: [2×1 double]
+│   │   │                   Bounds: [2×2 double]
+│   │   │        WorstPerturbation: [2×1 struct]
+│   │   │              Sensitivity: [1×1 struct]
+│   │   │       BadUncertainValues: [2×1 struct]
+│   │   │               ArrayIndex: 1
+│   │   │   
+│   │   │   
+│   │   │   - Solver time: 1.2575
+│   │   │   - Bounds: [0.942031,1.64828] = 0.518692,4.34063] dB 
+│   │   │   - Worst case uncertainty: p1 = 1.11022e-16
+│   │   │   - Critical frequency: 0
+│   │   └ 1.2586 [sec]
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:35 id:2314'
+│   │              Lower: 0.9420
+│   │              Upper: 1.6483
+│   │        Solver_Time: 0
+│   │       Overall_Time: 1.2575
+│   │        Solver_Info: '[no info
+│   │             Method: 'Robust Control Toolbox'
+│   │   
+│   │   
+│   └ 5.1203 [sec]
+│    
+│   ┌ method0_grid_LPVTools:14 - LPVTools
+│   │    
+│   │   ┌ method0_grid_LPVTools:60 - LPVTools grid based [msg:lpvnorm]
+│   │   │    
+│   │   │   ┌ lpvnorm called from method0_grid_LPVTools:62
+│   │   │   │    
+│   │   │   │   ┌ LOCALlpvL2normengine called from lpvnorm:82
+│   │   │   │   │   ny = 2
+│   │   │   │   │   nu = 2
+│   │   │   │   │   nmod = 5
+│   │   │   │   └ 0.27675 [sec]
+│   │   │   └ 0.35773 [sec]
+│   │   │   - Solver time: 0.375885
+│   │   │   - gamma = 0.960095 (lpvnorm)
+│   │   └ 0.37612 [sec]
+│   │   - Results stored in `results/LPVTools_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:37 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9601
+│   │        Solver_Time: 0
+│   │       Overall_Time: 0.3759
+│   │        Solver_Info: 'pgrid (5x5x5)x(2x2x2)'
+│   │             Method: 'grid'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:37 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9601
+│   │        Solver_Time: 0
+│   │       Overall_Time: 0.3759
+│   │        Solver_Info: 'pgrid (5x5x5)x(2x2x2)'
+│   │             Method: 'LPVTools - grid'
+│   │   
+│   │   
+│   └ 1.7194 [sec]
+│    
+│   ┌ method0_grid_Wu1995:48 - Grid-based [Wu, 1995]
+│   │   Required grid resolutions =
+│   │   
+│   │      Inf
+│   │   Acutally used grid resolutions =
+│   │   
+│   │        5
+│   │   - Collecting LMI constraints..........
+ 20.00% 40.00% 60.00% 80.00%100.00%
+│   │   - Calling the solver..........
+│   │    
+│   │   gamma = 0.95835
+│   │   solver_time = 0.018195
+│   │   - Successfully solved (MOSEK)
+│   │    
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:38 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9584
+│   │        Solver_Time: 0.0182
+│   │       Overall_Time: 1.2157
+│   │        Solver_Info: '5, Successfully solved (MOSEK)'
+│   │             Method: 'Req grid for T=Inf, delta=0: Inf (Wu, 1995)'
+│   │   
+│   │   
+│   └ 1.2604 [sec]
+│    
+│   ┌ method0_grid_Wu1995:48 - Grid-based [Wu, 1995]
+│   │   Required grid resolutions =
+│   │   
+│   │      Inf
+│   │   Acutally used grid resolutions =
+│   │   
+│   │       15
+│   │   - Collecting LMI constraints..........
+  7.00% 13.00% 20.00% 27.00% 33.00% 40.00% 47.00% 53.00% 60.00% 67.00% 73.00% 80.00% 87.00% 93.00%100.00%
+│   │   - Calling the solver..........
+│   │    
+│   │   gamma = 0.95891
+│   │   solver_time = 0.070135
+│   │   - Successfully solved (MOSEK)
+│   │    
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:40 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.0701
+│   │       Overall_Time: 1.3019
+│   │        Solver_Info: '15, Successfully solved (MOSEK)'
+│   │             Method: 'Req grid for T=Inf, delta=0: Inf (Wu, 1995)'
+│   │   
+│   │   
+│   └ 1.3463 [sec]
+│    
+│   ┌ method2_descriptor_primal called from model5_gasturbine_engine:125
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.00    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 169
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 8                 scalarized             : 636             
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 1.44e+04          after factor           : 1.44e+04        
+Factor     - dense dim.             : 0                 flops                  : 3.72e+06        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   3.9e+00  1.0e+00  9.0e+00  0.00e+00   3.199999844e+01   0.000000000e+00   1.0e+00  0.01  
+1   7.7e-01  2.0e-01  4.3e+00  7.46e-01   5.268250391e+00   -1.729870724e+00  2.0e-01  0.06  
+2   1.4e-01  3.5e-02  4.4e+00  1.38e+00   -7.227783789e-01  -1.688118444e+00  3.5e-02  0.06  
+3   3.1e-02  7.9e-03  1.9e+00  1.82e+00   -8.296329727e-01  -9.836890394e-01  7.9e-03  0.07  
+4   7.4e-03  1.9e-03  8.0e-01  1.00e+00   -8.953869703e-01  -9.340765783e-01  1.9e-03  0.07  
+5   1.6e-03  4.1e-04  2.9e-01  8.45e-01   -9.124735981e-01  -9.216080763e-01  4.1e-04  0.08  
+6   2.5e-04  6.4e-05  1.0e-01  8.72e-01   -9.183268887e-01  -9.198679942e-01  6.4e-05  0.08  
+7   3.7e-05  9.6e-06  3.7e-02  9.20e-01   -9.192984478e-01  -9.195381375e-01  9.6e-06  0.09  
+8   4.0e-06  1.0e-06  1.2e-02  9.40e-01   -9.195071153e-01  -9.195340446e-01  1.0e-06  0.10  
+9   1.5e-07  3.9e-08  2.2e-03  9.70e-01   -9.195337824e-01  -9.195348005e-01  4.0e-08  0.10  
+10  4.0e-09  1.1e-09  3.7e-04  9.99e-01   -9.195347774e-01  -9.195348048e-01  1.1e-09  0.11  
+Optimizer terminated. Time: 0.81    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -9.1953477736e-01   nrm: 4e+00    Viol.  con: 8e-05    barvar: 0e+00  
+  Dual.    obj: -9.1953480479e-01   nrm: 1e+01    Viol.  con: 0e+00    barvar: 2e-09  
+Optimizer summary
+  Optimizer                 -                        time: 0.81    
+    Interior-point          - iterations : 10        time: 0.11    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - 
+│   │   gamma = 0.95892
+│   │   solver_time = 0.84966
+│   │   - Successfully solved (MOSEK)
+│   │   X(p1) = 1 * X0 + p1 * X1
+│   │    
+│   │   X0 = [     1.0343 -0.2056 -0.1332       0       0       0       0       0       0
+│   │             -0.2056  0.1692  0.0202       0       0       0       0       0       0
+│   │             -0.1332  0.0202   0.094       0       0       0       0       0       0
+│   │             -2.8304  0.5185  0.3966  0.7919 -0.3636    0.11  -1.043 -0.1976 -0.2412
+│   │              0.5547 -0.0375 -0.1844  0.1358  0.0702 -0.0278 -0.0408  0.0818   0.143
+│   │             -0.5315  0.1548    0.28  0.0758 -0.0015  0.0438  -0.081  -0.498  0.0634
+│   │              1.6812 -0.4163 -0.5736   0.022  0.1172 -0.0771  0.8798  0.2635  0.0512
+│   │              1.9484 -0.2722 -0.2584 -0.4099  0.1595  0.4203  0.1202  0.6672 -0.0661
+│   │             -0.7447  0.8664 -0.1229  0.2998 -0.1423 -0.0366 -0.0882  0.0477  0.5272 ]
+│   │   - method2_descriptor_primal:292
+│   │   - model5_gasturbine_engine:125
+│   │    
+│   │   X1 = [         -0       0      -0       0       0       0       0       0       0
+│   │                   0      -0       0       0       0       0       0       0       0
+│   │                  -0       0      -0       0       0       0       0       0       0
+│   │              2.0894 -1.0891 -2.3521 -0.4245  0.0295 -0.1837  0.5529   0.191 -0.0837
+│   │              0.2824 -0.0257   0.006  0.0415 -0.0052 -0.1143 -0.0399  0.0292  0.0633
+│   │              0.2843  0.3606  0.3827 -0.0432  0.1265  0.1948  0.0678  0.1505  0.1051
+│   │              -1.281  0.4456  0.6765  0.1054 -0.0176 -0.1398 -0.3281 -0.1151  0.0257
+│   │              0.3044 -1.9004  0.9177  0.2633 -0.1235  0.2812 -0.2537 -0.3207 -0.2155
+│   │               1.054 -0.6169 -1.3405 -0.0852  0.0045 -0.2166  0.0039  0.0696 -0.1471 ]
+│   │   - method2_descriptor_primal:292
+│   │   - model5_gasturbine_engine:125
+│   │   - Results stored in `results/Descriptor_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:42 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.8497
+│   │       Overall_Time: 2.4810
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'primal'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:42 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.8497
+│   │       Overall_Time: 2.4810
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'Descriptor - primal'
+│   │   
+│   │   
+│   └ 2.6297 [sec]
+│    
+│   ┌ method2_descriptor_dual called from model5_gasturbine_engine:126
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.00    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 169
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 8                 scalarized             : 636             
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 1.44e+04          after factor           : 1.44e+04        
+Factor     - dense dim.             : 0                 flops                  : 3.30e+06        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   3.9e+00  4.8e+00  5.0e+00  0.00e+00   6.399999688e+01   0.000000000e+00   1.0e+00  0.01  
+1   8.1e-01  9.9e-01  1.0e+00  -6.42e-01  1.013193279e+01   -4.624527771e+00  2.0e-01  0.05  
+2   1.2e-01  1.5e-01  6.9e-01  1.60e+00   -2.653452345e+00  -4.861855168e+00  3.1e-02  0.06  
+3   1.9e-02  2.3e-02  3.2e-01  1.28e+00   -2.719376713e+00  -3.036329442e+00  4.9e-03  0.06  
+4   4.0e-03  4.9e-03  1.0e-01  7.71e-01   -1.538288154e+00  -1.609595502e+00  1.0e-03  0.07  
+5   9.7e-04  1.2e-03  4.1e-02  5.84e-01   -1.166308460e+00  -1.185982432e+00  2.5e-04  0.07  
+6   2.2e-04  2.7e-04  1.6e-02  6.21e-01   -1.018689586e+00  -1.023637087e+00  5.6e-05  0.07  
+7   6.1e-05  7.4e-05  7.0e-03  6.32e-01   -9.599815287e-01  -9.614007203e-01  1.5e-05  0.08  
+8   1.5e-05  1.8e-05  2.8e-03  5.90e-01   -9.309479911e-01  -9.312826563e-01  3.7e-06  0.08  
+9   3.6e-06  4.4e-06  1.3e-03  8.11e-01   -9.234472842e-01  -9.235197254e-01  8.7e-07  0.09  
+10  7.6e-07  9.3e-07  5.8e-04  7.88e-01   -9.201649562e-01  -9.201868683e-01  1.7e-07  0.09  
+11  1.5e-07  1.8e-07  2.6e-04  9.56e-01   -9.196337615e-01  -9.196384891e-01  3.2e-08  0.09  
+12  1.5e-08  1.6e-08  7.4e-05  9.91e-01   -9.195406044e-01  -9.195409486e-01  2.9e-09  0.10  
+13  3.8e-10  2.8e-10  1.0e-05  1.00e+00   -9.195348179e-01  -9.195348246e-01  5.3e-11  0.10  
+Optimizer terminated. Time: 0.12    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -9.1953481795e-01   nrm: 2e+01    Viol.  con: 7e-07    barvar: 0e+00  
+  Dual.    obj: -9.1953482456e-01   nrm: 1e+02    Viol.  con: 0e+00    barvar: 5e-09  
+Optimizer summary
+  Optimizer                 -                        time: 0.12    
+    Interior-point          - iterations : 13        time: 0.10    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - 
+│   │   gamma = 0.95892
+│   │   solver_time = 0.163
+│   │   - Successfully solved (MOSEK)
+│   │   Y(p1) = 1 * Y0 + p1 * Y1
+│   │    
+│   │   Y0 = [     1.3546   1.638  1.5034  0.9427 -3.5574 -1.2543 -1.7791  1.4351   4.197
+│   │               1.638   7.822  0.6382 -1.9319  6.5533  3.1108 -8.6148 -25.643 -0.3475
+│   │              1.5034  0.6382  12.513  9.5665 -36.651 -16.591  6.1707   33.29  27.405
+│   │                   0       0       0  9.7638   -8.16 -0.2974 -0.0207 -1.2267 -0.3793
+│   │                   0       0       0 -9.6221  35.308  6.2168  0.2822  3.4565  1.0123
+│   │                   0       0       0  -10.89  29.491  16.341  0.0945  3.8839  1.0858
+│   │                   0       0       0  0.7389   -0.28  -0.224  4.7923  3.1753 -0.6991
+│   │                   0       0       0  9.6689 -29.631 -20.037 -0.6069  8.9798 -2.2376
+│   │                   0       0       0  4.1588 -12.712 -9.1589 -0.5574  5.6087  2.4286 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:126
+│   │    
+│   │   Y1 = [         -0       0      -0 -4.3522 -0.6329 -0.6892  0.3828  0.3566 -0.0289
+│   │                   0      -0       0  1.4662  0.0856 -0.9515 -0.5677  0.5356  0.1403
+│   │                  -0       0      -0   4.192 -6.6473  5.6046  1.5777  1.1384  0.0395
+│   │                   0       0       0 -2.3135 -13.938 -7.4237  1.3174  0.1509  0.5687
+│   │                   0       0       0  14.506 -8.3063 -12.833  -4.668  10.975  8.0625
+│   │                   0       0       0   16.37  2.8746 -3.8726  2.2889  8.5475 -2.0647
+│   │                   0       0       0 -3.9415  3.3651   -1.86 -0.9373  0.3528  1.5233
+│   │                   0       0       0 -12.181 -1.0095  4.2364  0.7547 -5.4287 -2.2787
+│   │                   0       0       0 -3.6467 -16.069 -6.6627 -0.7384  9.5907  1.7391 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:126
+│   │   - Results stored in `results/Descriptor_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:44 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1630
+│   │       Overall_Time: 1.6878
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'dual condensed LMI form'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:44 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1630
+│   │       Overall_Time: 1.6878
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'Descriptor - dual condensed LMI form'
+│   │   
+│   │   
+│   └ 1.8261 [sec]
+│    
+│   ┌ method2_descriptor_dual called from model5_gasturbine_engine:127
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.00    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 169
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 8                 scalarized             : 636             
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 1.44e+04          after factor           : 1.44e+04        
+Factor     - dense dim.             : 0                 flops                  : 3.30e+06        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   3.9e+00  4.8e+00  5.0e+00  0.00e+00   6.399999688e+01   0.000000000e+00   1.0e+00  0.01  
+1   8.1e-01  9.9e-01  1.0e+00  -6.42e-01  1.013193279e+01   -4.624527771e+00  2.0e-01  0.05  
+2   1.2e-01  1.5e-01  6.9e-01  1.60e+00   -2.653452345e+00  -4.861855168e+00  3.1e-02  0.05  
+3   1.9e-02  2.3e-02  3.2e-01  1.28e+00   -2.719376713e+00  -3.036329442e+00  4.9e-03  0.06  
+4   4.0e-03  4.9e-03  1.0e-01  7.71e-01   -1.538288154e+00  -1.609595502e+00  1.0e-03  0.06  
+5   9.7e-04  1.2e-03  4.1e-02  5.84e-01   -1.166308460e+00  -1.185982432e+00  2.5e-04  0.06  
+6   2.2e-04  2.7e-04  1.6e-02  6.21e-01   -1.018689586e+00  -1.023637087e+00  5.6e-05  0.07  
+7   6.1e-05  7.4e-05  7.0e-03  6.32e-01   -9.599815287e-01  -9.614007203e-01  1.5e-05  0.07  
+8   1.5e-05  1.8e-05  2.8e-03  5.90e-01   -9.309479911e-01  -9.312826563e-01  3.7e-06  0.08  
+9   3.6e-06  4.4e-06  1.3e-03  8.11e-01   -9.234472842e-01  -9.235197254e-01  8.7e-07  0.08  
+10  7.6e-07  9.3e-07  5.8e-04  7.88e-01   -9.201649562e-01  -9.201868683e-01  1.7e-07  0.08  
+11  1.5e-07  1.8e-07  2.6e-04  9.56e-01   -9.196337615e-01  -9.196384891e-01  3.2e-08  0.09  
+12  1.5e-08  1.6e-08  7.4e-05  9.91e-01   -9.195406044e-01  -9.195409486e-01  2.9e-09  0.09  
+13  3.8e-10  2.8e-10  1.0e-05  1.00e+00   -9.195348179e-01  -9.195348246e-01  5.3e-11  0.10  
+Optimizer terminated. Time: 0.12    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -9.1953481795e-01   nrm: 2e+01    Viol.  con: 7e-07    barvar: 0e+00  
+  Dual.    obj: -9.1953482456e-01   nrm: 1e+02    Viol.  con: 0e+00    barvar: 5e-09  
+Optimizer summary
+  Optimizer                 -                        time: 0.12    
+    Interior-point          - iterations : 13        time: 0.10    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - 
+│   │   gamma = 0.95892
+│   │   solver_time = 0.15422
+│   │   - Successfully solved (MOSEK)
+│   │   Y(p1) = 1 * Y0 + p1 * Y1
+│   │    
+│   │   Y0 = [     1.3546   1.638  1.5034  0.9427 -3.5574 -1.2543 -1.7791  1.4351   4.197
+│   │               1.638   7.822  0.6382 -1.9319  6.5533  3.1108 -8.6148 -25.643 -0.3475
+│   │              1.5034  0.6382  12.513  9.5665 -36.651 -16.591  6.1707   33.29  27.405
+│   │                   0       0       0  9.7638   -8.16 -0.2974 -0.0207 -1.2267 -0.3793
+│   │                   0       0       0 -9.6221  35.308  6.2168  0.2822  3.4565  1.0123
+│   │                   0       0       0  -10.89  29.491  16.341  0.0945  3.8839  1.0858
+│   │                   0       0       0  0.7389   -0.28  -0.224  4.7923  3.1753 -0.6991
+│   │                   0       0       0  9.6689 -29.631 -20.037 -0.6069  8.9798 -2.2376
+│   │                   0       0       0  4.1588 -12.712 -9.1589 -0.5574  5.6087  2.4286 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:127
+│   │    
+│   │   Y1 = [         -0       0      -0 -4.3522 -0.6329 -0.6892  0.3828  0.3566 -0.0289
+│   │                   0      -0       0  1.4662  0.0856 -0.9515 -0.5677  0.5356  0.1403
+│   │                  -0       0      -0   4.192 -6.6473  5.6046  1.5777  1.1384  0.0395
+│   │                   0       0       0 -2.3135 -13.938 -7.4237  1.3174  0.1509  0.5687
+│   │                   0       0       0  14.506 -8.3063 -12.833  -4.668  10.975  8.0625
+│   │                   0       0       0   16.37  2.8746 -3.8726  2.2889  8.5475 -2.0647
+│   │                   0       0       0 -3.9415  3.3651   -1.86 -0.9373  0.3528  1.5233
+│   │                   0       0       0 -12.181 -1.0095  4.2364  0.7547 -5.4287 -2.2787
+│   │                   0       0       0 -3.6467 -16.069 -6.6627 -0.7384  9.5907  1.7391 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:127
+│   │   - Results stored in `results/Descriptor_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:46 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1542
+│   │       Overall_Time: 1.7063
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'dual explicit LMI form'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:46 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1542
+│   │       Overall_Time: 1.7063
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'Descriptor - dual explicit LMI form'
+│   │   
+│   │   
+│   └ 1.8751 [sec]
+│    
+│   ┌ method3_IQC_LFT_IQCToolbox:13 - IQCToolbox
+│   │    
+│   │   ┌ iqcsolve:680 - mincx
+
+ Solver for linear objective minimization under LMI constraints 
+
+ Iterations   :    Best objective value so far 
+ 
+     1
+     2
+     3
+     4
+     5
+
+ Result:  infeasibility
+
+ The LMI constraints were found INFEASIBLE 
+
+│   │   └ 0.31964 [sec]
+Elapsed time is 0.380259 seconds.
+1 uncertainty block(s)-
+
+	1. LTVS Block
+		Pole: -1
+		Length: 2
+		Relax: 1
+		Active: 1
+
+IQC problem solutions-
+
+	tmin: 
+	gopt: 
+	Scaling: {0x0 cell}
+	Lyap: [0x0 double]
+	tgplot: [0x0 double]
+
+│   │   - Model: gasturbine_engine, R: 1000000000
+│   │   - Overall time: 0.380255
+│   │   - Gamma = 0 
+│   │   -  
+│   │   - Results stored in `results/IQCToolbox_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:46 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0
+│   │        Solver_Time: 0
+│   │       Overall_Time: 0.3803
+│   │        Solver_Info: 'Pole: 1 Length: [2 Relax: 1, Active: 1'
+│   │             Method: 'IQCToolbox - ltvs'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:46 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0
+│   │        Solver_Time: 0
+│   │       Overall_Time: 0.3803
+│   │        Solver_Info: 'Pole: 1 Length: [2 Relax: 1, Active: 1'
+│   │             Method: 'IQCToolbox - ltvs'
+│   │   
+│   │   
+│   └ 0.4874 [sec]
+│    
+│   ┌ method3_IQC_LFT_LPVTools:90 - LPVTools
+│   │    
+│   │   ┌ method3_IQC_LFT_LPVTools:109 - LPVTools LFT/IQC [msg:lpvnorm]
+│   │   │    
+│   │   │   ┌ lpvnorm called from method3_IQC_LFT_LPVTools:116
+│   │   │   │    
+│   │   │   │   ┌ lpvwcgain called from lpvnorm:59
+│   │   │   │   │   
+│   │   │   │   │   List of default poles = 
+│   │   │   │   │   
+│   │   │   │   │     struct with fields:
+│   │   │   │   │   
+│   │   │   │   │       p1: 1.4899 -8.2020 -45.1526 Inf]
+│   │   │   │   │   
+│   │   │   │   │   
+│   │   │   │   │   grid omega: 2.706394e-01 <-- 45 --> 2.485688e+02
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcperf4 called from lpvwcgain:83
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.4404 [sec]
+│   │   │   │   │   │   └ 0.49092 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  26
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.60191 [sec]
+│   │   │   │   │   │   └ 0.62906 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  26  18
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.85721 [sec]
+│   │   │   │   │   │   └ 0.88631 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  26  18  23
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 1.05 [sec]
+│   │   │   │   │   │   └ 1.0727 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  26  18  23  21
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 1.2423 [sec]
+│   │   │   │   │   │   └ 1.2673 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  26  18  23  21  20
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 1.4138 [sec]
+│   │   │   │   │   │   └ 1.4415 [sec]
+│   │   │   │   │   └ 5.9638 [sec]
+│   │   │   │   └ 6.1232 [sec]
+│   │   │   └ 6.1516 [sec]
+│   │   │   - Solver time: 6.16856
+│   │   │   - gamma = 0.959501 (lpvnorm)
+│   │   └ 6.1688 [sec]
+│   │   - Results stored in `results/LPVTools_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:53 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9595
+│   │        Solver_Time: 0
+│   │       Overall_Time: 6.1686
+│   │        Solver_Info: 'tvreal, lpvnorm'
+│   │             Method: 'LFT/IQC'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:30:53 id:2314'
+│   │              Lower: 0
+│   │              Upper: 0.9595
+│   │        Solver_Time: 0
+│   │       Overall_Time: 6.1686
+│   │        Solver_Info: 'tvreal, lpvnorm'
+│   │             Method: 'LPVTools - LFT/IQC'
+│   │   
+│   │   
+│   │    
+│   │   ┌ method3_IQC_LFT_LPVTools:131 - LPVTools LFT/IQC [msg:lpvwcgain]
+│   │   │    
+│   │   │   ┌ lpvwcgain called from method3_IQC_LFT_LPVTools:145
+│   │   │   │   
+│   │   │   │   List of default poles = 
+│   │   │   │   
+│   │   │   │     struct with fields:
+│   │   │   │   
+│   │   │   │       p1: 1.4899 -8.2020 -45.1526 Inf]
+│   │   │   │   
+│   │   │   │   
+│   │   │   │   grid omega: 2.706394e-01 <-- 45 --> 2.485688e+02
+│   │   │   │    
+│   │   │   │   ┌ iqcperf4 called from lpvwcgain:83
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.45085 [sec]
+│   │   │   │   │   └ 0.47715 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  26
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.60896 [sec]
+│   │   │   │   │   └ 0.63651 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  26  18
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.87301 [sec]
+│   │   │   │   │   └ 0.90044 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  26  18  23
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 1.0537 [sec]
+│   │   │   │   │   └ 1.0818 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  26  18  23  21
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 1.2475 [sec]
+│   │   │   │   │   └ 1.2749 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  26  18  23  21  20
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 1.3864 [sec]
+│   │   │   │   │   └ 1.4146 [sec]
+│   │   │   │   └ 5.913 [sec]
+│   │   │   └ 8.1583 [sec]
+│   │   │   - Solver time: 8.17616
+│   │   │   - Bounds: [0.941758,0.959501] = 0.521213,-0.359088] dB 
+│   │   └ 8.1767 [sec]
+│   │   - Results stored in `results/LPVTools_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:31:01 id:2314'
+│   │              Lower: 0.9418
+│   │              Upper: 0.9595
+│   │        Solver_Time: 0
+│   │       Overall_Time: 8.1762
+│   │        Solver_Info: 'tvreal, lpvwcgain'
+│   │             Method: 'LFT/IQC'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │              Stamp: '2020.04.10. Friday 23:31:01 id:2314'
+│   │              Lower: 0.9418
+│   │              Upper: 0.9595
+│   │        Solver_Time: 0
+│   │       Overall_Time: 8.1762
+│   │        Solver_Info: 'tvreal, lpvwcgain'
+│   │             Method: 'LPVTools - LFT/IQC'
+│   │   
+│   │   
+│   └ 14.623 [sec]
+│    
+│   ┌ method4_authors_old_symbolical called from model5_gasturbine_engine:133
+│   │    
+│   │   ┌ method4_authors_old_symbolical:19 - model generation
+│   │   │    
+│   │   │   ┌ P_LFR_reduction called from method4_authors_old_symbolical:44
+│   │   │   │    
+│   │   │   │   ┌ P_lfrdata called from P_LFR_reduction:95
+│   │   │   │   └ 0.019968 [sec]
+│   │   │   │    
+│   │   │   │   - Redundant LFR model (dim: 9) (symbolic computations). Elapsed time is 0.023961
+│   │   │   │    
+│   │   │   │   ┌ P_Pi_canonical_decomp called from P_LFR_reduction:131
+│   │   │   │   └ 0.13454 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the permuted model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 1.33227e-15
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the permuted model should be the same
+│   │   │   │   └ 0.010009 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Pi [dim: 12] = S * (reduced Pi [dim: 9.
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 2.09439e-10
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [ FAILED ] Pi [dim: 12] = S * (reduced Pi [dim: 9.
+│   │   │   │   │   - Equality percentage: 75%
+│   │   │   │   │   - Indices, where not equal: [ 8 , 10 , 12 ] / 12
+│   │   │   │   │   - nr of elements where not zero/all: 3/12
+│   │   │   │   │   - differences: [ 0 ; 0 ; 0 ]
+│   │   │   │   └ 0.01608 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the reduced model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-05.
+│   │   │   │   │   [  INFO  ] Maximal difference: 1.77636e-15
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the reduced model should be the same
+│   │   │   │   └ 0.012381 [sec]
+│   │   │   │    
+│   │   │   └ 1.2198 [sec]
+│   │   │    
+│   │   │   ┌ P_LFR_reduction called from method4_authors_old_symbolical:45
+│   │   │   │    
+│   │   │   │   ┌ P_lfrdata called from P_LFR_reduction:95
+│   │   │   │   └ 0.01476 [sec]
+│   │   │   │    
+│   │   │   │   - Redundant LFR model (dim: 6) (symbolic computations). Elapsed time is 0.019882
+│   │   │   │    
+│   │   │   │   ┌ P_Pi_canonical_decomp called from P_LFR_reduction:131
+│   │   │   │   └ 0.10623 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the permuted model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 4.89192e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the permuted model should be the same
+│   │   │   │   └ 0.000418 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Pi [dim: 8] = S * (reduced Pi [dim: 6.
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 2.36483e-11
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Pi [dim: 8] = S * (reduced Pi [dim: 6.
+│   │   │   │   └ 0.000432 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the reduced model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-05.
+│   │   │   │   │   [  INFO  ] Maximal difference: 1.08247e-15
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the reduced model should be the same
+│   │   │   │   └ 0.011754 [sec]
+│   │   │   │    
+│   │   │   └ 1.0935 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator called from method4_authors_old_symbolical:114
+│   │   │   │    
+│   │   │   │   ┌ P_affine_annihilator:94 (pcz_fhzero_report) - Numerical check. 
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   - Maximal difference: 8.56035e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Numerical check. 
+│   │   │   │   └ 0.13574 [sec]
+│   │   │   └ 0.53921 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator called from method4_authors_old_symbolical:117
+│   │   │   │    
+│   │   │   │   ┌ P_affine_annihilator:94 (pcz_fhzero_report) - Numerical check. 
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   - Maximal difference: 1.79629e-14
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Numerical check. 
+│   │   │   │   └ 0.19679 [sec]
+│   │   │   └ 0.81391 [sec]
+│   │   └ 5.1984 [sec]
+│   │   - nr. of variables: 1399
+│   │    
+│   │   ┌ method4_authors_old_symbolical:171 - Solve LMIs
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1399            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.01    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1399            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 1399
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 1                 conic                  : 0               
+Optimizer  - Semi-definite variables: 6                 scalarized             : 2334            
+Factor     - setup time             : 0.13              dense det. time        : 0.00            
+Factor     - ML order time          : 0.05              GP order time          : 0.00            
+Factor     - nonzeros before factor : 9.12e+05          after factor           : 9.12e+05        
+Factor     - dense dim.             : 0                 flops                  : 1.22e+09        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   8.0e+00  1.5e+00  3.0e+00  0.00e+00   -1.600036003e+01  0.000000000e+00   1.0e+00  0.17  
+1   7.8e-01  1.5e-01  1.7e-01  -7.78e-01  -2.763547856e+01  -1.062177971e+01  9.7e-02  0.72  
+2   9.2e-02  1.7e-02  5.4e-03  -7.88e-01  -3.052321320e+02  -1.365246873e+02  1.1e-02  0.99  
+3   3.9e-03  7.3e-04  2.2e-05  -1.24e+00  -2.766000997e+04  -1.082392795e+04  4.9e-04  1.25  
+4   8.1e-05  1.5e-05  1.8e-07  -9.83e-01  -1.950965145e+05  -8.506250534e+04  1.3e-05  1.51  
+5   5.6e-06  1.1e-06  1.2e-08  1.14e-02   -3.412487366e+05  -2.098145864e+05  1.1e-06  1.99  
+6   6.3e-07  1.5e-07  6.9e-10  -1.21e-01  -2.284926437e+06  -1.516932903e+06  1.3e-07  2.25  
+7   5.6e-07  1.3e-07  4.7e-10  -1.38e+00  -3.210332679e+06  -2.082343005e+06  1.1e-07  2.50  
+8   3.0e-07  5.5e-08  3.5e-11  -1.80e+00  -9.005176275e+07  -5.127095641e+07  4.6e-08  3.00  
+9   2.6e-07  5.2e-08  1.8e-11  -1.95e+01  -1.503912269e+08  -2.394061159e+07  4.5e-08  3.25  
+10  2.6e-07  5.2e-08  1.8e-11  -2.51e+01  -1.503912269e+08  -2.394061159e+07  4.5e-08  3.73  
+Optimizer terminated. Time: 4.60    
+
+
+MOSEK DUAL INFEASIBILITY REPORT.
+
+Problem status: The problem is dual infeasible
+
+Interior-point solution summary
+  Problem status  : DUAL_INFEASIBLE
+  Solution status : DUAL_INFEASIBLE_CER
+  Primal.  obj: -1.3013719034e+01   nrm: 3e+01    Viol.  con: 9e+01    var: 6e-08    barvar: 0e+00  
+Optimizer summary
+  Optimizer                 -                        time: 4.60    
+    Interior-point          - iterations : 11        time: 3.76    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   │   [ FAILED ] Infeasible problem (MOSEK). Solver time: 4.79023
+│   │   │   [ FAILED ] The solution is NOT feasible. Tolerance: 1e-06. Min(Dual) = -6.006460e-08.
+│   │   │    
+│   │   │   - Gamma = 1.43932 
+│   │   │   - size(N)  =   6, size(PI)   =   9
+│   │   │   - size(Na) =  38, size(PI_a) =  33
+│   │   │   - 
+│   │   │    
+│   │   │   Q0 =  = [          0      -0       0      -0       0      -0      -0       0      -0
+│   │   │                     -0       0      -0       0      -0       0       0      -0       0
+│   │   │                      0      -0       0       0       0      -0      -0       0      -0
+│   │   │                     -0       0       0       0      -0      -0       0      -0       0
+│   │   │                      0      -0       0      -0       0      -0      -0       0      -0
+│   │   │                     -0       0      -0      -0      -0       0       0      -0       0
+│   │   │                     -0       0      -0       0      -0       0       0      -0       0
+│   │   │                      0      -0       0      -0       0      -0      -0       0      -0
+│   │   │                     -0       0      -0       0      -0       0       0      -0       0 ]
+│   │   │   - method4_authors_old_symbolical:197
+│   │   │   - model5_gasturbine_engine:133
+│   │   │    
+│   │   │   Q1 =  = [         -0      -0      -0      -0       0      -0       0      -0       0
+│   │   │                     -0       0       0      -0       0      -0       0       0       0
+│   │   │                     -0       0       0      -0       0      -0       0      -0       0
+│   │   │                     -0      -0      -0      -0       0      -0      -0      -0      -0
+│   │   │                      0       0       0       0       0       0       0      -0      -0
+│   │   │                     -0      -0      -0      -0       0       0       0       0       0
+│   │   │                      0       0       0      -0       0       0      -0       0      -0
+│   │   │                     -0       0      -0      -0      -0       0       0       0       0
+│   │   │                      0       0       0      -0      -0       0      -0       0       0 ]
+│   │   │   - method4_authors_old_symbolical:197
+│   │   │   - model5_gasturbine_engine:133
+│   │   │    
+│   │   │   p_lim = [       0.000    1.000 ]
+│   │   │   - method4_authors_old_symbolical:200
+│   │   │   - model5_gasturbine_engine:133
+│   │   │    
+│   │   │   dp_lim = [    -1000000000.000 1000000000.000 ]
+│   │   │   - method4_authors_old_symbolical:201
+│   │   │   - model5_gasturbine_engine:133
+│   │   │   - Results stored in `results/Results_All.csv'
+│   │   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │   │              Stamp: '2020.04.10. Friday 23:31:12 id:2314'
+│   │   │              Lower: 0
+│   │   │              Upper: 1.4393
+│   │   │        Solver_Time: 4.7902
+│   │   │       Overall_Time: 10.7850
+│   │   │        Solver_Info: 'Infeasible problem (MOSEK)'
+│   │   │             Method: 'Polytopic a. with Finsler (old)'
+│   │   │   
+│   │   │   
+│   │   └ 5.2118 [sec]
+│   └ 11.0325 [sec]
+│    
+│   ┌ method5_proposed_approach called from model5_gasturbine_engine:136
+│   │    
+│   │   ┌ method5_proposed_approach:19 - model generation
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:49 (pcz_lfrzero_report) - Generator form (m = 9) of [ A(p) ; C(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.77636e-15
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Generator form (m = 9) of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.016782 [sec]
+│   │   │    
+│   │   │   ┌ P_mingen_for_LFR called from method5_proposed_approach:52
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_mingen_for_LFR:61
+│   │   │   │   │   Constant kernel computation for G: 3x12, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (4*3=)12x12
+│   │   │   │   │   Error computed for Merr: (4*3=)12x12. Maximum error: 9.507008e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.030205 [sec]
+│   │   │   └ 0.52181 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:54 (pcz_lfrzero_report) - Minimal generator form of [ A(p) ; C(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.77636e-15
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Minimal generator form of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.011268 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:67 (pcz_lfrzero_report) - Generator form of [ B(p) ; D(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.95807e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.012706 [sec]
+│   │   │    
+│   │   │   ┌ P_mingen_for_LFR called from method5_proposed_approach:70
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_mingen_for_LFR:61
+│   │   │   │   │   Constant kernel computation for G: 2x8, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (4*2=)8x8
+│   │   │   │   │   Error computed for Merr: (4*2=)8x8. Maximum error: 2.203287e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.016309 [sec]
+│   │   │   └ 0.45208 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:72 (pcz_lfrzero_report) - Minimal generator form of [ B(p) ; D(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.13841e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Minimal generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.011356 [sec]
+│   │   │    
+│   │   │   ┌ P_mingen_for_LFR called from method5_proposed_approach:108
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_mingen_for_LFR:61
+│   │   │   │   │   Constant kernel computation for G: 5x33, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.354535e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_mingen_for_LFR (line 61)
+  In method5_proposed_approach (line 108)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.620247e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_mingen_for_LFR (line 61)
+  In method5_proposed_approach (line 108)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.713010e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_mingen_for_LFR (line 61)
+  In method5_proposed_approach (line 108)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.462441e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_mingen_for_LFR (line 61)
+  In method5_proposed_approach (line 108)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.644571e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_mingen_for_LFR (line 61)
+  In method5_proposed_approach (line 108)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.628081e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_mingen_for_LFR (line 61)
+  In method5_proposed_approach (line 108)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (7*5=)35x33
+│   │   │   │   │   Error computed for Merr: (7*5=)35x33. Maximum error: 7.430859e-13
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.031508 [sec]
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-14
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-13
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-12
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-11
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-10
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-09
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-08
+│   │   │   └ 1.0678 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:109 (pcz_fhzero_report) - Minimal generator for PI_a(p) is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal difference: 4.05207e-09
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [ FAILED ] Minimal generator for PI_a(p) is OK
+│   │   │   │   - Equality percentage: 95.1515%
+│   │   │   │   - Indices, where not equal: [ 33 , 63 , 66 , 99 , 129 , 132 , 162 , 165 ] / 165
+│   │   │   │   - nr of elements where not zero/all: 8/165
+│   │   │   └ 0.024126 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator_for_LFR called from method5_proposed_approach:135
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_affine_annihilator_for_LFR:52
+│   │   │   │   │   Constant kernel computation for G: 3x18, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (6*3=)18x18
+│   │   │   │   │   Error computed for Merr: (6*3=)18x18. Maximum error: 6.598172e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.01591 [sec]
+│   │   │   └ 0.54693 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:136 (pcz_gsszero_report) - Annihilator N
+│   │   │   │   [  INFO  ] Tolerance: 6.59817e-14.
+│   │   │   │   - Maximal difference: 6.59817e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Annihilator N
+│   │   │   └ 0.010883 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator_for_LFR called from method5_proposed_approach:138
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_affine_annihilator_for_LFR:52
+│   │   │   │   │   Constant kernel computation for G: 5x93, with tolerance: 1e-10.
+│   │   │   │   │   ----------------------------------------------------
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.658746e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.040682e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.993725e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.889278e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.455099e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.428444e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.277515e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.184672e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.748090e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.875106e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.093130e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.607128e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.682093e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.329646e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.863694e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.875143e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.663271e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.188741e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.624732e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 123)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (19*5=)95x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.815683e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.247592e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.344273e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.766696e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.438355e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.119761e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.860871e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.888615e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.713421e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.871290e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.164215e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.639551e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.559626e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.750632e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.784030e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.953991e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.897447e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.783032e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.214617e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 2.721062e+04
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 0 not found, trying again with N = 38.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.282273e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.709397e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.102345e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.173019e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.242198e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.799674e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.784191e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.426813e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.417668e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.811929e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.008636e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.579466e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.154354e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.484140e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.164740e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.589633e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.055926e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.286159e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.976296e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (38*5=)190x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.864172e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.273211e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.356938e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.151807e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.027188e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.648534e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.887545e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.298939e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.283225e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.352605e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.745564e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.894791e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.854342e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.599933e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.730317e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.965530e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.019229e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.769999e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.808948e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 6.153563e+04
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 19 not found, trying again with N = 57.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.022678e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.487613e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.902675e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.922359e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.228844e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.476909e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.661979e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.646496e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.239456e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.258370e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.267461e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.652827e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.904996e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.346818e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.311340e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.955055e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.699203e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.208005e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.911116e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (57*5=)285x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.815610e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.346472e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.448040e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.752339e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.759962e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.236578e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.138167e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.042251e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.644785e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.457698e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.213833e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.656972e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.142257e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.072473e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.896243e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.659039e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.868277e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.308879e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.738655e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 5.264805e+03
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 38 not found, trying again with N = 76.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.397927e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.890382e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.504513e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.518605e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.124323e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.061160e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.186180e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.225656e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.166017e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.841917e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.091167e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.378839e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.804865e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.277985e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.713981e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.761569e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.743594e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.663747e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.347038e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (76*5=)380x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.058928e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.825409e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.721101e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.325417e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.190805e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.212701e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.410441e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.971391e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.962889e-17. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.180598e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.182489e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.318533e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.020651e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.274364e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.158716e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.316633e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.722855e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.243341e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.344423e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 3.524398e+03
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 57 not found, trying again with N = 95.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.734778e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.387796e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.568704e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.662270e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.521482e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.925636e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.286896e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.935941e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.163842e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.766705e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.580163e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.005962e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.590109e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.671667e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.070807e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.756787e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.820519e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.646302e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.172812e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (95*5=)475x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.865869e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.245490e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.824327e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.190168e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.298978e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.083728e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.679880e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.068442e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.624230e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.154500e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.420511e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.766527e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.837434e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.965263e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.197004e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.609559e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.966735e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.189574e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.264955e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 7.568528e+03
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 76 not found, trying again with N = 114.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.219256e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.938952e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.021759e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.845721e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.028645e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.982955e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.122143e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.451381e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.673839e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.740044e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.689377e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.097284e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.422418e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.807491e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.846449e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.552242e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.038924e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.038306e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.567936e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (114*5=)570x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.662569e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.951230e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.933234e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.562961e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.192573e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.043121e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.009256e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.211268e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.627005e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.890569e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.354705e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.424426e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.050979e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.434788e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.002004e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.353310e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.685766e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.871236e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.175157e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 5.993745e+03
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 95 not found, trying again with N = 133.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.272310e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.457324e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.141377e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.354818e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.925117e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.567869e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.597525e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.669505e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.855049e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.368014e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.089982e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.160119e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.370535e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.984399e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.051482e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.991519e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.088411e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.397463e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.167029e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (133*5=)665x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.462844e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.459214e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.522900e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.418994e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.091894e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.520952e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.488332e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.253795e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.212599e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.265052e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.975993e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.443408e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.684450e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.309955e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.181243e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.680453e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.579399e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.797957e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.566151e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 2.483683e+03
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 114 not found, trying again with N = 152.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.471312e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.191962e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.176644e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.944942e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.090680e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.008603e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.932485e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.729400e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.053339e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.092972e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.462557e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.504024e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.165179e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.203390e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.185969e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.322707e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.981102e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.845916e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.751517e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (152*5=)760x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.493478e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.292824e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.002060e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.383857e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.909159e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.918691e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.031492e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.186202e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.616811e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.921602e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.535435e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.822194e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.412791e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.487836e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.007106e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.927277e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.428240e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.321101e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.307624e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 1.638241e+06
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 133 not found, trying again with N = 171.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.114283e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.971019e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.068820e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.058531e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.170107e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.752180e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.438968e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.888161e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.195561e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.367956e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.917042e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.309277e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.891536e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.639079e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.416997e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.529201e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.891246e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.026001e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.366413e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (171*5=)855x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.926973e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.177500e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.266522e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.890999e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.221510e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.170277e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.579444e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.540363e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.559038e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.071080e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.350477e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.225084e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.961346e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.872726e-17. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.526460e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.690855e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.962558e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.490666e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.848523e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 1.420921e+06
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 152 not found, trying again with N = 190.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.528167e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.756353e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.962057e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.637211e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.692231e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.022881e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.429271e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.265093e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.064852e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.099879e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.265249e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.651532e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.987317e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.367296e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.266578e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.361895e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.457437e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.578259e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 185)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Kernel computed for M: (190*5=)950x93
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.696346e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.332360e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.384646e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.732760e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.823966e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.118805e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.968941e-18. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.816905e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.148090e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+9.517180e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.323549e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.156737e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.099580e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.321830e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.263453e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+7.463162e-20. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.174506e-19. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.794946e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.084026e-21. 
+> In gss/eval
+  In dbsample
+  In P_constKer_for_GSS (line 149)
+  In P_affine_annihilator_for_LFR (line 52)
+  In method5_proposed_approach (line 138)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 9.646635e+05
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [ FAILED ] Maximum nr. iterations (10) reached. Kernel NOT found with the given tolerance.
+│   │   │   │   └ 1.0254 [sec]
+│   │   │   └ 2.3226 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:139 (pcz_gsszero_report) - Annihilator Na
+│   │   │   │   [  INFO  ] Tolerance: 0.
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.987576e-18. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+1.400454e-19. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.424204e-20. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+2.543728e-19. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.687557e-19. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+5.198105e-19. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+4.724867e-18. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+8.193077e-18. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+3.807957e-19. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =
+6.307380e-19. 
+> In gss/eval
+  In dbsample
+  In pcz_gsszero_report (line 61)
+  In method5_proposed_approach (line 139)
+  In model5_gasturbine_engine (line 136)
+ 
+│   │   │   │   - Maximal difference: 796638
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [ FAILED ] Annihilator Na
+│   │   │   │   - Equality percentage: 0%
+│   │   │   │   - Indices, where not equal: [ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21 , 22 , 23 , 24 , 25 , 26 , 27 , 28 , 29 , 30 , 31 , 32 , 33 , 34 , 35 , 36 , 37 , 38 , 39 , 40 , 41 , 42 , 43 , 44 , 45 , 46 , 47 , 48 , 49 , 50 , 51 , 52 , 53 , 54 , 55 , 56 , 57 , 58 , 59 , 60 , 61 , 62 , 63 , 64 , 65 , 66 , 67 , 68 , 69 , 70 , 71 , 72 , 73 , 74 , 75 , 76 , 77 , 78 , 79 , 80 , 81 , 82 , 83 , 84 , 85 , 86 , 87 , 88 , 89 , 90 , 91 , 92 , 93 , 94 , 95 , 96 , 97 , 98 , 99 , 100 , 101 , 102 , 103 , 104 , 105 , 106 , 107 , 108 , 109 , 110 , 111 , 112 , 113 , 114 , 115 , 116 , 117 , 118 , 119 , 120 , 121 , 122 , 123 , 124 , 125 , 126 , 127 , 128 , 129 , 130 , 131 , 132 , 133 , 134 , 135 , 136 , 137 , 138 , 139 , 140 , 141 , 142 , 143 , 144 , 145 , 146 , 147 , 148 , 149 , 150 , 151 , 152 , 153 , 154 , 155 , 156 , 157 , 158 , 159 , 160 , 161 , 162 , 163 , 164 , 165 , 166 , 167 , 168 , 169 , 170 , 171 , 172 , 173 , 174 , 175 , 176 , 177 , 178 , 179 , 180 , 181 , 182 , 183 , 184 , 185 , 186 , 187 , 188 , 189 , 190 , 191 , 192 , 193 , 194 , 195 , 196 , 197 , 198 , 199 , 200 , 201 , 202 , 203 , 204 , 205 , 206 , 207 , 208 , 209 , 210 , 211 , 212 , 213 , 214 , 215 , 216 , 217 , 218 , 219 , 220 , 221 , 222 , 223 , 224 , 225 , 226 , 227 , 228 , 229 , 230 , 231 , 232 , 233 , 234 , 235 , 236 , 237 , 238 , 239 , 240 , 241 , 242 , 243 , 244 , 245 , 246 , 247 , 248 , 249 , 250 , 251 , 252 , 253 , 254 , 255 , 256 , 257 , 258 , 259 , 260 , 261 , 262 , 263 , 264 , 265 , 266 , 267 , 268 , 269 , 270 , 271 , 272 , 273 , 274 , 275 , 276 , 277 , 278 , 279 , 280 , 281 , 282 , 283 , 284 , 285 , 286 , 287 , 288 , 289 , 290 , 291 , 292 , 293 , 294 , 295 , 296 , 297 , 298 , 299 , 300 , 301 , 302 , 303 , 304 , 305 , 306 , 307 , 308 , 309 , 310 , 311 , 312 , 313 , 314 , 315 , 316 , 317 , 318 , 319 , 320 , 321 , 322 , 323 , 324 , 325 ] / 325
+│   │   │   │   - nr of elements where not zero/all: 325/325
+│   │   │   └ 0.024474 [sec]
+│   │   └ 14.1327 [sec]
+│   │   - nr. of variables: 2160
+│   │    
+│   │   ┌ method5_proposed_approach:192 - Solve LMIs
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2160            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.01    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2160            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 2160
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 1                 conic                  : 0               
+Optimizer  - Semi-definite variables: 6                 scalarized             : 2074            
+Factor     - setup time             : 0.35              dense det. time        : 0.00            
+Factor     - ML order time          : 0.17              GP order time          : 0.00            
+Factor     - nonzeros before factor : 2.23e+06          after factor           : 2.23e+06        
+Factor     - dense dim.             : 0                 flops                  : 3.91e+09        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   8.0e+00  1.5e+00  3.0e+00  0.00e+00   -1.600036002e+01  0.000000000e+00   1.0e+00  0.39  
+1   7.4e-01  1.4e-01  4.5e-01  -5.48e-01  -7.272204767e+00  -3.903015769e+00  9.2e-02  1.58  
+2   5.5e-02  1.0e-02  9.1e-03  -1.89e-01  -9.091641203e+01  -6.748019406e+01  7.0e-03  2.22  
+3   8.2e-03  1.5e-03  6.1e-04  -1.04e+00  -3.775716000e+02  -2.765532440e+02  1.1e-03  2.84  
+4   1.1e-03  2.1e-04  4.4e-05  -7.72e-01  -1.406283500e+03  -1.029983621e+03  1.5e-04  3.45  
+5   3.0e-04  5.6e-05  7.2e-06  -3.43e-01  -4.016583940e+03  -3.059143666e+03  3.6e-05  4.07  
+6   1.8e-04  3.3e-05  3.7e-06  -3.97e-01  -5.769352433e+03  -4.483523065e+03  2.1e-05  4.66  
+7   1.8e-04  3.3e-05  3.7e-06  -8.87e-01  -5.769352433e+03  -4.483523065e+03  2.1e-05  5.82  
+Optimizer terminated. Time: 5.92    
+
+
+Interior-point solution summary
+  Problem status  : UNKNOWN
+  Solution status : UNKNOWN
+  Primal.  obj: -5.7693524329e+03   nrm: 2e+05    Viol.  con: 2e+06    var: 0e+00    barvar: 0e+00  
+  Dual.    obj: -4.4835230649e+03   nrm: 4e+03    Viol.  con: 0e+00    var: 2e-12    barvar: 3e-01  
+Optimizer summary
+  Optimizer                 -                        time: 5.92    
+    Interior-point          - iterations : 8         time: 5.89    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   │   [   OK   ] Successfully solved (MOSEK). Solver time: 6.0194
+│   │   │   [ FAILED ] The solution is NOT feasible. Tolerance: 1e-06. Min(Primal) = -1.828946e-01.
+│   │   │    
+│   │   │   - Model: gasturbine_engine, R: 1000000000
+│   │   │   - Overall time: 20.9423
+│   │   │   - Gamma = 66.9591 
+│   │   │   - size(N)  =   6, size(PI)   =   9
+│   │   │   - size(Na) =  65, size(PI_a) =  31
+│   │   │   - 
+│   │   │    
+│   │   │   Q0 =  = [     23.882 -3.2211  0.6793 -2.4287    0.59 -0.4334 -2.2922  0.5417 -0.0407
+│   │   │                -3.2211  2.2295 -1.5296  0.1805 -0.1776  0.2494  0.1633 -0.1959  0.0245
+│   │   │                 0.6793 -1.5296  1.7048   0.045  0.0651 -0.1109  0.0566  0.0989 -0.0132
+│   │   │                -2.4287  0.1805   0.045  0.3181 -0.0638  0.0297  0.3018 -0.0503  0.0027
+│   │   │                   0.59 -0.1776  0.0651 -0.0638  0.0222 -0.0231 -0.0617  0.0269 -0.0021
+│   │   │                -0.4334  0.2494 -0.1109  0.0297 -0.0231  0.0452  0.0254 -0.0185   0.004
+│   │   │                -2.2922  0.1633  0.0566  0.3018 -0.0617  0.0254  0.3111 -0.0469  0.0023
+│   │   │                 0.5417 -0.1959  0.0989 -0.0503  0.0269 -0.0185 -0.0469  0.0411 -0.0018
+│   │   │                -0.0407  0.0245 -0.0132  0.0027 -0.0021   0.004  0.0023 -0.0018  0.0004 ]
+│   │   │   - method5_proposed_approach:220
+│   │   │   - model5_gasturbine_engine:136
+│   │   │    
+│   │   │   Q1 =  = [         -0      -0      -0       0       0      -0       0 -0.0001      -0
+│   │   │                     -0      -0      -0       0  0.0001      -0       0 -0.0001      -0
+│   │   │                     -0      -0      -0       0       0      -0      -0      -0  0.0001
+│   │   │                      0       0       0      -0  0.0001       0  0.0001 -0.0001      -0
+│   │   │                      0  0.0001       0  0.0001      -0      -0  0.0001  0.0001       0
+│   │   │                     -0      -0      -0       0      -0 -0.0001       0 -0.0001       0
+│   │   │                      0       0      -0  0.0001  0.0001       0  0.0001 -0.0001      -0
+│   │   │                -0.0001 -0.0001      -0 -0.0001  0.0001 -0.0001 -0.0001       0      -0
+│   │   │                     -0      -0  0.0001      -0       0       0      -0      -0       0 ]
+│   │   │   - method5_proposed_approach:220
+│   │   │   - model5_gasturbine_engine:136
+│   │   │    
+│   │   │   p_lim = [       0.000    1.000 ]
+│   │   │   - method5_proposed_approach:223
+│   │   │   - model5_gasturbine_engine:136
+│   │   │    
+│   │   │   dp_lim = [    -1000000000.000 1000000000.000 ]
+│   │   │   - method5_proposed_approach:224
+│   │   │   - model5_gasturbine_engine:136
+│   │   │   - Results stored in `results/Results_All.csv'
+│   │   │              Model: 'gasturbine_engine, R: 1000000000'
+│   │   │              Stamp: '2020.04.10. Friday 23:31:33 id:2314'
+│   │   │              Lower: 0
+│   │   │              Upper: 66.9591
+│   │   │        Solver_Time: 6.0194
+│   │   │       Overall_Time: 20.9423
+│   │   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │   │             Method: 'Polytopic a. with Finsler'
+│   │   │   
+│   │   │   
+│   │   └ 6.4458 [sec]
+│   └ 21.1673 [sec]
+└ 63.4391 [sec]

@@ -1,10 +1,10 @@
 Model|Stamp|Lower|Upper|Solver_Time|Overall_Time|Solver_Info|Method
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 14:00:16 id:2246|0|1.14508313368057|0|20.530899|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:45 id:2249|0|2.17194955302484|0|1.756029|Pole: [-2], Length: [2], Relax: 1, Active: 1|IQCToolbox - ltvs
-simple2D_1x1_LFR|2020.03.29. Sunday 19:56:02 id:2249|0|2.17194955302484|0|1.623144|Pole: [-2], Length: [2], Relax: 1, Active: 1|IQCToolbox - ltvs
-simple2D_1x1_LFR|2020.03.30. Monday 17:52:12 id:2249|0|2.10175010475715|0|3.972314|Pole: [-2], Length: [2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:31:09 id:2242|0|1.14508313368057|0|20.472061|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:25:43 id:2243|0|1.14508313368057|0|20.629589|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:26:17 id:2243|0|1.14508313368057|0|20.521849|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:43:54 id:2244|0|1.14508313368057|0|20.765308|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:47:54 id:2261|0|1.14508313368057|0|20.681674|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 20:07:14 id:2350|0|2.82033877316899|0|38.988533|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 21:14:45 id:2351|0|2.82026959237618|0|39.904897|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 22:25:40 id:2352|0|2.81963134967875|0|47.737574|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 23:04:16 id:2353|0|2.82739191302986|0|53.059505|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 23:33:57 id:2354|0|2.87240145997068|0|59.922712|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x1.78|2020.04.14. Tuesday 00:18:43 id:2357|0|2.54833429486015|0|37.811201|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x3.16|2020.04.14. Tuesday 00:45:51 id:2357|0|2.82087126323161|0|37.250375|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x5.6|2020.04.14. Tuesday 01:11:28 id:2357|0|2.81794253677084|0|42.882109|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x17.8|2020.04.14. Tuesday 01:38:53 id:2357|0|2.820254204693|0|39.678529|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs

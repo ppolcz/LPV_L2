@@ -1,29 +1,10 @@
 Model|Stamp|Lower|Upper|Solver_Time|Overall_Time|Solver_Info|Method
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:56:07 id:2246|0|0.874407970344914|80.451767|95.348281|Successfully solved (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:58:01 id:2246|0|0.874385665021191|103.744467|113.558529|Successfully solved (MOSEK)|dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:59:55 id:2246|0|0.874385665021191|100.115181|114.015097|Successfully solved (MOSEK)|dual explicit LMI form
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:14 id:2249|0|3.6766120231177|0.433153|2.24996|Successfully solved (MOSEK)|primal
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:16 id:2249|0|4.53063048012933|0.286593|1.882565|Successfully solved (MOSEK)|dual condensed LMI form
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:18 id:2249|0|4.53063048012933|0.291183|1.858616|Successfully solved (MOSEK)|dual explicit LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 03:21:46 id:2249|0|1.70620232297237|0.712403|2.449494|Successfully solved (MOSEK)|primal
-simple2D_1x1_LFR|2020.03.30. Monday 03:21:48 id:2249|0|4.59295519791357|1.094617|2.64619|Successfully solved (MOSEK)|dual condensed LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 03:21:51 id:2249|0|4.59295519791357|1.09476|2.713486|Successfully solved (MOSEK)|dual explicit LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 03:24:39 id:2249|0|1.70619981546232|0.734371|2.651232|Successfully solved (MOSEK)|primal
-simple2D_1x1_LFR|2020.03.30. Monday 03:24:41 id:2249|0|4.51988784446352|0.848287|2.407703|Successfully solved (MOSEK)|dual condensed LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 03:24:44 id:2249|0|4.51988784446352|0.857|2.427636|Successfully solved (MOSEK)|dual explicit LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 17:51:04 id:2249|0|3.67667184141518|0.758389|2.839508|Successfully solved (MOSEK)|primal
-simple2D_1x1_LFR|2020.03.30. Monday 17:51:41 id:2249|0|4.52930009832253|0.7423|2.426627|Successfully solved (MOSEK)|dual condensed LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 17:51:44 id:2249|0|4.52930009832253|0.628811|2.724301|Successfully solved (MOSEK)|dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:13:15 id:2241|0|0|5.766856|20.582573|User terminated (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:27:11 id:2242|0|0.874407970344914|78.531738|92.702363|Successfully solved (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:28:56 id:2242|0|0.874385665021191|95.474945|104.794279|Successfully solved (MOSEK)|dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:30:48 id:2242|0|0.874385665021191|98.207731|111.363625|Successfully solved (MOSEK)|dual explicit LMI form
-random_5D_1x3_LFR|2020.03.30. Monday 21:52:25 id:2242|0|1.16762768343838|106.161694|113.991544|Infeasible problem (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:23:13 id:2243|0|0|2.340939|17.724061|User terminated (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:23:32 id:2243|0|0|3.174877|13.61944|User terminated (MOSEK)|dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:39:57 id:2244|0|0.874407970344914|80.71625|95.532801|Successfully solved (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:41:43 id:2244|0|0.874385665021191|96.156184|105.893164|Successfully solved (MOSEK)|dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:43:33 id:2244|0|0.874385665021191|95.812563|109.516897|Successfully solved (MOSEK)|dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:43:58 id:2261|0|0.874407970344914|77.816458|92.614879|Successfully solved (MOSEK)|primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:45:44 id:2261|0|0.874385665021191|95.417716|104.953068|Successfully solved (MOSEK)|dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:47:33 id:2261|0|0.874385665021191|95.575402|109.070477|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 20:06:34 id:2350|0|2.69285796471826|234.993388|247.827262|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 21:14:05 id:2351|0|2.78009235130869|230.543613|244.442347|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 22:24:52 id:2352|0|2.7807585761487|195.880867|210.184997|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 23:03:22 id:2353|0|2.78075936139437|149.883984|163.788999|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 23:32:57 id:2354|0|2.78075911067564|179.643741|192.483474|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D_x1.78|2020.04.14. Tuesday 00:18:05 id:2357|0|2.20063554509286|209.852716|223.006497|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D_x3.16|2020.04.14. Tuesday 00:45:14 id:2357|0|2.36050330073879|278.298015|291.692839|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D_x5.6|2020.04.14. Tuesday 01:10:45 id:2357|0|2.55228514512871|265.001022|278.184636|Successfully solved (MOSEK)|dual explicit LMI form
+model1_LPV4D_x17.8|2020.04.14. Tuesday 01:38:14 id:2357|0|2.75261587698898|231.469467|244.821671|Successfully solved (MOSEK)|dual explicit LMI form

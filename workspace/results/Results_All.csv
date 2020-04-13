@@ -1,126 +1,56 @@
 Model|Stamp|Lower|Upper|Solver_Time|Overall_Time|Solver_Info|Method
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:42:13 id:2245|0|0.871619359138664|0|311.903274|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:42:23 id:2245|0|0.863059431916671|3.093655|9.959417|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:47:13 id:2245|0|0.863357022191555|143.0641|288.825362|15x15x15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:47:24 id:2245|0|0.881365062151405|3.271972|10.054611|5x5x5, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 53486197x136308911x598465449 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:47:34 id:2245|0|0.887457877701511|2.713805|9.407404|5x5x5, Successfully solved (MOSEK)|Req grid for T=1000, delta=0.001: 534862x1363090x5984655 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:47:44 id:2245|0|0.982356017719424|2.590635|9.315935|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.01: 5349x13631x59847 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:47:54 id:2245|0|1.56089462816006|2.596646|9.374546|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.1: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:48:04 id:2245|0|1.47978421203999|2.481801|9.165573|5x5x5, Successfully solved (MOSEK)|Req grid for T=10, delta=0.01: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:48:14 id:2245|0|1.60555726501108e+55|2.575391|9.306849|5x5x5, Infeasible problem (MOSEK)|Req grid for T=10, delta=0.1: 54x137x599 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:56:07 id:2246|0|0.874407970344914|80.451767|95.348281|Successfully solved (MOSEK)|Descriptor - primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:58:01 id:2246|0|0.874385665021191|103.744467|113.558529|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 13:59:55 id:2246|0|0.874385665021191|100.115181|114.015097|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 14:00:16 id:2246|0|1.14508313368057|0|20.530899|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 14:17:26 id:2247|0|1.13861440358552|0|161.702266|tvreal, lpvnorm|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 14:22:15 id:2247|0.554086961035749|1.13861440358552|0|289.365685|tvreal, lpvwcgain|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 14:22:15 id:2248|0|0.870132|1349.92|1399.92|asdasd|Finsler (csak a vegen hiba volt)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 15:42:01 id:2248|0|0.87013247959827|1339.323714|1359.453106|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.28. Saturday 15:45:46 id:2248|0|0.870665403447704|196.729136|224.780245|Successfully solved (MOSEK)|Polytopic a. with Finsler
-simple2D_1x1_LFR|2020.03.29. Sunday 16:26:29 id:2249|0|3.34696452543098|0|0.400856|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-simple2D_1x1_LFR|2020.03.29. Sunday 16:34:47 id:2249|0|3.34485619763348|0.008817|1.471662|5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: Inf (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:35:54 id:2249|0|3.36875606529858|0.012718|1.376864|15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: Inf (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:36:03 id:2249|0|3.34767764838873|0.010751|1.197002|5, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 39598218644 (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:37:03 id:2249|0|3.6628366528714|1.453888|18.867736|1000, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 39598218644 (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:37:21 id:2249|0|3.68795902716624|1.308017|17.26447|1000, Successfully solved (MOSEK)|Req grid for T=1000, delta=0.001: 395982187 (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:37:39 id:2249|0|3.96893647952065|1.266267|17.285431|1000, Successfully solved (MOSEK)|Req grid for T=100, delta=0.01: 3959822 (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:37:57 id:2249|0|-3.6418179737358e+37|0.760676|16.727749|1000, Infeasible problem (MOSEK)|Req grid for T=100, delta=0.1: 395983 (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:38:14 id:2249|0|3.96893646692856|1.237884|17.26753|1000, Successfully solved (MOSEK)|Req grid for T=10, delta=0.01: 395983 (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:38:32 id:2249|0|-6.05418335618212e+20|0.594615|16.443551|1000, Infeasible problem (MOSEK)|Req grid for T=10, delta=0.1: 39599 (Wu, 1995)
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:14 id:2249|0|3.6766120231177|0.433153|2.24996|Successfully solved (MOSEK)|Descriptor - primal
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:16 id:2249|0|4.53063048012933|0.286593|1.882565|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:18 id:2249|0|4.53063048012933|0.291183|1.858616|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-simple2D_1x1_LFR|2020.03.29. Sunday 16:41:45 id:2249|0|2.17194955302484|0|1.756029|Pole: [-2], Length: [2], Relax: 1, Active: 1|IQCToolbox - ltvs
-simple2D_1x1_LFR|2020.03.29. Sunday 19:56:02 id:2249|0|2.17194955302484|0|1.623144|Pole: [-2], Length: [2], Relax: 1, Active: 1|IQCToolbox - ltvs
-simple2D_1x1_LFR|2020.03.30. Monday 03:15:29 id:2249|0|1.17244989473166|1.297526|17.240384|Successfully solved (MOSEK)|Polytopic a. with Finsler
-simple2D_1x1_LFR|2020.03.30. Monday 03:16:16 id:2249|0|3.34696452509642|0|0.419028|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-simple2D_1x1_LFR|2020.03.30. Monday 03:16:30 id:2249|0|3.36875606507239|0.014356|1.575455|15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: Inf (Wu, 1995)
-simple2D_1x1_LFR|2020.03.30. Monday 03:17:31 id:2249|0|1.3550761966631|2.050946|17.535943|Successfully solved (MOSEK)|Polytopic a. with Finsler
-simple2D_1x1_LFR|2020.03.30. Monday 03:18:31 id:2249|1.15406667251973|2.25985156518419|0|10.750166|[no info]|Robust Control Toolbox
-simple2D_1x1_LFR|2020.03.30. Monday 03:20:17 id:2249|0|1.8660686433046|0.007808|1.521493|5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: Inf (Wu, 1995)
-simple2D_1x1_LFR|2020.03.30. Monday 03:20:34 id:2249|0|1.37667015801526|0.010083|1.331659|5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: Inf (Wu, 1995)
-simple2D_1x1_LFR|2020.03.30. Monday 03:21:05 id:2249|0|1.37201603390822|0.022015|1.733743|15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: Inf (Wu, 1995)
-simple2D_1x1_LFR|2020.03.30. Monday 03:21:46 id:2249|0|1.70620232297237|0.712403|2.449494|Successfully solved (MOSEK)|Descriptor - primal
-simple2D_1x1_LFR|2020.03.30. Monday 03:21:48 id:2249|0|4.59295519791357|1.094617|2.64619|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 03:21:51 id:2249|0|4.59295519791357|1.09476|2.713486|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 03:24:39 id:2249|0|1.70619981546232|0.734371|2.651232|Successfully solved (MOSEK)|Descriptor - primal
-simple2D_1x1_LFR|2020.03.30. Monday 03:24:41 id:2249|0|4.51988784446352|0.848287|2.407703|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 03:24:44 id:2249|0|4.51988784446352|0.857|2.427636|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 17:49:32 id:2249|1.13972080252176|2.08250772381244|0|6.459269|[no info]|Robust Control Toolbox
-simple2D_1x1_LFR|2020.03.30. Monday 17:50:01 id:2249|0|1.33386090163055|0|0.43981|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-simple2D_1x1_LFR|2020.03.30. Monday 17:50:30 id:2249|0|1.33288164602711|0.008209|1.722958|5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: Inf (Wu, 1995)
-simple2D_1x1_LFR|2020.03.30. Monday 17:51:04 id:2249|0|3.67667184141518|0.758389|2.839508|Successfully solved (MOSEK)|Descriptor - primal
-simple2D_1x1_LFR|2020.03.30. Monday 17:51:41 id:2249|0|4.52930009832253|0.7423|2.426627|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 17:51:44 id:2249|0|4.52930009832253|0.628811|2.724301|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-simple2D_1x1_LFR|2020.03.30. Monday 17:52:12 id:2249|0|2.10175010475715|0|3.972314|Pole: [-2], Length: [2], Relax: 1, Active: 1|IQCToolbox - ltvs
-simple2D_1x1_LFR|2020.03.30. Monday 18:11:43 id:|0|1.39131850961466|2.28595|17.544807|Successfully solved (MOSEK)|Polytopic a. with Finsler
-simple2D_1x1_LFR|2020.03.30. Monday 19:04:28 id:|0|1.2533727284346|2.449805|10.897543|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
-simple2D_1x1_LFR|2020.03.30. Monday 19:05:00 id:|0|1.41159673686587|2.288504|16.975463|Successfully solved (MOSEK)|Polytopic a. with Finsler
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:12:50 id:2241|0|0.863059431916671|3.265526|12.522611|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:13:15 id:2241|0|0|5.766856|20.582573|User terminated (MOSEK)|Descriptor - primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:19:48 id:2242|0|0.871619359138664|0|306.958556|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:19:59 id:2242|0|0.863059431916671|3.049714|9.617677|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:24:38 id:2242|0|0.863357022191555|140.481565|278.45836|15x15x15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:24:49 id:2242|0|0.881365062151405|3.214705|10.208699|5x5x5, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 53486197x136308911x598465449 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:24:59 id:2242|0|0.887457877701511|2.677614|9.121204|5x5x5, Successfully solved (MOSEK)|Req grid for T=1000, delta=0.001: 534862x1363090x5984655 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:09 id:2242|0|0.982356017719424|2.572922|9.020644|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.01: 5349x13631x59847 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:19 id:2242|0|1.56089462816006|2.552463|9.013856|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.1: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:28 id:2242|0|1.47978421203999|2.496605|8.897868|5x5x5, Successfully solved (MOSEK)|Req grid for T=10, delta=0.01: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:25:38 id:2242|0|1.60555726501108e+55|2.539423|8.917843|5x5x5, Infeasible problem (MOSEK)|Req grid for T=10, delta=0.1: 54x137x599 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:27:11 id:2242|0|0.874407970344914|78.531738|92.702363|Successfully solved (MOSEK)|Descriptor - primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:28:56 id:2242|0|0.874385665021191|95.474945|104.794279|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:30:48 id:2242|0|0.874385665021191|98.207731|111.363625|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:31:09 id:2242|0|1.14508313368057|0|20.472061|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:33:49 id:2242|0|1.13861440358552|0|158.89776|tvreal, lpvnorm|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 19:38:35 id:2242|0.554086961035749|1.13861440358552|0|285.163116|tvreal, lpvwcgain|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.30. Monday 20:17:42 id:2242|0|0.87013247959827|1368.82332|1390.571734|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
-random_5D_1x3_LFR|2020.03.30. Monday 21:36:38 id:2242|4.28508764461927|Inf|0|3.078474|[no info]|Robust Control Toolbox
-random_5D_1x3_LFR|2020.03.30. Monday 21:52:25 id:2242|0|1.16762768343838|106.161694|113.991544|Infeasible problem (MOSEK)|Descriptor - primal
-random_5D_1x3_LFR|2020.03.30. Monday 22:00:25 id:2242|0|NaN|NaN|363.105328|Unknown problem in solver (Turn on 'debug' in sdpsettings) (Reference to non-existent field 'sol'.)|Polytopic a. with Finsler
-random_3D_1x3_LFR|2020.03.31. Tuesday 00:39:48 id:2242|3.91548291794238|3.92671507342742|0|5.864168|[no info]|Robust Control Toolbox
-random_3D_1x3_LFR|2020.03.31. Tuesday 00:56:13 id:2242|0.735133639490325|0.736604089822234|0|9.839879|[no info]|Robust Control Toolbox
-random_3D_1x2_LFR|2020.03.31. Tuesday 00:58:04 id:2242|3.2089061978002|3.2175211911065|0|4.280328|[no info]|Robust Control Toolbox
-random_3D_1x2_LFR|2020.03.31. Tuesday 01:44:15 id:2242|Inf|Inf|0|1.9007|[no info]|Robust Control Toolbox
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 01:54:09 id:2243|0|0.871619359138664|0|311.337325|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:22:05 id:2243|0|0.863059431916671|3.226213|11.626556|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:22:34 id:2243|0|0.861557429181256|0.624525|3.60536|3x3x3, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:22:52 id:2243|0|0.881365062151405|3.288864|9.997493|5x5x5, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 53486197x136308911x598465449 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:23:13 id:2243|0|0|2.340939|17.724061|User terminated (MOSEK)|Descriptor - primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:23:33 id:2243|0|0|3.174877|13.61944|User terminated (MOSEK)|Descriptor - dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:25:43 id:2243|0|1.14508313368057|0|20.629589|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:26:17 id:2243|0|1.14508313368057|0|20.521849|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:26:53 id:2243|0|0|11.339207|32.380445|User terminated (MOSEK)|Polytopic a. with Finsler (old)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:32:23 id:2244|0|0.871619359138664|0|310.108755|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:32:35 id:2244|0|0.863059431916671|3.233818|11.71749|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:37:20 id:2244|0|0.863357022191555|139.472797|284.619947|15x15x15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:37:31 id:2244|0|0.881365062151405|3.278815|10.033659|5x5x5, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 53486197x136308911x598465449 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:37:41 id:2244|0|0.887457877701511|2.687031|9.393966|5x5x5, Successfully solved (MOSEK)|Req grid for T=1000, delta=0.001: 534862x1363090x5984655 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:37:51 id:2244|0|0.982356017719424|2.576534|9.625475|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.01: 5349x13631x59847 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:38:01 id:2244|0|1.56089462816006|2.580529|9.130858|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.1: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:38:11 id:2244|0|1.47978421203999|2.476582|9.044247|5x5x5, Successfully solved (MOSEK)|Req grid for T=10, delta=0.01: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:38:21 id:2244|0|1.60555726501108e+55|2.558265|9.047389|5x5x5, Infeasible problem (MOSEK)|Req grid for T=10, delta=0.1: 54x137x599 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:39:57 id:2244|0|0.874407970344914|80.71625|95.532801|Successfully solved (MOSEK)|Descriptor - primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:41:43 id:2244|0|0.874385665021191|96.156184|105.893164|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:43:33 id:2244|0|0.874385665021191|95.812563|109.516897|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:43:54 id:2244|0|1.14508313368057|0|20.765308|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:46:36 id:2244|0|1.13861440358552|0|160.433145|tvreal, lpvnorm|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 02:51:23 id:2244|0.554086961035749|1.13861440358552|0|286.355472|tvreal, lpvwcgain|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 03:13:50 id:2244|0|0.87013247959827|1326.258822|1347.52593|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 13:00:41 id:2260|0|0.870711507691996|195.436487|232.333887|Successfully solved (MOSEK)|Polytopic a. with Finsler
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:36:33 id:2261|0|0.871619359138664|0|307.285915|pgrid (5x5x5)x(2x2x2)|LPVTools - grid
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:36:45 id:2261|0|0.863059431916671|3.221653|11.269009|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:41:25 id:2261|0|0.863357022191555|140.319155|279.413245|15x15x15, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:41:35 id:2261|0|0.881365062151405|3.255297|9.822741|5x5x5, Successfully solved (MOSEK)|Req grid for T=10000, delta=0.0001: 53486197x136308911x598465449 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:41:46 id:2261|0|0.887457877701511|2.710825|9.130255|5x5x5, Successfully solved (MOSEK)|Req grid for T=1000, delta=0.001: 534862x1363090x5984655 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:41:56 id:2261|0|0.982356017719424|2.596844|9.523531|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.01: 5349x13631x59847 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:42:06 id:2261|0|1.56089462816006|2.605205|9.123281|5x5x5, Successfully solved (MOSEK)|Req grid for T=100, delta=0.1: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:42:16 id:2261|0|1.47978421203999|2.47566|8.88283|5x5x5, Successfully solved (MOSEK)|Req grid for T=10, delta=0.01: 535x1364x5985 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:42:25 id:2261|0|1.60555726501108e+55|2.529775|8.919299|5x5x5, Infeasible problem (MOSEK)|Req grid for T=10, delta=0.1: 54x137x599 (Wu, 1995)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:43:58 id:2261|0|0.874407970344914|77.816458|92.614879|Successfully solved (MOSEK)|Descriptor - primal
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:45:44 id:2261|0|0.874385665021191|95.417716|104.953068|Successfully solved (MOSEK)|Descriptor - dual condensed LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:47:33 id:2261|0|0.874385665021191|95.575402|109.070477|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:47:54 id:2261|0|1.14508313368057|0|20.681674|Pole: [-2 -2 -2], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:50:35 id:2261|0|1.13861440358552|0|158.602259|tvreal, lpvnorm|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 16:55:17 id:2261|0.554086961035749|1.13861440358552|0|282.380403|tvreal, lpvwcgain|LPVTools - LFT/IQC
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 17:17:51 id:2261|0|0.87013247959827|1331.862305|1353.281711|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
-ipend(1,2,1,10,5;2,0.4,1.2;1)|2020.03.31. Tuesday 17:23:27 id:2261|0|0.865453748523684|302.242334|336.373514|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D|2020.04.13. Monday 20:02:25 id:2350|0|2.50069044501004|3.763568|10.814598|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D|2020.04.13. Monday 20:06:34 id:2350|0|2.69285796471826|234.993388|247.827262|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 20:07:14 id:2350|0|2.82033877316899|0|38.988533|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 20:08:30 id:2350|0|2.81884398630243|0|74.923081|tvreal, lpvnorm|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 20:10:03 id:2350|2.02851105805651|2.81884398630243|0|93.115172|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 20:41:22 id:2350|0|2.37246558356987|1823.517395|1879.177951|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
+model1_LPV4D|2020.04.13. Monday 21:05:38 id:2350|0|2.37250963593153|1394.224726|1455.079271|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D|2020.04.13. Monday 21:09:59 id:2351|0|2.68133181557627|3.708297|11.842799|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D|2020.04.13. Monday 21:14:05 id:2351|0|2.78009235130869|230.543613|244.442347|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 21:14:45 id:2351|0|2.82026959237618|0|39.904897|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 21:16:13 id:2351|0|2.81924566906359|0|87.337428|tvreal, lpvnorm|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 21:17:57 id:2351|2.02851105805651|2.81924566906359|0|104.070897|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 21:55:51 id:2351|0|2.72932634897617|2219.578694|2272.963155|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
+model1_LPV4D|2020.04.13. Monday 22:20:45 id:2351|0|2.7291213977834|1425.221292|1493.201897|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D|2020.04.13. Monday 22:21:20 id:2352|0|2.68303688028365|2.776353|11.155299|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D|2020.04.13. Monday 22:24:52 id:2352|0|2.7807585761487|195.880867|210.184997|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 22:25:40 id:2352|0|2.81963134967875|0|47.737574|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 22:27:16 id:2352|0|2.81813194525962|0|95.246734|tvreal, lpvnorm|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 22:29:10 id:2352|2.02851105805651|2.81813194525962|0|114.380577|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 22:30:16 id:2352|0|NaN|NaN|64.736994|Unknown problem in solver (Turn on 'debug' in sdpsettings) (Out of memory. Type "help memory" for your options.)|Polytopic a. with Finsler (old)
+model1_LPV4D|2020.04.13. Monday 22:53:20 id:2352|0|2.7768342796527|1278.35609|1383.578644|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D|2020.04.13. Monday 23:00:37 id:2353|0|2.68305331689286|2.275977|9.987713|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D|2020.04.13. Monday 23:03:22 id:2353|0|2.78075936139437|149.883984|163.788999|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 23:04:16 id:2353|0|2.82739191302986|0|53.059505|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 23:05:56 id:2353|0|2.81862859240125|0|99.803834|tvreal, lpvnorm|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 23:07:54 id:2353|2.02851105805651|2.81862859240125|0|117.988429|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 23:08:47 id:2353|0|NaN|NaN|51.781193|Unknown problem in solver (Turn on 'debug' in sdpsettings) (Out of memory. Type "help memory" for your options.)|Polytopic a. with Finsler (old)
+model1_LPV4D|2020.04.13. Monday 23:28:57 id:2353|0|2.694649013175|1111.157933|1209.605438|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D|2020.04.13. Monday 23:29:43 id:2354|0|2.6830534808692|2.224032|9.413283|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D|2020.04.13. Monday 23:32:57 id:2354|0|2.78075911067564|179.643741|192.483474|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D|2020.04.13. Monday 23:33:58 id:2354|0|2.87240145997068|0|59.922712|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D|2020.04.13. Monday 23:35:49 id:2354|0|2.81851428506674|0|110.522326|tvreal, lpvnorm|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 23:37:58 id:2354|2.02851105805651|2.81851428506674|0|129.617165|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D|2020.04.13. Monday 23:57:03 id:2354|0|49.9605489149094|1091.715933|1143.441119|Successfully solved (MOSEK)|Polytopic a. with Finsler (old)
+model1_LPV4D|2020.04.13. Monday 23:58:54 id:2354|0|NaN|NaN|108.913106|Unknown problem in solver (Turn on 'debug' in sdpsettings) (Out of memory. Type "help memory" for your options.)|Polytopic a. with Finsler
+model1_LPV4D|2020.04.14. Tuesday 00:12:54 id:2356|0|2.05126989067949|4.537023|13.832787|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D_x1.78|2020.04.14. Tuesday 00:14:20 id:2357|0|2.05126989067949|4.266247|11.599493|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D_x1.78|2020.04.14. Tuesday 00:18:05 id:2357|0|2.20063554509286|209.852716|223.006497|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D_x1.78|2020.04.14. Tuesday 00:18:43 id:2357|0|2.54833429486015|0|37.811201|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x1.78|2020.04.14. Tuesday 00:21:07 id:2357|2.02851105805651|2.59231592853063|0|142.018482|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D_x1.78|2020.04.14. Tuesday 00:40:08 id:2357|0|2.05120659809694|1082.816618|1140.905834|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D_x3.16|2020.04.14. Tuesday 00:40:20 id:2357|0|2.14179282356365|4.223732|11.728686|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D_x3.16|2020.04.14. Tuesday 00:45:14 id:2357|0|2.36050330073879|278.298015|291.692839|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D_x3.16|2020.04.14. Tuesday 00:45:51 id:2357|0|2.82087126323161|0|37.250375|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x3.16|2020.04.14. Tuesday 00:47:45 id:2357|2.02851105805651|2.81855086686819|0|112.702329|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D_x3.16|2020.04.14. Tuesday 01:05:54 id:2357|0|2.11755668912915|1031.776193|1088.77138|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D_x5.6|2020.04.14. Tuesday 01:06:05 id:2357|0|2.29222240933528|4.063697|11.222185|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D_x5.6|2020.04.14. Tuesday 01:10:45 id:2357|0|2.55228514512871|265.001022|278.184636|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D_x5.6|2020.04.14. Tuesday 01:11:28 id:2357|0|2.81794253677084|0|42.882109|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x5.6|2020.04.14. Tuesday 01:13:01 id:2357|2.02851105805651|2.81812896808011|0|92.775212|tvreal, lpvwcgain|LPVTools - LFT/IQC
+model1_LPV4D_x5.6|2020.04.14. Tuesday 01:33:56 id:2357|0|2.23104291531253|1197.776851|1254.26853|Successfully solved (MOSEK)|Polytopic a. with Finsler
+model1_LPV4D_x17.8|2020.04.14. Tuesday 01:34:07 id:2357|0|2.62319766543296|3.84043|11.023824|5x5x5, Successfully solved (MOSEK)|Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)
+model1_LPV4D_x17.8|2020.04.14. Tuesday 01:38:14 id:2357|0|2.75261587698898|231.469467|244.821671|Successfully solved (MOSEK)|Descriptor - dual explicit LMI form
+model1_LPV4D_x17.8|2020.04.14. Tuesday 01:38:53 id:2357|0|2.820254204693|0|39.678529|Pole: [-1 -1 -1], Length: [2  2  2], Relax: 1, Active: 1|IQCToolbox - ltvs
+model1_LPV4D_x17.8|2020.04.14. Tuesday 01:40:32 id:2357|2.02851105805651|2.81819053246449|0|97.627313|tvreal, lpvwcgain|LPVTools - LFT/IQC

@@ -186,7 +186,7 @@ WA_AW_dW_contr = vpa([
     ],5);
 
 pcz_dispFunction2('Contribution of He{WA} compared to that of dW:');
-pcz_dispFunction2(evalc('disp(WA_AW_dW_contr)'));
+pcz_dispFunction2(eval('disp(WA_AW_dW_contr)'));
 
 pcz_dispFunctionEnd(TMP_WRUEESbUvbMihFnquvuF);
 

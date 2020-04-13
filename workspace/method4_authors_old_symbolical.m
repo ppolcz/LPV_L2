@@ -21,6 +21,10 @@ TMP_vFNECEAeLZsYsUxvlgqL = pcz_dispFunctionName('model generation');
 [A_sym,B_sym,C_sym,D_sym] = helper_fh2sym(A,B,C,D,p_lim);
 [~,~,~,~,AC_lfr,BD_lfr,~,nx,np,nu,ny] = helper_convert(A,B,C,D,p_lim);
 
+% 2020.04.09. (április  9, csütörtök), 09:52
+% AC_lfr = minlfr(AC_lfr);
+% BD_lfr = minlfr(BD_lfr);
+
 % Generate symbolic variables
 P_generate_symvars(nx,np,nu,ny);
 
@@ -68,14 +72,14 @@ dPI_1 = [ dPI_1_cell{:} ];
 
 %% Matrices of the dissipativity inequality
 
-% Upper-left block matrix of $\Pi_a$
+% Upper-left block of matrix $\Pi_a$
 PI_ax = [ 
     PI_x
     PI_1 * ( F{1,1} + F{1,3}*PI_1 )
     dPI_1
     ];
 
-% Lower-right block matrix of $\Pi_a$
+% Lower-right block of matrix $\Pi_a$
 PI_au = [
     PI_u
     PI_1 * ( F{1,2} + F{1,4}*PI_2 )
@@ -112,6 +116,8 @@ N = N.set_subsvars(p);
 
 Na = P_affine_annihilator(PI_a*xw,xwpdp,pdp);
 Na = Na.set_subsvars(pdp);
+
+pcz_dispFunctionEnd(TMP_vFNECEAeLZsYsUxvlgqL);
 
 %% Optimization
 

@@ -1,0 +1,2591 @@
+[  INFO  ] Output logging (with `diary'): results/model5_gasturbine_engine-output-0410231539_id2310.txt
+ 
+┌ model5_gasturbine_engine
+│   Run ID = 2311
+│    
+│   ┌ method1_RCT:14 - Robust Control Toolbox
+│   │    
+│   │   ┌ method1_RCT:56 - Pure wcgain
+│   │   │   
+│   │   │   info = 
+│   │   │   
+│   │   │     struct with fields:
+│   │   │   
+│   │   │                    Model: 1
+│   │   │                Frequency: [2×1 double]
+│   │   │                   Bounds: [2×2 double]
+│   │   │        WorstPerturbation: [2×1 struct]
+│   │   │              Sensitivity: [1×1 struct]
+│   │   │       BadUncertainValues: [2×1 struct]
+│   │   │               ArrayIndex: 1
+│   │   │   
+│   │   │   
+│   │   │   - Solver time: 1.35894
+│   │   │   - Bounds: [0.942031,1.64828] = 0.518692,4.34063] dB 
+│   │   │   - Worst case uncertainty: p1 = 1.11022e-16
+│   │   │   - Critical frequency: 0
+│   │   └ 1.36 [sec]
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:44 id:2311'
+│   │              Lower: 0.9420
+│   │              Upper: 1.6483
+│   │        Solver_Time: 0
+│   │       Overall_Time: 1.3589
+│   │        Solver_Info: '[no info
+│   │             Method: 'Robust Control Toolbox'
+│   │   
+│   │   
+│   └ 5.0351 [sec]
+│    
+│   ┌ method0_grid_LPVTools:14 - LPVTools
+│   │    
+│   │   ┌ method0_grid_LPVTools:60 - LPVTools grid based [msg:lpvnorm]
+│   │   │    
+│   │   │   ┌ lpvnorm called from method0_grid_LPVTools:62
+│   │   │   │    
+│   │   │   │   ┌ LOCALlpvL2normengine called from lpvnorm:82
+│   │   │   │   │   ny = 2
+│   │   │   │   │   nu = 2
+│   │   │   │   │   nmod = 5
+│   │   │   │   └ 0.30201 [sec]
+│   │   │   └ 0.39867 [sec]
+│   │   │   - Solver time: 0.426152
+│   │   │   - gamma = 0.95578 (lpvnorm)
+│   │   └ 0.42651 [sec]
+│   │   - Results stored in `results/LPVTools_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:46 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9558
+│   │        Solver_Time: 0
+│   │       Overall_Time: 0.4262
+│   │        Solver_Info: 'pgrid (5x5x5)x(2x2x2)'
+│   │             Method: 'grid'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:46 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9558
+│   │        Solver_Time: 0
+│   │       Overall_Time: 0.4262
+│   │        Solver_Info: 'pgrid (5x5x5)x(2x2x2)'
+│   │             Method: 'LPVTools - grid'
+│   │   
+│   │   
+│   └ 1.8233 [sec]
+│    
+│   ┌ method0_grid_Wu1995:48 - Grid-based [Wu, 1995]
+│   │   Required grid resolutions =
+│   │   
+│   │      Inf
+│   │   Acutally used grid resolutions =
+│   │   
+│   │        5
+│   │   - Collecting LMI constraints..........
+ 20.00% 40.00% 60.00% 80.00%100.00%
+│   │   - Calling the solver..........
+│   │    
+│   │   gamma = 0.95346
+│   │   solver_time = 0.018979
+│   │   - Successfully solved (MOSEK)
+│   │    
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:47 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9535
+│   │        Solver_Time: 0.0190
+│   │       Overall_Time: 1.2174
+│   │        Solver_Info: '5, Successfully solved (MOSEK)'
+│   │             Method: 'Req grid for T=Inf, delta=0: Inf (Wu, 1995)'
+│   │   
+│   │   
+│   └ 1.2638 [sec]
+│    
+│   ┌ method0_grid_Wu1995:48 - Grid-based [Wu, 1995]
+│   │   Required grid resolutions =
+│   │   
+│   │      Inf
+│   │   Acutally used grid resolutions =
+│   │   
+│   │       15
+│   │   - Collecting LMI constraints..........
+  7.00% 13.00% 20.00% 27.00% 33.00% 40.00% 47.00% 53.00% 60.00% 67.00% 73.00% 80.00% 87.00% 93.00%100.00%
+│   │   - Calling the solver..........
+│   │    
+│   │   gamma = 0.95395
+│   │   solver_time = 0.0644
+│   │   - Successfully solved (MOSEK)
+│   │    
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:48 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9540
+│   │        Solver_Time: 0.0644
+│   │       Overall_Time: 1.3170
+│   │        Solver_Info: '15, Successfully solved (MOSEK)'
+│   │             Method: 'Req grid for T=Inf, delta=0: Inf (Wu, 1995)'
+│   │   
+│   │   
+│   └ 1.3641 [sec]
+│    
+│   ┌ method2_descriptor_primal called from model5_gasturbine_engine:125
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.01    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 169
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 8                 scalarized             : 636             
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 1.44e+04          after factor           : 1.44e+04        
+Factor     - dense dim.             : 0                 flops                  : 3.72e+06        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   3.9e+00  1.0e+00  9.0e+00  0.00e+00   3.199999844e+01   0.000000000e+00   1.0e+00  0.04  
+1   7.7e-01  2.0e-01  4.3e+00  7.46e-01   5.268318280e+00   -1.729950019e+00  2.0e-01  0.15  
+2   1.4e-01  3.5e-02  4.4e+00  1.38e+00   -7.234499386e-01  -1.688400148e+00  3.5e-02  0.15  
+3   3.1e-02  7.9e-03  1.9e+00  1.82e+00   -8.290392351e-01  -9.836101442e-01  7.9e-03  0.16  
+4   7.5e-03  1.9e-03  8.0e-01  1.00e+00   -8.950693673e-01  -9.341461663e-01  1.9e-03  0.16  
+5   1.7e-03  4.3e-04  3.0e-01  8.45e-01   -9.120780315e-01  -9.217049373e-01  4.3e-04  0.17  
+6   2.4e-04  6.2e-05  9.9e-02  8.75e-01   -9.182594769e-01  -9.197407314e-01  6.2e-05  0.17  
+7   3.2e-05  8.4e-06  3.3e-02  9.18e-01   -9.193129346e-01  -9.195219043e-01  8.4e-06  0.18  
+8   6.8e-06  1.7e-06  1.5e-02  9.46e-01   -9.194945975e-01  -9.195397430e-01  1.7e-06  0.18  
+9   4.7e-07  1.2e-07  4.0e-03  9.69e-01   -9.195324213e-01  -9.195356330e-01  1.2e-07  0.19  
+10  5.1e-08  1.3e-08  1.3e-03  1.00e+00   -9.195346020e-01  -9.195349469e-01  1.3e-08  0.19  
+11  1.2e-09  6.2e-10  2.1e-04  1.00e+00   -9.195347995e-01  -9.195348076e-01  3.1e-10  0.19  
+Optimizer terminated. Time: 0.73    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -9.1953479953e-01   nrm: 4e+00    Viol.  con: 1e-07    barvar: 0e+00  
+  Dual.    obj: -9.1953480765e-01   nrm: 1e+01    Viol.  con: 0e+00    barvar: 1e-09  
+Optimizer summary
+  Optimizer                 -                        time: 0.73    
+    Interior-point          - iterations : 11        time: 0.19    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - 
+│   │   gamma = 0.95892
+│   │   solver_time = 0.778
+│   │   - Successfully solved (MOSEK)
+│   │   X(p1) = 1 * X0 + p1 * X1
+│   │    
+│   │   X0 = [     1.0268  -0.204 -0.1336       0       0       0       0       0       0
+│   │              -0.204  0.1689  0.0203       0       0       0       0       0       0
+│   │             -0.1336  0.0203   0.094       0       0       0       0       0       0
+│   │             -2.8348  0.5218   0.436  0.7926 -0.1312  0.1235 -0.8228 -0.4781  0.1719
+│   │              0.5377 -0.0347 -0.1781 -0.0891   0.071  0.0062  0.0114  0.2809  0.0417
+│   │             -0.5286   0.154  0.2845  0.0674 -0.0336  0.0444 -0.1799 -0.0728  0.0798
+│   │              1.7157 -0.4311 -0.6086 -0.1967  0.0612  0.0183   0.894  0.1688   -0.09
+│   │              1.9475 -0.2749 -0.2724 -0.1201 -0.0422 -0.0045  0.2076  0.6691 -0.0608
+│   │             -0.7774  0.8649 -0.1135 -0.1005 -0.0404 -0.0508  0.0461   0.033  0.5298 ]
+│   │   - method2_descriptor_primal:292
+│   │   - model5_gasturbine_engine:125
+│   │    
+│   │   X1 = [     0.0001      -0       0       0       0       0       0       0       0
+│   │                  -0       0      -0       0       0       0       0       0       0
+│   │                   0      -0       0       0       0       0       0       0       0
+│   │              1.5313 -0.4139  0.0019 -0.4185  0.1944 -0.0803  0.5586  0.3321  0.0685
+│   │             -0.1435  -0.301  0.0262  0.0888 -0.0611 -0.0415 -0.0588 -0.0717 -0.0358
+│   │              0.1852 -0.0934 -0.2082  -0.071  0.0329  0.0724  0.0783  0.0659  0.0069
+│   │             -1.3194  0.0755  0.6443  0.1534 -0.0284  0.0555 -0.3765 -0.1474  0.0145
+│   │             -0.0025 -0.6212 -0.9743  0.1516 -0.0773 -0.0558 -0.1755 -0.2746 -0.1574
+│   │              0.0398 -0.3954 -0.1865   0.017  0.0091  0.0481 -0.0547  0.0274 -0.1815 ]
+│   │   - method2_descriptor_primal:292
+│   │   - model5_gasturbine_engine:125
+│   │   - Results stored in `results/Descriptor_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:51 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.7780
+│   │       Overall_Time: 2.4383
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'primal'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:51 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.7780
+│   │       Overall_Time: 2.4383
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'Descriptor - primal'
+│   │   
+│   │   
+│   └ 2.5863 [sec]
+│    
+│   ┌ method2_descriptor_dual called from model5_gasturbine_engine:126
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.00    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 169
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 8                 scalarized             : 636             
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 1.44e+04          after factor           : 1.44e+04        
+Factor     - dense dim.             : 0                 flops                  : 3.30e+06        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   3.9e+00  4.8e+00  5.0e+00  0.00e+00   6.399999688e+01   0.000000000e+00   1.0e+00  0.01  
+1   8.1e-01  9.9e-01  1.0e+00  -6.42e-01  1.013579332e+01   -4.624203652e+00  2.1e-01  0.05  
+2   1.2e-01  1.5e-01  6.9e-01  1.60e+00   -2.652906057e+00  -4.861838285e+00  3.1e-02  0.06  
+3   1.9e-02  2.3e-02  3.2e-01  1.28e+00   -2.719636836e+00  -3.036720857e+00  4.9e-03  0.06  
+4   4.0e-03  4.9e-03  1.0e-01  7.72e-01   -1.538690289e+00  -1.610062839e+00  1.0e-03  0.07  
+5   9.8e-04  1.2e-03  4.1e-02  5.84e-01   -1.166890497e+00  -1.186658066e+00  2.5e-04  0.07  
+6   2.2e-04  2.7e-04  1.6e-02  6.22e-01   -1.019071969e+00  -1.024045208e+00  5.6e-05  0.08  
+7   6.2e-05  7.6e-05  7.1e-03  6.31e-01   -9.605998336e-01  -9.620520463e-01  1.6e-05  0.08  
+8   1.5e-05  1.9e-05  2.9e-03  5.93e-01   -9.313406167e-01  -9.316854558e-01  3.8e-06  0.09  
+9   3.7e-06  4.5e-06  1.3e-03  7.99e-01   -9.234620687e-01  -9.235355846e-01  9.0e-07  0.09  
+10  8.4e-07  1.0e-06  6.0e-04  7.89e-01   -9.202002640e-01  -9.202222948e-01  1.9e-07  0.10  
+11  2.0e-07  2.4e-07  2.9e-04  9.49e-01   -9.196630161e-01  -9.196686974e-01  4.4e-08  0.10  
+12  3.3e-08  3.8e-08  1.2e-04  9.88e-01   -9.195528889e-01  -9.195537455e-01  7.2e-09  0.10  
+13  2.7e-09  2.6e-09  3.0e-05  9.99e-01   -9.195364257e-01  -9.195364830e-01  5.0e-10  0.11  
+Optimizer terminated. Time: 0.13    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -9.1953642567e-01   nrm: 2e+01    Viol.  con: 2e-06    barvar: 0e+00  
+  Dual.    obj: -9.1953648296e-01   nrm: 1e+02    Viol.  con: 0e+00    barvar: 5e-08  
+Optimizer summary
+  Optimizer                 -                        time: 0.13    
+    Interior-point          - iterations : 13        time: 0.11    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - 
+│   │   gamma = 0.95892
+│   │   solver_time = 0.17305
+│   │   - Successfully solved (MOSEK)
+│   │   Y(p1) = 1 * Y0 + p1 * Y1
+│   │    
+│   │   Y0 = [     1.3551  1.6379  1.5038  0.9814  -3.576  -1.334 -1.6947  1.4466  4.2411
+│   │              1.6379  7.8222  0.6381 -1.9646   6.684  3.1554 -8.6893 -25.617 -0.3872
+│   │              1.5038  0.6381  12.513  9.5067 -36.481 -16.496   6.102  33.294  27.325
+│   │                   0       0       0  9.8458 -8.1594 -0.2354 -0.0328 -1.2176 -0.3736
+│   │                   0       0       0 -9.5987  35.308  6.2335  0.2504  3.4404  0.9924
+│   │                   0       0       0 -10.956  29.499  16.405  0.0845  3.8718  1.0675
+│   │                   0       0       0  0.7136 -0.2983 -0.1708  4.7934  3.1596 -0.7264
+│   │                   0       0       0  9.6543 -29.665 -20.069 -0.5801  9.0039 -2.2143
+│   │                   0       0       0  4.1556  -12.74 -9.1577 -0.5555  5.5997  2.4334 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:126
+│   │    
+│   │   Y1 = [    -0.0001       0 -0.0002 -4.6492 -0.6978 -0.5655  0.3447  0.3855  -0.096
+│   │                   0 -0.0001 -0.0001  1.5545  0.0574 -0.9266 -0.4546  0.5744  0.1536
+│   │             -0.0002 -0.0001 -0.0004  4.8158 -6.3802  5.4685  1.6637  1.1425  0.1308
+│   │                   0       0       0 -2.3757  -14.42 -7.3668  1.5111  0.3509  0.6249
+│   │                   0       0       0  15.228 -8.3715 -12.985 -4.3982  11.084  8.1111
+│   │                   0       0       0  16.584  2.8651 -3.9261  2.3851  8.5425 -2.0542
+│   │                   0       0       0 -4.0311  3.1871 -1.9442  -0.853  0.4294  1.5761
+│   │                   0       0       0 -12.551  -1.022  4.3458  0.5908 -5.4763 -2.2809
+│   │                   0       0       0 -3.7759 -16.078 -6.6841 -0.7852  9.5842  1.7606 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:126
+│   │   - Results stored in `results/Descriptor_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:53 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1730
+│   │       Overall_Time: 1.6717
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'dual condensed LMI form'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:53 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1730
+│   │       Overall_Time: 1.6717
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'Descriptor - dual condensed LMI form'
+│   │   
+│   │   
+│   └ 1.803 [sec]
+│    
+│   ┌ method2_descriptor_dual called from model5_gasturbine_engine:127
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.01    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 169             
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 8               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 169
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 8                 scalarized             : 636             
+Factor     - setup time             : 0.00              dense det. time        : 0.00            
+Factor     - ML order time          : 0.00              GP order time          : 0.00            
+Factor     - nonzeros before factor : 1.44e+04          after factor           : 1.44e+04        
+Factor     - dense dim.             : 0                 flops                  : 3.30e+06        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   3.9e+00  4.8e+00  5.0e+00  0.00e+00   6.399999688e+01   0.000000000e+00   1.0e+00  0.01  
+1   8.1e-01  9.9e-01  1.0e+00  -6.42e-01  1.013579332e+01   -4.624203652e+00  2.1e-01  0.05  
+2   1.2e-01  1.5e-01  6.9e-01  1.60e+00   -2.652906057e+00  -4.861838285e+00  3.1e-02  0.06  
+3   1.9e-02  2.3e-02  3.2e-01  1.28e+00   -2.719636836e+00  -3.036720857e+00  4.9e-03  0.06  
+4   4.0e-03  4.9e-03  1.0e-01  7.72e-01   -1.538690289e+00  -1.610062839e+00  1.0e-03  0.07  
+5   9.8e-04  1.2e-03  4.1e-02  5.84e-01   -1.166890497e+00  -1.186658066e+00  2.5e-04  0.07  
+6   2.2e-04  2.7e-04  1.6e-02  6.22e-01   -1.019071969e+00  -1.024045208e+00  5.6e-05  0.07  
+7   6.2e-05  7.6e-05  7.1e-03  6.31e-01   -9.605998336e-01  -9.620520463e-01  1.6e-05  0.08  
+8   1.5e-05  1.9e-05  2.9e-03  5.93e-01   -9.313406167e-01  -9.316854558e-01  3.8e-06  0.08  
+9   3.7e-06  4.5e-06  1.3e-03  7.99e-01   -9.234620687e-01  -9.235355846e-01  9.0e-07  0.09  
+10  8.4e-07  1.0e-06  6.0e-04  7.89e-01   -9.202002640e-01  -9.202222948e-01  1.9e-07  0.09  
+11  2.0e-07  2.4e-07  2.9e-04  9.49e-01   -9.196630161e-01  -9.196686974e-01  4.4e-08  0.09  
+12  3.3e-08  3.8e-08  1.2e-04  9.88e-01   -9.195528889e-01  -9.195537455e-01  7.2e-09  0.10  
+13  2.7e-09  2.6e-09  3.0e-05  9.99e-01   -9.195364257e-01  -9.195364830e-01  5.0e-10  0.10  
+Optimizer terminated. Time: 0.12    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -9.1953642567e-01   nrm: 2e+01    Viol.  con: 2e-06    barvar: 0e+00  
+  Dual.    obj: -9.1953648296e-01   nrm: 1e+02    Viol.  con: 0e+00    barvar: 5e-08  
+Optimizer summary
+  Optimizer                 -                        time: 0.12    
+    Interior-point          - iterations : 13        time: 0.10    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - 
+│   │   gamma = 0.95892
+│   │   solver_time = 0.16524
+│   │   - Successfully solved (MOSEK)
+│   │   Y(p1) = 1 * Y0 + p1 * Y1
+│   │    
+│   │   Y0 = [     1.3551  1.6379  1.5038  0.9814  -3.576  -1.334 -1.6947  1.4466  4.2411
+│   │              1.6379  7.8222  0.6381 -1.9646   6.684  3.1554 -8.6893 -25.617 -0.3872
+│   │              1.5038  0.6381  12.513  9.5067 -36.481 -16.496   6.102  33.294  27.325
+│   │                   0       0       0  9.8458 -8.1594 -0.2354 -0.0328 -1.2176 -0.3736
+│   │                   0       0       0 -9.5987  35.308  6.2335  0.2504  3.4404  0.9924
+│   │                   0       0       0 -10.956  29.499  16.405  0.0845  3.8718  1.0675
+│   │                   0       0       0  0.7136 -0.2983 -0.1708  4.7934  3.1596 -0.7264
+│   │                   0       0       0  9.6543 -29.665 -20.069 -0.5801  9.0039 -2.2143
+│   │                   0       0       0  4.1556  -12.74 -9.1577 -0.5555  5.5997  2.4334 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:127
+│   │    
+│   │   Y1 = [    -0.0001       0 -0.0002 -4.6492 -0.6978 -0.5655  0.3447  0.3855  -0.096
+│   │                   0 -0.0001 -0.0001  1.5545  0.0574 -0.9266 -0.4546  0.5744  0.1536
+│   │             -0.0002 -0.0001 -0.0004  4.8158 -6.3802  5.4685  1.6637  1.1425  0.1308
+│   │                   0       0       0 -2.3757  -14.42 -7.3668  1.5111  0.3509  0.6249
+│   │                   0       0       0  15.228 -8.3715 -12.985 -4.3982  11.084  8.1111
+│   │                   0       0       0  16.584  2.8651 -3.9261  2.3851  8.5425 -2.0542
+│   │                   0       0       0 -4.0311  3.1871 -1.9442  -0.853  0.4294  1.5761
+│   │                   0       0       0 -12.551  -1.022  4.3458  0.5908 -5.4763 -2.2809
+│   │                   0       0       0 -3.7759 -16.078 -6.6841 -0.7852  9.5842  1.7606 ]
+│   │   - method2_descriptor_dual:318
+│   │   - model5_gasturbine_engine:127
+│   │   - Results stored in `results/Descriptor_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:55 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1652
+│   │       Overall_Time: 1.6880
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'dual explicit LMI form'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:55 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9589
+│   │        Solver_Time: 0.1652
+│   │       Overall_Time: 1.6880
+│   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │             Method: 'Descriptor - dual explicit LMI form'
+│   │   
+│   │   
+│   └ 1.8278 [sec]
+│    
+│   ┌ method3_IQC_LFT_IQCToolbox:13 - IQCToolbox
+│   │    
+│   │   ┌ iqcsolve:226 - infomatrix(1,1): LTVS
+Ap [0x0] = 
+ 
+ 
+Bp [0x0] = 
+ 
+ 
+Cp [0x0] = 
+ 
+ 
+Dp [0x0] = 
+ 
+ 
+Ap [6x6] = 
+ 
+    -1     0     0     0     0     0
+     0    -1     0     0     0     0
+     0     0    -1     0     0     0
+     0     0     0    -1     0     0
+     0     0     0     0    -1     0
+     0     0     0     0     0    -1
+
+ 
+Bp [6x6] = 
+ 
+     1     0     0     0     0     0
+     0     1     0     0     0     0
+     0     0     1     0     0     0
+     0     0     0     1     0     0
+     0     0     0     0     1     0
+     0     0     0     0     0     1
+
+ 
+Cp [12x6] = 
+ 
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     1     0     0     0     0     0
+     0     1     0     0     0     0
+     0     0     1     0     0     0
+     0     0     0     1     0     0
+     0     0     0     0     1     0
+     0     0     0     0     0     1
+
+ 
+Dp [12x6] = 
+ 
+     1     0     0     0     0     0
+     0     1     0     0     0     0
+     0     0     1     0     0     0
+     0     0     0     1     0     0
+     0     0     0     0     1     0
+     0     0     0     0     0     1
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+
+ 
+│   │   └ 0.027559 [sec]
+Apsi [12x12] = 
+ 
+  Columns 1 through 7
+
+    -1     0     0     0     0     0     0
+     0    -1     0     0     0     0     0
+     0     0    -1     0     0     0     0
+     0     0     0    -1     0     0     0
+     0     0     0     0    -1     0     0
+     0     0     0     0     0    -1     0
+     0     0     0     0     0     0    -1
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Columns 8 through 12
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+    -1     0     0     0     0
+     0    -1     0     0     0
+     0     0    -1     0     0
+     0     0     0    -1     0
+     0     0     0     0    -1
+
+ 
+Bpsi1 [12x8] = 
+ 
+  Columns 1 through 7
+
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Column 8
+
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+
+ 
+Bpsi2 [12x14] = 
+ 
+  Columns 1 through 7
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     1     0     0     0     0     0     1
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+
+  Columns 8 through 14
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+
+ 
+Cpsi [40x12] = 
+ 
+  Columns 1 through 7
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     1
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Columns 8 through 12
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     1     0     0     0     0
+     0     1     0     0     0
+     0     0     1     0     0
+     0     0     0     1     0
+     0     0     0     0     1
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+
+ 
+Cpsi1 [18x12] = 
+ 
+  Columns 1 through 7
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+
+  Columns 8 through 12
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+
+ 
+Cpsi2 [18x12] = 
+ 
+  Columns 1 through 7
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     1
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Columns 8 through 12
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     1     0     0     0     0
+     0     1     0     0     0
+     0     0     1     0     0
+     0     0     0     1     0
+     0     0     0     0     1
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+
+ 
+Dpsi1 [40x8] = 
+ 
+  Columns 1 through 7
+
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     1
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Column 8
+
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     1
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+     0
+
+ 
+Dpsi2 [40x14] = 
+ 
+  Columns 1 through 7
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     1
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Columns 8 through 14
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     0     0     0     0     0     0     1
+
+ 
+Dpsi11 [18x6] = 
+ 
+     1     0     0     0     0     0
+     0     1     0     0     0     0
+     0     0     1     0     0     0
+     0     0     0     1     0     0
+     0     0     0     0     1     0
+     0     0     0     0     0     1
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+
+ 
+Dpsi12 [18x12] = 
+ 
+  Columns 1 through 7
+
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Columns 8 through 12
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+
+ 
+Dpsi21 [18x6] = 
+ 
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+     0     0     0     0     0     0
+
+ 
+Dpsi22 [18x12] = 
+ 
+  Columns 1 through 7
+
+     1     0     0     0     0     0     0
+     0     1     0     0     0     0     0
+     0     0     1     0     0     0     0
+     0     0     0     1     0     0     0
+     0     0     0     0     1     0     0
+     0     0     0     0     0     1     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     1
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0
+
+  Columns 8 through 12
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     1     0     0     0     0
+     0     1     0     0     0
+     0     0     1     0     0
+     0     0     0     1     0
+     0     0     0     0     1
+
+ 
+Am [3x3] = 
+ 
+   -4.4780   -0.5884   -0.2894
+    7.6306   -7.4592   -5.8407
+   -1.7086    9.1923  -15.1272
+
+ 
+Bm [3x14] = 
+ 
+  Columns 1 through 4
+
+   -0.0000   -0.0000    0.0000    1.0153
+    0.0000    0.0000    0.0000   -0.0142
+    0.0000    0.0000    0.0000   -0.0655
+
+  Columns 5 through 8
+
+    0.1576    0.1828         0         0
+   -1.3465    4.0138         0         0
+    2.7353    1.9654         0         0
+
+  Columns 9 through 12
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 13 through 14
+
+    2.3329    0.6051
+    1.3002    3.2115
+    0.8787  -11.6982
+
+ 
+Cm [8x3] = 
+ 
+    3.0836   -0.8469   -0.3153
+    0.2240   -0.7604    4.9563
+   -3.0397    3.5636    4.2871
+    0.1363   -0.7676   -0.3890
+   -0.0590    1.7230   -0.6078
+   -0.1097   -0.0647    0.4870
+         0    1.0000         0
+         0         0    1.0000
+
+ 
+Dm [8x14] = 
+ 
+  Columns 1 through 4
+
+    0.2049    0.4521   -0.4696   -0.0249
+   -0.1402   -0.2934    0.2998    0.0163
+   -0.0374   -0.0384    0.1045    0.0039
+   -0.0727    0.0516   -0.3714   -0.0055
+   -0.0658   -0.2757    0.1104    0.0102
+   -0.0756    0.1903    0.2608    0.0028
+         0         0         0         0
+         0         0         0         0
+
+  Columns 5 through 8
+
+   -0.0643    0.0292         0         0
+    0.0273   -0.0237         0         0
+   -0.0584   -0.0349         0         0
+   -0.1216    0.0024         0         0
+    0.2232    0.0742         0         0
+   -0.5236   -0.2338         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 9 through 12
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 13 through 14
+
+   -0.5041   -0.2001
+   -0.2824    0.3099
+   -0.3817    0.4697
+    0.0102   -0.0038
+    0.0133   -1.3174
+   -0.0901   -0.0548
+         0         0
+         0         0
+
+ 
+A [15x15] = 
+ 
+  Columns 1 through 4
+
+   -4.4780   -0.5884   -0.2894         0
+    7.6306   -7.4592   -5.8407         0
+   -1.7086    9.1923  -15.1272         0
+    3.0836   -0.8469   -0.3153   -1.0000
+    0.2240   -0.7604    4.9563         0
+   -3.0397    3.5636    4.2871         0
+    0.1363   -0.7676   -0.3890         0
+   -0.0590    1.7230   -0.6078         0
+   -0.1097   -0.0647    0.4870         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 5 through 8
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+   -1.0000         0         0         0
+         0   -1.0000         0         0
+         0         0   -1.0000         0
+         0         0         0   -1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 9 through 12
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+   -1.0000         0         0         0
+         0   -1.0000         0         0
+         0         0   -1.0000         0
+         0         0         0   -1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 13 through 15
+
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+   -1.0000         0         0
+         0   -1.0000         0
+         0         0   -1.0000
+
+ 
+B [15x14] = 
+ 
+  Columns 1 through 4
+
+   -0.0000   -0.0000    0.0000    1.0153
+    0.0000    0.0000    0.0000   -0.0142
+    0.0000    0.0000    0.0000   -0.0655
+    0.2049    0.4521   -0.4696   -0.0249
+   -0.1402   -0.2934    0.2998    0.0163
+   -0.0374   -0.0384    0.1045    0.0039
+   -0.0727    0.0516   -0.3714   -0.0055
+   -0.0658   -0.2757    0.1104    0.0102
+   -0.0756    0.1903    0.2608    0.0028
+    1.0000         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+
+  Columns 5 through 8
+
+    0.1576    0.1828         0         0
+   -1.3465    4.0138         0         0
+    2.7353    1.9654         0         0
+   -0.0643    0.0292         0         0
+    0.0273   -0.0237         0         0
+   -0.0584   -0.0349         0         0
+   -0.1216    0.0024         0         0
+    0.2232    0.0742         0         0
+   -0.5236   -0.2338         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0    1.0000         0         0
+
+  Columns 9 through 12
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+
+  Columns 13 through 14
+
+    2.3329    0.6051
+    1.3002    3.2115
+    0.8787  -11.6982
+   -0.5041   -0.2001
+   -0.2824    0.3099
+   -0.3817    0.4697
+    0.0102   -0.0038
+    0.0133   -1.3174
+   -0.0901   -0.0548
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+
+ 
+C [40x15] = 
+ 
+  Columns 1 through 4
+
+    3.0836   -0.8469   -0.3153         0
+    0.2240   -0.7604    4.9563         0
+   -3.0397    3.5636    4.2871         0
+    0.1363   -0.7676   -0.3890         0
+   -0.0590    1.7230   -0.6078         0
+   -0.1097   -0.0647    0.4870         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 5 through 8
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 9 through 12
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 13 through 15
+
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+    1.0000         0         0
+         0    1.0000         0
+         0         0    1.0000
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+         0         0         0
+
+ 
+D [40x14] = 
+ 
+  Columns 1 through 4
+
+    0.2049    0.4521   -0.4696   -0.0249
+   -0.1402   -0.2934    0.2998    0.0163
+   -0.0374   -0.0384    0.1045    0.0039
+   -0.0727    0.0516   -0.3714   -0.0055
+   -0.0658   -0.2757    0.1104    0.0102
+   -0.0756    0.1903    0.2608    0.0028
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 5 through 8
+
+   -0.0643    0.0292         0         0
+    0.0273   -0.0237         0         0
+   -0.0584   -0.0349         0         0
+   -0.1216    0.0024         0         0
+    0.2232    0.0742         0         0
+   -0.5236   -0.2338         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0    1.0000         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+
+  Columns 9 through 12
+
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+         0         0         0         0
+    1.0000         0         0         0
+         0    1.0000         0         0
+         0         0    1.0000         0
+         0         0         0    1.0000
+         0         0         0         0
+         0         0         0         0
+
+  Columns 13 through 14
+
+   -0.5041   -0.2001
+   -0.2824    0.3099
+   -0.3817    0.4697
+    0.0102   -0.0038
+    0.0133   -1.3174
+   -0.0901   -0.0548
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+         0         0
+    1.0000         0
+         0    1.0000
+
+ 
+│   │    
+│   │   ┌ iqcsolve:680 - mincx
+
+ Solver for linear objective minimization under LMI constraints 
+
+ Iterations   :    Best objective value so far 
+ 
+     1
+     2
+     3
+     4
+     5
+     6
+     7
+     8
+* switching to QR
+     9                   3.319510
+    10                   1.626815
+    11                   1.626815
+    12                   1.302544
+    13                   1.302544
+    14                   1.302544
+    15                   1.095286
+    16                   1.095286
+    17                   1.048824
+    18                   1.048824
+    19                   0.972677
+    20                   0.972677
+***                 new lower bound:     0.761413
+    21                   0.944213
+***                 new lower bound:     0.817384
+    22                   0.940283
+***                 new lower bound:     0.836197
+    23                   0.937048
+***                 new lower bound:     0.850651
+    24                   0.934368
+***                 new lower bound:     0.862640
+    25                   0.932140
+***                 new lower bound:     0.872670
+    26                   0.930286
+***                 new lower bound:     0.881055
+    27                   0.927274
+***                 new lower bound:     0.888048
+    28                   0.926102
+***                 new lower bound:     0.893828
+    29                   0.925129
+***                 new lower bound:     0.898608
+    30                   0.924316
+***                 new lower bound:     0.902541
+    31                   0.924067
+***                 new lower bound:     0.905760
+    32                   0.924067
+***                 new lower bound:     0.913724
+    33                   0.924067
+***                 new lower bound:     0.913890
+    34                   0.921289
+***                 new lower bound:     0.912537
+
+ Result:  feasible solution of required accuracy
+          best objective value:     0.921289
+          guaranteed absolute accuracy:  8.75e-03
+          f-radius saturation:  0.631% of R =  1.00e+09 
+ 
+│   │   └ 1.6892 [sec]
+Elapsed time is 1.775218 seconds.
+1 uncertainty block(s)-
+
+	1. LTVS Block
+		Pole: -1
+		Length: 2
+		Relax: 1
+		Active: 1
+
+IQC problem solutions-
+
+	tmin: 
+	gopt: 9.598381e-01
+	Scaling: {0x0 cell}
+	Lyap: [15x15 double]
+	tgplot: [0x0 double]
+
+│   │   - Model: gasturbine_engine, R: 100
+│   │   - Overall time: 1.7752
+│   │   - Gamma = 0.959838 
+│   │   -  
+│   │   - Results stored in `results/IQCToolbox_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:56 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9598
+│   │        Solver_Time: 0
+│   │       Overall_Time: 1.7752
+│   │        Solver_Info: 'Pole: 1 Length: [2 Relax: 1, Active: 1'
+│   │             Method: 'IQCToolbox - ltvs'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:15:57 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9598
+│   │        Solver_Time: 0
+│   │       Overall_Time: 1.7752
+│   │        Solver_Info: 'Pole: 1 Length: [2 Relax: 1, Active: 1'
+│   │             Method: 'IQCToolbox - ltvs'
+│   │   
+│   │   
+│   └ 1.8796 [sec]
+│    
+│   ┌ method3_IQC_LFT_LPVTools:90 - LPVTools
+│   │    
+│   │   ┌ method3_IQC_LFT_LPVTools:109 - LPVTools LFT/IQC [msg:lpvnorm]
+│   │   │    
+│   │   │   ┌ lpvnorm called from method3_IQC_LFT_LPVTools:116
+│   │   │   │    
+│   │   │   │   ┌ lpvwcgain called from lpvnorm:59
+│   │   │   │   │   
+│   │   │   │   │   List of default poles = 
+│   │   │   │   │   
+│   │   │   │   │     struct with fields:
+│   │   │   │   │   
+│   │   │   │   │       p1: 1.4899 -8.2020 -45.1526 Inf]
+│   │   │   │   │   
+│   │   │   │   │   
+│   │   │   │   │   grid omega: 2.706394e-01 <-- 45 --> 2.485688e+02
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcperf4 called from lpvwcgain:83
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.21826 [sec]
+│   │   │   │   │   │   └ 0.27047 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  27
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.2941 [sec]
+│   │   │   │   │   │   └ 0.32113 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  27  18
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.44699 [sec]
+│   │   │   │   │   │   └ 0.47573 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  27  18  23
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.5514 [sec]
+│   │   │   │   │   │   └ 0.5813 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  27  18  23  21
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.64856 [sec]
+│   │   │   │   │   │   └ 0.67949 [sec]
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   │   cidx = 1  45  27  18  23  21  20
+│   │   │   │   │   │   │    
+│   │   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   │   └ 0.76728 [sec]
+│   │   │   │   │   │   └ 0.79199 [sec]
+│   │   │   │   │   └ 3.3126 [sec]
+│   │   │   │   └ 3.459 [sec]
+│   │   │   └ 3.4877 [sec]
+│   │   │   - Solver time: 3.51568
+│   │   │   - gamma = 0.959314 (lpvnorm)
+│   │   └ 3.5161 [sec]
+│   │   - Results stored in `results/LPVTools_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:16:00 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9593
+│   │        Solver_Time: 0
+│   │       Overall_Time: 3.5157
+│   │        Solver_Info: 'tvreal, lpvnorm'
+│   │             Method: 'LFT/IQC'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:16:00 id:2311'
+│   │              Lower: 0
+│   │              Upper: 0.9593
+│   │        Solver_Time: 0
+│   │       Overall_Time: 3.5157
+│   │        Solver_Info: 'tvreal, lpvnorm'
+│   │             Method: 'LPVTools - LFT/IQC'
+│   │   
+│   │   
+│   │    
+│   │   ┌ method3_IQC_LFT_LPVTools:131 - LPVTools LFT/IQC [msg:lpvwcgain]
+│   │   │    
+│   │   │   ┌ lpvwcgain called from method3_IQC_LFT_LPVTools:145
+│   │   │   │   
+│   │   │   │   List of default poles = 
+│   │   │   │   
+│   │   │   │     struct with fields:
+│   │   │   │   
+│   │   │   │       p1: 1.4899 -8.2020 -45.1526 Inf]
+│   │   │   │   
+│   │   │   │   
+│   │   │   │   grid omega: 2.706394e-01 <-- 45 --> 2.485688e+02
+│   │   │   │    
+│   │   │   │   ┌ iqcperf4 called from lpvwcgain:83
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.20883 [sec]
+│   │   │   │   │   └ 0.23862 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  27
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.29726 [sec]
+│   │   │   │   │   └ 0.32588 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  27  18
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.45657 [sec]
+│   │   │   │   │   └ 0.48468 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  27  18  23
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.57097 [sec]
+│   │   │   │   │   └ 0.59989 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  27  18  23  21
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.63613 [sec]
+│   │   │   │   │   └ 0.66337 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ iqcsolve4 called from iqcperf4:171
+│   │   │   │   │   │   Size of omega: 45 x 1
+│   │   │   │   │   │   Size of G:    8 x 11 x 45
+│   │   │   │   │   │   cidx = 1  45  27  18  23  21  20
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ iqcsolve4:289 - call mincx
+│   │   │   │   │   │   └ 0.77712 [sec]
+│   │   │   │   │   └ 0.81664 [sec]
+│   │   │   │   └ 3.2675 [sec]
+│   │   │   └ 5.4991 [sec]
+│   │   │   - Solver time: 5.51861
+│   │   │   - Bounds: [0.941758,0.959314] = 0.521213,-0.360786] dB 
+│   │   └ 5.5193 [sec]
+│   │   - Results stored in `results/LPVTools_Results.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:16:06 id:2311'
+│   │              Lower: 0.9418
+│   │              Upper: 0.9593
+│   │        Solver_Time: 0
+│   │       Overall_Time: 5.5186
+│   │        Solver_Info: 'tvreal, lpvwcgain'
+│   │             Method: 'LFT/IQC'
+│   │   
+│   │   
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'gasturbine_engine, R: 100'
+│   │              Stamp: '2020.04.10. Friday 23:16:06 id:2311'
+│   │              Lower: 0.9418
+│   │              Upper: 0.9593
+│   │        Solver_Time: 0
+│   │       Overall_Time: 5.5186
+│   │        Solver_Info: 'tvreal, lpvwcgain'
+│   │             Method: 'LPVTools - LFT/IQC'
+│   │   
+│   │   
+│   └ 9.3163 [sec]
+│    
+│   ┌ method4_authors_old_symbolical called from model5_gasturbine_engine:133
+│   │    
+│   │   ┌ method4_authors_old_symbolical:19 - model generation
+│   │   │    
+│   │   │   ┌ P_LFR_reduction called from method4_authors_old_symbolical:44
+│   │   │   │    
+│   │   │   │   ┌ P_lfrdata called from P_LFR_reduction:95
+│   │   │   │   └ 0.027886 [sec]
+│   │   │   │    
+│   │   │   │   - Redundant LFR model (dim: 9) (symbolic computations). Elapsed time is 0.027390
+│   │   │   │    
+│   │   │   │   ┌ P_Pi_canonical_decomp called from P_LFR_reduction:131
+│   │   │   │   └ 0.12958 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the permuted model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 1.33227e-15
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the permuted model should be the same
+│   │   │   │   └ 0.011208 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Pi [dim: 12] = S * (reduced Pi [dim: 9.
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 1.90934e-10
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [ FAILED ] Pi [dim: 12] = S * (reduced Pi [dim: 9.
+│   │   │   │   │   - Equality percentage: 75%
+│   │   │   │   │   - Indices, where not equal: [ 8 , 10 , 12 ] / 12
+│   │   │   │   │   - nr of elements where not zero/all: 3/12
+│   │   │   │   │   - differences: [ 0 ; 0 ; 0 ]
+│   │   │   │   └ 0.01577 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the reduced model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-05.
+│   │   │   │   │   [  INFO  ] Maximal difference: 6.66134e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the reduced model should be the same
+│   │   │   │   └ 0.000424 [sec]
+│   │   │   │    
+│   │   │   └ 1.2479 [sec]
+│   │   │    
+│   │   │   ┌ P_LFR_reduction called from method4_authors_old_symbolical:45
+│   │   │   │    
+│   │   │   │   ┌ P_lfrdata called from P_LFR_reduction:95
+│   │   │   │   └ 0.017602 [sec]
+│   │   │   │    
+│   │   │   │   - Redundant LFR model (dim: 6) (symbolic computations). Elapsed time is 0.021209
+│   │   │   │    
+│   │   │   │   ┌ P_Pi_canonical_decomp called from P_LFR_reduction:131
+│   │   │   │   └ 0.10812 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the permuted model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 1.05124e-15
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the permuted model should be the same
+│   │   │   │   └ 0.009792 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Pi [dim: 8] = S * (reduced Pi [dim: 6.
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   [  INFO  ] Maximal difference: 3.87552e-11
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Pi [dim: 8] = S * (reduced Pi [dim: 6.
+│   │   │   │   └ 0.000425 [sec]
+│   │   │   │    
+│   │   │   │   ┌ pcz_symeq_report:14 (pcz_symzero_report) - Equation of the reduced model should be the same
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-05.
+│   │   │   │   │   [  INFO  ] Maximal difference: 3.33067e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Equation of the reduced model should be the same
+│   │   │   │   └ 0.000433 [sec]
+│   │   │   │    
+│   │   │   └ 1.0978 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator called from method4_authors_old_symbolical:114
+│   │   │   │    
+│   │   │   │   ┌ P_affine_annihilator:94 (pcz_fhzero_report) - Numerical check. 
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   - Maximal difference: 9.19924e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Numerical check. 
+│   │   │   │   └ 0.11858 [sec]
+│   │   │   └ 0.53635 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator called from method4_authors_old_symbolical:117
+│   │   │   │    
+│   │   │   │   ┌ P_affine_annihilator:94 (pcz_fhzero_report) - Numerical check. 
+│   │   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   │   - Maximal difference: 2.11883e-14
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Numerical check. 
+│   │   │   │   └ 0.21955 [sec]
+│   │   │   └ 0.89153 [sec]
+│   │   └ 5.2559 [sec]
+│   │   - nr. of variables: 1399
+│   │    
+│   │   ┌ method4_authors_old_symbolical:171 - Solve LMIs
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1399            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.00    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1399            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 1399
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 1                 conic                  : 0               
+Optimizer  - Semi-definite variables: 6                 scalarized             : 2334            
+Factor     - setup time             : 0.13              dense det. time        : 0.00            
+Factor     - ML order time          : 0.05              GP order time          : 0.00            
+Factor     - nonzeros before factor : 9.12e+05          after factor           : 9.12e+05        
+Factor     - dense dim.             : 0                 flops                  : 1.20e+09        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   8.0e+00  1.5e+00  3.0e+00  0.00e+00   -1.600036003e+01  0.000000000e+00   1.0e+00  0.16  
+1   1.4e+00  2.6e-01  2.4e+00  6.39e-01   -3.758742614e+00  -1.642330993e+00  1.7e-01  0.65  
+2   1.7e-01  3.2e-02  6.7e-01  2.68e+00   -1.033597562e+00  -8.900009283e-01  2.1e-02  0.90  
+3   2.4e-02  4.6e-03  1.2e+00  1.30e+00   -9.009608172e-01  -8.880950334e-01  3.1e-03  1.14  
+4   3.2e-03  6.0e-04  2.0e-01  1.29e+00   -8.887131492e-01  -8.871906957e-01  4.0e-04  1.39  
+5   4.3e-04  8.0e-05  9.1e-02  1.24e+00   -8.875964018e-01  -8.874226747e-01  5.4e-05  1.63  
+6   1.7e-04  3.2e-05  4.9e-02  8.94e-01   -8.875031861e-01  -8.874243285e-01  2.1e-05  1.87  
+7   4.0e-05  7.4e-06  1.8e-02  7.60e-01   -8.874505822e-01  -8.874258555e-01  5.0e-06  2.11  
+8   1.2e-05  2.2e-06  6.7e-03  4.55e-01   -8.874375273e-01  -8.874259823e-01  1.5e-06  2.35  
+9   5.2e-06  9.8e-07  2.9e-03  1.77e-01   -8.874360028e-01  -8.874271343e-01  5.7e-07  2.59  
+10  2.0e-06  3.8e-07  1.2e-03  -4.31e-01  -8.874572920e-01  -8.874493149e-01  1.7e-07  2.83  
+11  1.4e-06  2.6e-07  7.1e-04  -8.13e-01  -8.875140407e-01  -8.875060341e-01  1.5e-07  3.07  
+12  1.1e-06  2.0e-07  4.8e-04  -1.08e+00  -8.875692065e-01  -8.875607247e-01  1.3e-07  3.32  
+13  1.1e-06  2.0e-07  4.8e-04  -3.83e-01  -8.875692065e-01  -8.875607247e-01  1.3e-07  3.81  
+Optimizer terminated. Time: 3.88    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -8.8756920651e-01   nrm: 5e+02    Viol.  con: 3e-04    var: 0e+00    barvar: 0e+00  
+  Dual.    obj: -8.8756072481e-01   nrm: 4e+01    Viol.  con: 0e+00    var: 7e-11    barvar: 1e-06  
+Optimizer summary
+  Optimizer                 -                        time: 3.88    
+    Interior-point          - iterations : 14        time: 3.86    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   │   [   OK   ] Successfully solved (MOSEK). Solver time: 3.93955
+│   │   │   [  WARN  ] The solution is feasible. Tolerance: 1e-06. Min(Primal) = -9.296386e-07.
+│   │   │    
+│   │   │   - Gamma = 0.942104 
+│   │   │   - size(N)  =   6, size(PI)   =   9
+│   │   │   - size(Na) =  38, size(PI_a) =  33
+│   │   │   - 
+│   │   │    
+│   │   │   Q0 =  = [     1.5189  -0.315 -0.1567 -0.5616 -0.0391 -0.0345  1.1656 -0.4491  0.5354
+│   │   │                 -0.315  0.1881  0.0188 -0.7955 -0.0665  0.0586 -0.3044  0.0163  0.0148
+│   │   │                -0.1567  0.0188  0.0972  0.0844  0.0102  -0.012  0.0165  0.0222 -0.0288
+│   │   │                -0.5616 -0.7955  0.0844 -1.1554 -0.4746 -0.5688   0.789 -2.4343  -1.858
+│   │   │                -0.0391 -0.0665  0.0102 -0.4746 -0.2304  0.3109   1.917  -0.153 -0.0406
+│   │   │                -0.0345  0.0586  -0.012 -0.5688  0.3109 -0.8407 -1.1771  2.4535  1.3931
+│   │   │                 1.1656 -0.3044  0.0165   0.789   1.917 -1.1771  2.5929   0.031 -1.5537
+│   │   │                -0.4491  0.0163  0.0222 -2.4343  -0.153  2.4535   0.031  0.0466 -0.0607
+│   │   │                 0.5354  0.0148 -0.0288  -1.858 -0.0406  1.3931 -1.5537 -0.0607 -0.4602 ]
+│   │   │   - method4_authors_old_symbolical:197
+│   │   │   - model5_gasturbine_engine:133
+│   │   │    
+│   │   │   Q1 =  = [    -0.2251  0.0381  0.0106 -0.0313 -1.0776   1.114   0.815  0.0317 -0.2216
+│   │   │                 0.0381  1.0129  0.0634  1.4521  0.1646   0.799  1.1595 -0.0101 -0.2454
+│   │   │                 0.0106  0.0634 -0.0065  -1.689 -0.3955  0.6068   0.658  0.1873 -0.0582
+│   │   │                -0.0313  1.4521  -1.689  4.5779 -1.5725 -0.9995   4.091    0.03 -0.6504
+│   │   │                -1.0776  0.1646 -0.3955 -1.5725  -0.735   3.475 -0.8823 -0.0654 -0.3503
+│   │   │                  1.114   0.799  0.6068 -0.9995   3.475  2.4693 -0.5786  0.1792 -0.2369
+│   │   │                  0.815  1.1595   0.658   4.091 -0.8823 -0.5786  0.0008 -0.0012  0.0007
+│   │   │                 0.0317 -0.0101  0.1873    0.03 -0.0654  0.1792 -0.0012       0 -0.0007
+│   │   │                -0.2216 -0.2454 -0.0582 -0.6504 -0.3503 -0.2369  0.0007 -0.0007 -0.0014 ]
+│   │   │   - method4_authors_old_symbolical:197
+│   │   │   - model5_gasturbine_engine:133
+│   │   │    
+│   │   │   p_lim = [       0.000    1.000 ]
+│   │   │   - method4_authors_old_symbolical:200
+│   │   │   - model5_gasturbine_engine:133
+│   │   │    
+│   │   │   dp_lim = [    -100.000  100.000 ]
+│   │   │   - method4_authors_old_symbolical:201
+│   │   │   - model5_gasturbine_engine:133
+│   │   │   - Results stored in `results/Results_All.csv'
+│   │   │              Model: 'gasturbine_engine, R: 100'
+│   │   │              Stamp: '2020.04.10. Friday 23:16:16 id:2311'
+│   │   │              Lower: 0
+│   │   │              Upper: 0.9421
+│   │   │        Solver_Time: 3.9396
+│   │   │       Overall_Time: 9.9956
+│   │   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │   │             Method: 'Polytopic a. with Finsler (old)'
+│   │   │   
+│   │   │   
+│   │   └ 4.2649 [sec]
+│   └ 10.1563 [sec]
+│    
+│   ┌ method5_proposed_approach called from model5_gasturbine_engine:136
+│   │    
+│   │   ┌ method5_proposed_approach:19 - model generation
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:49 (pcz_lfrzero_report) - Generator form (m = 9) of [ A(p) ; C(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.77636e-15
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Generator form (m = 9) of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.018088 [sec]
+│   │   │    
+│   │   │   ┌ P_mingen_for_LFR called from method5_proposed_approach:52
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_mingen_for_LFR:61
+│   │   │   │   │   Constant kernel computation for G: 3x12, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (4*3=)12x12
+│   │   │   │   │   Error computed for Merr: (4*3=)12x12. Maximum error: 4.878706e-15
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.029674 [sec]
+│   │   │   │   - Rank decision tolerance for `rref' increased to 2.66454e-14
+│   │   │   └ 0.49424 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:54 (pcz_lfrzero_report) - Minimal generator form of [ A(p) ; C(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.77636e-15
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Minimal generator form of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.010201 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:67 (pcz_lfrzero_report) - Generator form of [ B(p) ; D(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.00831e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.010578 [sec]
+│   │   │    
+│   │   │   ┌ P_mingen_for_LFR called from method5_proposed_approach:70
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_mingen_for_LFR:61
+│   │   │   │   │   Constant kernel computation for G: 2x8, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (4*2=)8x8
+│   │   │   │   │   Error computed for Merr: (4*2=)8x8. Maximum error: 3.860804e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.015998 [sec]
+│   │   │   └ 0.46659 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:72 (pcz_lfrzero_report) - Minimal generator form of [ B(p) ; D(p) ] is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 1.36826e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Minimal generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.010626 [sec]
+│   │   │    
+│   │   │   ┌ P_mingen_for_LFR called from method5_proposed_approach:108
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_mingen_for_LFR:61
+│   │   │   │   │   Constant kernel computation for G: 5x33, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (7*5=)35x33
+│   │   │   │   │   Error computed for Merr: (7*5=)35x33. Maximum error: 3.985451e-14
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.027782 [sec]
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-14
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-13
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-12
+│   │   │   │   - Rank decision tolerance for `rref' increased to 7.32747e-11
+│   │   │   └ 1.0167 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:109 (pcz_fhzero_report) - Minimal generator for PI_a(p) is OK
+│   │   │   │   [  INFO  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal difference: 5.8379e-09
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [ FAILED ] Minimal generator for PI_a(p) is OK
+│   │   │   │   - Equality percentage: 94.5455%
+│   │   │   │   - Indices, where not equal: [ 30 , 33 , 63 , 66 , 96 , 99 , 132 , 162 , 165 ] / 165
+│   │   │   │   - nr of elements where not zero/all: 9/165
+│   │   │   └ 0.032711 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator_for_LFR called from method5_proposed_approach:135
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_affine_annihilator_for_LFR:52
+│   │   │   │   │   Constant kernel computation for G: 3x18, with tolerance: 1e-07.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (6*3=)18x18
+│   │   │   │   │   Error computed for Merr: (6*3=)18x18. Maximum error: 4.174256e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   OK   ] Kernel found with the given tolerance.
+│   │   │   │   └ 0.014462 [sec]
+│   │   │   └ 0.53473 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:136 (pcz_gsszero_report) - Annihilator N
+│   │   │   │   [  INFO  ] Tolerance: 4.17426e-14.
+│   │   │   │   - Maximal difference: 4.17426e-16
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Annihilator N
+│   │   │   └ 0.010255 [sec]
+│   │   │    
+│   │   │   ┌ P_affine_annihilator_for_LFR called from method5_proposed_approach:138
+│   │   │   │    
+│   │   │   │   ┌ P_constKer_for_GSS called from P_affine_annihilator_for_LFR:52
+│   │   │   │   │   Constant kernel computation for G: 5x93, with tolerance: 1e-10.
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Kernel computed for M: (19*5=)95x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 2.845907e-08
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 0 not found, trying again with N = 38.
+│   │   │   │   │   Kernel computed for M: (38*5=)190x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 2.162491e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 19 not found, trying again with N = 57.
+│   │   │   │   │   Kernel computed for M: (57*5=)285x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 1.058560e-08
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 38 not found, trying again with N = 76.
+│   │   │   │   │   Kernel computed for M: (76*5=)380x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 1.870899e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 57 not found, trying again with N = 95.
+│   │   │   │   │   Kernel computed for M: (95*5=)475x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 1.096300e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 76 not found, trying again with N = 114.
+│   │   │   │   │   Kernel computed for M: (114*5=)570x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 1.323521e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 95 not found, trying again with N = 133.
+│   │   │   │   │   Kernel computed for M: (133*5=)665x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 2.312287e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 114 not found, trying again with N = 152.
+│   │   │   │   │   Kernel computed for M: (152*5=)760x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 3.841529e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 133 not found, trying again with N = 171.
+│   │   │   │   │   Kernel computed for M: (171*5=)855x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 3.000270e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   Constant kernel with N = 152 not found, trying again with N = 190.
+│   │   │   │   │   Kernel computed for M: (190*5=)950x93
+│   │   │   │   │   Error computed for Merr: (19*5=)95x93. Maximum error: 2.866826e-09
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [ FAILED ] Maximum nr. iterations (10) reached. Kernel NOT found with the given tolerance.
+│   │   │   │   └ 0.33083 [sec]
+│   │   │   └ 1.6024 [sec]
+│   │   │    
+│   │   │   ┌ method5_proposed_approach:139 (pcz_gsszero_report) - Annihilator Na
+│   │   │   │   [  INFO  ] Tolerance: 2.86683e-07.
+│   │   │   │   - Maximal difference: 2.38551e-09
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   OK   ] Annihilator Na
+│   │   │   └ 0.010683 [sec]
+│   │   └ 13.1296 [sec]
+│   │   - nr. of variables: 1137
+│   │    
+│   │   ┌ method5_proposed_approach:192 - Solve LMIs
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1137            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.01    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 1137            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 6               
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 1137
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 1                 conic                  : 0               
+Optimizer  - Semi-definite variables: 6                 scalarized             : 2074            
+Factor     - setup time             : 0.08              dense det. time        : 0.00            
+Factor     - ML order time          : 0.02              GP order time          : 0.00            
+Factor     - nonzeros before factor : 5.93e+05          after factor           : 5.93e+05        
+Factor     - dense dim.             : 0                 flops                  : 6.84e+08        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   8.0e+00  1.5e+00  3.0e+00  0.00e+00   -1.600036002e+01  0.000000000e+00   1.0e+00  0.11  
+1   1.5e+00  2.8e-01  2.6e+00  6.70e-01   -4.033839207e+00  -1.747678326e+00  1.9e-01  0.47  
+2   2.0e-01  3.8e-02  5.0e-01  3.09e+00   -1.095588401e+00  -8.826769880e-01  2.5e-02  0.64  
+3   4.1e-02  7.7e-03  5.1e-01  1.03e+00   -9.217876662e-01  -8.961084821e-01  5.1e-03  0.80  
+4   4.1e-03  7.7e-04  2.4e-01  1.20e+00   -8.896502856e-01  -8.876675024e-01  5.1e-04  0.97  
+5   3.4e-04  6.4e-05  1.2e-01  1.21e+00   -8.875678354e-01  -8.874292213e-01  4.3e-05  1.14  
+6   7.9e-05  1.5e-05  3.8e-02  9.40e-01   -8.874670466e-01  -8.874282745e-01  9.8e-06  1.31  
+7   2.5e-05  4.7e-06  1.5e-02  6.08e-01   -8.874443941e-01  -8.874271001e-01  3.0e-06  1.47  
+8   1.1e-05  2.0e-06  6.9e-03  4.15e-01   -8.874375706e-01  -8.874269347e-01  1.2e-06  1.62  
+9   7.2e-06  1.3e-06  4.4e-03  1.43e-01   -8.874385687e-01  -8.874285619e-01  9.0e-07  1.78  
+10  3.9e-06  7.3e-07  2.4e-03  -3.35e-01  -8.874603607e-01  -8.874506863e-01  5.2e-07  1.94  
+11  2.0e-06  3.8e-07  8.6e-04  -1.15e+00  -8.874893855e-01  -8.874786902e-01  3.1e-07  2.12  
+12  1.4e-06  2.7e-07  5.2e-04  -7.87e-01  -8.876201012e-01  -8.876086231e-01  2.8e-07  2.27  
+13  8.9e-07  1.7e-07  2.5e-04  -9.60e-01  -8.878285566e-01  -8.878143509e-01  2.1e-07  2.45  
+14  6.1e-07  1.1e-07  1.4e-04  -9.12e-01  -8.882004033e-01  -8.881825841e-01  1.7e-07  2.63  
+15  5.0e-07  9.3e-08  1.2e-04  -4.32e-01  -8.893532245e-01  -8.893373165e-01  1.6e-07  2.80  
+16  5.0e-07  9.3e-08  1.2e-04  -3.92e-01  -8.893532245e-01  -8.893373165e-01  1.6e-07  2.96  
+Optimizer terminated. Time: 3.88    
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -8.8935322454e-01   nrm: 1e+03    Viol.  con: 3e-04    var: 0e+00    barvar: 0e+00  
+  Dual.    obj: -8.8933731657e-01   nrm: 2e+02    Viol.  con: 0e+00    var: 4e-11    barvar: 1e-06  
+Optimizer summary
+  Optimizer                 -                        time: 3.88    
+    Interior-point          - iterations : 17        time: 2.99    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   │   [   OK   ] Successfully solved (MOSEK). Solver time: 4.02079
+│   │   │   [  WARN  ] The solution is feasible. Tolerance: 1e-06. Min(Primal) = -9.143360e-07.
+│   │   │    
+│   │   │   - Model: gasturbine_engine, R: 100
+│   │   │   - Overall time: 17.824
+│   │   │   - Gamma = 0.943047 
+│   │   │   - size(N)  =   6, size(PI)   =   9
+│   │   │   - size(Na) =  32, size(PI_a) =  31
+│   │   │   - 
+│   │   │    
+│   │   │   Q0 =  = [      1.372 -0.2731 -0.1466  0.0317  0.0745   0.029 -1.8537 -0.6663  0.0068
+│   │   │                -0.2731  0.1765  0.0174 -1.2926 -0.1313  0.0326  0.2411  -0.125  0.0065
+│   │   │                -0.1466  0.0174  0.0967 -0.0802 -0.0146   -0.02  0.7557  0.0585 -0.0069
+│   │   │                 0.0317 -1.2926 -0.0802  9.5894  2.3749 -0.0094  5.6723 -3.7981   0.019
+│   │   │                 0.0745 -0.1313 -0.0146  2.3749  0.6369  -0.107  2.0248 -0.4222 -0.0721
+│   │   │                  0.029  0.0326   -0.02 -0.0094  -0.107 -0.8625  0.3068  0.3976 -0.0533
+│   │   │                -1.8537  0.2411  0.7557  5.6723  2.0248  0.3068  -1.259 -0.7449  0.0455
+│   │   │                -0.6663  -0.125  0.0585 -3.7981 -0.4222  0.3976 -0.7449 -0.2206  0.0454
+│   │   │                 0.0068  0.0065 -0.0069   0.019 -0.0721 -0.0533  0.0455  0.0454  0.0134 ]
+│   │   │   - method5_proposed_approach:220
+│   │   │   - model5_gasturbine_engine:136
+│   │   │    
+│   │   │   Q1 =  = [    -0.5304 -0.4984  0.6984   8.459  1.3743  1.7861 -0.6484 -0.0707   0.192
+│   │   │                -0.4984  1.8216 -0.0833  4.9059  0.6001 -2.2124  0.1133  0.1858 -0.1683
+│   │   │                 0.6984 -0.0833 -0.2376 -2.6925 -0.1353  1.6171    0.65  0.4576  0.1462
+│   │   │                  8.459  4.9059 -2.6925 -3.0018 -3.8709  0.9858 -2.9679 -0.5927  0.0781
+│   │   │                 1.3743  0.6001 -0.1353 -3.8709 -1.5797  0.6024 -0.8154 -0.1523  0.0706
+│   │   │                 1.7861 -2.2124  1.6171  0.9858  0.6024  0.2304 -0.1424 -0.0504  0.0027
+│   │   │                -0.6484  0.1133    0.65 -2.9679 -0.8154 -0.1424  -0.021 -0.0094 -0.0154
+│   │   │                -0.0707  0.1858  0.4576 -0.5927 -0.1523 -0.0504 -0.0094  0.0003  -0.006
+│   │   │                  0.192 -0.1683  0.1462  0.0781  0.0706  0.0027 -0.0154  -0.006 -0.0126 ]
+│   │   │   - method5_proposed_approach:220
+│   │   │   - model5_gasturbine_engine:136
+│   │   │    
+│   │   │   p_lim = [       0.000    1.000 ]
+│   │   │   - method5_proposed_approach:223
+│   │   │   - model5_gasturbine_engine:136
+│   │   │    
+│   │   │   dp_lim = [    -100.000  100.000 ]
+│   │   │   - method5_proposed_approach:224
+│   │   │   - model5_gasturbine_engine:136
+│   │   │   - Results stored in `results/Results_All.csv'
+│   │   │              Model: 'gasturbine_engine, R: 100'
+│   │   │              Stamp: '2020.04.10. Friday 23:16:34 id:2311'
+│   │   │              Lower: 0
+│   │   │              Upper: 0.9430
+│   │   │        Solver_Time: 4.0208
+│   │   │       Overall_Time: 17.8240
+│   │   │        Solver_Info: 'Successfully solved (MOSEK)'
+│   │   │             Method: 'Polytopic a. with Finsler'
+│   │   │   
+│   │   │   
+│   │   └ 4.3263 [sec]
+│   └ 17.9823 [sec]
+└ 55.3983 [sec]

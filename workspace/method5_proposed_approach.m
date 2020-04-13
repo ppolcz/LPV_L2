@@ -24,6 +24,10 @@ TMP_vFNECEAeLZsYsUxvlgqL = pcz_dispFunctionName('model generation');
 
 [~,~,~,~,AC_lfr,BD_lfr,~,nx,np,nu,ny] = helper_convert(A_fh, B_fh, C_fh, D_fh, p_lfr_cell);
 
+% 2020.04.09. (április  9, csütörtök), 09:52
+% AC_lfr = minlfr(AC_lfr);
+% BD_lfr = minlfr(BD_lfr);
+
 % Generate symbolic variables
 P_generate_symvars(nx,np,nu,ny);
 
@@ -129,12 +133,12 @@ Ga = [ I(nu) O(nu,m2+m1) ];
 %% Construct annihilators
 
 [N,~,~,N_err] = P_affine_annihilator_for_LFR(PI_x,p_lfr,'lims',p_lims_comp);
-pcz_lfrzero_report(minlfr(N*PI_x), N_err, 'Annihilator N');
+pcz_gsszero_report(minlfr(N*PI_x), N_err*100, 'Annihilator N');
 
+[Na,~,~,Na_err] = P_affine_annihilator_for_LFR(PI_a,[p_lfr;dp_lfr],'lims',pdp_lims_comp,'tol',1e-10);
+pcz_gsszero_report(minlfr(Na*PI_a), Na_err*100, 'Annihilator Na');
 
-
-[Na,~,~,Na_err] = P_affine_annihilator_for_LFR(PI_a,[p_lfr;dp_lfr],'lims',pdp_lims_comp);
-pcz_lfrzero_report(Na*PI_a, Na_err, 'Annihilator Na');
+pcz_dispFunctionEnd(TMP_vFNECEAeLZsYsUxvlgqL);
 
 %% Optimization
 

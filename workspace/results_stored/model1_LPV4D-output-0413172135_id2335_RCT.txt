@@ -1,0 +1,42 @@
+[  INFO  ] Output logging (with `diary'): results/model1_LPV4D-output-0413172135_id2335.txt
+ 
+┌ model1_LPV4D
+│   Run ID = 2335
+│    
+│   ┌ method1_RCT:14 - Robust Control Toolbox
+│   │    
+│   │   ┌ method1_RCT:56 - Pure wcgain
+│   │   │   
+│   │   │   info = 
+│   │   │   
+│   │   │     struct with fields:
+│   │   │   
+│   │   │                    Model: 1
+│   │   │                Frequency: 2.5000e-05
+│   │   │                   Bounds: [1.4402 4.8910]
+│   │   │        WorstPerturbation: [1×1 struct]
+│   │   │              Sensitivity: [1×1 struct]
+│   │   │       BadUncertainValues: [1×1 struct]
+│   │   │               ArrayIndex: 1
+│   │   │   
+│   │   │   
+│   │   │   - Solver time: 4.21189
+│   │   │   - Bounds: [1.44022,4.89098] = [3.1686,13.7879] dB 
+│   │   │   - Worst case uncertainty: p1 = 2
+│   │   │   - Worst case uncertainty: p2 = 2
+│   │   │   - Worst case uncertainty: p3 = 0.0862142
+│   │   │   - Critical frequency: 2.5e-05
+│   │   └ 4.2161 [sec]
+│   │   - Results stored in `results/Results_All.csv'
+│   │              Model: 'model1_LPV4D'
+│   │              Stamp: '2020.04.13. Monday 17:21:44 id:2335'
+│   │              Lower: 1.4402
+│   │              Upper: 4.8910
+│   │        Solver_Time: 0
+│   │       Overall_Time: 4.2119
+│   │        Solver_Info: '[no info
+│   │             Method: 'Robust Control Toolbox'
+│   │   
+│   │   
+│   └ 8.997 [sec]
+└ 9.2825 [sec]
