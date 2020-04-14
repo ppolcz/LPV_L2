@@ -1,0 +1,44 @@
+[  [INFO]  ] Output logging (with `diary'): results/model1_LPV4D-output-0414110430_id2267.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m')">model1_LPV4D</a>
+│   Run ID = 2267
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_Wu1995.m',48)">method0_grid_Wu1995:48</a> - [<strong>Grid-based [Wu, 1995]</strong>]
+│   │   Required grid resolutions =
+│   │   
+│   │      Inf
+│   │      Inf
+│   │      Inf
+│   │   Acutally used grid resolutions =
+│   │   
+│   │        5
+│   │        5
+│   │        5
+│   │   - Collecting LMI constraints..........
+  1.00%  2.00%  3.00%  4.00%  5.00%  6.00%  7.00%  8.00%  9.00% 10.00% 11.00% 12.00% 13.00% 14.00% 15.00% 16.00% 17.00% 18.00% 19.00% 20.00% 21.00% 22.00% 23.00% 24.00% 25.00% 26.00% 27.00% 28.00% 29.00% 30.00% 31.00% 32.00% 33.00% 34.00% 35.00% 36.00% 37.00% 38.00% 39.00% 40.00% 41.00% 42.00% 43.00% 44.00% 45.00% 46.00% 47.00% 48.00% 49.00% 50.00% 51.00% 52.00% 53.00% 54.00% 55.00% 56.00% 57.00% 58.00% 59.00% 60.00% 61.00% 62.00% 63.00% 64.00% 65.00% 66.00% 67.00% 68.00% 69.00% 70.00% 71.00% 72.00% 73.00% 74.00% 75.00% 76.00% 77.00% 78.00% 79.00% 80.00% 81.00% 82.00% 83.00% 84.00% 85.00% 86.00% 87.00% 88.00% 89.00% 90.00% 91.00% 92.00% 93.00% 94.00% 95.00% 96.00% 97.00% 98.00% 99.00%100.00%
+│   │   - Calling the solver..........
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('call_mosek_dual>doCall', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m', 98)" style="font-weight:bold">call_mosek_dual>doCall</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m',98,0)">line 98</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('call_mosek_dual', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m', 55)" style="font-weight:bold">call_mosek_dual</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m',55,0)">line 55</a>)
+[r,res,solvertime] = doCall(prob,param,model.options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('callmosek>call_mosek_lpqpsocpsdp', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m', 97)" style="font-weight:bold">callmosek>call_mosek_lpqpsocpsdp</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m',97,0)">line 97</a>)
+        [x,D_struc,problem,r,res,solvertime,prob] = call_mosek_dual(model);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('callmosek', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m', 51)" style="font-weight:bold">callmosek</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m',51,0)">line 51</a>)
+    [x,D_struc,problem,r,res,solvertime,prob] = call_mosek_lpqpsocpsdp(model);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('solvesdp', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/solvesdp.m', 364)" style="font-weight:bold">solvesdp</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/solvesdp.m',364,0)">line 364</a>)
+        eval(['output = ' solver.call '(interfacedata);']);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimize', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/optimize.m', 31)" style="font-weight:bold">optimize</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/optimize.m',31,0)">line 31</a>)
+[varargout{1:nargout}] = solvesdp(varargin{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method0_grid_Wu1995', '/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_Wu1995.m', 144)" style="font-weight:bold">method0_grid_Wu1995</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_Wu1995.m',144,0)">line 144</a>)
+sol = optimize(CONS,-igamma,sdps);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model1_LPV4D', '/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m', 130)" style="font-weight:bold">model1_LPV4D</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m',130,0)">line 130</a>)
+    method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
+} 
+model1_LPV4D

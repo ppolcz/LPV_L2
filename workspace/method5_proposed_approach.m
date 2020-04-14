@@ -10,6 +10,9 @@ function method5_proposed_approach(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp_
 
 TMP_BIvQLYBqfFOwenhowBxT = pcz_dispFunctionName;
 
+args.minlfr = false;
+args = parsepropval(args,varargin{:});
+
 %%
 
 O = @(varargin) zeros(varargin{:});
@@ -25,8 +28,10 @@ TMP_vFNECEAeLZsYsUxvlgqL = pcz_dispFunctionName('model generation');
 [~,~,~,~,AC_lfr,BD_lfr,~,nx,np,nu,ny] = helper_convert(A_fh, B_fh, C_fh, D_fh, p_lfr_cell);
 
 % 2020.04.09. (április  9, csütörtök), 09:52
-% AC_lfr = minlfr(AC_lfr);
-% BD_lfr = minlfr(BD_lfr);
+if args.minlfr
+    AC_lfr = minlfr(AC_lfr);
+    BD_lfr = minlfr(BD_lfr);
+end
 
 % Generate symbolic variables
 P_generate_symvars(nx,np,nu,ny);
@@ -225,7 +230,13 @@ pcz_dispFunction_num2str(dp_lim);
 % pcz_dispFunction_num2str(Pi_indices, 'format', '%d', 'pref', ' ');
 % pcz_dispFunction(msg);
 
-store_results('Results_All.csv',modelname,0,gamma,sol.solvertime,Overall_Time,sol.info,'Polytopic a. with Finsler')
+if args.minlfr
+    method = 'minlfr + Polytopic a. with Finsler';
+else
+    method = 'Polytopic a. with Finsler';
+end
+
+store_results('Results_All.csv',modelname,0,gamma,sol.solvertime,Overall_Time,sol.info,method)
 
 pcz_dispFunctionEnd(TMP_UFTXCLDbxHBtWRStETWI);
 

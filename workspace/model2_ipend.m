@@ -77,7 +77,7 @@ Ax_sym = A_fh(p_expr_cell{:});
 Bx_sym = B_fh(p_expr_cell{:});
 
 %% Bound the state and input space
-%  Compute parameter and rate bounds
+%  Compute the parameter and rate bounds
 
 % Bound the state variables and input
 veloc_max = 2;   % meters/seconds
@@ -176,6 +176,8 @@ bases_Jac = jacobian(bases,p);
 
 %%
 
+method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
+
 % method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
 
 % method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
@@ -263,3 +265,18 @@ end
 
 pcz_dispFunctionEnd(TMP_vcUXzzrUtfOumvfgWXDd);
 logger.stoplog
+
+return
+
+%%
+
+% Generate grid
+lspace = cellfun(@(o) {linspace(o{:})}, num2cell(num2cell([p_lim res_used]),2));
+pp = cell(1,np);
+[pp{:}] = ndgrid(lspace{:});
+pp = cellfun(@(a) {a(:)'}, pp);
+pp = vertcat(pp{:});
+
+
+norm(ss(A_fh(pwc{:}),B_fh(pwc{:}),C_fh,D_fh),Inf)
+

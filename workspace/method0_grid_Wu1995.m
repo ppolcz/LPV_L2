@@ -160,6 +160,7 @@ method = sprintf('Req grid for T=%g, delta=%g: %s (Wu, 1995)', T, delta, strreq)
 store_results('Results_All.csv', modelname, 0, gamma, solver_time, Overall_Time, ...
     [ strused ', ' sol.info ], method)
 
+%{
 
 W = value(W);
 dW = value(dW);
@@ -188,6 +189,8 @@ WA_AW_dW_contr = vpa([
 pcz_dispFunction2('Contribution of He{WA} compared to that of dW:');
 pcz_dispFunction2(evalc('disp(WA_AW_dW_contr)'));
 
+%}
+    
 pcz_dispFunctionEnd(TMP_WRUEESbUvbMihFnquvuF);
 
 end

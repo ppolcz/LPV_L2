@@ -1,0 +1,115 @@
+[  [INFO]  ] Output logging (with `diary'): results/model1_LPV4D-output-0414191949_id2267.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m')">model1_LPV4D</a>
+│   Run ID = 2267
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m')">method2_descriptor_dual</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m',133)">model1_LPV4D:133</a>
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2001            
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 224             
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.01    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2001            
+  Cones                  : 0               
+  Scalar variables       : 0               
+  Matrix variables       : 224             
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 2001
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 0                 conic                  : 0               
+Optimizer  - Semi-definite variables: 224               scalarized             : 46448           
+Factor     - setup time             : 0.99              dense det. time        : 0.00            
+Factor     - ML order time          : 0.15              GP order time          : 0.00            
+Factor     - nonzeros before factor : 2.00e+06          after factor           : 2.00e+06        
+Factor     - dense dim.             : 0                 flops                  : 4.86e+09        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   6.4e+01  4.0e+00  2.6e+02  0.00e+00   4.095999827e+03   0.000000000e+00   1.0e+00  1.30  
+1   3.0e+01  1.9e+00  1.3e+02  -6.30e-01  2.709082797e+03   -1.324808361e+00  4.8e-01  23.35 
+Optimizer terminated. Time: 30.09   
+
+
+Interior-point solution summary
+  Problem status  : UNKNOWN
+  Solution status : UNKNOWN
+  Primal.  obj: 2.7090827975e+03    nrm: 8e+00    Viol.  con: 1e+04    barvar: 0e+00  
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('call_mosek_dual>doCall', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m', 102)" style="font-weight:bold">call_mosek_dual>doCall</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m',102,0)">line 102</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('call_mosek_dual', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m', 55)" style="font-weight:bold">call_mosek_dual</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/call_mosek_dual.m',55,0)">line 55</a>)
+[r,res,solvertime] = doCall(prob,param,model.options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('callmosek>call_mosek_lpqpsocpsdp', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m', 97)" style="font-weight:bold">callmosek>call_mosek_lpqpsocpsdp</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m',97,0)">line 97</a>)
+        [x,D_struc,problem,r,res,solvertime,prob] = call_mosek_dual(model);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('callmosek', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m', 51)" style="font-weight:bold">callmosek</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/solvers/callmosek.m',51,0)">line 51</a>)
+    [x,D_struc,problem,r,res,solvertime,prob] = call_mosek_lpqpsocpsdp(model);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('solvesdp', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/solvesdp.m', 364)" style="font-weight:bold">solvesdp</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/solvesdp.m',364,0)">line 364</a>)
+        eval(['output = ' solver.call '(interfacedata);']);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimize', '/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/optimize.m', 31)" style="font-weight:bold">optimize</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes/yalmip/R20190425/all/YALMIP-master/extras/optimize.m',31,0)">line 31</a>)
+[varargout{1:nargout}] = solvesdp(varargin{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method2_descriptor_dual', '/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m', 296)" style="font-weight:bold">method2_descriptor_dual</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m',296,0)">line 296</a>)
+sol = optimize(CONS,gammaSqr,sdpsettings('solver','mosek'));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model1_LPV4D', '/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m', 133)" style="font-weight:bold">model1_LPV4D</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m',133,0)">line 133</a>)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
+} 
+  Dual.    obj: -1.3248083609e+00   nrm: 1e+01    Viol.  con: 0e+00    barvar: 1e+01  
+Optimizer summary
+  Optimizer                 -                        time: 30.09   
+    Interior-point          - iterations : 2         time: 30.05   
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   - Saved to workspace: Y
+│   │   gamma = 1.151
+│   │   solver_time = 30.6154
+│   │   - User terminated (MOSEK)
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('digits', '/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/digits.m', 15)" style="font-weight:bold">digits</a> (<a href="matlab: opentoline('/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/digits.m',15,0)">line 15</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sym', '/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m', 194)" style="font-weight:bold">sym</a> (<a href="matlab: opentoline('/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m',194,0)">line 194</a>)
+        S.digits = digits;
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sym/subsref', '/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m', 902)" style="font-weight:bold">sym/subsref</a> (<a href="matlab: opentoline('/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m',902,0)">line 902</a>)
+        B = mupadmex('symobj::subsref',L.s,privformat(R_tilde));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('num2cell', '/opt/MATLAB/R2019b/toolbox/matlab/datatypes/num2cell.m', 34)" style="font-weight:bold">num2cell</a> (<a href="matlab: opentoline('/opt/MATLAB/R2019b/toolbox/matlab/datatypes/num2cell.m',34,0)">line 34</a>)
+        c{i} = a(i);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method2_descriptor_dual', '/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m', 312)" style="font-weight:bold">method2_descriptor_dual</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method2_descriptor_dual.m',312,0)">line 312</a>)
+Y_channels = cellfun(@char,num2cell(Y.channels),'UniformOutput',0);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model1_LPV4D', '/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m', 133)" style="font-weight:bold">model1_LPV4D</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model1_LPV4D.m',133,0)">line 133</a>)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
+} 
+model1_LPV4D
