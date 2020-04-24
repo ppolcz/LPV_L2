@@ -6,10 +6,10 @@ function [ret] = pcz_info(bool, varargin)
 % 
 %  Created on 2017.01.06. Friday, 13:56:14
 %  Modified on 2018. April 30.
+%  Minor review on 2020. April 03. (2019b)
+
 
 %%
-
-global SCOPE_DEPTH VERBOSE
 
 % Find link to the caller code
 % s = dbstack;
@@ -49,9 +49,9 @@ end
 % S = dbstack;
 % S.name
 
-depth = SCOPE_DEPTH;
+depth = G_SCOPE_DEPTH;
 
-if VERBOSE
+if G_VERBOSE
 
     prefix = '';
     if depth >= 1
@@ -68,8 +68,12 @@ if VERBOSE
     % pcz_dispFunctionStackTrace('', 'first', opts.first, 'last', opts.last)
     
     % pcz_dispFunction('Depth = %d', SCOPE_DEPTH)
-    
     % disp([prefix '- ' link])
+
+elseif ~bool
+    
+    pcz_OK_FAILED(bool, varargin{:});
+    
 end
 
 if nargout > 0

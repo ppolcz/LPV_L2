@@ -59,7 +59,7 @@ end
 
 if nargout > 0
     ret = text;
-else
+elseif G_VERBOSE
     disp(text);
 end
 

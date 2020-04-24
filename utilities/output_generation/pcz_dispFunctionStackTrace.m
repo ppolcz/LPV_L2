@@ -10,6 +10,10 @@ function [ret] = pcz_dispFunctionStackTrace(varargin)
 
 %%
 
+if ~G_VERBOSE
+    return
+end
+
 if isempty(varargin) || mod(numel(varargin),2) == 0
     varargin = [ {'Stack trace:'} varargin ];
 end

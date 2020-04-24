@@ -8,12 +8,10 @@ function pcz_dispFunctionEnd(start_time, depth_method)
 %
 
 %%
+
 elapsed = toc(start_time);
 
-global SCOPE_DEPTH
-global VERBOSE
-
-if ~VERBOSE
+if ~G_VERBOSE
     return
 end
 
@@ -25,8 +23,7 @@ end
 
 if depth_method
 
-    depth = SCOPE_DEPTH;
-    SCOPE_DEPTH = SCOPE_DEPTH - 1;
+    depth = G_SCOPE_DEPTH(-1) + 1;
 
     for i = 2:depth
         fprintf('│   ')

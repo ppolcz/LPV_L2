@@ -11,6 +11,9 @@ function method4_authors_old_symbolical(modelname,A,B,C,D,p_lim,dp_lim,varargin)
 TMP_BIvQLYBqfFOwenhowBxT = pcz_dispFunctionName;
 
 args.minlfr = false;
+args.solver = 'mosek';
+args.Na = 'Na(p,dp)';
+args.cachesolvers = true;
 args = parsepropval(args,varargin{:});
 
 %%
@@ -119,7 +122,12 @@ Ga = [ I(nw) O(nw,m2+m1) ];
 N = P_affine_annihilator(PI_x*x,xp,p);
 N = N.set_subsvars(p);
 
-Na = P_affine_annihilator(PI_a*xw,xwpdp,pdp);
+if strcmp(args.Na,'Na(p)')
+    Na_vars = p;
+else
+    Na_vars = pdp;
+end
+Na = P_affine_annihilator(PI_a*xw,xwpdp,Na_vars);
 Na = Na.set_subsvars(pdp);
 
 pcz_dispFunctionEnd(TMP_vFNECEAeLZsYsUxvlgqL);
@@ -175,7 +183,7 @@ Q = Q.set_vars(p);
 
 TMP_UFTXCLDbxHBtWRStETWI = pcz_dispFunctionName('Solve LMIs');
 
-sdps = sdpsettings('solver', 'mosek', 'verbose', true, 'cachesolvers', true);
+sdps = sdpsettings('solver', args.solver, 'verbose', true, 'cachesolvers', args.cachesolvers);
 % sdps = sdpsettings('solver', 'SDPT3', 'verbose', true, 'cachesolvers', true);
 sol = optimize(CONS, gammaSqr, sdps);
 pcz_feasible(sol, CONS, 'tol', 1e-6);
@@ -212,8 +220,9 @@ if args.minlfr
 else
     method = 'Polytopic a. with Finsler (old)';
 end
+method = [ method ' ' args.Na ];
 
-store_results('Results_All.csv',modelname,0,gamma,sol.solvertime,Overall_Time,sol.info,method)
+store_results('Results_All',modelname,0,gamma,sol.solvertime,Overall_Time,sol.info,method)
 
 pcz_dispFunctionEnd(TMP_UFTXCLDbxHBtWRStETWI);
 

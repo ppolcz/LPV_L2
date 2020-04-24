@@ -1,0 +1,79 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/workspace/results/model2_ipend-0423102125_id0010-output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Run ID = 0010
+│   Model parameters:
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   b = 5
+│   I = 1.3333
+│   State and input bounds:
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_Wu1995.m',48)">method0_grid_Wu1995:48</a> - [<strong>Grid-based [Wu, 1995]</strong>]
+│   │   Required grid resolutions =
+│   │   
+│   │      Inf
+│   │      Inf
+│   │      Inf
+│   │   Acutally used grid resolutions =
+│   │   
+│   │        5
+│   │        5
+│   │        5
+│   │   - Collecting LMI constraints..........
+  1.00%  2.00%  3.00%  4.00%  5.00%  6.00%  7.00%  8.00%  9.00% 10.00% 11.00% 12.00% 13.00% 14.00% 15.00% 16.00% 17.00% 18.00% 19.00% 20.00% 21.00% 22.00% 23.00% 24.00% 25.00% 26.00% 27.00% 28.00% 29.00% 30.00% 31.00% 32.00% 33.00% 34.00% 35.00% 36.00% 37.00% 38.00% 39.00% 40.00% 41.00% 42.00% 43.00% 44.00% 45.00% 46.00% 47.00% 48.00% 49.00% 50.00% 51.00% 52.00% 53.00% 54.00% 55.00% 56.00% 57.00% 58.00% 59.00% 60.00% 61.00% 62.00% 63.00% 64.00% 65.00% 66.00% 67.00% 68.00% 69.00% 70.00% 71.00% 72.00% 73.00% 74.00% 75.00% 76.00% 77.00% 78.00% 79.00% 80.00% 81.00% 82.00% 83.00% 84.00% 85.00% 86.00% 87.00% 88.00% 89.00% 90.00% 91.00% 92.00% 93.00% 94.00% 95.00% 96.00% 97.00% 98.00% 99.00%100.00%
+│   │   - Calling the solver..........
+│   │    
+│   │   gamma = 0.86304
+│   │   solver_time = 4.5072
+│   │   - Successfully solved (MOSEK)
+│   │    
+│   │   - Results stored in `results/Results_All.csv'
+│   │           DateTime: '2020.04.23. Thursday 10:21:39'
+│   │              Model: 'ipend(1,2,1,10,5;2,0.4,1.2;1)'
+│   │              RunID: 10
+│   │              Lower: 0
+│   │              Upper: 0.8630
+│   │        Solver_Time: 4.5072
+│   │       Overall_Time: 13.0179
+│   │        Solver_Info: '5x5x5, Successfully solved (MOSEK)'
+│   │             Method: 'Req grid for T=Inf, delta=0: InfxInfxInf (Wu, 1995)'
+│   │   
+│   │   
+│   └ 13.1961 [sec]
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_Wu1995.m',48)">method0_grid_Wu1995:48</a> - [<strong>Grid-based [Wu, 1995]</strong>]
+│   │   Required grid resolutions =
+│   │   
+│   │      Inf
+│   │      Inf
+│   │      Inf
+│   │   Acutally used grid resolutions =
+│   │   
+│   │       15
+│   │       15
+│   │       15
+│   │   - Collecting LMI constraints..........
+  1.00%  2.00%{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('constraint', '/home/ppolcz/_/7_ftools/toolboxes_mpt/yalmip/R20200116/all/YALMIP-master/extras/@constraint/constraint.m', 84)" style="font-weight:bold">constraint</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes_mpt/yalmip/R20200116/all/YALMIP-master/extras/@constraint/constraint.m',84,0)">line 84</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sdpvar/le', '/home/ppolcz/_/7_ftools/toolboxes_mpt/yalmip/R20200116/all/YALMIP-master/@sdpvar/le.m', 5)" style="font-weight:bold"> <= </a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes_mpt/yalmip/R20200116/all/YALMIP-master/@sdpvar/le.m',5,0)">line 5</a>)
+    y = constraint(X,'<=',Y);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method0_grid_Wu1995', '/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_Wu1995.m', 136)" style="font-weight:bold">method0_grid_Wu1995</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_Wu1995.m',136,0)">line 136</a>)
+        CONS = [CONS , Lambda + delta*I(nx+nu+ny) <= 0 ];
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model2_ipend', '/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m', 180)" style="font-weight:bold">model2_ipend</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',180,0)">line 180</a>)
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',15);
+} 
+model2_ipend

@@ -318,11 +318,7 @@ for i = 1:numel(Y_cell)
     pcz_dispFunction_num2str(Y_cell{i}, 'format', '%7.5g','name',Y_names{i})
 end
 
-
-store_results('Descriptor_Results.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
-    sol.info, [ 'dual ' LMI_form{CONDENSED_LMI+1} ])
-
-store_results('Results_All.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
+store_results('Results_All', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
     sol.info, [ 'Descriptor - dual ' LMI_form{CONDENSED_LMI+1} ])
 
 %%

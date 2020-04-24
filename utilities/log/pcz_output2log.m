@@ -8,8 +8,7 @@ function [ret] = pcz_output2log(logname,varargin)
 %  Created on 2019. February 28.
 %
 
-args.rewrite = 0;
-args.delete = 1;
+args.rewrite = 1;
 args = parsepropval(args,varargin{:});
 
 %%
@@ -31,17 +30,13 @@ sed_commands = {
 
 [path,name,ext] = fileparts(logname);
 
-new_logname = sprintf('%s/%s-formatted%s',path,name,ext);
+new_logname = sprintf('%s/%s_output%s',path,name,ext);
 
 sed_commands = strjoin(sed_commands,';');
 
 cmd = sprintf('cat %s | sed -r ''%s'' > %s', logname, sed_commands, new_logname);
 
 output = system(cmd);
-
-if args.delete == 1
-    delete(logname);    
-end
 
 if args.rewrite == 1
     movefile(new_logname,logname);    

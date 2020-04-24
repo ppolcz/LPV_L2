@@ -1,0 +1,65 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/workspace/results/model2_ipend-0423103054_id0014-output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Run ID = 0014
+│   Model parameters:
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   b = 5
+│   I = 1.3333
+│   State and input bounds:
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m',92)">method3_IQC_LFT_LPVTools:92</a> - [<strong>LPVTools</strong>]
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m',111)">method3_IQC_LFT_LPVTools:111</a> - [<strong>LPVTools LFT/IQC</strong>] [msg:lpvwcgain]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/lpvwcgain.m')">lpvwcgain</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m',125)">method3_IQC_LFT_LPVTools:125</a>
+│   │   │   │   
+│   │   │   │   List of default poles = 
+│   │   │   │   
+│   │   │   │     <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+│   │   │   │   
+│   │   │   │       p1: [-3.8437 -167.3716 -7.2882e+03 Inf]
+│   │   │   │       p2: [-3.8437 -167.3716 -7.2882e+03 Inf]
+│   │   │   │       p3: [-3.8437 -167.3716 -7.2882e+03 Inf]
+│   │   │   │   
+│   │   │   │   
+│   │   │   │   grid omega: 8.826947e-02 <-- 114 --> 3.173606e+05
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m')">iqcperf4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/lpvwcgain.m',83)">lpvwcgain:83</a>
+│   │   │   │   │    
+│   │   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')">iqcsolve4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)">iqcperf4:173</a>
+│   │   │   │   │   │   Size of omega: 114 x 1
+│   │   │   │   │   │   Size of G:    11 x 20 x 114
+│   │   │   │   │   │   cidx = 1  114
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cellfun')" style="font-weight:bold">cellfun</a>
+Non-scalar in Uniform output, at index 1, output 1.
+Set 'UniformOutput' to false.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('iqcsolve4', '/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m', 75)" style="font-weight:bold">iqcsolve4</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m',75,0)">line 75</a>)
+omega_cidx = strjoin(cellfun(@num2str, num2cell(omega(cidx))),', ');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('iqcperf4', '/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m', 173)" style="font-weight:bold">iqcperf4</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173,0)">line 173</a>)
+    [cfeas,S,xopt,perfparm] = iqcsolve4(Gg, mublk, IQCinfoS, lmisys, omega, cidx, PerfFlag);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plftss/lpvwcgain', '/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/@plftss/lpvwcgain.m', 83)" style="font-weight:bold">plftss/lpvwcgain</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/@plftss/lpvwcgain.m',83,0)">line 83</a>)
+[UpperBound,Sopt,xopt] = iqcperf4(Piqc,omega);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method3_IQC_LFT_LPVTools', '/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m', 125)" style="font-weight:bold">method3_IQC_LFT_LPVTools</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m',125,0)">line 125</a>)
+wcg = lpvwcgain(sys_unc_LFT);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model2_ipend', '/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m', 198)" style="font-weight:bold">model2_ipend</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',198,0)">line 198</a>)
+method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+} 
+edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')
+model2_ipend

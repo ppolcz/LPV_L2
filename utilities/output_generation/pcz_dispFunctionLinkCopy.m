@@ -1,4 +1,4 @@
-function [ret] = pcz_dispFunctionLinkCopy(linkname, varargin)
+function pcz_dispFunctionLinkCopy(linkname, varargin)
 %% pcz_dispFunctionLinkCopy
 %  
 %  File: pcz_dispFunctionLinkCopy.m
@@ -9,6 +9,10 @@ function [ret] = pcz_dispFunctionLinkCopy(linkname, varargin)
 %
 
 %%
+
+if ~G_VERBOSE
+    return
+end
 
 if ~ischar(linkname)
     linkname = [ inputname(1) ': Copy LaTeX command' ];

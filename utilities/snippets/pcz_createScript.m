@@ -12,6 +12,14 @@ function ret = pcz_createScript(fn)
 f = pcz_resolvePath(fn);
 clear fn
 
+[~,globscode] = pglobals;
+
+globalScope = [
+    sprintf('%% Automatically generated stuff\n') ...
+    newline ...
+    globscode ...
+    ];
+
 header = pcz_headerComment(f);
 
 beginning = [
@@ -20,7 +28,7 @@ beginning = [
     '%%' newline
     ];
 
-text = [ header beginning 'persist.stoplog;' newline ];
+text = [ header globalScope beginning 'persist.stoplog;' newline ];
 text = pcz_escape_sprintf(text);
 
 if nargout > 0

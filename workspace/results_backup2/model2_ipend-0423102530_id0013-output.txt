@@ -1,0 +1,143 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/workspace/results/model2_ipend-0423102530_id0013-output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Run ID = 0013
+│   Model parameters:
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   b = 5
+│   I = 1.3333
+│   State and input bounds:
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m',92)">method3_IQC_LFT_LPVTools:92</a> - [<strong>LPVTools</strong>]
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m',111)">method3_IQC_LFT_LPVTools:111</a> - [<strong>LPVTools LFT/IQC</strong>] [msg:lpvwcgain]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/lpvwcgain.m')">lpvwcgain</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method3_IQC_LFT_LPVTools.m',125)">method3_IQC_LFT_LPVTools:125</a>
+│   │   │   │   
+│   │   │   │   List of default poles = 
+│   │   │   │   
+│   │   │   │     <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+│   │   │   │   
+│   │   │   │       p1: [-3.8437 -167.3716 -7.2882e+03 Inf]
+│   │   │   │       p2: [-3.8437 -167.3716 -7.2882e+03 Inf]
+│   │   │   │       p3: [-3.8437 -167.3716 -7.2882e+03 Inf]
+│   │   │   │   
+│   │   │   │   
+│   │   │   │   grid omega: 8.826947e-02 <-- 114 --> 3.173606e+05
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m')">iqcperf4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/lpvwcgain.m',83)">lpvwcgain:83</a>
+│   │   │   │   │    
+│   │   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')">iqcsolve4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)">iqcperf4:173</a>
+│   │   │   │   │   │   Size of omega: 114 x 1
+│   │   │   │   │   │   Size of G:    11 x 20 x 114
+│   │   │   │   │   │   cidx = 1  114
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m',291)">iqcsolve4:291</a> - [<strong>call mincx</strong>]
+│   │   │   │   │   │   └ 2.9034 [sec]
+│   │   │   │   │   └ 2.9937 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')">iqcsolve4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)">iqcperf4:173</a>
+│   │   │   │   │   │   Size of omega: 114 x 1
+│   │   │   │   │   │   Size of G:    11 x 20 x 114
+│   │   │   │   │   │   cidx = 1  114   29
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m',291)">iqcsolve4:291</a> - [<strong>call mincx</strong>]
+│   │   │   │   │   │   └ 5.7212 [sec]
+│   │   │   │   │   └ 5.789 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')">iqcsolve4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)">iqcperf4:173</a>
+│   │   │   │   │   │   Size of omega: 114 x 1
+│   │   │   │   │   │   Size of G:    11 x 20 x 114
+│   │   │   │   │   │   cidx = 1  114   29   50
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m',291)">iqcsolve4:291</a> - [<strong>call mincx</strong>]
+│   │   │   │   │   │   └ 8.5275 [sec]
+│   │   │   │   │   └ 8.5869 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')">iqcsolve4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)">iqcperf4:173</a>
+│   │   │   │   │   │   Size of omega: 114 x 1
+│   │   │   │   │   │   Size of G:    11 x 20 x 114
+│   │   │   │   │   │   cidx = 1  114   29   50   33
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m',291)">iqcsolve4:291</a> - [<strong>call mincx</strong>]
+│   │   │   │   │   │   └ 12.1204 [sec]
+│   │   │   │   │   └ 12.1789 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')">iqcsolve4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)">iqcperf4:173</a>
+│   │   │   │   │   │   Size of omega: 114 x 1
+│   │   │   │   │   │   Size of G:    11 x 20 x 114
+│   │   │   │   │   │   cidx = 1  114   29   50   33   67
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m',291)">iqcsolve4:291</a> - [<strong>call mincx</strong>]
+│   │   │   │   │   │   └ 15.4018 [sec]
+│   │   │   │   │   └ 15.4642 [sec]
+│   │   │   │   │    
+│   │   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')">iqcsolve4</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)">iqcperf4:173</a>
+│   │   │   │   │   │   Size of omega: 114 x 1
+│   │   │   │   │   │   Size of G:    11 x 20 x 114
+│   │   │   │   │   │   cidx = 1  114   29   50   33   67   30
+│   │   │   │   │   │    
+│   │   │   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m',291)">iqcsolve4:291</a> - [<strong>call mincx</strong>]
+│   │   │   │   │   │   └ 16.7938 [sec]
+│   │   │   │   │   └ 16.849 [sec]
+│   │   │   │   └ 62.303 [sec]
+│   │   │   └ 76.6911 [sec]
+│   │   │   - Solver time: <strong>76.7086</strong>
+│   │   │   - Bounds: [<strong>0.554087</strong>,1.13877] = [-5.12844,1.12872] dB 
+│   │   └ 76.7096 [sec]
+│   │   - Results stored in `results/Results_All.csv'
+│   │           DateTime: '2020.04.23. Thursday 10:26:48'
+│   │              Model: 'ipend(1,2,1,10,5;2,0.4,1.2;1)'
+│   │              RunID: 13
+│   │              Lower: 0.5541
+│   │              Upper: 1.1388
+│   │        Solver_Time: 61.4672
+│   │       Overall_Time: 76.7086
+│   │        Solver_Info: 'tvreal, lpvwcgain'
+│   │             Method: 'LPVTools - LFT/IQC'
+│   │   
+│   │   
+│   └ 77.2391 [sec]
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m')">method4_authors_old_symbolical</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',200)">model2_ipend:200</a>
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',25)">method4_authors_old_symbolical:25</a> - [<strong>model generation</strong>]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m')">P_LFR_reduction</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',52)">method4_authors_old_symbolical:52</a>
+│   │   │   │    
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_resolvePath', '/home/ppolcz/_/8_published/LPV_L2/utilities/pcz_resolvePath.m', 32)" style="font-weight:bold">pcz_resolvePath</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/pcz_resolvePath.m',32,0)">line 32</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_dispHRefOpenToLine', '/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispHRefOpenToLine.m', 37)" style="font-weight:bold">pcz_dispHRefOpenToLine</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispHRefOpenToLine.m',37,0)">line 37</a>)
+fnscript = pcz_resolvePath(matlab.desktop.editor.getActive().Filename);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_dispFunctionName', '/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispFunctionName.m', 66)" style="font-weight:bold">pcz_dispFunctionName</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/output_generation/pcz_dispFunctionName.m',66,0)">line 66</a>)
+        name = [ pcz_dispHRefEditFile(name) ' called from ' pcz_dispHRefOpenToLine(caller.name,
+        caller.line) ];
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P_lfrdata', '/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_lfrdata.m', 11)" style="font-weight:bold">P_lfrdata</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_lfrdata.m',11,0)">line 11</a>)
+TMP_EIHwhNmHSeYbRRcCXqPF = pcz_dispFunctionName;
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('P_LFR_reduction', '/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m', 95)" style="font-weight:bold">P_LFR_reduction</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m',95,0)">line 95</a>)
+    lfr = P_lfrdata(lfr);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method4_authors_old_symbolical', '/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m', 52)" style="font-weight:bold">method4_authors_old_symbolical</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',52,0)">line 52</a>)
+[~,AC_plfr] = P_LFR_reduction(AC_lfr,x);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model2_ipend', '/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m', 200)" style="font-weight:bold">model2_ipend</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',200,0)">line 200</a>)
+method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+} 
+opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcperf4.m',173)
+edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/IQCfiles/iqcsolve4.m')
+model2_ipend

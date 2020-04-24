@@ -77,11 +77,11 @@ CONS = [
 sol_alpha = optimize(CONS,-alpha,sdpsettings('verbose',0));
 alpha = double(alpha);
 
-Mu = alpha/gamma;
+Mu = alpha/gamma^2;
 
 pcz_dispFunction2('alpha = %g', alpha)
 pcz_dispFunction2('gamma = %g', gamma)
-pcz_info('|u|_L2 < M = alpha/gamma = %g', Mu)
+pcz_info('|u|_L2 < M = alpha/gamma^2 = %g', Mu)
 
 pcz_2basews(alpha,Mu)
 
@@ -93,7 +93,7 @@ pcz_dispFunctionEnd(TMP_GvDXGhRLfipwBoRPoGfI);
 if alpha > eps
 %% PLOT if a good level set obtained
 
-    figure('Color', [1 1 1])
+    fig = figure(1);
     ph = patch(isosurface(x_grid{:},V_num,alpha));
     ph_Vertices = ph.Vertices;
     ph_Faces = ph.Faces;
@@ -102,7 +102,7 @@ if alpha > eps
 
     axis equal
     light('Position',[-5 0 0]),
-    view([-14 15])
+    view([-44 15])
     xlabel $x_1$ interpreter latex
     ylabel $x_2$ interpreter latex
     zlabel $x_3$ interpreter latex
@@ -122,8 +122,10 @@ if alpha > eps
     good = V_num < alpha;
     all = ones(size(V_num));
 
-    VOLUME = prod(x_lim(:,2) - x_lim(:,1)) * ( sum(good(:))/sum(all(:)) );
+    VOL_X = prod(x_lim(:,2) - x_lim(:,1));
+    VOLUME = VOL_X * ( sum(good(:))/sum(all(:)) );
 
+	pcz_dispFunction2('Volume of the X: %g', VOL_X)
 	pcz_dispFunction2('Approximated volume of the invariant domain: %g', VOLUME)
 
     rotate3d on
@@ -136,4 +138,11 @@ end
 
 pcz_dispFunctionEnd(TMP_oyXrvtrEzBjWNTyEyMog);
 
+%{
+
+print('results_stored/model2_ipend-Omega.pdf','-dpdf')
+print('results_stored/model2_ipend-Omega-r500.png','-dpng','-r500')
+print('results_stored/model2_ipend-Omega-r1500.png','-dpng','-r1500')
+
+%}
 end

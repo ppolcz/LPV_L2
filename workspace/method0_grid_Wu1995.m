@@ -157,7 +157,7 @@ strused = strjoin(cellfun(@(n) {num2str(n)}, num2cell(res_used) ), 'x');
 
 method = sprintf('Req grid for T=%g, delta=%g: %s (Wu, 1995)', T, delta, strreq);
 
-store_results('Results_All.csv', modelname, 0, gamma, solver_time, Overall_Time, ...
+store_results('Results_All', modelname, 0, gamma, solver_time, Overall_Time, ...
     [ strused ', ' sol.info ], method)
 
 %{

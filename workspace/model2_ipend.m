@@ -8,19 +8,11 @@
 G_reset
 P_init(11)
 
-%%
-
-RUN_ID = str2double(getenv('RUN_ID'));
-if isnan(RUN_ID) || ceil(log10(RUN_ID + 1)) ~= 4
-    setenv('RUN_ID', num2str(pcz_runID))
-else
-    setenv('RUN_ID', num2str(str2double(getenv('RUN_ID')) + 1))
-end
-
-logger = Logger(['results/' mfilename '-output.txt']);
+setenv('RUN_ID', num2str(pcz_runID(mfilename)))
+logger = Logger(mfilename);
 TMP_vcUXzzrUtfOumvfgWXDd = pcz_dispFunctionName;
-
 pcz_dispFunction2('Run ID = %s', getenv('RUN_ID'));
+
 
 %% Model parameters
 
@@ -28,7 +20,7 @@ m = 1;       % Mass of the rod [kg]
 M = 2;       % Mass of the car [kg]
 L = 1;       % Length of the rod [m]
 g = 10;      % Gravitational acceleration [m/s^2]
-k = 5;       % Friction coefficient [kg/s]
+b = 5;       % Friction coefficient [kg/s]
 
 % Moment of inertia of a rod of length 2L and mass m, rotating about one
 % end. This expression assumes that the rod is an infinitely thin (but
@@ -36,7 +28,7 @@ k = 5;       % Friction coefficient [kg/s]
 I = 4*m*L^2/3;
 
 pcz_dispFunction2('Model parameters:')
-pcz_dispFunction_scalar(m,M,L,g,k,I)
+pcz_dispFunction_scalar(m,M,L,g,b,I)
 
 %%%
 % Generate x1,x2,x3; p1,p2,p3; w1; z1
@@ -54,19 +46,20 @@ p_expr_cell = num2cell(p_expr);
 
 %% Model matrices
 
-sigma1 = @(p2) (I+m*L^2)*(m+M) - m^2*L^2*p2^2;
+sigma1 = I + m*L^2;
+sigma4 = @(p2) sigma1*(m+M) - m^2*L^2*p2^2;
 
 A_fh = @(p1,p2,p3) [
-    -k*(I+m*L^2) , -m^2*L^2*g*p1*p2 , -m*L*(I+m*L^2)*p3
-     0           ,  0               ,  sigma1(p2)
-    -k*m*L*p2    , -(m+M)*m*g*L*p1  , -m^2*L^2*p2*p3
-    ] / sigma1(p2);
+    -b*sigma1 , -m^2*L^2*g*p1*p2 , -m*L*sigma1*p3
+     0        ,  0               ,  sigma4(p2)
+    -b*m*L*p2 , -(m+M)*m*g*L*p1  , -m^2*L^2*p2*p3
+    ] / sigma4(p2);
 
 B_fh = @(p1,p2,p3) [
-    I+m*L^2
+    sigma1
     0
     m*L*p2
-    ] / sigma1(p2);
+    ] / sigma4(p2);
 
 C_fh = [ 0 1 0 ];
 
@@ -85,7 +78,7 @@ theta_max = 0.4; % radians
 omega_max = 1.2; % radians/seconds
 w_max = 1;       % bound the disturbance input
 
-modelname = sprintf('ipend(%g,%g,%g,%g,%g;%g,%g,%g;%g)', m,M,L,g,k, ...
+modelname = sprintf('ipend(%g,%g,%g,%g,%g;%g,%g,%g;%g)', m,M,L,g,b, ...
     veloc_max, theta_max, omega_max, w_max);
 
 pcz_dispFunction2('State and input bounds:')
@@ -163,52 +156,55 @@ bases = [
                   p1
                   p2
                   p3
- -(p1*p2)/(p2^2 - 7)
-      -p1/(p2^2 - 7)
-      -p2/(p2^2 - 7)
+  (p1*p2)/(p2^2 - 7)
+       p1/(p2^2 - 7)
+       p2/(p2^2 - 7)
      p2^2/(p2^2 - 7)
- -(p2*p3)/(p2^2 - 7)
-      -p3/(p2^2 - 7)
+  (p2*p3)/(p2^2 - 7)
+       p3/(p2^2 - 7)
     ];
 
 bases_Jac = jacobian(bases,p);
 
 
 %%
-
-method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
-
-% method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
-
-% method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
 % 
+% method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,'res',15);
+% 
+% method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim);
+% 
+% % method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
+% % 
 % % Greedy grid 
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',15);
-% 
-% % As proposed by Wu (1995,1996)
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-6,'T',1e6);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-5,'T',100000);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-4,'T',10000);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-3,'T',1000);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',100);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',100);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',10);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',10);
-% 
+% % 
+% % % As proposed by Wu (1995,1996)
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-6,'T',1e6);
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-5,'T',100000);
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-4,'T',10000);
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-3,'T',1000);
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',100);
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',100);
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',10);
+% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',10);
+% % 
 % method2_descriptor_primal(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
-% method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,1)
+% % method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,1)
 % method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
 % 
 % % IQC/LFT approaches for LPV with rate-bounded parameters
-% method3_IQC_LFT_IQCToolbox(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);fi
+% method3_IQC_LFT_LPVMAD(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);fi
 % method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 % 
 % method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 % 
 % % Imported variables to the base workspace: Q, dQ, PI_x, gamma
-% method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,p_expr);
-% helper_generate_isosurface_method5(Q,PI_x,gamma,p_expr,xw_lim(1:nx,:),p_lim,dp_lim,[1,1,1]*101);
+method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp);
+helper_generate_isosurface_method5(Q,PI_x,gamma,p_expr,xw_lim(1:nx,:),p_lim,dp_lim,[1,1,1]*101);
+% 
+% % method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,'minlfr',1);
+% method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,'minlfr',1);
 
 %% 
 %{
@@ -265,18 +261,3 @@ end
 
 pcz_dispFunctionEnd(TMP_vcUXzzrUtfOumvfgWXDd);
 logger.stoplog
-
-return
-
-%%
-
-% Generate grid
-lspace = cellfun(@(o) {linspace(o{:})}, num2cell(num2cell([p_lim res_used]),2));
-pp = cell(1,np);
-[pp{:}] = ndgrid(lspace{:});
-pp = cellfun(@(a) {a(:)'}, pp);
-pp = vertcat(pp{:});
-
-
-norm(ss(A_fh(pwc{:}),B_fh(pwc{:}),C_fh,D_fh),Inf)
-

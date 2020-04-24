@@ -14,28 +14,28 @@ p = sym('p',[size(p_lim,1),1]);
 p_cell = num2cell(p);
 
 % Symbolical expression of matrix A(p):
-if isdouble(A_fh)
+if isnumeric(A_fh)
     A_sym = sym(A_fh);
 else
     A_sym = A_fh(p_cell{:});
 end
 
 % Symbolical expression of matrix B(p):
-if isdouble(B_fh)
+if isnumeric(B_fh)
     B_sym = sym(B_fh);
 else
     B_sym = B_fh(p_cell{:});
 end
 
 % Symbolical expression of matrix C(p):
-if isdouble(C_fh)
+if isnumeric(C_fh)
     C_sym = sym(C_fh);
 else
     C_sym = C_fh(p_cell{:});
 end
 
 % Symbolical expression of matrix D(p):
-if isdouble(D_fh)
+if isnumeric(D_fh)
     D_sym = sym(D_fh);
 else
     D_sym = D_fh(p_cell{:});

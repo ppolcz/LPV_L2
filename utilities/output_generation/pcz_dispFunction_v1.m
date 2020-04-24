@@ -7,7 +7,9 @@ function [ret] = pcz_dispFunction_v1(argin, depth_method)
 %  Created on 2016.03.04. Friday, 16:59:50
 %
 
-global SCOPE_DEPTH
+if ~G_VERBOSE
+    return
+end
 
 if nargin < 2
     depth_method = 1;
@@ -27,7 +29,7 @@ end
 
 if depth_method
     
-    depth = SCOPE_DEPTH;
+    depth = G_SCOPE_DEPTH;
     
     for i = 2:depth
         fprintf('│   ')

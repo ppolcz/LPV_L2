@@ -1,0 +1,89 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/workspace/results/model2_ipend-0423095307_id0008-output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Run ID = 0008
+│   Model parameters:
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   b = 5
+│   I = 1.3333
+│   State and input bounds:
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│   Worst case LTI Hinf norm: 0.554772
+│   Worst case parameter values: 
+│     p1 = 0.97355
+│     p2 = 0.92106
+│     p3 = -0.4673
+│   - Results stored in `results/Results_All.csv'
+│           DateTime: '2020.04.23. Thursday 09:55:35'
+│              Model: 'ipend(1,2,1,10,5;2,0.4,1.2;1)'
+│              RunID: 8
+│              Lower: 0.5548
+│              Upper: 0
+│        Solver_Time: 0
+│       Overall_Time: 0
+│        Solver_Info: 'p1 = 0.97355, p2 = 0.92106, p3 = -0.4673'
+│             Method: 'Grid-based worst case LTI Hinf analysis (frozen parameters)'
+│   
+│   
+
+ans =
+
+    0.5548
+
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method1_RCT.m',14)">method1_RCT:14</a> - [<strong>Robust Control Toolbox</strong>]
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method1_RCT.m',56)">method1_RCT:56</a> - [<strong>Pure wcgain</strong>]
+│   │   │   
+│   │   │   info = 
+│   │   │   
+│   │   │     <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+│   │   │   
+│   │   │                    Model: 1
+│   │   │                Frequency: 2.1390
+│   │   │                   Bounds: [0.5548 0.5663]
+│   │   │        WorstPerturbation: [1×1 struct]
+│   │   │              Sensitivity: [1×1 struct]
+│   │   │       BadUncertainValues: [1×1 struct]
+│   │   │               ArrayIndex: 1
+│   │   │   
+│   │   │   
+│   │   │   - Solver time: <strong>3.79855</strong>
+│   │   │   - Bounds: [<strong>0.554772</strong>,0.566321] = [-5.11771,-4.93875] dB 
+│   │   │   - Worst case uncertainty: p1 = 0.973546
+│   │   │   - Worst case uncertainty: p2 = 0.921061
+│   │   │   - Worst case uncertainty: p3 = -0.467302
+│   │   │   - Critical frequency: 2.13897
+│   │   └ 3.8056 [sec]
+│   │   - Results stored in `results/Results_All.csv'
+│   │           DateTime: '2020.04.23. Thursday 09:55:49'
+│   │              Model: 'ipend(1,2,1,10,5;2,0.4,1.2;1)'
+│   │              RunID: 8
+│   │              Lower: 0.5548
+│   │              Upper: 0.5663
+│   │        Solver_Time: 0
+│   │       Overall_Time: 3.7986
+│   │        Solver_Info: '[no info]'
+│   │             Method: 'Robust Control Toolbox'
+│   │   
+│   │   
+│   └ 13.6084 [sec]
+│    
+│   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_LPVTools.m',14)">method0_grid_LPVTools:14</a> - [<strong>LPVTools</strong>]
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_LPVTools.m',60)">method0_grid_LPVTools:60</a> - [<strong>LPVTools grid based</strong>] [msg:lpvnorm]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/lpvnorm.m')">lpvnorm</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method0_grid_LPVTools.m',62)">method0_grid_LPVTools:62</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('')">LOCALlpvL2normengine</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/toolboxes_other/LPVToolsV1.0/LPVutil/lpvnorm.m',82)">lpvnorm:82</a>
+│   �

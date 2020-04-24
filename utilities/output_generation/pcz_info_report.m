@@ -10,8 +10,6 @@ function [ret] = pcz_info_report(bool, varargin)
 
 %%
 
-global SCOPE_DEPTH VERBOSE
-
 % Find link to the caller code
 % s = dbstack;
 % link = '';
@@ -50,9 +48,9 @@ end
 % S = dbstack;
 % S.name
 
-depth = SCOPE_DEPTH;
+depth = G_SCOPE_DEPTH;
 
-if VERBOSE
+if G_VERBOSE
 
     prefix = '';
     if depth >= 1
@@ -71,6 +69,11 @@ if VERBOSE
     % pcz_dispFunction('Depth = %d', SCOPE_DEPTH)
     
     % disp([prefix '- ' link])
+elseif ~bool
+    
+    pcz_OK_FAILED(bool, varargin{:});
+    dbstack
+
 end
 
 if nargout > 0

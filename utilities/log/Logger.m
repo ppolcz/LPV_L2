@@ -9,6 +9,7 @@ classdef Logger
 %%
 properties (GetAccess = public, SetAccess = private)
     diary_fname;        
+    latex_fname;
     stamp;
     date;
 end
@@ -17,13 +18,18 @@ methods (Access = public)
 
     function p = Logger(fname, varargin)
 
+        RUN_ID = getenv('RUN_ID');
+
         p.stamp = datestr(now, 'mmddHHMMSS');
         p.date = datestr(now, 'yyyy.mm.dd. dddd, HH:MM:SS');
         
-        [dirname,basename,ext] = fileparts(fname);
+        [~,basename,~] = fileparts(fname);
         
-        p.diary_fname = [ dirname filesep basename '-' p.stamp ext ];
+        p.diary_fname = [ cd filesep 'results' filesep basename '-' p.stamp '_id' RUN_ID '-output.txt' ];
+        p.latex_fname = [ cd filesep 'results' filesep basename '-' p.stamp '_id' RUN_ID '-latex.tex' ];
         
+        setenv('DIARY_FNAME',p.diary_fname);
+        setenv('LATEX_FNAME',p.latex_fname);
         
         [dirname,~,~] = fileparts(p.diary_fname);
         

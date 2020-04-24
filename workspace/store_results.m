@@ -6,13 +6,14 @@ function store_results(fname, modelname, gamma_lower, gamma_upper, solver_time, 
 % 
 %  Created on 2020. March 25. (2019b)
 
-RUN_ID = getenv('RUN_ID');
+RUN_ID = str2double(getenv('RUN_ID'));
 if ~RUN_ID
-    RUN_ID = num2str(pcz_runID);
+    RUN_ID = pcz_runID;
 end
 
+s.DateTime = datestr(now, 'yyyy.mm.dd. dddd HH:MM:SS');
 s.Model = modelname;
-s.Stamp = [ datestr(now, 'yyyy.mm.dd. dddd HH:MM:SS') ' id:' RUN_ID ];
+s.RunID = RUN_ID;
 s.Lower = gamma_lower;
 s.Upper = gamma_upper;
 s.Solver_Time = solver_time;
@@ -28,22 +29,42 @@ if isempty(s.Upper)
     s.Upper = 0;
 end
 
-Results_csv = [ 'results/' fname];
+[~,fname,~] = fileparts(fname);
 
-if exist(Results_csv, 'file')
-    Results = readtable(Results_csv,'Delimiter','|');
+Results_spreadsheet = [ 'results' filesep fname '.xlsx' ];
+
+if ~exist('results','dir')
+    mkdir result
+end
+
+if exist(Results_spreadsheet, 'file')
+    Results = readtable(Results_spreadsheet,'Sheet',1);
 end
 
 if ~exist('Results', 'var')
-    Cols = { 'Model', 'Stamp', 'Lower', 'Upper', 'Solver_Time', 'Overall_Time', 'Solver_Info', 'Method' };
+    Cols = { 'DateTime', 'Model', 'RunID', 'Lower', 'Upper', 'Solver_Time', 'Overall_Time', 'Solver_Info', 'Method' };
     Results = cell2table(cell(0,numel(Cols)), 'VariableNames', Cols);
 end
 
 Results = [ Results ; struct2table(s) ];
 
-writetable(Results,Results_csv,'Delimiter','|');
+writetable(Results,Results_spreadsheet,'Sheet',1);
 
-pcz_dispFunction('Results stored in `%s''', Results_csv);
+pcz_dispFunction('Results stored in `%s''', Results_spreadsheet);
 pcz_dispFunction2(evalc('disp(s)'))
+
+
+latex_fname = getenv('LATEX_FNAME');
+if isempty(latex_fname)
+    latex_fname = 'latex_source_code.tex';
+end
+
+
+latexfile = fopen(latex_fname,'a');
+
+fprintf(latexfile,'\n%s %s \n\t& %.4g & %d & %d & %d \\\\\n',...
+    method,info,gamma_upper,round(solver_time),round(overall_time),round(overall_time) - round(solver_time));
+
+fclose(latexfile);
 
 end

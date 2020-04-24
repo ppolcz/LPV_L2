@@ -1,0 +1,109 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/workspace/results/model2_ipend-0423210450_id0026-output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Run ID = 0026
+│   Model parameters:
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   b = 5
+│   I = 1.3333
+│   State and input bounds:
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m')">method5_proposed_approach</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',207)">model2_ipend:207</a>
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',25)">method5_proposed_approach:25</a> - [<strong>model generation</strong>]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',57)">method5_proposed_approach:57</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form (m = 10) of [ A(p) ; C(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Generator form (m = 10) of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.018568 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',60)">method5_proposed_approach:60</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 15x13, where (15 = 5*3)
+│   │   │   │   │   - Error computed for M: 30x13, where (30 = 10*3). Error: 0
+│   │   │   │   └ 0.65792 [sec]
+│   │   │   └ 1.6594 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',62)">method5_proposed_approach:62</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Minimal generator form of [ A(p) ; C(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator form of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.005018 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',75)">method5_proposed_approach:75</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form of [ B(p) ; D(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.00588 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',78)">method5_proposed_approach:78</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 4x3, where (4 = 4*1)
+│   │   │   │   │   - Error computed for M: 8x3, where (8 = 8*1). Error: 0
+│   │   │   │   └ 0.30702 [sec]
+│   │   │   └ 0.80321 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',80)">method5_proposed_approach:80</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Minimal generator form of [ B(p) ; D(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.005646 [sec]
+<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',94,1)">94  </a>[F{1,:},F{2,:}] = pcz_split_matrix([F{1,:}],[nx ny],[nx nu m1 m2]);
+PI_1
+
+PI_1 = 
+
+PLFR object (10 x 3), uncertainty block: (10 x 10)
+Dimensions: ny = 10, nu = 3, m1 = 10.
+-- 
+Uncertainty blocks (globally (10 x 10)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds             Rate Bounds
+ p1    2x2   LTI       r           s        [0.97355,1]        [-0.15745,0.15745]
+ p2    7x7   LTI       r           s        [0.92106,1]        [-0.4673,0.4673]
+ p3    1x1   LTI       r           s        [-0.4673,0.4673]   [-4,4]
+Blocks (vars):        p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)
+sym(PI_1)
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sym/privBinaryOp', '/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m', 1032)" style="font-weight:bold">sym/privBinaryOp</a> (<a href="matlab: opentoline('/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m',1032,0)">line 1032</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('sym/mldivide', '/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m', 387)" style="font-weight:bold"> \ </a> (<a href="matlab: opentoline('/opt/MATLAB/R2019b/toolbox/symbolic/symbolic/@sym/sym.m',387,0)">line 387</a>)
+        X = privBinaryOp(A, B, 'symobj::mldivide');
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plfr/sym_helper__', '/home/ppolcz/_/8_published/LPV_L2/ftools/v11/@plfr/sym_helper__.m', 7)" style="font-weight:bold">plfr/sym_helper__</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/@plfr/sym_helper__.m',7,0)">line 7</a>)
+    (pLFR.I-pLFR.Delta*D)\pLFR.Delta*C
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plfr/sym', '/home/ppolcz/_/8_published/LPV_L2/ftools/v11/@plfr/sym.m', 6)" style="font-weight:bold">plfr/sym</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/@plfr/sym.m',6,0)">line 6</a>)
+[pLFR_sym, PI_sym] = sym_helper__(pLFR,A,B,C,D);
+} 
+args
+
+args = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+          minlfr: 1
+          solver: 'mosek'
+              Na: 'Na(p,dp)'
+    cachesolvers: 1
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+model2_ipend

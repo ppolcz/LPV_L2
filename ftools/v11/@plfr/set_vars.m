@@ -13,7 +13,9 @@ pLFR.subsvars = vars_(:);
 delta = diag(pLFR.Delta);
 
 if isempty(delta)
-    pLFR.delta_fh = @(xp) zeros(0,size(xp,2));
+    
+    % 2020.04.10. (április 10, péntek), 12:27: ``varargin'' inserted
+    pLFR.delta_fh = @(xp,varargin) zeros(0,size(xp,2));
 else
     ZERO = sym('ZERO');
     delta(delta == 1) = 1 + ZERO;

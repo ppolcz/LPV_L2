@@ -1,0 +1,3 @@
+DateTime|Model|RunID|Lower|Upper|Solver_Time|Overall_Time|Solver_Info|Method
+2020.04.23. Thursday 10:11:32|ipend(1,2,1,10,5;2,0.4,1.2;1)|9|0|0.871619359138664|0|304.02829|pgrid (5x5x5)x(2x2x2)|grid
+2020.04.23. Thursday 10:44:37|ipend(1,2,1,10,5;2,0.4,1.2;1)|18|0|0.871619359138664|0|305.943897|pgrid (5x5x5)x(2x2x2)|grid

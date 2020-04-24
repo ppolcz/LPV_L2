@@ -29,13 +29,11 @@ end
 
 %%
 
-global SCOPE_DEPTH VERBOSE
-
-if ~VERBOSE
+if ~G_VERBOSE
     return
 end
 
-depth = SCOPE_DEPTH;
+depth = G_SCOPE_DEPTH;
 
 prefix = '';
 if depth >= 1

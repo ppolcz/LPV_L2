@@ -72,7 +72,7 @@ simplify(sys_unc,'full');
     pcz_dispFunctionEnd(TMP_KZWeXiYFmdpQdsgidKeG);
 
     
-    store_results('Results_All.csv', modelname, bounds(1), bounds(2), 0, Overall_Time, ...
+    store_results('Results_All', modelname, bounds(1), bounds(2), 0, Overall_Time, ...
         '[no info]', 'Robust Control Toolbox')
     
 % -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -

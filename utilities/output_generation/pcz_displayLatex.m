@@ -7,6 +7,10 @@ function pcz_displayLatex(varargin)
 %  Created on 2016.02.20. Saturday, 04:15:24
 %
 
+if ~G_VERBOSE
+    return
+end
+
 rules = sed_platex_from_sym;
 
 

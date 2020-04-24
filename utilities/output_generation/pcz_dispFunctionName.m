@@ -19,18 +19,16 @@ opts = parsepropval(opts,opts_{:});
 
 %% 
 
-global SCOPE_DEPTH VERBOSE
+if ~G_VERBOSE
+    start_time = tic;
+    return
+end
 
 % Kiegészítve: 2018.03.30. (március 30, péntek), 01:56
-if SCOPE_DEPTH > 0
+if G_SCOPE_DEPTH > 0
     pcz_dispFunction('')
 else
     disp(' ')
-end
-
-if ~VERBOSE
-    start_time = tic;
-    return
 end
 
 [ST,I] = dbstack;
@@ -77,9 +75,7 @@ if nargin < 2
 end
 
 
-
-SCOPE_DEPTH = SCOPE_DEPTH + 1;
-depth = SCOPE_DEPTH;
+depth = G_SCOPE_DEPTH(1);
 
 for i = 2:depth
     fprintf('│   ')

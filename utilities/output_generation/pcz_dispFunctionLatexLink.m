@@ -10,6 +10,10 @@ function [ret] = pcz_dispFunctionLatexLink(A, varargin)
 
 %%
 
+if ~G_VERBOSE
+    return
+end
+
 prefix = pcz_dispFunctionGetPrefix;
 
 label = inputname(1);

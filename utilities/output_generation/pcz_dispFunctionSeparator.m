@@ -17,32 +17,11 @@ end
 
 %%
 
-global SCOPE_DEPTH VERBOSE
-
-if ~VERBOSE
+if ~G_VERBOSE
     return
 end
 
-% [ST,I] = dbstack;
-% 
-% for i = 2:SCOPE_DEPTH
-%     fprintf('│   ')
-% end
-
-% msg = sprintf(varargin{:});
-
-% if numel(ST) > I    
-%     if ~isempty(msg)
-%         disp(['│   - ' msg])
-%     else
-%         disp '│   '
-%     end
-% else
-%     disp(['- ' msg ])
-% end
-
-
-depth = SCOPE_DEPTH;
+depth = G_SCOPE_DEPTH;
 
 prefix = '';
 if depth >= 1

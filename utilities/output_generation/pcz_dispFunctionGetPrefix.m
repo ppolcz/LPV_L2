@@ -10,28 +10,10 @@ function [prefix] = pcz_dispFunctionGetPrefix
 
 %%
 
-global SCOPE_DEPTH
-
-% [ST,I] = dbstack;
-% 
-% for i = 2:SCOPE_DEPTH
-%     fprintf('│   ')
-% end
-
-% if numel(ST) > I    
-%     if ~isempty(msg)
-%         disp(['│   - ' msg])
-%     else
-%         disp '│   '
-%     end
-% else
-%     disp(['- ' msg ])
-% end
-
 prefix = '';
-if SCOPE_DEPTH >= 1
+if G_SCOPE_DEPTH >= 1
     tab = '│   ';
-    prefix = repmat(tab,[1 SCOPE_DEPTH]);
+    prefix = repmat(tab,[1 G_SCOPE_DEPTH]);
 end
 
 

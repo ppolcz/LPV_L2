@@ -11,6 +11,9 @@ function method5_proposed_approach(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp_
 TMP_BIvQLYBqfFOwenhowBxT = pcz_dispFunctionName;
 
 args.minlfr = false;
+args.solver = 'mosek';
+args.Na = 'Na(p,dp)';
+args.cachesolvers = true;
 args = parsepropval(args,varargin{:});
 
 %%
@@ -140,6 +143,11 @@ Ga = [ I(nu) O(nu,m2+m1) ];
 [N,~,~,N_err] = P_affine_annihilator_for_LFR(PI_x,p_lfr,'lims',p_lims_comp);
 pcz_gsszero_report(minlfr(N*PI_x), N_err*100, 'Annihilator N');
 
+if strcmp(args.Na,'Na(p)')
+    Na_vars = p_lfr;
+else
+    Na_vars = [p_lfr;dp_lfr];
+end
 [Na,~,~,Na_err] = P_affine_annihilator_for_LFR(PI_a,[p_lfr;dp_lfr],'lims',pdp_lims_comp,'tol',1e-10);
 pcz_gsszero_report(minlfr(Na*PI_a), Na_err*100, 'Annihilator Na');
 
@@ -196,8 +204,7 @@ Q = Q.set_vars(p);
 
 TMP_UFTXCLDbxHBtWRStETWI = pcz_dispFunctionName('Solve LMIs');
 
-sdps = sdpsettings('solver', 'mosek', 'verbose', true, 'cachesolvers', true);
-% sdps = sdpsettings('solver', 'SDPT3', 'verbose', true, 'cachesolvers', true);
+sdps = sdpsettings('solver', args.solver, 'verbose', true, 'cachesolvers', args.cachesolvers);
 sol = optimize(CONS, gammaSqr, sdps);
 pcz_feasible(sol, CONS, 'tol', 1e-6);
 
@@ -235,8 +242,9 @@ if args.minlfr
 else
     method = 'Polytopic a. with Finsler';
 end
+method = [ method ' ' args.Na ];
 
-store_results('Results_All.csv',modelname,0,gamma,sol.solvertime,Overall_Time,sol.info,method)
+store_results('Results_All',modelname,0,gamma,sol.solvertime,Overall_Time,sol.info,method)
 
 pcz_dispFunctionEnd(TMP_UFTXCLDbxHBtWRStETWI);
 

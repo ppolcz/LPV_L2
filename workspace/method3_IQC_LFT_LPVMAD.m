@@ -1,4 +1,4 @@
-function method3_IQC_LFT_IQCToolbox(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp_lim)
+function method3_IQC_LFT_LPVMAD(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp_lim)
 %% LPV_L2anal_IQCToolbox
 %  
 %  File: LPV_L2anal_IQCToolbox.m
@@ -7,6 +7,9 @@ function method3_IQC_LFT_IQCToolbox(modelname, A_fh, B_fh, C_fh, D_fh, p_lim, dp
 %  
 %  Created on 2020. March 13. (2019b)
 %
+
+global LPVMAD_vars
+LPVMAD_vars.Solver_Time = 0;
 
 %%
 
@@ -94,8 +97,7 @@ pcz_dispFunction(' ');
 
 info = [ 'Pole: [' num2str(Pole) '], Length: [' num2str(Length) '], Relax: ' num2str(get(iqc,1,'Relax')) ', Active: ' num2str(get(iqc,1,'Active')) ];
 
-store_results('IQCToolbox_Results.csv',modelname,0,gamma,0,Overall_Time,info,'IQCToolbox - ltvs')
-store_results('Results_All.csv',modelname,0,gamma,0,Overall_Time,info,'IQCToolbox - ltvs')
+store_results('Results_All',modelname,0,gamma,LPVMAD_vars.Solver_Time,Overall_Time,info,'LPVMAD - ltvs')
 
 %%
 pcz_dispFunctionEnd(TMP_quNJgGJNllaEMSewPAvy);

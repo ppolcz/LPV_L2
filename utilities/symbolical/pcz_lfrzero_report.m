@@ -13,6 +13,7 @@ function [r_indices,r_maxdiff,r_perc] = pcz_lfrzero_report(M_plfr, prec, N, vara
 if isa(M_plfr, 'lfr')
     M_plfr = plfr(M_plfr);
 end
+M_plfr = minlfr(M_plfr);
 
 if nargin < 3 || isempty(N) || ischar(N)
     if nargin >= 3 && ( ischar(N) || ischar(prec) )
@@ -48,19 +49,24 @@ z_dummy = M_plfr(w_dummy);
 
 p = M_plfr.ny * M_plfr.nu;
 
-samples = generate(N, M_plfr.bounds, @(x) x);
+if M_plfr.m1 > 0
+    samples = generate(N, M_plfr.bounds, @(x) x);
+    ZERO = reshape( M_plfr.val(samples) , [M_plfr.nu M_plfr.ny N] );
+    ZERO_max = max(abs(ZERO),[],3);
+else
+    % 2020.04.10. (április 10, péntek), 17:46
+    ZERO_max = abs(M_plfr.A);
+end
 
-ZERO = reshape( M_plfr.val(samples) , [M_plfr.nu M_plfr.ny N] );
+% lfr2gss(N.lfr
 
 % ZERO_mean = repmat(sum(ZERO,3) / N, [1 1 N]);
 % ZERO_variance = sqrt(sum((ZERO - ZERO_mean).^2,3) / (N-1));
 
-ZERO_variance0 = sqrt( sum(ZERO.^2,3) / (N-1) );
-
-greater = ZERO_variance0(:) > tol;
+greater = ZERO_max(:) > tol;
 indices = find(greater);
 perc = numel(indices) / p;
-maxdiff = max(ZERO_variance0(:));
+maxdiff = max(ZERO_max(:));
 
 S = dbstack;
 % S.name
@@ -79,7 +85,7 @@ end
 if nargout == 0
     bool = perc == 0 && maxdiff < tol;
     
-    pcz_dispFunction('Maximal variance: %g', maxdiff)
+    pcz_dispFunction('Maximal error: %g', maxdiff)
     pcz_dispFunctionSeparator
     
     pcz_info(bool, varargin{:}, {'first', 2})

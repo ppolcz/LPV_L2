@@ -16,7 +16,8 @@ if isa(PI,'lfr')
     PI = plfr(PI);
 end
 
-args.proj = @(W) W;
+args.tol = 1e-7;
+args.proj = [];
 args.symbolic = 0;
 args.precision = 10;
 args.samples = [];

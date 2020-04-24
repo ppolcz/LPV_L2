@@ -9,7 +9,9 @@ function pcz_display(varargin)
 
 %%
 
-% disp ' '
+if ~G_VERBOSE
+    return
+end
 
 if nargin == 2 && ischar(varargin{1}) && isempty(inputname(1))
     disp_(varargin{:})

@@ -11,11 +11,12 @@ function [varargout] = helper_fh2fh_vec(A_fh, B_fh, C_fh, D_fh, p_lim)
 %%
 
 p = sym('p', [size(p_lim,1),1]);
+dummy = sym('dummy',1);
 
 symobj = cell(1,7);
 
 [symobj{:}] = helper_fh2sym(A_fh,B_fh,C_fh,D_fh,p_lim);
 
-varargout = cellfun( @(obj) { matlabFunction(obj,'vars', {p}) }, symobj );
+varargout = cellfun( @(obj) { matlabFunction(obj,'vars', {[p;dummy]}) }, symobj );
 
 end

@@ -292,11 +292,7 @@ for i = 1:numel(X_cell)
     pcz_dispFunction_num2str(X_cell{i}, 'format', '%7.5g','name',X_names{i})    
 end
 
-
-store_results('Descriptor_Results.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
-    sol.info, 'primal')
-
-store_results('Results_All.csv', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
+store_results('Results_All', modelname, 0, gamma, sol.solvertime, Overall_Time, ...
     sol.info, 'Descriptor - primal')
 
 %%

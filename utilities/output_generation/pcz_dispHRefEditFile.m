@@ -14,7 +14,7 @@ text = ['<a href="matlab:edit(''' which(filename) ''')">' filename '</a>'];
 
 if nargout > 0
     ret = text;
-else
+elseif G_VERBOSE
     disp(text);
 end
 

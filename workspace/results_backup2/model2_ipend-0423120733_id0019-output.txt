@@ -1,0 +1,177 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/workspace/results/model2_ipend-0423120733_id0019-output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a>
+│   Run ID = 0019
+│   Model parameters:
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   b = 5
+│   I = 1.3333
+│   State and input bounds:
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m')">method4_authors_old_symbolical</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',200)">model2_ipend:200</a>
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',25)">method4_authors_old_symbolical:25</a> - [<strong>model generation</strong>]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m')">P_LFR_reduction</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',52)">method4_authors_old_symbolical:52</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_lfrdata.m')">P_lfrdata</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m',95)">P_LFR_reduction:95</a>
+│   │   │   │   └ 0.046472 [sec]
+│   │   │   │    
+│   │   │   │   - Redundant LFR model (dim: 15) (symbolic computations). Elapsed time is 0.026628
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_Pi_canonical_decomp.m')">P_Pi_canonical_decomp</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m',131)">P_LFR_reduction:131</a>
+│   │   │   │   └ 0.16962 [sec]
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Equation of the permuted model should be the same</strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   │   [  [INFO]  ] Maximal difference: 0
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Equation of the permuted model should be the same
+│   │   │   │   └ 0.008626 [sec]
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Pi [dim: 18] = S * (reduced Pi [dim: 13]).</strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   │   [  [INFO]  ] Maximal difference: 0
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Pi [dim: 18] = S * (reduced Pi [dim: 13]).
+│   │   │   │   └ 0.005707 [sec]
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Equation of the reduced model should be the same</strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-05.
+│   │   │   │   │   [  [INFO]  ] Maximal difference: 0
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Equation of the reduced model should be the same
+│   │   │   │   └ 0.000478 [sec]
+│   │   │   │    
+│   │   │   └ 1.0605 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m')">P_LFR_reduction</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',53)">method4_authors_old_symbolical:53</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_lfrdata.m')">P_lfrdata</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m',95)">P_LFR_reduction:95</a>
+│   │   │   │   └ 0.01893 [sec]
+│   │   │   │    
+│   │   │   │   - Redundant LFR model (dim: 3) (symbolic computations). Elapsed time is 0.019555
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_Pi_canonical_decomp.m')">P_Pi_canonical_decomp</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_LFR_reduction.m',131)">P_LFR_reduction:131</a>
+│   │   │   │   └ 0.087195 [sec]
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Equation of the permuted model should be the same</strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   │   [  [INFO]  ] Maximal difference: 0
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Equation of the permuted model should be the same
+│   │   │   │   └ 0.000546 [sec]
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Pi [dim: 4] = S * (reduced Pi [dim: 3]).</strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   │   [  [INFO]  ] Maximal difference: 0
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Pi [dim: 4] = S * (reduced Pi [dim: 3]).
+│   │   │   │   └ 0.005565 [sec]
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symeq_report.m',14)">pcz_symeq_report:14</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_symzero_report.m',0)">pcz_symzero_report</a>) - [<strong>Equation of the reduced model should be the same</strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-05.
+│   │   │   │   │   [  [INFO]  ] Maximal difference: 0
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Equation of the reduced model should be the same
+│   │   │   │   └ 0.000485 [sec]
+│   │   │   │    
+│   │   │   └ 0.65878 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator.m')">P_affine_annihilator</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',122)">method4_authors_old_symbolical:122</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator.m',94)">P_affine_annihilator:94</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_fhzero_report.m',0)">pcz_fhzero_report</a>) - [<strong>Numerical check. </strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   │   - Maximal difference: 3.04771e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Numerical check. 
+│   │   │   │   └ 0.17313 [sec]
+│   │   │   └ 0.67336 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator.m')">P_affine_annihilator</a> called from <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',130)">method4_authors_old_symbolical:130</a>
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/ftools/v11/P_affine_annihilator.m',94)">P_affine_annihilator:94</a> (<a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/symbolical/pcz_fhzero_report.m',0)">pcz_fhzero_report</a>) - [<strong>Numerical check. </strong>]
+│   │   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   │   - Maximal difference: 9.01397e-16
+│   │   │   │   │   ----------------------------------------------------
+│   │   │   │   │   [   <strong>OK</strong>   ] Numerical check. 
+│   │   │   │   └ 0.25808 [sec]
+│   │   │   └ 1.7232 [sec]
+│   │   └ 5.9451 [sec]
+│   │   - nr. of variables: 6067
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',184)">method4_authors_old_symbolical:184</a> - [<strong>Solve LMIs</strong>]
+
+MOSEK Version 9.0.89 (Build date: 2019-5-24 09:51:12)
+Copyright (c) MOSEK ApS, Denmark. WWW: mosek.com
+Platform: Linux/64-X86
+
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 6067            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 72              
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator started.
+Freed constraints in eliminator : 0
+Eliminator terminated.
+Eliminator - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.00            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.02    
+Optimizer terminated. Time: 9.04    
+
+
+Interior-point solution summary
+  Problem status  : UNKNOWN
+  Solution status : UNKNOWN
+  Primal.  obj: -nan                nrm: 2e+308   Viol.  con: inf      var: 0e+00    barvar: inf    
+  Dual.    obj: 6.9269130562e-310   nrm: 7e-310   Viol.  con: 7e-310   var: 0e+00    barvar: 1e+00  
+Optimizer summary
+  Optimizer                 -                        time: 9.04    
+    Interior-point          - iterations : 0         time: 8.93    
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   │   [ <strong>FAILED</strong> ] User terminated (MOSEK). Solver time: <strong>10.8866</strong>
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eig')" style="font-weight:bold">eig</a>
+Input matrix contains NaN or Inf.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('lmi/check', '/home/ppolcz/_/7_ftools/toolboxes_mpt/yalmip/R20200116/all/YALMIP-master/extras/@lmi/check.m', 170)" style="font-weight:bold">lmi/check</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/toolboxes_mpt/yalmip/R20200116/all/YALMIP-master/extras/@lmi/check.m',170,0)">line 170</a>)
+                resdual(j,1) = min(eig(dual));
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('pcz_feasible', '/home/ppolcz/_/8_published/LPV_L2/utilities/yalmip_utils/pcz_feasible.m', 21)" style="font-weight:bold">pcz_feasible</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/utilities/yalmip_utils/pcz_feasible.m',21,0)">line 21</a>)
+[Prim,Dual] = check(CONS);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method4_authors_old_symbolical', '/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m', 189)" style="font-weight:bold">method4_authors_old_symbolical</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method4_authors_old_symbolical.m',189,0)">line 189</a>)
+pcz_feasible(sol, CONS, 'tol', 1e-6);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('model2_ipend', '/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m', 200)" style="font-weight:bold">model2_ipend</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m',200,0)">line 200</a>)
+method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+} 

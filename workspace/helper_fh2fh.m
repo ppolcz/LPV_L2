@@ -10,19 +10,19 @@ function [A_fh,B_fh,C_fh,D_fh,AC_fh,BD_fh,M_fh] = helper_fh2fh(A_fh, B_fh, C_fh,
 
 %%
 
-if isdouble(A_fh)
+if isnumeric(A_fh)
     A_fh = @(varargin) A_fh;
 end
 
-if isdouble(B_fh)
+if isnumeric(B_fh)
     B_fh = @(varargin) B_fh;
 end
 
-if isdouble(C_fh)
+if isnumeric(C_fh)
     C_fh = @(varargin) C_fh;
 end
 
-if isdouble(D_fh)
+if isnumeric(D_fh)
     D_fh = @(varargin) D_fh;
 end
 

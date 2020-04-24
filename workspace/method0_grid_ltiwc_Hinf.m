@@ -1,4 +1,4 @@
-function method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,varargin)
+function wcg = method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,varargin)
 %% method0_grid_ltiwc_Hinf
 %  
 %  File: method0_grid_ltiwc_Hinf.m
@@ -36,13 +36,16 @@ Hinf_all = cellfun(@(p) Hinf(p), pp);
 
 [wcg,wci] = max(Hinf_all);
 
-wcp_str = cellfun(@(n,i) {sprintf('p%d = %s',i,num2str(n))}, pp{wci}, num2cell(1:np)');
+if nargout == 0
 
-pcz_dispFunction2('Worst case LTI Hinf norm: %g', wcg)
-pcz_dispFunction2('Worst case parameter values: \n  %s', strjoin(wcp_str,[newline '  ']))
+    wcp_str = cellfun(@(n,i) {sprintf('p%d = %s',i,num2str(n))}, pp{wci}, num2cell(1:np)');
 
-store_results('Results_All.csv', modelname, wcg, 0, 0, 0, ...
-    strjoin(wcp_str,', '), 'Grid-based worst case LTI Hinf analysis (frozen parameters)')
+    pcz_dispFunction2('Worst case LTI Hinf norm: %g', wcg)
+    pcz_dispFunction2('Worst case parameter values: \n  %s', strjoin(wcp_str,[newline '  ']))
 
+    store_results('Results_All', modelname, wcg, 0, 0, 0, ...
+        strjoin(wcp_str,', '), 'Grid-based worst case LTI Hinf analysis (frozen parameters)')
+
+end
 
 end

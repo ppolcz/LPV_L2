@@ -8,6 +8,10 @@ function pcz_dispStruct(s)
 %
 %%
 
+if ~G_VERBOSE
+    return
+end
+
 fns = fieldnames(s);
 for i = 1:numel(fns)
     disp([ inputname(1) '.' fns{i} ' = '])

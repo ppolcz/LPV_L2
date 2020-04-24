@@ -8,21 +8,13 @@
 %
 
 G_reset
-P_init(11)
+P_init(12)
 
-%%
-
-RUN_ID = str2double(getenv('RUN_ID'));
-if isnan(RUN_ID) || ceil(log10(RUN_ID + 1)) ~= 4
-    setenv('RUN_ID', num2str(pcz_runID))
-else
-    setenv('RUN_ID', num2str(str2double(getenv('RUN_ID')) + 1))
-end
-
+setenv('RUN_ID', num2str(pcz_runID(mfilename)))
 logger = Logger(['results/' mfilename '-output.txt']);
 TMP_vcUXzzrUtfOumvfgWXDd = pcz_dispFunctionName;
-
 pcz_dispFunction2('Run ID = %s', getenv('RUN_ID'));
+
 
 %%
 
@@ -60,17 +52,28 @@ p_lim = [
 
 % LPV_quick_check_stability(A_fh, B_fh, C_fh, D, p_lim)
 
+% Basis functions for the grid-based methods
+bases = [
+                  1
+      monomials(p,1) % Requires SOS Tools
+      monomials(p,2) % Requires SOS Tools
+      monomials(p,3) % Requires SOS Tools
+            1/(5-p2)
+           p1/(p1+2)
+  p1/(p3^2+0.5*p1+1)
+    ];
+bases_Jac = jacobian(bases,p);
+
 
 %% N logarithmically equidistant points in a decade
 for Scale_dp_lim = setdiff(unique([
 %         logspace(0,1,11)'
 %         logspace(1,2,11)'
-        ...
-%         logspace(0,1,5)'
-%         logspace(1,2,5)'
-%         logspace(2,3,5)'
-        10
-        ...
+%         ...
+        logspace(0,1,5)'
+        logspace(1,2,5)'
+        logspace(2,3,5)'
+%         ...
 %         logspace(3,4,4)'
 %         logspace(4,5,4)'
 %         ...
@@ -94,20 +97,6 @@ pdp_lims_comp = [
     dp_lim
     ];
 
-%% Basis functions for the grid-based methods
-
-bases = [
-                  1
-      monomials(p,1) % Requires SOS Tools
-      monomials(p,2) % Requires SOS Tools
-      monomials(p,3) % Requires SOS Tools
-            1/(5-p2)
-           p1/(p1+2)
-  p1/(p3^2+0.5*p1+1)
-    ];
-
-bases_Jac = jacobian(bases,p);
-
 %%
 
 % method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
@@ -116,6 +105,7 @@ bases_Jac = jacobian(bases,p);
 %
 % % Greedy grid
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',13);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',15);
 %
 % % As proposed by Wu (1995,1996)
@@ -136,16 +126,14 @@ bases_Jac = jacobian(bases,p);
 % method3_IQC_LFT_LPVMAD(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 % method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
 %
-method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,...
-    'minlfr', true);
+% method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,...
+%     'minlfr', true);
 %
 % % Imported variables to the base workspace: Q, dQ, PI_x, gamma
 % method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,...
 %     'minlfr', true);
 
 end
-
-%%
 
 pcz_dispFunctionEnd(TMP_vcUXzzrUtfOumvfgWXDd);
 logger.stoplog
@@ -156,8 +144,9 @@ return
 %% Plot overall results
 
 Entries = {
-    '$\hat\gamma$, grid $5\times5\times5$ poor $V(x,p)$' 'v--'  10 true
-    '$\hat\gamma$, grid $5\times5\times5$ rich $V(x,p)$' '^--'  10 true
+    '$\hat\gamma$, grid $5\times5\times5$ $V(x,p)$' '^--'  5 true
+    '$\hat\gamma$, grid $7\times7\times7$ $V(x,p)$' '^--'  5 false
+    '$\hat\gamma$, grid $13\times13\times13$ $V(x,p)$' '^--'  5 true
     'upper bound $\gamma$, descriptor'       '.--'  30 true
     'upper bound $\gamma$, LPVMAD'           '.--'  40 true
     'upper bound $\gamma$, lpvwcgain'        '.--'  20 true
@@ -168,8 +157,9 @@ Entries = {
 
 Res = [
 1	1.26	1.59	1.78	2	2.15	2.51	3.16	3.98	4.64	5.01	5.6	6.31	7.94	10	17.8	21.5	31.6	46.4	56.2	100	177.8	215.4	316.2	464.2	562.3	1000	1.00E+04	1.00E+05
-2.03523957766612	NaN	NaN	2.05126989067949	NaN	NaN	NaN	2.14179282356365	NaN	NaN	NaN	2.29222240933528	NaN	NaN	2.50069044501004	2.62319766543296	NaN	2.66469130642587	NaN	2.67745923984867	2.68133181557627	2.68252038881997	NaN	2.68288661040889	NaN	2.68300096654232	2.68303688028365	2.68305331689286	2.6830534808692
 2.03523957595921	NaN	NaN	2.03523957668091	NaN	NaN	NaN	2.05545642480682	NaN	NaN	NaN	2.14528742985676	NaN	NaN	2.26678243850142	2.3896684602428	NaN	2.49177817818668	NaN	2.56546022948363	NaN	2.64263560252844	NaN	2.65992389825714	NaN	2.6699170221645	2.67562535952935	NaN	NaN
+2.03523957600935	NaN	NaN	2.0375360506381	NaN	NaN	NaN	2.07836868819199	NaN	NaN	NaN	2.170878918141	NaN	NaN	2.30270111649155	2.44264158416503	NaN	2.56064016506232	NaN	2.64514028230515	2.69983381045177	2.7331560617445	NaN	2.75275034058177	NaN	2.76405264863283	2.77049996025163	NaN	NaN
+2.0352395759488	NaN	NaN	2.03877065378142	NaN	NaN	NaN	2.07952106297757	NaN	NaN	NaN	2.17289013401731	NaN	NaN	2.30591180984638	2.4454328668872	NaN	2.56234109618297	NaN	2.64603162112553	2.70038247672717	2.73350365183496	NaN	2.75300025125219	NaN	2.76421448395179	2.7705980545329	NaN	NaN
 2.10564666849556	NaN	NaN	2.20063554509286	NaN	NaN	NaN	2.36050330073879	NaN	NaN	NaN	2.55228514512871	NaN	NaN	2.69285796471826	2.75261587698898	NaN	2.7723471343514	NaN	2.77834860730295	2.78009235130869	2.78058262438168	NaN	2.7807241834886	NaN	2.78075685811572	2.7807585761487	2.78075936139437	2.78075911067564
 2.24860849805858	2.33489739789273	2.46624325313265	2.54833429486015	2.63818392553585	NaN	2.80114519282558	2.81918562097354	2.81977241055676	NaN	2.81860414924753	2.81794253677084	2.81764609080954	2.82018392520324	2.82033877316899	2.820254204693	NaN	2.81888218089099	NaN	2.81994196725838	2.82026959237618	2.82072910307767	NaN	2.82318853468453	NaN	2.82031935321688	2.81963134967875	2.82739191302986	2.87240145997068
 2.36441711121937	2.4367725457923	2.53209068828656	2.59231592853063	2.65813032943977	NaN	2.79533678925321	2.81854965249846	2.81852067142831	NaN	2.81839227737	2.81812896808011	2.819047448031	2.81921458920945	2.81884398630243	2.81819053246449	NaN	2.81913762542185	NaN	2.81917041397138	2.81924566906359	2.81932602818647	NaN	2.81930701683456	NaN	2.81813077694576	2.81813194525962	2.81862859240125	2.81851428506674
@@ -202,14 +192,10 @@ xlim([1,1000])
 ylim([2,2.9])
 
 Logger.latexify_axis(14)
-Logger.latexified_labels(gca,20,'Value of $\alpha$','Computed $\gamma$')
+Logger.latexified_labels(gca,16,'Value of $\alpha$','Computed $\gamma$')
 
-% %{
-%%
-try c = evalin('caller','persist'); catch; c = []; end
-persist = Persist(mfilename('fullpath'), c); clear c; 
-persist.stoplog;
+%{
 
-print('results_stored/model1_LPV4D-plot.pdf','-dpdf')
+print('results_stored/model1_LPV4D-plot-3.pdf','-dpdf')
 
 %}

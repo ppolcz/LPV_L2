@@ -84,6 +84,8 @@ function [ret] = method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp
 % KYP-SDPs. Automatica, 44(2):418-429, 2008.
 % 
 
+global LPVTools_vars
+LPVTools_vars.Solver_Time = 0;
 
 %%
 
@@ -102,31 +104,6 @@ end
 
 sys_unc_LFT = ss(A_unc,B_unc,C_unc,D_unc);
 sys_unc_LFT = simplify(sys_unc_LFT,'full');
-
-%% Computations -- LPVNORM
-%{
-
-% -------------------------------------------------------------------------
-TMP_cwCXkgHfZmFQRzNVUlCO = pcz_dispFunctionName('LPVTools LFT/IQC', 'lpvnorm');
-
-% What actually is executed:
-% 
-% [7] Helmersson (1999). An IQC-based stability criterion for systems with
-% slowly varying parameters. IFAC Proceedings Volumes, 32(2):3183-3188,
-% 1999.
-lpv_gamma = lpvnorm(sys_unc_LFT);
-lpvnorm_time = toc(TMP_cwCXkgHfZmFQRzNVUlCO);
-
-pcz_dispFunction('Solver time: <strong>%g</strong>', lpvnorm_time)
-pcz_dispFunction(2, sprintf('<strong>gamma = %g </strong>(lpvnorm)', lpv_gamma))
-
-pcz_dispFunctionEnd(TMP_cwCXkgHfZmFQRzNVUlCO);
-% -------------------------------------------------------------------------
-
-store_results('LPVTools_Results.csv', modelname, 0, lpv_gamma, 0, lpvnorm_time, 'tvreal, lpvnorm', 'LFT/IQC')
-store_results('Results_All.csv', modelname, 0, lpv_gamma, 0, lpvnorm_time, 'tvreal, lpvnorm', 'LPVTools - LFT/IQC')
-
-%}
 
 %% Computations -- LPVWCGAIN
 
@@ -162,8 +139,7 @@ pcz_dispFunction(2, 'Bounds: [<strong>%g</strong>,%g] = [%g,%g] dB ', bounds, 20
 pcz_dispFunctionEnd(TMP_KZWeXiYFmdpQdsgidKeG);
 % -------------------------------------------------------------------------
 
-store_results('LPVTools_Results.csv', modelname, bounds(1), bounds(2), 0, lpvwcgain_time, 'tvreal, lpvwcgain', 'LFT/IQC')
-store_results('Results_All.csv', modelname, bounds(1), bounds(2), 0, lpvwcgain_time, 'tvreal, lpvwcgain', 'LPVTools - LFT/IQC')
+store_results('Results_All', modelname, bounds(1), bounds(2), LPVTools_vars.Solver_Time, lpvwcgain_time, 'tvreal, lpvwcgain', 'LPVTools - LFT/IQC')
 
 %%
 

@@ -12,7 +12,7 @@ function [S,syslfr_min,iS,Ker] = P_mingen_for_LFR(syslfr,varargin)
 
 args.State = [];
 args.Round = 10;
-args.proj = @(W) W;
+args.proj = [];
 args.lims = [];
 args = parsepropval(args, varargin{:});
 
@@ -54,7 +54,7 @@ end
 
 %%
 
-rcond_tol = 1e-4;
+rcond_tol = 1e-7;
 
 %%
 

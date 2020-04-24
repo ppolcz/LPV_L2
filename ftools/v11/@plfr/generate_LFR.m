@@ -59,7 +59,7 @@ else
         bounds = [
             bounds
             [0.5 0.5]*bounds
-            [-1;1]*ones(1,np)
+            [-Inf;Inf]*ones(1,np)
             ];
     elseif size(bounds,2) == 2*np
         bounds = [
