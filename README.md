@@ -4,15 +4,16 @@ Computational results
 Computational results of the induced L2-gain computation for the 
 pendulum-cart system in [PPKSz20] are available in 
 
+```
    workspace/results_stored/model2_ipend-results.mat
-
+```
 
 [PPKSz20] Polcz, Péni, Kulcsár, Szederkényi. Induced L2-gain computation 
 for rational LPV systems using Finsler's lemma and minimal generators. 
 Preprint submitted to Systems & Control Letters, 2020.
 
 
-Dependenciesu   
+Dependencies
 ============
 
 Used Matlab toolboxes:
