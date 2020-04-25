@@ -193,6 +193,8 @@ gamma = double(gammaSqr)^(0.5);
 Overall_Time = toc(TMP_BIvQLYBqfFOwenhowBxT);
 
 pcz_dispFunction
+pcz_dispFunction(2,'Model: %s', modelname);
+pcz_dispFunction(2,'Overall time: %g', Overall_Time);
 pcz_dispFunction(2,'<strong>Gamma = %g</strong> ', gamma);
 pcz_dispFunction(2,'size(N)  =%4d, size(PI)   =%4d', size(N));
 pcz_dispFunction(2,'size(Na) =%4d, size(PI_a) =%4d', size(Na));
@@ -206,9 +208,20 @@ dP_cell = dQ.get_matrices;
 
 pcz_2basews(Q,dQ,PI_x,gamma)
 
+Q.name = 'Q';
+Q_names = cellfun(@(i) {sprintf('%s%d',Q.name,i)}, num2cell(0:numel(Q_cell)-1)');
+Q_channels = cellfun(@char,num2cell(Q.channels),'UniformOutput',0);
+pcz_dispFunction2('%s = %s', Q.name_full, ...
+strjoin(cellfun(@(b,Q) {sprintf('%s * %s',b,Q)}, Q_channels, Q_names), ' + '))
+
 for i = 0:np
-    pcz_dispFunction_num2str(Q_cell{i+1}, 'format', '%7.5g','name',sprintf('Q%d = ',i))    
+    pcz_dispFunction_num2str(Q_cell{i+1}, 'format', '%7.5g','name',sprintf('Q%d',i))    
 end
+
+pcz_dispFunction_num2str(p_lim);
+pcz_dispFunction_num2str(dp_lim);
+% pcz_dispFunction_num2str(Pi_indices, 'format', '%d', 'pref', ' ');
+% pcz_dispFunction(msg);
 
 pcz_dispFunction_num2str(p_lim);
 pcz_dispFunction_num2str(dp_lim);

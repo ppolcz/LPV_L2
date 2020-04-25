@@ -73,7 +73,7 @@ simplify(sys_unc,'full');
 
     
     store_results('Results_All', modelname, bounds(1), bounds(2), 0, Overall_Time, ...
-        '[no info]', 'Robust Control Toolbox')
+        'ureal, wcgain', 'Robust Control Toolbox')
     
 % -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 

@@ -54,6 +54,13 @@ pcz_dispFunction('Results stored in `%s''', Results_spreadsheet);
 pcz_dispFunction2(evalc('disp(s)'))
 
 
+if strcmp(fname, 'Results_All') && ~isempty(getenv('RESULTS_FNAME'))
+    store_results(getenv('RESULTS_FNAME'), modelname, gamma_lower, gamma_upper, solver_time, overall_time, info, method);
+else
+    return
+end
+
+
 latex_fname = getenv('LATEX_FNAME');
 if isempty(latex_fname)
     latex_fname = 'latex_source_code.tex';
@@ -66,5 +73,6 @@ fprintf(latexfile,'\n%s %s \n\t& %.4g & %d & %d & %d \\\\\n',...
     method,info,gamma_upper,round(solver_time),round(overall_time),round(overall_time) - round(solver_time));
 
 fclose(latexfile);
+    
 
 end

@@ -10,6 +10,7 @@ classdef Logger
 properties (GetAccess = public, SetAccess = private)
     diary_fname;        
     latex_fname;
+    results_fname;
     stamp;
     date;
 end
@@ -27,9 +28,11 @@ methods (Access = public)
         
         p.diary_fname = [ cd filesep 'results' filesep basename '-' p.stamp '_id' RUN_ID '-output.txt' ];
         p.latex_fname = [ cd filesep 'results' filesep basename '-' p.stamp '_id' RUN_ID '-latex.tex' ];
+        p.results_fname = [ cd filesep 'results' filesep basename '-' p.stamp '_id' RUN_ID '-results.xlsx' ];
         
         setenv('DIARY_FNAME',p.diary_fname);
         setenv('LATEX_FNAME',p.latex_fname);
+        setenv('RESULTS_FNAME',p.results_fname);
         
         [dirname,~,~] = fileparts(p.diary_fname);
         

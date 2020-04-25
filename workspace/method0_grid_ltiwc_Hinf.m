@@ -8,6 +8,8 @@ function wcg = method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,varar
 %  Created on 2020. April 14. (2019b)
 %
 
+TMP_QVgVGfoCXYiYXzPhvVPX = pcz_dispFunctionName;
+
 %%
 
 args.res = 10;
@@ -47,5 +49,9 @@ if nargout == 0
         strjoin(wcp_str,', '), 'Grid-based worst case LTI Hinf analysis (frozen parameters)')
 
 end
+
+%%
+
+pcz_dispFunctionEnd(TMP_QVgVGfoCXYiYXzPhvVPX);
 
 end

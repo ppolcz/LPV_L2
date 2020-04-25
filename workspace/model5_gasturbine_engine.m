@@ -82,29 +82,14 @@ bases = [
     p1^2
     p1^3
     p1^4
-%     p1^5
-%     
-%     % rich
-%     p1^6
-%     p1^7
-%     p1^8
-%     p1^9
-%     p1^10
-% 
-%     % wealty
-%     p1^11
-%     p1^12
-%     p1^13
-%     p1^14
-%     p1^15
     ];
 
 bases_Jac = jacobian(bases,p);
 
 %% N logarithmically equidistant points in a decade
 for Scale_dp_lim = setdiff(unique([
-        logspace(0,4,41)'
-        logspace(4,6,61)'
+%         logspace(0,4,41)'
+%         logspace(4,6,61)'
 %         logspace(0,6,481)'
 %         
 %         ...
@@ -120,7 +105,7 @@ for Scale_dp_lim = setdiff(unique([
 %         logspace(5,6,4)'
 %         ...
 %         logspace(4,5,2)'
-%         1000
+        100
         ])',[])
 %%
 
@@ -141,13 +126,13 @@ pdp_lims_comp = pdp_lim;
 
 %%
 
-% method1_RCT(modelname,A,B,C,D,p_lim)
+method1_RCT(modelname,A,B,C,D,p_lim)
 
 % method0_grid_LPVTools(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,5);
 
 % Greedy grid 
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
-% method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',45);
+method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',45);
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',95);
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',135);
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',255);
@@ -159,20 +144,21 @@ pdp_lims_comp = pdp_lim;
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',1000,'delta',1e-1,'T',100);
 % method0_grid_Wu1995(modelname,A,B,C,D,p_lim,dp_lim,bases,bases_Jac,'res_max',1000,'delta',1e-1,'T',10);
 
-% method2_descriptor_primal(modelname,A,B,C,D,p_lim,dp_lim)
-% method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,1)
-% method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,0)
+method2_descriptor_primal(modelname,A,B,C,D,p_lim,dp_lim)
+method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,1)
+method2_descriptor_dual(modelname,A,B,C,D,p_lim,dp_lim,0)
 
 % IQC/LFT approaches for LPV with rate-bounded parameters
-% method3_IQC_LFT_LPVMAD(modelname,A,B,C,D,p_lim,dp_lim);
-% method3_IQC_LFT_LPVTools(modelname,A,B,C,D,p_lim,dp_lim);
+method3_IQC_LFT_LPVMAD(modelname,A,B,C,D,p_lim,dp_lim);
+method3_IQC_LFT_LPVTools(modelname,A,B,C,D,p_lim,dp_lim);
 
-method4_authors_old_symbolical(modelname,A,B,C,D,p_lim,dp_lim,...
-    'minlfr', false, 'solver', 'sedumi','cachesolvers',false,'Na','Na(p)');
+method4_authors_old_symbolical(modelname,A,B,C,D,p_lim,dp_lim,'minlfr',false);
+
+method4_authors_old_symbolical(modelname,A,B,C,D,p_lim,dp_lim,'minlfr',true);
 
 % Imported variables to the base workspace: Q, dQ, PI_x, gamma
-method5_proposed_approach(modelname,A,B,C,D,p_lim,dp_lim,p_lim,pdp_lim,...
-    'minlfr', false, 'solver', 'sedumi','cachesolvers',false,'Na','Na(p)');
+method5_proposed_approach(modelname,A,B,C,D,p_lim,dp_lim,p_lim,pdp_lim,'minlfr',false);
+method5_proposed_approach(modelname,A,B,C,D,p_lim,dp_lim,p_lim,pdp_lim,'minlfr',true);
 
 end
 

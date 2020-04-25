@@ -152,61 +152,61 @@ pdp_lims_comp = [
 %% Basis functions for the grid-based methods
 
 bases = [
-                   1
-                  p1
-                  p2
-                  p3
-  (p1*p2)/(p2^2 - 7)
-       p1/(p2^2 - 7)
-       p2/(p2^2 - 7)
-     p2^2/(p2^2 - 7)
-  (p2*p3)/(p2^2 - 7)
-       p3/(p2^2 - 7)
+    1
+    p1
+    p2
+    p3
+    (p1*p2)/(p2^2 - 7)
+    p1/(p2^2 - 7)
+    p2/(p2^2 - 7)
+    p2^2/(p2^2 - 7)
+    (p2*p3)/(p2^2 - 7)
+    p3/(p2^2 - 7)
     ];
 
 bases_Jac = jacobian(bases,p);
 
 
 %%
-% 
-% method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,'res',15);
-% 
-% method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim);
-% 
-% % method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
-% % 
-% % Greedy grid 
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',15);
-% % 
-% % % As proposed by Wu (1995,1996)
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-6,'T',1e6);
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-5,'T',100000);
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-4,'T',10000);
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-3,'T',1000);
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',100);
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',100);
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',10);
-% % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',10);
-% % 
-% method2_descriptor_primal(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
-% % method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,1)
-% method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
-% 
-% % IQC/LFT approaches for LPV with rate-bounded parameters
-% method3_IQC_LFT_LPVMAD(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);fi
-% method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
-% 
-% method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
-% 
-% % Imported variables to the base workspace: Q, dQ, PI_x, gamma
+
+method0_grid_ltiwc_Hinf(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,'res',15);
+
+method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim);
+
+% method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
+
+% Greedy grid
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',15);
+
+% As proposed by Wu (1995,1996)
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-6,'T',1e6);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-5,'T',100000);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-4,'T',10000);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-3,'T',1000);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',100);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',100);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',10);
+% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',10);
+
+method2_descriptor_primal(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
+% method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,1)
+
+% IQC/LFT approaches for LPV with rate-bounded parameters
+method3_IQC_LFT_LPVMAD(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);fi
+method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+
+method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+
+% Imported variables to the base workspace: Q, dQ, PI_x, gamma
 method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp);
 helper_generate_isosurface_method5(Q,PI_x,gamma,p_expr,xw_lim(1:nx,:),p_lim,dp_lim,[1,1,1]*101);
-% 
-% % method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,'minlfr',1);
-% method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,'minlfr',1);
 
-%% 
+% method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,'minlfr',1);
+method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,'minlfr',1);
+
+%%
 %{
 
 global LPVTools_vars
@@ -230,19 +230,19 @@ for i = 1:np
     pl(isinf(pl)) = [];
     pl = abs(1./(1i*omega-pl)');
     % pl = reshape(pl, [1,1,numel(pl)]);
-        
+
     z = sym('z',size(pl));
-    
+
     Psi_i1 = abs(Psi{i}{1}(:,:,index));
     Psi_i2 = abs(Psi{i}{2}(:,:,index));
-    
+
     Psi_i = [
         Psi_i1(1:IQCinfoS(i).ExtBlkDim(1),:)
         Psi_i2(1:numel(pl),:)
         Psi_i1(IQCinfoS(i).ExtBlkDim(1)+1:end,:)
         Psi_i2(numel(pl)+1:end,:)
     ];
-    
+
     Tsi = Psi_i1(1:IQCinfoS(i).ExtBlkDim(1),1:IQCinfoS(i).OrigBlkDim(1));
     Tsi_sym = sym(round(Tsi,10));
     Tsi_sym(abs(Tsi - 1) > 1e-10) = 0;
@@ -252,7 +252,7 @@ for i = 1:np
 
     Ts_sym = blkdiag(Ts_sym, Tsi_sym);
     Ts = blkdiag(Ts, Tsi);
-    Us = blkdiag(Us, Psi_i2(1:numel(pl),1:IQCinfoS(i).OrigBlkDim(1)));    
+    Us = blkdiag(Us, Psi_i2(1:numel(pl),1:IQCinfoS(i).OrigBlkDim(1)));
     Vs = blkdiag(Vs, Psi_i1(IQCinfoS(i).ExtBlkDim(1)+1:end,2*IQCinfoS(i).OrigBlkDim(2)+1:end));
 end
 

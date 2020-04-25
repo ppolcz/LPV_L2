@@ -54,13 +54,29 @@ p_lim = [
 
 % Basis functions for the grid-based methods
 bases = [
-                  1
-      monomials(p,1) % Requires SOS Tools
-      monomials(p,2) % Requires SOS Tools
-      monomials(p,3) % Requires SOS Tools
-            1/(5-p2)
-           p1/(p1+2)
-  p1/(p3^2+0.5*p1+1)
+    1
+    p1
+    p2
+    p3
+    p1^2
+    p1*p2
+    p2^2
+    p1*p3
+    p2*p3
+    p3^2
+    p1^3
+    p1^2*p2
+    p1*p2^2
+    p2^3
+    p1^2*p3
+    p1*p2*p3
+    p2^2*p3
+    p1*p3^2
+    p2*p3^2
+    p3^3
+    -1/(p2 - 5)
+    p1/(p1 + 2)
+    p1/(p3^2 + p1/2 + 1)
     ];
 bases_Jac = jacobian(bases,p);
 
@@ -70,9 +86,10 @@ for Scale_dp_lim = setdiff(unique([
 %         logspace(0,1,11)'
 %         logspace(1,2,11)'
 %         ...
-        logspace(0,1,5)'
-        logspace(1,2,5)'
-        logspace(2,3,5)'
+%         logspace(0,1,5)'
+%         logspace(1,2,5)'
+%         logspace(2,3,5)'
+        100
 %         ...
 %         logspace(3,4,4)'
 %         logspace(4,5,4)'
@@ -99,16 +116,15 @@ pdp_lims_comp = [
 
 %%
 
-% method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
+method1_RCT(modelname,A_fh,B_fh,C_fh,D_fh,p_lim)
 
 % method0_grid_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,[5 5 5]);
-%
-% % Greedy grid
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
+
+% Greedy grid
+method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5);
 method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',13);
-% method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',15);
-%
-% % As proposed by Wu (1995,1996)
+
+% As proposed by Wu (1995,1996)
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-6,'T',1e6);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-5,'T',100000);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-4,'T',10000);
@@ -117,21 +133,20 @@ method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',100);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-2,'T',10);
 % method0_grid_Wu1995(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,bases,bases_Jac,'res_max',5,'delta',1e-1,'T',10);
-%
-% method2_descriptor_primal(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
-% method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,1)
-% method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
-%
-% % IQC/LFT approaches for LPV with rate-bounded parameters
-% method3_IQC_LFT_LPVMAD(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
-% method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
-%
-% method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,...
-%     'minlfr', true);
-%
-% % Imported variables to the base workspace: Q, dQ, PI_x, gamma
-% method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,...
-%     'minlfr', true);
+
+method2_descriptor_primal(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,0)
+method2_descriptor_dual(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,1)
+
+% IQC/LFT approaches for LPV with rate-bounded parameters
+method3_IQC_LFT_LPVMAD(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+method3_IQC_LFT_LPVTools(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim);
+
+method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,'minlfr',false);
+method4_authors_old_symbolical(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,'minlfr',true);
+
+method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,'minlfr',false);
+method5_proposed_approach(modelname,A_fh,B_fh,C_fh,D_fh,p_lim,dp_lim,p_lims_comp,pdp_lims_comp,'minlfr',true);
 
 end
 
@@ -157,7 +172,7 @@ Entries = {
 
 Res = [
 1	1.26	1.59	1.78	2	2.15	2.51	3.16	3.98	4.64	5.01	5.6	6.31	7.94	10	17.8	21.5	31.6	46.4	56.2	100	177.8	215.4	316.2	464.2	562.3	1000	1.00E+04	1.00E+05
-2.03523957595921	NaN	NaN	2.03523957668091	NaN	NaN	NaN	2.05545642480682	NaN	NaN	NaN	2.14528742985676	NaN	NaN	2.26678243850142	2.3896684602428	NaN	2.49177817818668	NaN	2.56546022948363	NaN	2.64263560252844	NaN	2.65992389825714	NaN	2.6699170221645	2.67562535952935	NaN	NaN
+2.03523957595921	NaN	NaN	2.03523957668091	NaN	NaN	NaN	2.05545642480682	NaN	NaN	NaN	2.14528742985676	NaN	NaN	2.26678243850142	2.3896684602428	NaN	2.49177817818668	NaN	2.56546022948363	2.6134	2.64263560252844	NaN	2.65992389825714	NaN	2.6699170221645	2.67562535952935	NaN	NaN
 2.03523957600935	NaN	NaN	2.0375360506381	NaN	NaN	NaN	2.07836868819199	NaN	NaN	NaN	2.170878918141	NaN	NaN	2.30270111649155	2.44264158416503	NaN	2.56064016506232	NaN	2.64514028230515	2.69983381045177	2.7331560617445	NaN	2.75275034058177	NaN	2.76405264863283	2.77049996025163	NaN	NaN
 2.0352395759488	NaN	NaN	2.03877065378142	NaN	NaN	NaN	2.07952106297757	NaN	NaN	NaN	2.17289013401731	NaN	NaN	2.30591180984638	2.4454328668872	NaN	2.56234109618297	NaN	2.64603162112553	2.70038247672717	2.73350365183496	NaN	2.75300025125219	NaN	2.76421448395179	2.7705980545329	NaN	NaN
 2.10564666849556	NaN	NaN	2.20063554509286	NaN	NaN	NaN	2.36050330073879	NaN	NaN	NaN	2.55228514512871	NaN	NaN	2.69285796471826	2.75261587698898	NaN	2.7723471343514	NaN	2.77834860730295	2.78009235130869	2.78058262438168	NaN	2.7807241834886	NaN	2.78075685811572	2.7807585761487	2.78075936139437	2.78075911067564
