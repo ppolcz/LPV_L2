@@ -56,6 +56,19 @@ AC_plfr = plfr(AC_lfr);
 [F{1,1},F{1,3},F{3,1},F{3,3},PI_x,PI_1] = deal(AC_plfr.A, AC_plfr.B, AC_plfr.C, AC_plfr.D, AC_plfr.generatePI, AC_plfr.generatePI1);
 pcz_lfrzero_report(AC_lfr - [ F{1,1} F{1,3} ] * PI_x, sprintf('Generator form (m = %d) of [ A(p) ; C(p) ] is OK', PI_1.ny));
 
+%%%
+%  LFR of matrix [ B(p) ] = [ F12 F14 ] * PI_u, where PI_u = [ eye(nu) ; PI_2 ]
+%                [ D(p) ]   [ F22 F24 ]
+% 
+BD_plfr = plfr(BD_lfr);
+[F{1,2},F{1,4},F{4,2},F{4,4},PI_u,PI_2] = deal(BD_plfr.A, BD_plfr.B, BD_plfr.C, BD_plfr.D, BD_plfr.generatePI,BD_plfr.generatePI1);
+pcz_lfrzero_report(BD_lfr - [ F{1,2} F{1,4} ] * PI_u,'Generator form of [ B(p) ; D(p) ] is OK');
+
+PI_x_initial = PI_x;
+F_initial = F;
+
+%% Minimal generators
+
 % Minimal generator for PI_x
 [S_x,PI_x,iS_x,~] = P_mingen_for_LFR(PI_x.set_vars(p),'lims',p_lims_comp);
 [F{1,1},F{1,3},F{3,1},F{3,3}] = pcz_split_matrix([F{1,1} F{1,3} ; F{3,1} F{3,3}] * S_x, [nx+ny Inf], [nx Inf]);
@@ -65,14 +78,6 @@ pcz_lfrzero_report(AC_lfr - [ F{1,1} F{1,3} ] * PI_x,'Minimal generator form of 
 PI_1 = plfr(iS_x(nx+1:end,nx+1:end) * PI_1); % plfr object
 
 % -----------------------
-
-%%%
-%  LFR of matrix [ B(p) ] = [ F12 F14 ] * PI_u, where PI_u = [ eye(nu) ; PI_2 ]
-%                [ D(p) ]   [ F22 F24 ]
-% 
-BD_plfr = plfr(BD_lfr);
-[F{1,2},F{1,4},F{4,2},F{4,4},PI_u,PI_2] = deal(BD_plfr.A, BD_plfr.B, BD_plfr.C, BD_plfr.D, BD_plfr.generatePI,BD_plfr.generatePI1);
-pcz_lfrzero_report(BD_lfr - [ F{1,2} F{1,4} ] * PI_u,'Generator form of [ B(p) ; D(p) ] is OK');
 
 % Minimal generator for PI_u
 [S_u,PI_u,iS_u,~] = P_mingen_for_LFR(PI_u.set_vars(p),'lims',p_lims_comp);
@@ -112,9 +117,9 @@ PI_au = [ % lfr object
 PI_a = blkdiag(PI_ax,PI_au);
 
 % Minimal generator for PI_a
-PI_a_old = plfr(PI_a,[p_lfr;dp_lfr]);
-[S_a,PI_a,~,~] = P_mingen_for_LFR(PI_a_old,'lims',pdp_lims_comp);
-pcz_fhzero_report(@(pdp) PI_a_old(pdp)-S_a*PI_a(pdp), pdp, 'Minimal generator for PI_a(p) is OK');
+PI_a_initial = plfr(PI_a,[p_lfr;dp_lfr]);
+[S_a,PI_a,~,~] = P_mingen_for_LFR(PI_a_initial,'lims',pdp_lims_comp);
+pcz_fhzero_report(@(pdp) PI_a_initial(pdp)-S_a*PI_a(pdp), pdp, 'Minimal generator for PI_a(p) is OK');
 
 Aa = [
     F{1,1}   F{1,3}   O(nx,m1) O(nx,m1)
@@ -224,7 +229,6 @@ dQ = double(dQ);
 Lb = double(Lb);
 La = double(La);
 Q_cell = Q.get_matrices;
-dP_cell = dQ.get_matrices;
 
 pcz_2basews(Q,dQ,PI_x,gamma)
 
@@ -259,3 +263,45 @@ pcz_dispFunctionEnd(TMP_UFTXCLDbxHBtWRStETWI);
 pcz_dispFunctionEnd(TMP_BIvQLYBqfFOwenhowBxT);
 
 end
+
+
+%%
+% 2020.04.27. (április 27, hétfő), 10:47
+% Store results in `results/model2_ipend-values.mat'
+%{
+
+N_paffmat = paffmat(N,[1;p]);
+[~,N_cell] = N_paffmat.get_matrices;
+
+Na_paffmat = paffmat(Na,[1;pdp]);
+[~,Na_cell] = Na_paffmat.get_matrices;
+
+Q = struct;
+N = struct;
+Na = struct;
+for i = 0:np
+    Q.(sprintf('Q%d',i)) = Q_cell{i+1};
+    N.(sprintf('N%d',i)) = N_cell{i+1};
+    Na.(sprintf('Na%d',i)) = Na_cell{i+1};
+end
+
+PI_initial = export(PI_x_initial);
+PI_initial.symbolic_expression = evalc('disp(sym(PI_x_initial))');
+
+PI_mingen = export(PI_x);
+PI_mingen.symbolic_expression = evalc('disp(sym(PI_x))');
+PI_mingen.S = S_x;
+
+PIa_initial = export(PI_a_initial);
+PIa_mingen = export(PI_a);
+PIa_mingen.Sa = S_a;
+
+system_LFR.AC = export(AC_plfr);
+system_LFR.BD = export(BD_plfr);
+system_LFR.F = F_initial;
+
+pcz_save('results/model2_ipend-values.mat',system_LFR,...
+    PI_initial,PI_mingen,PIa_initial,PIa_mingen,...
+    N,Na,Q)
+
+%}

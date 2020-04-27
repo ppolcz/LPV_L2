@@ -85,7 +85,7 @@ properties (GetAccess = public, SetAccess = private)
 
     % Fast evaluation in multiple (numerical) points
     delta_fh
-    
+
     % Flexible evaluation in a single symbolical point of different types
     % deltai_fh_cell
 
@@ -96,7 +96,7 @@ properties (GetAccess = public, SetAccess = private)
     % ebben azok a szimbolikus valtozok vannak, amibe kivulrol be akarok
     % helyettesiteni
     % pl. [x1 p1 p2 x2 x3 dp1 dp2 .... barmi ]
-    subsvars % --> ns 
+    subsvars % --> ns
 end
 
 properties (GetAccess = public, SetAccess = public)
@@ -106,7 +106,7 @@ properties (Dependent)
     blk, desc, names, bounds, rbounds
 
     varnames % pl. { 'x1' 'x2' 'p1' 'p2' }
-    
+
     % ebben az 1 is benne lehet (lenyegeben Delta blokk neve)
     vars % pl. [1 x1 x2 p1 p2]
 
@@ -140,7 +140,7 @@ methods
     function varnames = get.varnames(pLFR)
         varnames = pLFR.names(~strcmp('1',pLFR.names));
     end
-    
+
     function vars = get.vars(pLFR)
         if isempty(pLFR.names)
             vars = [];
@@ -180,7 +180,7 @@ methods (Access = public)
     function pLFR = plfr(varargin)
         pLFR = pLFR.init(varargin{:});
     end
-    
+
 end
 
 methods (Access = private)
@@ -192,7 +192,7 @@ methods (Access = private)
 	pLFR = generate_delta(pLFR)
 	pLFR = generate_LFR(pLFR,blk)
     pLFR = test_properties(pLFR)
-    
+
 end
 
 methods (Access = public)
@@ -235,7 +235,32 @@ methods (Access = public)
         bounds = pLFR.bounds;
         blk = pLFR.blk;
     end
-    
+
+    % 2020.04.27. (április 27, hétfő), 12:26
+    function data = export(pLFR)
+        data.type = 'Lower LFR: M11 + M12 (I - Delta M22) Delta M22';
+        data.M11 = pLFR.A;
+        data.M12 = pLFR.B;
+        data.M21 = pLFR.C;
+        data.M22 = pLFR.D;
+        data.Delta_str = sprintf('diag([%s])',strjoin(cellfun(@(s) {char(s)}, num2cell(diag(pLFR.Delta))),','));
+        data.Delta_blk = cell2table([ num2cell(pLFR.blk.desc) {
+            "Row  1. Row-dimensions of blocks"
+            "Row  2. Column-dimensions of blocks"
+            "Row  3. Real(1) / complex(0) block types"
+            "Row  4. Scalar(1) / full(0) block types"
+            "Row  5. Linear(1) / nonlinear (0) block types"
+            "Row  6. Time-inv.(1) / time-var.(0) block types"
+            "Row  7. Min/max(1) / sector(2) / freq. dependent(>2) bounds, 0 for constant block"
+            "Row  8. Min/max(2) / sector(1) / freq. dependent(>2) bounds, 0 for constant block"
+            "Row  9. Minumum values of bounds, 0 for constant block"
+            "Row 10. Maximum values of bounds, 0 for constant block"
+            "Row 11. Nominal values, 0 for constant block"
+            "Row 12. Minimum rate bound"
+            "Row 13. Maximum rate bound"
+            } ], 'VariableNames', [ pLFR.blk.names 'LFR Toolbox block description']);
+    end
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%% Simplified operator wrappers
   %  2020.03.29. (március 29, vasárnap), 12:55
@@ -290,7 +315,7 @@ methods (Access = private)
 
     [pLFR_sym, PI_sym] = sym_helper__(pLFR,A,B,C,D)
     order_nr = ordernr__(pLFR,varname)
-    
+
 end
 
 

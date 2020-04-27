@@ -145,7 +145,7 @@ methods
             paffmat = PAffineMatrix(N.Theta, N.channels, N.vars, 'type', PAffineMatrix.TYPE_RIGHT);
             
             try
-                warning('Checking the correctness of the algorithm... Delete me if everything seems correct (2020-04-09).')
+                % warning('Checking the correctness of the algorithm... Delete me if everything seems correct (2020-04-09).')
                 sample = randn(numel(N.vars),1);
                 
                 S.type = '()';

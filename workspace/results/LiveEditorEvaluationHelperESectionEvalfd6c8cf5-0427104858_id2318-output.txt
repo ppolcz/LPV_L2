@@ -1,0 +1,1296 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/LPV_L2/workspace/results/LiveEditorEvaluationHelperESectionEvalfd6c8cf5-0427104858_id2318-output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/LPV_L2/workspace/model2_ipend.m')">model2_ipend</a> called from evaluateCode
+│   Run ID = 2318
+│   Model parameters:
+│   m = 1
+│   M = 2
+│   L = 1
+│   g = 10
+│   b = 5
+│   I = 1.3333
+│   State and input bounds:
+│   veloc_max = 2
+│   theta_max = 0.4
+│   omega_max = 1.2
+│   w_max = 1
+│   ----------------------------------------------------
+│   - Stability check in random points
+│   - Stability check in corner points
+│   [   <strong>OK</strong>   ] A(p) was stable in all sample points
+args.minlfr = false;
+args.solver = 'mosek';
+args.Na = 'Na(p,dp)';
+args.cachesolvers = true;
+TMP_BIvQLYBqfFOwenhowBxT = pcz_dispFunctionName;
+│    
+│   │   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',25)">method5_proposed_approach:25</a> - [<strong>model generation</strong>]
+│   │   │    
+│   │   │   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:57 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form (m = 15) of [ A(p) ; C(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Generator form (m = 15) of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.016966 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from LiveEditorEvaluationHelperESectionEvalc4fe700d:60
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 18x18, where (18 = 6*3)
+│   │   │   │   │   - Error computed for M: 36x18, where (36 = 12*3). Error: 8.424756e-16
+│   │   │   │   └ 0.62811 [sec]
+│   │   │   └ 1.5691 [sec]
+│   │   │    
+│   │   │   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:62 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Minimal generator form of [ A(p) ; C(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator form of [ A(p) ; C(p) ] is OK
+│   │   │   └ 0.01448 [sec]
+│   │   │    
+│   │   │   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:75 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form of [ B(p) ; D(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.009005 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from LiveEditorEvaluationHelperESectionEvalc4fe700d:78
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 5x4, where (5 = 5*1)
+│   │   │   │   │   - Error computed for M: 10x4, where (10 = 10*1). Error: 2.369901e-16
+│   │   │   │   └ 0.26943 [sec]
+│   │   │   └ 0.70959 [sec]
+│   │   │    
+│   │   │   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:80 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Minimal generator form of [ B(p) ; D(p) ] is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal error: 0
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator form of [ B(p) ; D(p) ] is OK
+│   │   │   └ 0.009093 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from LiveEditorEvaluationHelperESectionEvalc4fe700d:116
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   │   │   - Kernel computed for M: 48x46, where (48 = 12*4)
+│   │   │   │   │   - Error computed for M: 96x46, where (96 = 24*4). Error: 5.929535e-15
+│   │   │   │   └ 1.0293 [sec]
+│   │   │   │   - Rank decision tolerance for `rref' increased to 1.02141e-13
+│   │   │   │   - Rank decision tolerance for `rref' increased to 1.02141e-12
+│   │   │   └ 2.4427 [sec]
+│   │   │    
+│   │   │   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:117 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_fhzero_report.m',0)">pcz_fhzero_report</a>) - [<strong>Minimal generator for PI_a(p) is OK</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   │   │   - Maximal difference: 1.13732e-11
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Minimal generator for PI_a(p) is OK
+│   │   │   └ 0.04572 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_affine_annihilator_for_LFR.m')">P_affine_annihilator_for_LFR</a> called from LiveEditorEvaluationHelperESectionEvalc4fe700d:143
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/ftools/v11/P_affine_annihilator_for_LFR.m',52)">P_affine_annihilator_for_LFR:52</a>
+│   │   │   │   │   - Kernel computed for M: 54x52, where (54 = 18*3)
+│   │   │   │   │   - Error computed for M: 108x52, where (108 = 36*3). Error: 8.135942e-15
+│   │   │   │   └ 0.59932 [sec]
+│   │   │   └ 1.592 [sec]
+│   │   │    
+│   │   │   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:144 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_gsszero_report.m',0)">pcz_gsszero_report</a>) - [<strong>Annihilator N</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 8.13594e-13.
+│   │   │   │   - Maximal difference: 6.11758e-15
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Annihilator N
+│   │   │   └ 0.047374 [sec]
+│   │   │    
+│   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_affine_annihilator_for_LFR.m')">P_affine_annihilator_for_LFR</a> called from LiveEditorEvaluationHelperESectionEvalc4fe700d:151
+│   │   │   │    
+│   │   │   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/ftools/v11/P_affine_annihilator_for_LFR.m',52)">P_affine_annihilator_for_LFR:52</a>
+│   │   │   │   │   - Kernel computed for M: 252x252, where (252 = 63*4)
+│   │   │   │   │   - Error computed for M: 504x252, where (504 = 126*4). Error: 1.847666e-13
+│   │   │   │   └ 2.3178 [sec]
+│   │   │   └ 5.6595 [sec]
+│   │   │    
+│   │   │   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:152 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_gsszero_report.m',0)">pcz_gsszero_report</a>) - [<strong>Annihilator Na</strong>]
+│   │   │   │   [  [INFO]  ] Tolerance: 1.84767e-11.
+│   │   │   │   - Maximal difference: 1.24856e-13
+│   │   │   │   ----------------------------------------------------
+│   │   │   │   [   <strong>OK</strong>   ] Annihilator Na
+│   │   │   └ 0.022771 [sec]
+│   │   └ 37.8747 [sec]
+│   │   - nr. of variables: 2347
+│   │    
+│   │   ┌ <a href="matlab:opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',205)">method5_proposed_approach:205</a> - [<strong>Solve LMIs</strong>]
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2347            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 72              
+  Integer variables      : 0               
+
+Optimizer started.
+Presolve started.
+Linear dependency checker started.
+Linear dependency checker terminated.
+Eliminator - tries                  : 0                 time                   : 0.00            
+Lin. dep.  - tries                  : 1                 time                   : 0.01            
+Lin. dep.  - number                 : 0               
+Presolve terminated. Time: 0.04    
+Problem
+  Name                   :                 
+  Objective sense        : min             
+  Type                   : CONIC (conic optimization problem)
+  Constraints            : 2347            
+  Cones                  : 0               
+  Scalar variables       : 1               
+  Matrix variables       : 72              
+  Integer variables      : 0               
+
+Optimizer  - threads                : 4               
+Optimizer  - solved problem         : the primal      
+Optimizer  - Constraints            : 2347
+Optimizer  - Cones                  : 0
+Optimizer  - Scalar variables       : 1                 conic                  : 0               
+Optimizer  - Semi-definite variables: 72                scalarized             : 43352           
+Factor     - setup time             : 1.53              dense det. time        : 0.00            
+Factor     - ML order time          : 0.17              GP order time          : 0.00            
+Factor     - nonzeros before factor : 2.43e+06          after factor           : 2.43e+06        
+Factor     - dense dim.             : 0                 flops                  : 1.75e+10        
+ITE PFEAS    DFEAS    GFEAS    PRSTATUS   POBJ              DOBJ              MU       TIME  
+0   6.4e+01  1.5e+00  3.1e+01  0.00e+00   -1.280020805e+02  0.000000000e+00   1.0e+00  2.27  
+1   3.4e+01  7.9e-01  1.6e+01  -8.10e+00  -1.669730875e+01  -1.788093038e-01  5.3e-01  19.37 
+2   4.9e+00  1.1e-01  8.5e-01  -9.20e-01  -6.537152832e+01  -6.142926110e+00  7.6e-02  27.98 
+3   6.8e-01  1.6e-02  8.3e-01  6.10e-01   -5.455436532e+00  -3.242075318e+00  1.1e-02  36.59 
+4   1.3e-01  3.0e-03  6.8e-01  2.27e+00   -1.235388064e+00  -1.078166130e+00  2.0e-03  45.20 
+5   1.7e-02  3.9e-04  4.7e-01  1.21e+00   -8.537364864e-01  -8.383938554e-01  2.6e-04  54.01 
+6   2.9e-03  6.8e-05  2.5e-01  7.73e-01   -8.039966556e-01  -8.010017857e-01  4.5e-05  62.81 
+7   1.3e-03  3.1e-05  1.5e-01  6.44e-01   -7.964538304e-01  -7.947339924e-01  2.1e-05  71.28 
+8   3.8e-04  8.8e-06  6.4e-02  5.98e-01   -7.896007858e-01  -7.889547786e-01  5.9e-06  79.70 
+9   6.5e-05  1.5e-06  1.7e-02  4.39e-01   -7.840682175e-01  -7.838815758e-01  1.0e-06  88.30 
+10  5.9e-05  1.4e-06  1.5e-02  4.77e-02   -7.837476292e-01  -7.835655338e-01  9.2e-07  96.72 
+11  2.5e-05  5.9e-07  6.7e-03  3.15e-02   -7.807991245e-01  -7.806702078e-01  3.9e-07  105.18
+12  5.1e-06  1.2e-07  1.5e-03  -1.99e-02  -7.753868949e-01  -7.753270099e-01  7.8e-08  113.71
+13  1.8e-06  4.2e-08  5.6e-04  -2.03e-02  -7.713908961e-01  -7.713523261e-01  2.8e-08  122.17
+14  7.2e-07  1.7e-08  2.6e-04  1.38e-01   -7.682442406e-01  -7.682202567e-01  1.1e-08  130.59
+15  2.0e-07  4.6e-09  1.0e-04  3.28e-01   -7.650738824e-01  -7.650640152e-01  2.9e-09  139.02
+16  8.6e-08  2.0e-09  6.1e-05  4.36e-01   -7.632170827e-01  -7.632116608e-01  1.3e-09  147.48
+17  3.4e-08  7.9e-10  3.2e-05  4.71e-01   -7.613291378e-01  -7.613264640e-01  5.0e-10  155.99
+18  2.5e-08  5.5e-10  2.5e-05  5.20e-01   -7.606042402e-01  -7.606021710e-01  3.8e-10  164.42
+19  8.6e-09  3.0e-10  1.1e-05  5.32e-01   -7.585991430e-01  -7.585987172e-01  6.2e-11  173.07
+20  8.6e-09  3.0e-10  1.1e-05  -7.10e-01  -7.585991430e-01  -7.585987172e-01  6.2e-11  182.20
+Optimizer terminated. Time: 183.06  
+
+
+Interior-point solution summary
+  Problem status  : PRIMAL_AND_DUAL_FEASIBLE
+  Solution status : OPTIMAL
+  Primal.  obj: -7.5859914297e-01   nrm: 1e+00    Viol.  con: 4e-05    var: 0e+00    barvar: 0e+00  
+  Dual.    obj: -7.5859871724e-01   nrm: 1e+03    Viol.  con: 0e+00    var: 4e-12    barvar: 2e-08  
+Optimizer summary
+  Optimizer                 -                        time: 183.06  
+    Interior-point          - iterations : 21        time: 182.94  
+      Basis identification  -                        time: 0.00    
+        Primal              - iterations : 0         time: 0.00    
+        Dual                - iterations : 0         time: 0.00    
+        Clean primal        - iterations : 0         time: 0.00    
+        Clean dual          - iterations : 0         time: 0.00    
+    Simplex                 -                        time: 0.00    
+      Primal simplex        - iterations : 0         time: 0.00    
+      Dual simplex          - iterations : 0         time: 0.00    
+    Mixed integer           - relaxations: 0         time: 0.00    
+
+│   │   │   [   <strong>OK</strong>   ] Successfully solved (MOSEK). Solver time: <strong>184.098</strong>
+│   │   │   [   <strong>OK</strong>   ] The solution is feasible. Tolerance: 1e-06.
+│   │   │    
+│   │   │   - Model: ipend(1,2,1,10,5;2,0.4,1.2;1)
+│   │   │   - Overall time: 233.667
+│   │   │   - <strong>Gamma = 0.870976</strong> 
+│   │   │   - size(N)  =  14, size(PI)   =  13
+│   │   │   - size(Na) =  50, size(PI_a) =  36
+│   │   │   - Saved to workspace: Q, dQ, PI_x, gamma
+│   │   │   Q(p1,p2,p3) = 1 * Q0 + p1 * Q1 + p2 * Q2 + p3 * Q3
+│   │   │    
+│   │   │   Q0 = [     8.7659  9.7874 -3.6045  9.3076  2.1337 -1.9272  8.9889 -15.994 -12.937 -2.4823  5.9242 -12.348  3.4617
+│   │   │              9.7874  109.27 -1.8547  -88.75 -117.97 -87.796  28.264 -67.107 -38.959  -95.45 -3.3105  56.687  66.602
+│   │   │             -3.6045 -1.8547  0.7431  4.5033  1.3419  1.6248  -28.61 -7.4972  2.1593  2.6031  4.6478  0.4708  -0.958
+│   │   │              9.3076  -88.75  4.5033 -43.888  192.48  328.31 -80.057   213.1  66.263  115.37   3.867 -75.006  -92.79
+│   │   │              2.1337 -117.97  1.3419  192.48  150.42 -63.631 -132.14  56.157  33.627   11.93  1.3564 -190.19  50.994
+│   │   │             -1.9272 -87.796  1.6248  328.31 -63.631  135.22 -138.24  19.987   40.72  95.626 -0.9686  135.36 -97.331
+│   │   │              8.9889  28.264  -28.61 -80.057 -132.14 -138.24 -36.699 -157.02  11.892 -4.5013 -9.8812  -15.37 -54.098
+│   │   │             -15.994 -67.107 -7.4972   213.1  56.157  19.987 -157.02  22.755 -57.685 -116.67  0.4233 -32.734  243.92
+│   │   │             -12.937 -38.959  2.1593  66.263  33.627   40.72  11.892 -57.685 -9.4399 -5.4335 -1.3256 -63.838 -28.738
+│   │   │             -2.4823  -95.45  2.6031  115.37   11.93  95.626 -4.5013 -116.67 -5.4335  11.376 -0.8385 -91.813 -14.989
+│   │   │              5.9242 -3.3105  4.6478   3.867  1.3564 -0.9686 -9.8812  0.4233 -1.3256 -0.8385 -4.2095 -7.5087 -1.2912
+│   │   │             -12.348  56.687  0.4708 -75.006 -190.19  135.36  -15.37 -32.734 -63.838 -91.813 -7.5087  54.559  97.612
+│   │   │              3.4617  66.602  -0.958  -92.79  50.994 -97.331 -54.098  243.92 -28.738 -14.989 -1.2912  97.612  6.0373 ]
+│   │   │   - LiveEditorEvaluationHelperESectionEvalc4fe700d:238
+│   │   │    
+│   │   │   Q1 = [    -2.6195 -3.9873  1.2657  -19.95  0.0755   15.63 -7.4344  12.362  7.1944  0.5756 -1.1215 -10.324  0.0371
+│   │   │             -3.9873 -68.045 -0.5666  148.15  67.645  97.405 -18.136 -18.773  14.461  51.416  10.419 -118.11 -45.317
+│   │   │              1.2657 -0.5666  2.9368 -6.1248 -0.3931 -0.9883  23.249 -0.8165 -5.2629  0.4864  4.2758 -10.504 -6.0122
+│   │   │              -19.95  148.15 -6.1248 -197.42 -188.36 -395.81  31.946 -41.712   31.27 -67.171  6.7451  145.41  49.332
+│   │   │              0.0755  67.645 -0.3931 -188.36 -78.086   97.99  41.868  5.3915  25.327 -23.013  18.985  268.35  0.2679
+│   │   │               15.63  97.405 -0.9883 -395.81   97.99 -6.5553  51.352  29.419  -19.64 -25.796  4.2475 -50.948  49.211
+│   │   │             -7.4344 -18.136  23.249  31.946  41.868  51.352  57.174   81.02 -6.9921 -39.116  20.207 -21.499  17.169
+│   │   │              12.362 -18.773 -0.8165 -41.712  5.3915  29.419   81.02 -60.992 -8.8106    60.2  4.7356  13.708 -74.558
+│   │   │              7.1944  14.461 -5.2629   31.27  25.327  -19.64 -6.9921 -8.8106  6.7741 -2.6772 -4.3719  74.212 -1.4154
+│   │   │              0.5756  51.416  0.4864 -67.171 -23.013 -25.796 -39.116    60.2 -2.6772 -9.8928  4.8453  99.421  4.9378
+│   │   │             -1.1215  10.419  4.2758  6.7451  18.985  4.2475  20.207  4.7356 -4.3719  4.8453  7.2812   12.06 -7.1199
+│   │   │             -10.324 -118.11 -10.504  145.41  268.35 -50.948 -21.499  13.708  74.212  99.421   12.06 -116.95 -85.596
+│   │   │              0.0371 -45.317 -6.0122  49.332  0.2679  49.211  17.169 -74.558 -1.4154  4.9378 -7.1199 -85.596  6.9757 ]
+│   │   │   - LiveEditorEvaluationHelperESectionEvalc4fe700d:238
+│   │   │    
+│   │   │   Q2 = [    -4.5309 -12.342  2.9928  1.9342  24.046  4.6404 -0.5677  7.5795 -1.1115  3.0744  0.8736  -0.438  -0.169
+│   │   │             -12.342 -66.323 -3.5729  5.9435  43.932   67.48 -25.733  49.627  16.696  63.495 -0.5146  15.803 -57.822
+│   │   │              2.9928 -3.5729 -3.3515 -3.9898 -2.4269 -3.1158 -1.5003 -8.3388 -0.3563  1.1358 -4.2218  1.8891 -2.1332
+│   │   │              1.9342  5.9435 -3.9898 -66.047 -187.74  31.185  2.9228 -36.022 -74.539 -90.546  -2.915 -17.457  66.145
+│   │   │              24.046  43.932 -2.4269 -187.74  45.114  45.194  62.873 -65.805 -6.5179 -31.755  9.2958  28.123  37.672
+│   │   │              4.6404   67.48 -3.1158  31.185  45.194  121.63  7.1157 -5.6877  25.412 -27.152 -3.3404 -65.245  32.539
+│   │   │             -0.5677 -25.733 -1.5003  2.9228  62.873  7.1157  18.097  22.719 -12.887  70.754  7.7154  19.068 -62.243
+│   │   │              7.5795  49.627 -8.3388 -36.022 -65.805 -5.6877  22.719 -57.289   64.18  2.4187 -7.8273 -38.196 -4.8616
+│   │   │             -1.1115  16.696 -0.3563 -74.539 -6.5179  25.412 -12.887   64.18  152.47  17.626  8.2774  62.495  8.7758
+│   │   │              3.0744  63.495  1.1358 -90.546 -31.755 -27.152  70.754  2.4187  17.626  -14.95  2.6712  41.242  19.961
+│   │   │              0.8736 -0.5146 -4.2218  -2.915  9.2958 -3.3404  7.7154 -7.8273  8.2774  2.6712 -14.554  12.313  1.3817
+│   │   │              -0.438  15.803  1.8891 -17.457  28.123 -65.245  19.068 -38.196  62.495  41.242  12.313 -60.712 -38.969
+│   │   │              -0.169 -57.822 -2.1332  66.145  37.672  32.539 -62.243 -4.8616  8.7758  19.961  1.3817 -38.969  2.0271 ]
+│   │   │   - LiveEditorEvaluationHelperESectionEvalc4fe700d:238
+│   │   │    
+│   │   │   Q3 = [     0.0929  0.1266  0.3122 -0.4225 -0.3024   0.104 -0.2762  3.2476 -0.3349 -0.5127  0.2344  0.1506  0.5424
+│   │   │              0.1266 -0.2653  1.6555 -0.3148  0.5322  1.4115 -1.2249  -2.731  0.3099 -0.2325 -0.5169 -0.9971  0.4656
+│   │   │              0.3122  1.6555  5.0087 -0.0668 -1.1067  1.2848  1.9114  1.5922 -0.6653  1.2085   0.337 -1.4742  -1.284
+│   │   │             -0.4225 -0.3148 -0.0668  3.7948  2.2596 -4.6905  4.7794  4.1218 -1.3906  2.8714  1.2573  2.3241 -3.6535
+│   │   │             -0.3024  0.5322 -1.1067  2.2596 -1.1808  -5.254 -2.6378  11.664 -2.0739  1.4463  1.3194  1.5342 -1.8161
+│   │   │               0.104  1.4115  1.2848 -4.6905  -5.254  0.8603 -0.7428 -3.0312  0.4819 -3.2364  1.6544 -0.3534  3.2577
+│   │   │             -0.2762 -1.2249  1.9114  4.7794 -2.6378 -0.7428  5.9725  0.3458 -0.0427 -0.4501 -1.0579 -1.7106  3.8724
+│   │   │              3.2476  -2.731  1.5922  4.1218  11.664 -3.0312  0.3458  -9.874  4.4798  2.8814  3.3075 -5.9577  4.0056
+│   │   │             -0.3349  0.3099 -0.6653 -1.3906 -2.0739  0.4819 -0.0427  4.4798 -0.2865   0.528 -0.2815 -0.7391 -0.6001
+│   │   │             -0.5127 -0.2325  1.2085  2.8714  1.4463 -3.2364 -0.4501  2.8814   0.528  2.0875  2.6367  1.1663 -1.7024
+│   │   │              0.2344 -0.5169   0.337  1.2573  1.3194  1.6544 -1.0579  3.3075 -0.2815  2.6367  0.5819  0.9425 -2.4193
+│   │   │              0.1506 -0.9971 -1.4742  2.3241  1.5342 -0.3534 -1.7106 -5.9577 -0.7391  1.1663  0.9425 -3.1918 -0.8031
+│   │   │              0.5424  0.4656  -1.284 -3.6535 -1.8161  3.2577  3.8724  4.0056 -0.6001 -1.7024 -2.4193 -0.8031  1.3879 ]
+│   │   │   - LiveEditorEvaluationHelperESectionEvalc4fe700d:238
+│   │   │    
+│   │   │   p_lim = [       0.974    1.000
+│   │   │                   0.921    1.000
+│   │   │                  -0.467    0.467 ]
+│   │   │   - LiveEditorEvaluationHelperESectionEvalc4fe700d:241
+│   │   │    
+│   │   │   dp_lim = [      -0.158    0.158
+│   │   │                   -0.467    0.467
+│   │   │                   -4.000    4.000 ]
+│   │   │   - LiveEditorEvaluationHelperESectionEvalc4fe700d:242
+│   │   └ 931.3661 [sec]
+Unrecognized function or variable 'TMP_BIvQLYBqfFOwenhowBxT'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('method5_proposed_approach', '/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m', 270)" style="font-weight:bold">method5_proposed_approach</a> (<a href="matlab: opentoline('/home/ppolcz/_/8_published/LPV_L2/workspace/method5_proposed_approach.m',270,0)">line 270</a>)
+pcz_dispFunctionEnd(TMP_BIvQLYBqfFOwenhowBxT);
+
+pcz_dispFunctionEnd(TMP_UFTXCLDbxHBtWRStETWI);
+│   └ 892.786 [sec]
+if system_dependent('IsDebugMode')==1, dbquit all; end
+N
+
+N = 
+
+PLFR object (14 x 13), uncertainty block: (39 x 39)
+Dimensions: ny = 14, nu = 13, m1 = 39.
+-- 
+Uncertainty blocks (globally (39 x 39)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds             Rate Bounds
+ p1    13x13 LTI       r           s        [0.97355,1]        [-0.15745,0.15745]
+ p2    13x13 LTI       r           s        [0.92106,1]        [-0.4673,0.4673]
+ p3    13x13 LTI       r           s        [-0.4673,0.4673]   [-4,4]
+Blocks (vars):        p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)
+paffmat(N)
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plfr/paffmat', '/home/ppolcz/_/7_ftools/ftools/v11/@plfr/paffmat.m', 20)" style="font-weight:bold">plfr/paffmat</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/ftools/v11/@plfr/paffmat.m',20,0)">line 20</a>)
+if isa(xi,'lfr')
+} 
+help plfr/paffmat
+  plfr2paffine
+   
+   File: plfr2paffine.m
+   Directory: 1_PhD_projects/24_passivity_ujsag/algebrai_probalkozasok_atalakitasok
+   Author: Peter Polcz (ppolcz@gmail.com) 
+   
+   Created on 2019. November 06. (2019a)
+
+edit plfr/paffmat
+p
+ 
+p =
+ 
+ p1
+ p2
+ p3
+ 
+N_paffmat = paffmat(N,[1;p])
+
+N_paffmat = 
+
+PAffineMatrix object, RIGHT-typed: X = Theta*(Im o xi), where dim(xi) = 4
+Theta: [14x52], values between (-0.620704, 0.70116)
+Size of the matrix:  14x13
+Channels (xi):       1, p1, p2, p3 (sym)
+Substitute into:     p1, p2, p3 (sym)
+
+N_paffmat * PI_x
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('reshape')" style="font-weight:bold">reshape</a>
+To RESHAPE the number of elements must not change.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('kron', '/home/ppolcz/_/include/matlab/tensorlab/kron.m', 49)" style="font-weight:bold">kron</a> (<a href="matlab: opentoline('/home/ppolcz/_/include/matlab/tensorlab/kron.m',49,0)">line 49</a>)
+        A = reshape(A,[1 I 1 J]);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('PAffineMatrix/mtimes', '/home/ppolcz/_/7_ftools/ftools/v11/@PAffineMatrix/mtimes.m', 19)" style="font-weight:bold"> * </a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/ftools/v11/@PAffineMatrix/mtimes.m',19,0)">line 19</a>)
+    ret_Theta = X.Theta * kron(Y,X.Is);
+} 
+N_paffmat(1,3,4) * PI_x(1,2,3)
+
+ans =
+
+   -0.1207   -0.1606   -0.1497
+    0.0693   -0.1903    0.1641
+   -0.0689    0.0968   -0.0458
+    0.1802    0.0121    0.3343
+   -0.0835   -0.2036   -0.0683
+   -0.1957   -0.2779    0.6019
+   -0.0662   -0.0954   -0.1187
+   -0.0990    0.2091   -0.0792
+   -0.0676    0.1191   -0.0106
+    0.0985    0.0013   -0.6233
+   -0.0502   -0.4530   -0.2381
+    0.0439    0.1672    0.4574
+    0.3835   -0.3182    0.0676
+    0.2172    0.1893    0.0288
+
+N(1,3,4) * PI_x(1,2,3)
+
+ans =
+
+   -0.1207   -0.1606   -0.1497
+    0.0693   -0.1903    0.1641
+   -0.0689    0.0968   -0.0458
+    0.1802    0.0121    0.3343
+   -0.0835   -0.2036   -0.0683
+   -0.1957   -0.2779    0.6019
+   -0.0662   -0.0954   -0.1187
+   -0.0990    0.2091   -0.0792
+   -0.0676    0.1191   -0.0106
+    0.0985    0.0013   -0.6233
+   -0.0502   -0.4530   -0.2381
+    0.0439    0.1672    0.4574
+    0.3835   -0.3182    0.0676
+    0.2172    0.1893    0.0288
+
+N(1,3,4) * PI_x(1,3,4)
+
+ans =
+
+   1.0e-12 *
+
+    0.1140    0.2585    0.1677
+   -0.2136   -0.1793    0.0585
+   -0.1205    0.0100    0.0894
+   -0.0518   -0.1181    0.0473
+    0.0538   -0.0143   -0.0227
+   -0.0230    0.0143    0.0038
+   -0.0069   -0.0758    0.0602
+   -0.0154    0.0323    0.0102
+   -0.0119   -0.0548    0.0478
+    0.0183   -0.0369    0.0062
+    0.0209   -0.0369    0.0229
+   -0.0017    0.0032    0.0122
+   -0.0347   -0.2934    0.0045
+   -0.0522    0.0606   -0.0781
+
+N_paffmat(1,3,4) * PI_x(1,3,4)
+
+ans =
+
+   1.0e-12 *
+
+    0.1141    0.2584    0.1677
+   -0.2136   -0.1793    0.0585
+   -0.1201    0.0098    0.0894
+   -0.0519   -0.1181    0.0471
+    0.0538   -0.0143   -0.0229
+   -0.0231    0.0140    0.0041
+   -0.0068   -0.0757    0.0593
+   -0.0154    0.0323    0.0106
+   -0.0120   -0.0552    0.0478
+    0.0183   -0.0369    0.0062
+    0.0209   -0.0380    0.0229
+   -0.0017    0.0032    0.0141
+   -0.0349   -0.2934    0.0045
+   -0.0519    0.0604   -0.0781
+
+N_cell = N_paffmat.get_matrices
+
+N_cell =
+
+  Columns 1 through 11
+
+   -0.0000   -0.0000    0.0000    0.6248    0.4166    0.1399   -0.0233    0.0826    0.3683    0.2073    0.0032
+         0    0.0000   -0.0000   -0.0801    0.7012   -0.2009    0.0158   -0.0699   -0.2540   -0.2438   -0.0231
+         0    0.0000   -0.0000    0.1805    0.0765    0.1880    0.0115    0.0473   -0.6207    0.0025   -0.4137
+         0    0.0000    0.0000    0.2035   -0.1620   -0.3814   -0.0611    0.6858   -0.3005   -0.0527    0.1200
+         0   -0.0000    0.0000   -0.1511   -0.0101    0.5150   -0.1050    0.4497    0.1346   -0.0246   -0.0579
+         0    0.0000    0.0000   -0.0042   -0.0105    0.3352   -0.1040    0.0938    0.2053   -0.4583   -0.1909
+         0    0.0000    0.0000   -0.1424    0.1148    0.1974    0.0528   -0.1244   -0.0654    0.2799   -0.1320
+         0    0.0000    0.0000    0.1815   -0.1406   -0.2242   -0.2897   -0.2527    0.1408   -0.3904   -0.0781
+         0    0.0000    0.0000    0.0632   -0.0499   -0.1733   -0.0517   -0.2622   -0.0177    0.0475   -0.1102
+         0    0.0000   -0.0000   -0.0704    0.0369    0.0845   -0.5924   -0.0389   -0.1578    0.2456    0.0688
+         0    0.0000    0.0000    0.0200   -0.0795   -0.1221   -0.1409   -0.1502   -0.0287    0.1668   -0.0897
+         0   -0.0000   -0.0000   -0.0331    0.0397    0.0419   -0.0389    0.0278   -0.0392    0.0333    0.0463
+         0    0.0000   -0.0000    0.2749   -0.2069    0.4414    0.0595   -0.3008   -0.4114   -0.1411    0.3695
+         0   -0.0000   -0.0000   -0.1838    0.4305    0.0676   -0.0910    0.0453   -0.0619   -0.0932    0.2949
+
+  Columns 12 through 22
+
+    0.0204   -0.0186    0.0000   -0.0595    0.0000    0.0000    0.0000   -0.3112   -0.0000    0.0000   -0.0000
+   -0.3672    0.0829   -0.0000   -0.1002    0.0000   -0.0000   -0.0000    0.0131   -0.0000    0.0000    0.0000
+    0.2566    0.1672   -0.0000   -0.0109    0.0000    0.0000   -0.0000   -0.1054    0.0000    0.0000    0.0000
+   -0.0731   -0.3100         0    0.0231    0.0000    0.0000   -0.0000   -0.0181   -0.0000   -0.0000    0.0000
+   -0.1978    0.3331    0.0000    0.0014   -0.0000    0.0000    0.0000    0.3095    0.0000    0.0000   -0.0000
+    0.0039   -0.4550    0.0000    0.0015    0.0000    0.0000   -0.0000    0.0073   -0.0000    0.0000    0.0000
+   -0.1015   -0.6090         0   -0.0164    0.0000   -0.0000   -0.0000    0.0764   -0.0000    0.0000    0.0000
+    0.0524    0.1026         0    0.0201    0.0000    0.0000    0.0000   -0.1018    0.0000   -0.0000   -0.0000
+   -0.0498   -0.2888   -0.0000    0.0071    0.0000   -0.0000   -0.0000    0.3727   -0.0000    0.0000   -0.0000
+   -0.0539   -0.0572    0.0000   -0.0053   -0.0000   -0.0000   -0.0000   -0.1655    0.0000    0.0000         0
+   -0.1102    0.2040    0.0000    0.0114   -0.0000   -0.0000   -0.0000    0.3828   -0.0000   -0.0000   -0.0000
+    0.0288   -0.0598         0   -0.0057    0.0000    0.0000   -0.0000   -0.0927    0.0000    0.0000    0.0000
+   -0.1568   -0.0426         0    0.0296   -0.0000    0.0000   -0.0000   -0.0787   -0.0000    0.0000    0.0000
+    0.4454   -0.0768   -0.0000   -0.0615    0.0000   -0.0000    0.0000    0.3443    0.0000   -0.0000    0.0000
+
+  Columns 23 through 33
+
+    0.0000   -0.0000    0.0250   -0.0000   -0.0526   -0.0200    0.0118   -0.0345   -0.3137    0.0204   -0.0118
+   -0.0000   -0.0000    0.0480    0.0000    0.0363    0.0287   -0.0100   -0.0522    0.0670   -0.3672    0.0100
+    0.0000   -0.0000    0.0310    0.0000    0.0887   -0.0269    0.0068    0.0200   -0.0751    0.2566   -0.0068
+   -0.0000   -0.0000   -0.0299    0.0000    0.0429    0.0545    0.0980   -0.0068   -0.1854   -0.0731   -0.0980
+    0.0000    0.0000    0.2277    0.0000   -0.0192   -0.0736    0.0642    0.2291   -0.1584   -0.1978   -0.0642
+    0.0000   -0.0000   -0.2531   -0.0000   -0.0293   -0.0479    0.0134   -0.2516   -0.0031    0.0039   -0.0134
+    0.0000   -0.0000    0.0405   -0.0000    0.0093   -0.0282   -0.0178    0.0241    0.0660   -0.1015    0.0178
+   -0.0000   -0.0000    0.1689   -0.0000   -0.0201    0.0320   -0.0361    0.1890   -0.0797    0.0524    0.0361
+   -0.0000   -0.0000    0.3526   -0.0000    0.0025    0.0248   -0.0375    0.3597   -0.4360   -0.0498    0.0375
+   -0.0000    0.0000   -0.0145    0.0000    0.0225   -0.0121   -0.0056   -0.0197    0.2358   -0.0539    0.0056
+   -0.0000    0.0000   -0.4403    0.0000    0.0041    0.0174   -0.0215   -0.4289   -0.4028   -0.1102    0.0215
+    0.0000    0.0000    0.1858    0.0000    0.0056   -0.0060    0.0040    0.1801    0.1257    0.0288   -0.0040
+    0.0000    0.0000   -0.0312    0.0000    0.0588   -0.0631   -0.0430   -0.0017   -0.1962   -0.1568    0.0430
+    0.0000   -0.0000    0.0141    0.0000    0.0088   -0.0097    0.0065   -0.0474   -0.1605    0.4454   -0.0065
+
+  Columns 34 through 44
+
+    0.0233    0.0032    0.0072    0.0526    0.0200   -0.1034         0    0.0000    0.0027    0.0000    0.0000
+   -0.0158   -0.0231   -0.0057   -0.0363   -0.0287    0.1375         0   -0.0000   -0.0118   -0.0000   -0.0000
+   -0.0115   -0.4137   -0.0175   -0.0887    0.0269   -0.0004   -0.0000   -0.0000   -0.0239    0.0000    0.0000
+    0.0611    0.1200    0.0355   -0.0429   -0.0545   -0.0471   -0.0000         0    0.0443    0.0000   -0.0000
+    0.1050   -0.0579   -0.0317    0.0192    0.0736   -0.0972    0.0000   -0.0000   -0.0476    0.0000   -0.0000
+    0.1040   -0.1909    0.0610    0.0293    0.0479    0.4263   -0.0000    0.0000    0.0650    0.0000   -0.0000
+   -0.0528   -0.1320    0.0796   -0.0093    0.0282   -0.5457   -0.0000   -0.0000    0.0870   -0.0000    0.0000
+    0.2897   -0.0781    0.0524    0.0201   -0.0320   -0.1885   -0.0000    0.0000   -0.0147    0.0000   -0.0000
+    0.0517   -0.1102   -0.0636   -0.0025   -0.0248    0.2674   -0.0000    0.0000    0.0413   -0.0000   -0.0000
+    0.5924    0.0688   -0.1126   -0.0225    0.0121    0.0130         0    0.0000    0.0082   -0.0000    0.0000
+    0.1409   -0.0897    0.2017   -0.0041   -0.0174   -0.1481    0.0000    0.0000   -0.0291    0.0000    0.0000
+    0.0389    0.0463    0.6573   -0.0056    0.0060    0.1147    0.0000   -0.0000    0.0085   -0.0000    0.0000
+   -0.0595    0.3695    0.0055   -0.0588    0.0631    0.0487   -0.0000   -0.0000    0.0061   -0.0000   -0.0000
+    0.0910    0.2949   -0.0031   -0.0088    0.0097   -0.0341    0.0000   -0.0000    0.0110   -0.0000    0.0000
+
+  Columns 45 through 52
+
+   -0.0000    0.0045    0.1038    0.0000   -0.0000    0.0000    0.0000   -0.0000
+    0.0000    0.0062   -0.1063   -0.0000    0.0000    0.0000   -0.0000    0.0000
+   -0.0000    0.0064    0.0021   -0.0000   -0.0000    0.0000   -0.0000    0.0000
+    0.0000   -0.0088   -0.0998   -0.0000   -0.0000    0.0000   -0.0000    0.0000
+   -0.0000    0.0158   -0.1218    0.0000    0.0000   -0.0000    0.0000   -0.0000
+   -0.0000   -0.0040   -0.0320   -0.0000   -0.0000    0.0000    0.0000   -0.0000
+   -0.0000   -0.0074   -0.2658   -0.0000    0.0000    0.0000   -0.0000    0.0000
+   -0.0000    0.0671   -0.5789    0.0000   -0.0000    0.0000    0.0000   -0.0000
+    0.0000   -0.1049    0.3148    0.0000   -0.0000    0.0000   -0.0000    0.0000
+    0.0000   -0.1208    0.2586   -0.0000    0.0000   -0.0000   -0.0000    0.0000
+   -0.0000    0.2309    0.0187    0.0000   -0.0000   -0.0000   -0.0000    0.0000
+    0.0000    0.6487    0.1481   -0.0000   -0.0000    0.0000   -0.0000    0.0000
+    0.0000   -0.0005   -0.0924   -0.0000   -0.0000   -0.0000   -0.0000    0.0000
+    0.0000   -0.0140   -0.1273   -0.0000    0.0000    0.0000   -0.0000   -0.0000
+
+[~,N_cell] = N_paffmat.get_matrices
+
+N_cell =
+
+  1×4 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {14×13 double}    {14×13 double}    {14×13 double}    {14×13 double}
+
+Q_cell
+
+Q_cell =
+
+  1×4 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {13×13 double}    {13×13 double}    {13×13 double}    {13×13 double}
+
+Na_paffmat = paffmat(Na,[1;pdp])
+
+Na_paffmat = 
+
+PAffineMatrix object, RIGHT-typed: X = Theta*(Im o xi), where dim(xi) = 7
+Theta: [50x252], values between (-0.806958, 0.6583)
+Size of the matrix:  50x36
+Channels (xi):       1, p1, p2, p3, dp1, dp2, dp3 (sym)
+Substitute into:     p1, p2, p3, dp1, dp2, dp3 (sym)
+
+Na_paffmat(1,2,3,4,5,6) * PI_a(1,2,3,4,5,6)
+
+ans =
+
+   1.0e-10 *
+
+    0.0054   -0.1044   -0.0427    0.0942
+    0.0242   -0.0155   -0.0120   -0.0241
+    0.0081    0.0363    0.0440   -0.0443
+    0.0041    0.0323    0.0681   -0.0292
+   -0.0395   -0.0444    0.0098    0.0446
+   -0.0165   -0.0384   -0.0405   -0.0032
+    0.0131    0.0301    0.1044    0.0132
+   -0.0141   -0.0610    0.0136    0.0136
+    0.0048   -0.0425   -0.0295   -0.0241
+    0.0040    0.0455    0.1102   -0.0214
+    0.0139    0.0576   -0.0185   -0.0013
+    0.0045   -0.0194   -0.0341    0.0180
+    0.0147    0.0229    0.0180    0.0098
+   -0.0174   -0.0444   -0.0224    0.0019
+   -0.0101   -0.0450   -0.0779   -0.0078
+   -0.0031    0.0126    0.0286    0.0000
+   -0.0231   -0.0598   -0.0703    0.0035
+   -0.0000   -0.0029   -0.0124    0.0144
+    0.0005    0.0141    0.0224    0.0002
+   -0.0041   -0.0091    0.0474    0.0044
+    0.0036    0.0241    0.0050   -0.0102
+   -0.0049   -0.0176    0.0108    0.0034
+   -0.0085    0.0001    0.0559   -0.0135
+   -0.0079   -0.0064    0.0120   -0.0161
+   -0.0018    0.0079    0.0715    0.0110
+    0.0003    0.0265    0.0327    0.0166
+    0.0041    0.0198    0.0494    0.0040
+    0.0089    0.0261    0.0291   -0.0023
+   -0.0005    0.0023   -0.0097    0.0032
+   -0.0018   -0.0054   -0.0085   -0.0016
+   -0.0042   -0.0183    0.0356   -0.0027
+   -0.0048   -0.0069   -0.0180    0.0035
+   -0.0073   -0.0305   -0.0456   -0.0002
+   -0.0026   -0.0177   -0.0179    0.0001
+   -0.0000    0.0001   -0.0338   -0.0001
+   -0.0058   -0.0071    0.0169   -0.0033
+   -0.0049   -0.0221   -0.0089   -0.0043
+    0.0025    0.0212   -0.0019    0.0006
+    0.0018    0.0055   -0.0117   -0.0016
+   -0.0033   -0.0158   -0.0168    0.0001
+    0.0016    0.0125    0.0220   -0.0010
+    0.0005   -0.0003    0.0147    0.0021
+   -0.0031   -0.0037    0.0040   -0.0004
+   -0.0007    0.0044    0.0053   -0.0002
+   -0.0009   -0.0059   -0.0004   -0.0003
+    0.0040    0.0084    0.0126    0.0025
+    0.0013    0.0025   -0.0020   -0.0011
+   -0.0004   -0.0012    0.0025    0.0016
+    0.0017    0.0049    0.0056    0.0011
+   -0.0084   -0.0199   -0.0374    0.0069
+
+Na(1,2,3,4,5,6) * PI_a(1,2,3,4,5,6)
+
+ans =
+
+   1.0e-10 *
+
+    0.0054   -0.1044   -0.0427    0.0942
+    0.0242   -0.0155   -0.0120   -0.0241
+    0.0081    0.0363    0.0440   -0.0443
+    0.0041    0.0323    0.0681   -0.0291
+   -0.0395   -0.0444    0.0097    0.0446
+   -0.0165   -0.0383   -0.0405   -0.0032
+    0.0131    0.0301    0.1044    0.0132
+   -0.0141   -0.0610    0.0136    0.0136
+    0.0048   -0.0425   -0.0295   -0.0241
+    0.0040    0.0454    0.1102   -0.0214
+    0.0139    0.0576   -0.0185   -0.0013
+    0.0045   -0.0194   -0.0341    0.0180
+    0.0147    0.0229    0.0180    0.0098
+   -0.0174   -0.0444   -0.0225    0.0019
+   -0.0101   -0.0450   -0.0779   -0.0078
+   -0.0031    0.0126    0.0286    0.0000
+   -0.0231   -0.0598   -0.0703    0.0035
+   -0.0000   -0.0029   -0.0124    0.0144
+    0.0005    0.0141    0.0224    0.0002
+   -0.0041   -0.0091    0.0474    0.0044
+    0.0036    0.0241    0.0050   -0.0102
+   -0.0049   -0.0177    0.0108    0.0034
+   -0.0085    0.0001    0.0559   -0.0135
+   -0.0079   -0.0064    0.0120   -0.0161
+   -0.0018    0.0079    0.0715    0.0110
+    0.0003    0.0265    0.0327    0.0166
+    0.0041    0.0198    0.0494    0.0040
+    0.0089    0.0260    0.0290   -0.0023
+   -0.0005    0.0023   -0.0097    0.0032
+   -0.0018   -0.0054   -0.0085   -0.0016
+   -0.0042   -0.0183    0.0356   -0.0027
+   -0.0048   -0.0069   -0.0180    0.0035
+   -0.0073   -0.0305   -0.0456   -0.0002
+   -0.0026   -0.0177   -0.0179    0.0001
+   -0.0000    0.0001   -0.0338   -0.0001
+   -0.0058   -0.0071    0.0169   -0.0033
+   -0.0049   -0.0220   -0.0089   -0.0043
+    0.0025    0.0211   -0.0019    0.0006
+    0.0018    0.0055   -0.0117   -0.0016
+   -0.0033   -0.0158   -0.0168    0.0001
+    0.0016    0.0125    0.0221   -0.0010
+    0.0005   -0.0002    0.0147    0.0021
+   -0.0031   -0.0037    0.0040   -0.0004
+   -0.0007    0.0044    0.0053   -0.0002
+   -0.0009   -0.0059   -0.0004   -0.0003
+    0.0040    0.0084    0.0126    0.0025
+    0.0013    0.0025   -0.0020   -0.0011
+   -0.0004   -0.0012    0.0025    0.0016
+    0.0017    0.0049    0.0056    0.0011
+   -0.0084   -0.0199   -0.0374    0.0069
+
+[~,Na_cell] = Na_paffmat.get_matrices
+
+Na_cell =
+
+  1×7 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+  Columns 1 through 6
+
+    {50×36 double}    {50×36 double}    {50×36 double}    {50×36 double}    {50×36 double}    {50×36 double}
+
+  Column 7
+
+    {50×36 double}
+
+Delta 1
+{Unrecognized function or variable 'Delta'.
+} 
+Delta1
+{Unrecognized function or variable 'Delta1'.
+} 
+AC_plfr
+
+AC_plfr = 
+
+PLFR object (4 x 3), uncertainty block: (15 x 15)
+Dimensions: ny = 4, nu = 3, m1 = 15.
+-- 
+Uncertainty blocks (globally (15 x 15)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds             Rate Bounds
+ p1    2x2   LTI       r           s        [0.97355,1]        [-0.15745,0.15745]
+ p2    11x11 LTI       r           s        [0.92106,1]        [-0.4673,0.4673]
+ p3    2x2   LTI       r           s        [-0.4673,0.4673]   [-4,4]
+Blocks (vars):        p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)
+AC_plfr.Delta1
+{Unrecognized method, property, or field 'Delta1' for class 'plfr'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plfr/subsref', '/home/ppolcz/_/7_ftools/ftools/v11/@plfr/subsref.m', 52)" style="font-weight:bold">plfr/subsref</a> (<a href="matlab: opentoline('/home/ppolcz/_/7_ftools/ftools/v11/@plfr/subsref.m',52,0)">line 52</a>)
+            builtin('subsref', pLFR, S);
+} 
+AC_plfr.Delta
+ 
+ans =
+ 
+[ p1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[  0, p1,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[  0,  0, p2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[  0,  0,  0, p2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[  0,  0,  0,  0, p2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[  0,  0,  0,  0,  0, p2,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[  0,  0,  0,  0,  0,  0, p2,  0,  0,  0,  0,  0,  0,  0,  0]
+[  0,  0,  0,  0,  0,  0,  0, p2,  0,  0,  0,  0,  0,  0,  0]
+[  0,  0,  0,  0,  0,  0,  0,  0, p2,  0,  0,  0,  0,  0,  0]
+[  0,  0,  0,  0,  0,  0,  0,  0,  0, p2,  0,  0,  0,  0,  0]
+[  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, p2,  0,  0,  0,  0]
+[  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, p2,  0,  0,  0]
+[  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, p2,  0,  0]
+[  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, p3,  0]
+[  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, p3]
+ 
+size(ans)
+
+ans =
+
+    15    15
+
+F
+
+F =
+
+  4×4 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    { 3×3 double}    {3×1 double}    { 3×10 double}    {3×2 double}
+    { 1×3 double}    {[       0]}    { 1×10 double}    {1×2 double}
+    {15×3 double}    {0×0 double}    {15×10 double}    {0×0 double}
+    { 0×0 double}    {3×1 double}    { 0×0  double}    {3×2 double}
+
+│    
+│   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:57 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form (m = 15) of [ A(p) ; C(p) ] is OK</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   - Maximal error: 0
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] Generator form (m = 15) of [ A(p) ; C(p) ] is OK
+│   └ 0.017722 [sec]
+│    
+│   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:65 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form of [ B(p) ; D(p) ] is OK</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   - Maximal error: 0
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] Generator form of [ B(p) ; D(p) ] is OK
+│   └ 0.007273 [sec]
+F_initial
+
+F_initial =
+
+  4×4 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    { 4×3 double}    {4×1 double}    { 4×15 double}    {4×3 double}
+    { 0×0 double}    {0×0 double}    { 0×0  double}    {0×0 double}
+    {15×3 double}    {0×0 double}    {15×15 double}    {0×0 double}
+    { 0×0 double}    {3×1 double}    { 0×0  double}    {3×3 double}
+
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from LiveEditorEvaluationHelperESectionEvalc4fe700d:72
+│   │    
+│   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   - Kernel computed for M: 18x18, where (18 = 6*3)
+│   │   │   - Error computed for M: 36x18, where (36 = 12*3). Error: 1.018630e-15
+│   │   └ 0.56236 [sec]
+│   └ 1.4396 [sec]
+│    
+│   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:74 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Minimal generator form of [ A(p) ; C(p) ] is OK</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   - Maximal error: 0
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] Minimal generator form of [ A(p) ; C(p) ] is OK
+│   └ 0.004391 [sec]
+│    
+│   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m')">P_mingen_for_LFR</a> called from LiveEditorEvaluationHelperESectionEvalc4fe700d:82
+│   │    
+│   │   ┌ <a href="matlab:edit('/home/ppolcz/_/7_ftools/ftools/v11/P_constKer_for_LFR.m')">P_constKer_for_LFR</a> called from <a href="matlab:opentoline('/home/ppolcz/_/7_ftools/ftools/v11/P_mingen_for_LFR.m',61)">P_mingen_for_LFR:61</a>
+│   │   │   - Kernel computed for M: 5x4, where (5 = 5*1)
+│   │   │   - Error computed for M: 10x4, where (10 = 10*1). Error: 5.377991e-16
+│   │   └ 0.29704 [sec]
+│   └ 0.7523 [sec]
+│    
+│   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:84 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Minimal generator form of [ B(p) ; D(p) ] is OK</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   - Maximal error: 0
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] Minimal generator form of [ B(p) ; D(p) ] is OK
+│   └ 0.004238 [sec]
+F
+
+F =
+
+  4×4 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    { 3×3 double}    {3×1 double}    { 3×10 double}    {3×2 double}
+    { 1×3 double}    {[       0]}    { 1×10 double}    {1×2 double}
+    {15×3 double}    {0×0 double}    {15×10 double}    {0×0 double}
+    { 0×0 double}    {3×1 double}    { 0×0  double}    {3×2 double}
+
+│    
+│   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:57 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form (m = 15) of [ A(p) ; C(p) ] is OK</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   - Maximal error: 0
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] Generator form (m = 15) of [ A(p) ; C(p) ] is OK
+│   └ 0.003978 [sec]
+│    
+│   ┌ LiveEditorEvaluationHelperESectionEvalc4fe700d:65 (<a href="matlab:opentoline('/home/ppolcz/_/7_ftools/utilities/symbolical/pcz_lfrzero_report.m',0)">pcz_lfrzero_report</a>) - [<strong>Generator form of [ B(p) ; D(p) ] is OK</strong>]
+│   │   [  [INFO]  ] Tolerance: 1e-10.
+│   │   - Maximal error: 0
+│   │   ----------------------------------------------------
+│   │   [   <strong>OK</strong>   ] Generator form of [ B(p) ; D(p) ] is OK
+│   └ 0.003185 [sec]
+PI_x_initial
+
+PI_x_initial = 
+
+PLFR object (18 x 3), uncertainty block: (15 x 15)
+Dimensions: ny = 18, nu = 3, m1 = 15.
+-- 
+Uncertainty blocks (globally (15 x 15)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds             Rate Bounds
+ p1    2x2   LTI       r           s        [0.97355,1]        [-0.15745,0.15745]
+ p2    11x11 LTI       r           s        [0.92106,1]        [-0.4673,0.4673]
+ p3    2x2   LTI       r           s        [-0.4673,0.4673]   [-4,4]
+Blocks (vars):        p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)
+sym(PI_x_initial)
+ 
+ans =
+ 
+[               1,                   0,                   0]
+[               0,                   1,                   0]
+[               0,                   0,                   1]
+[               0, -(p1*p2)/(p2^2 - 7),                   0]
+[               0,      -p1/(p2^2 - 7),                   0]
+[               0,      -p2/(p2^2 - 7),                   0]
+[               0,                   0,     p2^2/(p2^2 - 7)]
+[               0,                   0,       p2/(p2^2 - 7)]
+[  -p2/(p2^2 - 7),                   0,                   0]
+[               0,                   0, -(p2*p3)/(p2^2 - 7)]
+[ p2^2/(p2^2 - 7),                   0,                   0]
+[   p2/(p2^2 - 7),                   0,                   0]
+[               0,     p2^2/(p2^2 - 7),                   0]
+[               0,       p2/(p2^2 - 7),                   0]
+[               0,                   0,     p2^2/(p2^2 - 7)]
+[               0,                   0,       p2/(p2^2 - 7)]
+[               0,                   0,      -p3/(p2^2 - 7)]
+[               0,                   0,      -p3/(p2^2 - 7)]
+ 
+edit plfr
+help outputname
+
+outputname not found.
+
+Use the Help browser search field to <a href="matlab:docsearch outputname">search the documentation</a>, or
+type "<a href="matlab:help help">help help</a>" for help command options, such as help for methods.
+
+blkdiag(eye(3), eye(4)*p1, eye(5)*p2)
+ 
+ans =
+ 
+[ 1, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 1, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 1,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0, p1,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0, p1,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0, p1,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0, p1,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0, p2,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0, p2,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0,  0, p2,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0,  0,  0, p2,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0, p2]
+ 
+Delta = blkdiag(eye(3), eye(4)*p1, eye(5)*p2)
+ 
+Delta =
+ 
+[ 1, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 1, 0,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 1,  0,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0, p1,  0,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0, p1,  0,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0, p1,  0,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0, p1,  0,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0, p2,  0,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0, p2,  0,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0,  0, p2,  0,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0,  0,  0, p2,  0]
+[ 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,  0, p2]
+ 
+num2cell(diag(Delta))
+
+ans =
+
+  12×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+    {1×1 sym}
+
+strjoin(cellfun(@(s) {char(s)}, num2cell(diag(Delta)),',')
+ strjoin(cellfun(@(s) {char(s)}, num2cell(diag(Delta)),',')
+                                                           ↑
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for
+mismatched delimiters.
+} 
+strjoin(cellfun(@(s) {char(s)}, num2cell(diag(Delta)),','))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cellfun')" style="font-weight:bold">cellfun</a>
+Input #3 is a char row vector. If it is intended as a parameter name, it must be either 'UniformOutput' or
+'ErrorHandler'. If it is intended as a data input, it must be a cell array.
+} 
+strjoin(cellfun(@(s) {char(s)}, num2cell(diag(Delta))),',')
+
+ans =
+
+    '1,1,1,p1,p1,p1,p1,p2,p2,p2,p2,p2'
+
+sprintf('diag([%s])',strjoin(cellfun(@(s) {char(s)}, num2cell(diag(Delta))),','))
+
+ans =
+
+    'diag([1,1,1,p1,p1,p1,p1,p2,p2,p2,p2,p2])'
+
+N
+
+N = 
+
+PLFR object (14 x 13), uncertainty block: (39 x 39)
+Dimensions: ny = 14, nu = 13, m1 = 39.
+-- 
+Uncertainty blocks (globally (39 x 39)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds             Rate Bounds
+ p1    13x13 LTI       r           s        [0.97355,1]        [-0.15745,0.15745]
+ p2    13x13 LTI       r           s        [0.92106,1]        [-0.4673,0.4673]
+ p3    13x13 LTI       r           s        [-0.4673,0.4673]   [-4,4]
+Blocks (vars):        p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)
+pLFR = N
+
+pLFR = 
+
+PLFR object (14 x 13), uncertainty block: (39 x 39)
+Dimensions: ny = 14, nu = 13, m1 = 39.
+-- 
+Uncertainty blocks (globally (39 x 39)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds             Rate Bounds
+ p1    13x13 LTI       r           s        [0.97355,1]        [-0.15745,0.15745]
+ p2    13x13 LTI       r           s        [0.92106,1]        [-0.4673,0.4673]
+ p3    13x13 LTI       r           s        [-0.4673,0.4673]   [-4,4]
+Blocks (vars):        p1, p2, p3 (sym)
+Function handle args: @(p1,p2,p3)
+[
+            num2cell(pLFR.blk) {
+            "Row  1. row-dimensions of blocks"
+            "Row  2. column-dimensions of blocks"
+            "Row  3. real(1) / complex(0) block types"
+            "Row  4. scalar(1) / full(0) block types"
+            "Row  5. linear(1) / nonlinear (0) block types"
+            "Row  6. time-inv.(1) / time-var.(0) block types"
+            "Row  7. min/max(1) / sector(2) / freq. dependent(>2) bounds, vagy 0"
+            "Row  8. min/max(2) / sector(1) / freq. dependent(>2) bounds, vagy 0"
+            "Row  9. minumum values of bounds"
+            "Row 10. maximum values of bounds"
+            "Row 11. nominal values"
+            "Row 12. minimum rate bound"
+            "Row 13. maximum rate bound"
+            }
+            ]
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('horzcat')" style="font-weight:bold">horzcat</a>
+Dimensions of arrays being concatenated are not consistent.
+} 
+num2cell(pLFR.blk)
+
+ans =
+
+  1×1 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {1×1 struct}
+
+pLFR.blk
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+     desc: [13×3 double]
+    names: {'p1'  'p2'  'p3'}
+
+num2cell(pLFR.blk.names)
+
+ans =
+
+  1×3 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {1×1 cell}    {1×1 cell}    {1×1 cell}
+
+pLFR.blk.names
+
+ans =
+
+  1×3 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'p1'}    {'p2'}    {'p3'}
+
+[ pLFR.blk.names num2cell(pLFR.blk.desc) ]
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('horzcat')" style="font-weight:bold">horzcat</a>
+Dimensions of arrays being concatenated are not consistent.
+} 
+[ pLFR.blk.names ; num2cell(pLFR.blk.desc) ]
+
+ans =
+
+  14×3 <a href="matlab:helpPopup cell" style="font-weight:bold">cell</a> array
+
+    {'p1'     }    {'p2'     }    {'p3'     }
+    {[     13]}    {[     13]}    {[     13]}
+    {[     13]}    {[     13]}    {[     13]}
+    {[      1]}    {[      1]}    {[      1]}
+    {[      1]}    {[      1]}    {[      1]}
+    {[      1]}    {[      1]}    {[      1]}
+    {[      1]}    {[      1]}    {[      1]}
+    {[      1]}    {[      1]}    {[      1]}
+    {[      2]}    {[      2]}    {[      2]}
+    {[ 0.9735]}    {[ 0.9211]}    {[-0.4673]}
+    {[      1]}    {[      1]}    {[ 0.4673]}
+    {[ 0.9868]}    {[ 0.9605]}    {[      0]}
+    {[-0.1575]}    {[-0.4673]}    {[     -4]}
+    {[ 0.1575]}    {[ 0.4673]}    {[      4]}
+
+help table
+ <strong>table</strong> Table.
+    Tables are used to collect heterogeneous data and metadata into a single
+    container.  Tables are suitable for storing column-oriented or tabular data
+    that are often stored as columns in a text file or in a spreadsheet.  Tables
+    can accommodate variables of different types, sizes, units, etc.  They are
+    often used to store experimental data, with rows representing different
+    observations and columns representing different measured variables.
+ 
+    Use the <strong>table</strong> constructor to create a table from variables in the MATLAB
+    workspace.  Use the readtable function to create a table by reading data
+    from a text or spreadsheet file.
+ 
+    The <strong>table</strong> constructor can also be used to create tables without
+    providing workspace variables, by providing the size and variable
+    types.
+ 
+    Tables can be subscripted using parentheses much like ordinary numeric
+    arrays, but in addition to numeric and logical indices, you can use a
+    table's variable and row names as indices.  You can access individual
+    variables in a table much like fields in a structure, using dot
+    subscripting.  You can access the contents of one or more variables using
+    brace subscripting.
+ 
+    Tables can contain different kinds of variables, including numeric,
+    logical, character, string, categorical, and cell.  However, a table is
+    a different class than the variables that it contains.  For example,
+    even a table that contains only variables that are double arrays cannot
+    be operated on as if it were itself a double array.  However, using dot
+    subscripting, you can operate on a variable in a table as if it were a
+    workspace variable.  Using brace subscripting, you can operate on one
+    or more variables in a table as if they were in a homogeneous array.
+ 
+    A table T has properties that store metadata such as its variable and row
+    names.  Access or assign to a property using P = T.Properties.PropName or
+    T.Properties.PropName = P, where PropName is one of the following:
+ 
+    <strong>table</strong> metadata properties:
+        Description          - A character vector describing the table
+        DimensionNames       - A two-element cell array of character vectors containing names of
+                               the dimensions of the table
+        VariableNames        - A cell array containing names of the variables in the table
+        VariableDescriptions - A cell array of character vectors containing descriptions of the
+                               variables in the table
+        VariableUnits        - A cell array of character vectors containing units for the variables
+                               in table
+        VariableContinuity   - An array containing a matlab.tabular.Continuity value for each table 
+                               variable, specifying whether a variable represents continuous or discrete 
+                               data values. You can assign 'unset', 'continuous', 'step', or 'event' to
+                               elements of VariableContinuity.
+        RowNames             - A cell array of nonempty, distinct character vectors containing names
+                               of the rows in the table
+        UserData             - A variable containing any additional information associated
+                               with the table.  You can assign any value to this property.
+        CustomProperties     - A container for user-defined per-table or per-variable custom 
+                               metadata fields.
+ 
+    <strong>table</strong> methods and functions:
+      Construction and conversion:
+        <a href="matlab:help table/table">table</a>              - Create a table from workspace variables.
+        <a href="matlab:help array2table">array2table</a>        - Convert homogeneous array to table.
+        <a href="matlab:help cell2table">cell2table</a>         - Convert cell array to table.
+        <a href="matlab:help struct2table">struct2table</a>       - Convert structure array to table.
+        <a href="matlab:help table2array">table2array</a>        - Convert table to a homogeneous array.
+        <a href="matlab:help table2cell">table2cell</a>         - Convert table to cell array.
+        <a href="matlab:help table2struct">table2struct</a>       - Convert table to structure array.
+      Import and export:
+        <a href="matlab:help readtable">readtable</a>          - Create a table by reading from a file.
+        <a href="matlab:help writetable">writetable</a>         - Write a table to a file.
+        <a href="matlab:help asyncio.OutputStream/write">write</a>              - Write a table to a file.
+      Size and shape:
+        <a href="matlab:help istable">istable</a>            - True for tables.
+        <a href="matlab:help table/size">size</a>               - Size of a table.
+        <a href="matlab:help table/width">width</a>              - Number of variables in a table.
+        <a href="matlab:help table/height">height</a>             - Number of rows in a table.
+        <a href="matlab:help table/ndims">ndims</a>              - Number of dimensions of a table.
+        <a href="matlab:help table/numel">numel</a>              - Number of elements in a table.
+        <a href="matlab:help table/horzcat">horzcat</a>            - Horizontal concatenation for tables.
+        <a href="matlab:help table/vertcat">vertcat</a>            - Vertical concatenation for tables.
+      Set membership:
+        <a href="matlab:help table/intersect">intersect</a>          - Find rows common to two tables.
+        <a href="matlab:help table/ismember">ismember</a>           - Find rows in one table that occur in another table.
+        <a href="matlab:help table/setdiff">setdiff</a>            - Find rows that occur in one table but not in another.
+        <a href="matlab:help table/setxor">setxor</a>             - Find rows that occur in one or the other of two tables, but not both.
+        <a href="matlab:help table/unique">unique</a>             - Find unique rows in a table.
+        <a href="matlab:help table/union">union</a>              - Find rows that occur in either of two tables.
+      Data manipulation and reorganization:
+        <a href="matlab:help table/summary">summary</a>            - Print summary of a table.
+        <a href="matlab:help table/addvars">addvars</a>            - Insert new variables at a specified location in a table.
+        <a href="matlab:help table/movevars">movevars</a>           - Move table variables to a specified location.
+        <a href="matlab:help table/removevars">removevars</a>         - Delete the specified table variables.
+        <a href="matlab:help table/splitvars">splitvars</a>          - Splits multi-column variables into separate variables.
+        <a href="matlab:help table/mergevars">mergevars</a>          - Merges multiple variables into one multi-column variable or a nested table.
+        <a href="matlab:help table/convertvars">convertvars</a>        - Converts table variables to a specified data type.
+        <a href="matlab:help table/sortrows">sortrows</a>           - Sort rows of a table.
+        <a href="matlab:help table/stack">stack</a>              - Stack up data from multiple variables into a single variable.
+        <a href="matlab:help table/unstack">unstack</a>            - Unstack data from a single variable into multiple variables.
+        <a href="matlab:help table/join">join</a>               - Merge two tables by matching up rows using key variables.
+        <a href="matlab:help table/innerjoin">innerjoin</a>          - Inner join between two tables.
+        <a href="matlab:help table/outerjoin">outerjoin</a>          - Outer join between two tables.
+        <a href="matlab:help table/rows2vars">rows2vars</a>          - Reorient rows to be variables of output table.
+        <a href="matlab:help table/inner2outer">inner2outer</a>        - Invert a nested table-in-table hierarchy.
+        <a href="matlab:help ismissing">ismissing</a>          - Find elements in a table that contain missing values.
+        <a href="matlab:help standardizeMissing">standardizeMissing</a> - Insert missing data indicators into a table.
+      Computations on tables:
+        <a href="matlab:help table/varfun">varfun</a>             - Apply a function to variables in a table.
+        <a href="matlab:help table/rowfun">rowfun</a>             - Apply a function to rows of a table.
+ 
+    Examples:
+ 
+       % Create a table from individual workspace variables.
+       load patients
+       patients = table(LastName,Gender,Age,Height,Weight,Smoker,Systolic,Diastolic)
+ 
+       % Select the rows for patients who smoke, and a subset of the variables.
+       smokers = patients(patients.Smoker == true, {'LastName' 'Gender' 'Systolic' 'Diastolic'})
+ 
+       % Convert the two blood pressure variables into a single variable.
+       patients.BloodPressure = [patients.Systolic patients.Diastolic];
+       patients(:,{'Systolic' 'Diastolic'}) = []
+ 
+       % Pick out two specific patients by the LastName variable.
+       patients(ismember(patients.LastName,{'Smith' 'Jones'}), :)
+ 
+       % Convert the LastName variable into row names.
+       patients.Properties.RowNames = patients.LastName;
+       patients.LastName = []
+ 
+       % Use the row names to pick out two specific patients.
+       patients({'Smith' 'Jones'},:)
+ 
+       % Add metadata to the table.
+       patients.Properties.Description = 'Simulated patient data';
+       patients.Properties.VariableUnits =  {''  'Yrs'  'In'  'Lbs'  ''  'mm Hg'};
+       patients.Properties.VariableDescriptions{6} = 'Systolic/Diastolic';
+       summary(patients)
+ 
+       % Create a new variable in the table from existing variables.
+       patients.BMI = (patients.Weight * 0.453592) ./ (patients.Height * 0.0254).^2
+       patients.Properties.VariableUnits{'BMI'} =  'kg/m^2';
+       patients.Properties.VariableDescriptions{'BMI'} = 'Body Mass Index';
+ 
+       % Sort the table based on the new variable.
+       sortrows(patients,'BMI')
+ 
+       % Make a scatter plot of two of the table's variables.
+       plot(patients.Height,patients.Weight,'o')
+ 
+       % Create tables from text and spreadsheet files
+       patients2 = readtable('patients.dat','ReadRowNames',true)
+       patients3 = readtable('patients.xls','ReadRowNames',true)
+ 
+       % Create a table from a numeric matrix
+       load tetmesh.mat
+       t = array2table(X,'VariableNames',{'x' 'y' 'z'});
+       plot3(t.x,t.y,t.z,'.')
+ 
+    See also <a href="matlab:help table/table">table</a>, <a href="matlab:help categorical">categorical</a>
+
+    <a href="matlab:doc table">Documentation for table</a>
+    <a href="matlab:matlab.internal.language.introspective.overloads.displayOverloads('table')">Other functions named table</a>
+
+edit store_results.m
+
+--------------------------------------------------------------------------------
+        Segmentation violation detected at h ápr 27 11:37:18 2020 +0200
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : UTF-8
+  Deployed                 : false
+  Desktop Environment      : KDE
+  GNU C Library            : 2.27 stable
+  Graphics Driver          : Unknown hardware 
+  Graphics card 1          : 0x10de ( 0x10de ) 0x1290 Version 440.59.0.0 (0-0-0)
+  Graphics card 2          : 0x8086 ( 0x8086 ) 0x416 Version 0.0.0.0 (0-0-0)
+  Java Version             : Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+  MATLAB Architecture      : glnxa64
+  MATLAB Entitlement ID    : 4290207
+  MATLAB Root              : /opt/MATLAB/R2019b
+  MATLAB Version           : 9.7.0.1247435 (R2019b) Update 2
+  OpenGL                   : hardware
+  Operating System         : Ubuntu 18.04.4 LTS
+  Process ID               : 18146
+  Processor ID             : x86 Family 6 Model 60 Stepping 3, GenuineIntel
+  Session Key              : d6c43cf6-7506-4d67-b3ad-eb2b0cd913a1
+  Static TLS mitigation    : Enabled: Full
+  Window System            : The X.Org Foundation (11906000), display :0
+
+Fault Count: 1
+
+
+Abnormal termination:
+Segmentation violation
+
+Register State (from fault):
+  RAX = 0000000200000002  RBX = 00007f9ea8bcdae0
+  RCX = 00007f9d2332f650  RDX = 0000000100000002
+  RSP = 00007f9ea8bcdae0  RBP = 00007f9ea8bcdb40
+  RSI = 00007f9ea8bcdae0  RDI = 0000000000000000
+
+   R8 = 00007f9d07e38050   R9 = 00007f9eb402f980
+  R10 = 00007f9ec5f81518  R11 = 00007f9ec569d950
+  R12 = 00007f9eadfe4920  R13 = 00007f9d25355a60
+  R14 = 0000000000000000  R15 = 00007f9d001cbdc0
+
+  RIP = 00007f9eadfd81b9  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f9eadfd81b9 /opt/MATLAB/R2019b/bin/glnxa64/libmwcontextdata.so+00213433 _ZN17MCOSIntrospection21getClassPropertyNamesEPN4mcos8COSClassERSt6vectorINSt7__cxx1112basic_stringIDsSt11char_traitsIDsESaIDsEEESaIS9_EERKNS_25DesiredPropertyAttributesE+00000073
+[  1] 0x00007f9eadfd8279 /opt/MATLAB/R2019b/bin/glnxa64/libmwcontextdata.so+00213625 _ZN17MCOSIntrospection22getObjectPropertyNamesEPK11mxArray_tagRSt6vectorINSt7__cxx1112basic_stringIDsSt11char_traitsIDsESaIDsEEESaIS9_EE+00000121
+[  2] 0x00007f9eadb43bfb /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00326651
+[  3] 0x00007f9eadbbd775 /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00825205
+[  4] 0x00007f9eadbbe10a /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00827658
+[  5] 0x00007f9eadbc137b /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00840571
+[  6] 0x00007f9eadbc53c9 /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00857033
+[  7] 0x00007f9eadbc5806 /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00858118
+[  8] 0x00007f9eadbc77ba /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00866234
+[  9] 0x00007f9eadbeb693 /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+01013395
+[ 10] 0x00007f9eadbe1330 /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00971568
+[ 11] 0x00007f9eadbe1525 /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00972069 _ZN10TabContext14FindCompletionERKNSt7__cxx1112basic_stringIDsSt11char_traitsIDsESaIDsEEEmRKSt6vectorISt10shared_ptrIKN9MathWorks16functionRegistry8ArgumentEESaISE_EERb+00000037
+[ 12] 0x00007f9eadbe1738 /opt/MATLAB/R2019b/bin/glnxa64/libmwtabcompletion.so+00972600 _ZN10TabContext14FindCompletionERKNSt7__cxx1112basic_stringIDsSt11char_traitsIDsESaIDsEEEmRb+00000072
+[ 13] 0x00007f9e2d25969a     /opt/MATLAB/R2019b/bin/glnxa64/libnativejmi.so+01095322 _Z14findCompletionP7JNIEnv_P8_jobject+00000218
+[ 14] 0x00007f9e2d259810     /opt/MATLAB/R2019b/bin/glnxa64/libnativejmi.so+01095696 _Z23mtFindAllTabCompletionsP7JNIEnv_P8_jobject+00000048
+[ 15] 0x00007f9e2d23e36b     /opt/MATLAB/R2019b/bin/glnxa64/libnativejmi.so+00983915 _Z17mtMessageDispatchP7JNIEnv_P8_jobject+00000203
+[ 16] 0x00007f9e2d23e495     /opt/MATLAB/R2019b/bin/glnxa64/libnativejmi.so+00984213 _Z17SendMatlabMessageP7JNIEnv_P8_jobjectS2_+00000213
+[ 17] 0x00007f9e469a0f7c                                   <unknown-module>+00000000
+[ 18] 0x00007f9e4787e1ac                                   <unknown-module>+00000000
+[ 19] 0x00007f9e44dec040                                   <unknown-module>+00000000
+[ 20] 0x00007f9e44dec040                                   <unknown-module>+00000000
+[ 21] 0x00007f9e44dec040                                   <unknown-module>+00000000
+[ 22] 0x00007f9e44de47a7                                   <unknown-module>+00000000
+[ 23] 0x00007f9e9769f39b /opt/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so+06849435
+[ 24] 0x00007f9e976e6da8 /opt/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so+07142824
+[ 25] 0x00007f9e976e8fba /opt/MATLAB/R2019b/sys/java/jre/glnxa64/jre/lib/amd64/server/libjvm.so+07151546
+[ 26] 0x00007f9ea071a751         /opt/MATLAB/R2019b/bin/glnxa64/libmwjmi.so+01173329
+[ 27] 0x00007f9ea078e8cb         /opt/MATLAB/R2019b/bin/glnxa64/libmwjmi.so+01648843
+[ 28] 0x00007f9ea078c24c         /opt/MATLAB/R2019b/bin/glnxa64/libmwjmi.so+01638988
+[ 29] 0x00007f9ea078c8dd         /opt/MATLAB/R2019b/bin/glnxa64/libmwjmi.so+01640669
+[ 30] 0x00007f9ec6cf442b         /opt/MATLAB/R2019b/bin/glnxa64/libmwmvm.so+03097643 _ZN14cmddistributor15PackagedTaskIIP10invokeFuncIN7mwboost8functionIFvvEEEEENS2_10shared_ptrINS2_13unique_futureIDTclfp_EEEEEERKT_+00000059
+[ 31] 0x00007f9ec6cf4518         /opt/MATLAB/R2019b/bin/glnxa64/libmwmvm.so+03097880 _ZNSt17_Function_handlerIFN7mwboost3anyEvEZN14cmddistributor15PackagedTaskIIP10createFuncINS0_8functionIFvvEEEEESt8functionIS2_ET_EUlvE_E9_M_invokeERKSt9_Any_data+00000024
+[ 32] 0x00007f9eb1a2889c         /opt/MATLAB/R2019b/bin/glnxa64/libmwiqm.so+00751772 _ZN7mwboost6detail8function21function_obj_invoker0ISt8functionIFNS_3anyEvEES4_E6invokeERNS1_15function_bufferE+00000028
+[ 33] 0x00007f9eb1a28557         /opt/MATLAB/R2019b/bin/glnxa64/libmwiqm.so+00750935 _ZN3iqm18PackagedTaskPlugin7executeEP15inWorkSpace_tag+00000439
+[ 34] 0x00007f9eb18c7015         /opt/MATLAB/R2019b/bin/glnxa64/libmwmcr.so+00946197
+[ 35] 0x00007f9eb1a0d6a0         /opt/MATLAB/R2019b/bin/glnxa64/libmwiqm.so+00640672
+[ 36] 0x00007f9eb19f3838         /opt/MATLAB/R2019b/bin/glnxa64/libmwiqm.so+00534584
+[ 37] 0x00007f9eb09f21ca      /opt/MATLAB/R2019b/bin/glnxa64/libmwbridge.so+00303562
+[ 38] 0x00007f9eb09f3022      /opt/MATLAB/R2019b/bin/glnxa64/l

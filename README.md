@@ -5,7 +5,7 @@ Computational results of the induced L2-gain computation for the
 pendulum-cart system in [PPKSz20] are available in 
 
 ```
-   workspace/results_stored/model2_ipend-results.mat
+   workspace/results_stored/model2_ipend-values.mat
 ```
 
 [PPKSz20] Polcz, Péni, Kulcsár, Szederkényi. Induced L2-gain computation 
