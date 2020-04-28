@@ -18,7 +18,7 @@ setenv('A_MAT_PATH',A_MAT_PATH);
 addpath(genpath('ftools'))
 addpath(genpath('utilities'))
 
-cd ../../7_ftools
-tbxmanager restorepath
-addpath(genpath('toolboxes_other'))
-cd(ROOT)
+% cd ../../7_ftools
+% tbxmanager restorepath
+% addpath(genpath('toolboxes_other'))
+% cd(ROOT)

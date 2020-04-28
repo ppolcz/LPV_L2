@@ -40,12 +40,22 @@ https://dept.aem.umn.edu/~SeilerControl/software.shtml
 [5] Scherer, Köroğlue, Farhood. LPVMAD - The IQC analysis tool, Tech.
 Report, TU Delft for ESA.
 
-[6] Löfberg, YALMIP : a toolbox for modeling and optimization in MATLAB,
+[6] Magni, User manual of the Linear Fractional Representation Toolbox: 
+version 2.0 (Jan. 2006). URL https://w3.onera.fr/smac/lfrt
+
+[7] Löfberg, YALMIP : a toolbox for modeling and optimization in MATLAB,
 in: Proceedings of the CACSD Conference, Taipei, Taiwan, 2004.
 doi:10.1109/CACSD.2004.1393890. URL http://users.isy.liu.se/johanl/yalmip
 
-[7] MOSEK ApS, The MOSEK optimization toolbox for MATLAB 7.1 (revision 28), 2015. 
+##Suggested SDP solver
+
+[8] MOSEK ApS. The MOSEK optimization toolbox for MATLAB 7.1 (revision 28), 2015. 
 http://docs.mosek.com
 
-[8] Magni, User manual of the Linear Fractional Representation Toolbox: 
-version 2.0 (Jan. 2006). URL https://w3.onera.fr/smac/lfrt
+[9] Sturm, Romanko, Pólik, CORAL Lab. 
+SeDuMi: A linear/quadratic/semidefinite solver for Matlab and Octave. 
+http://sedumi.ie.lehigh.edu, https://github.com/sqlp/sedumi
+
+[10] Toh, Tütüncü, Todd. SDPT3 - a MATLAB software package for 
+semidefinite-quadratic-linear programming. URL http://www.math.cmu.edu/~reha/sdpt3.html
+
