@@ -1,0 +1,49 @@
+[  [INFO]  ] Output logging (with `diary'): /home/ppolcz/_/8_published/22_LPV_L2/workspace/results/LiveEditorEvaluationHelperESectionEval70d86313-output-2020-05-28_23:52_id2383/output.txt
+ 
+┌ <a href="matlab:edit('/home/ppolcz/_/8_published/22_LPV_L2/workspace/model1_LPV4D.m')">model1_LPV4D</a> called from evaluateCode
+│   Run ID = 2383
+A_fh
+
+A_fh =
+
+  <a href="matlab:helpPopup function_handle" style="font-weight:bold">function_handle</a> with value:
+
+    @(p1,p2,p3)[-3+p1,3+p1/(p3^2+0.5*p1+1),0.1*p3,p3^2*p2;0,-1-p2^2,5,0;-1/(5-p2),0,-4+p1,0;0,0.1,0,-5+1/(p1+2)]
+
+xl = pcz_generateLFRStateVector('x',4)
+ 
+a = 
+     0     0     0     0
+     0     0     0     0
+     0     0     0     0
+     0     0     0     0
+
+ 
+b = 
+     1
+     1
+     1
+     1
+
+ 
+c = 
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+
+ 
+d = 
+     0
+     0
+     0
+     0
+
+ 
+LFR-object with 4 output(s), 1 input(s) and 0 state(s).
+Uncertainty blocks (globally (4 x 4)):
+ Name  Dims  Type   Real/Cplx   Full/Scal   Bounds
+ x1    1x1   LTI       r           s        [-1,1]
+ x2    1x1   LTI       r           s        [-1,1]
+ x3    1x1   LTI       r           s        [-1,1]
+ x4    1x1   LTI       r           s        [-1,1]
